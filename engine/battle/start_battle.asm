@@ -61,13 +61,13 @@ PlayBattleMusic:
 	ld de, MUSIC_JOHTO_WILD_BATTLE
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jr nz, .done
+	jp nz, .done
 	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
-	jr .done
+	jp .done
 
 .kantowild
 	ld de, MUSIC_KANTO_WILD_BATTLE
-	jr .done
+	jp .done
 
 .trainermusic
 	ld de, MUSIC_CHAMPION_BATTLE
@@ -76,11 +76,10 @@ PlayBattleMusic:
 	cp RED
 	jr z, .done
 
-    ld de, MUSIC_FINAL_BATTLE
-    cp BLUE
-    jr z, .done
+	ld de, MUSIC_FINAL_BATTLE
+	cp BLUE
+	jr z, .done
 
-; BUG: Team Rocket battle music is not used for Executives or Scientists (see docs/bugs_and_glitches.md)
 	ld de, MUSIC_ROCKET_BATTLE
 	cp GRUNTM
 	jr z, .done
@@ -92,6 +91,16 @@ PlayBattleMusic:
 	jr z, .done
 	cp SCIENTIST
 	jr z, .done	
+	cp SCIENTIST
+	jr z, .done
+	cp PROTON
+	jr z, .done
+	cp PETREL
+	jr z, .done
+	cp ARIANA
+	jr z, .done
+	cp ARCHER
+	jr z, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
 	farcall IsKantoGymLeader
