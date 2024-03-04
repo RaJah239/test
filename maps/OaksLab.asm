@@ -38,6 +38,7 @@ Oak:
 	writetext OakOpenMtSilverText
 	promptbutton
 	setevent EVENT_OPENED_MT_SILVER
+	setmapscene SILVER_CAVE_OUTSIDE, SCENE_MTSILVER_RIVAL_BATTLE
 	sjump .CheckPokedex
 
 .Complain:

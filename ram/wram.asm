@@ -3087,7 +3087,6 @@ wBattleTowerElevatorSceneID::                     db
 wBattleTowerHallwaySceneID::                      db
 wBattleTowerOutsideSceneID::                      db
 wRoute43GateSceneID::                             db
-wMountMoonSceneID::                               db
 wSproutTower3FSceneID::                           db
 wTinTower1FSceneID::                              db
 wBurnedTower1FSceneID::                           db
@@ -3117,7 +3116,7 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 wSilverCavePokecenter1F::                         db ; Crystal Trove
-
+wSilverCaveOutsideSceneID::                       db ; Crystal Trove removed Mt. Moon scene with Rival and moved to Mt. Silver
 	ds 48
 
 ; fight counts

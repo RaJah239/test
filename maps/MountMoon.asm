@@ -1,9 +1,7 @@
 	object_const_def
-	const MOUNTMOON_RIVAL
 
 MountMoon_MapScripts:
 	def_scene_scripts
-	scene_script MountMoonNoopScene,           SCENE_MOUNTMOON_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .Flypoint
@@ -11,9 +9,6 @@ MountMoon_MapScripts:
 .Flypoint:
 	setflag ENGINE_FLYPOINT_MT_MOON
 	return
-
-MountMoonNoopScene:
-	end
 
 MountMoon_MapEvents:
 	db 0, 0 ; filler
