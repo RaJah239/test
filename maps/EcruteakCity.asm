@@ -73,6 +73,9 @@ TinTowerSign:
 EcruteakGymSign:
 	jumptext EcruteakGymSignText
 
+EcruteakTradebackGuySign:
+	jumptext EcruteakTradebackGuySignText
+
 EcruteakDanceTheaterSign:
 	jumptext EcruteakDanceTheaterSignText
 
@@ -220,6 +223,11 @@ EcruteakGymSignText:
 	line "the Future"
 	done
 
+EcruteakTradebackGuySignText:
+	text "TRADEBACK KID'S"
+	line "HOUSE"
+	done
+
 EcruteakDanceTheaterSignText:
 	text "ECRUTEAK DANCE"
 	line "THEATER"
@@ -262,6 +270,7 @@ EcruteakCity_MapEvents:
 	bg_event 15, 21, BGEVENT_READ, EcruteakCitySign
 	bg_event 38, 10, BGEVENT_READ, TinTowerSign
 	bg_event  8, 28, BGEVENT_READ, EcruteakGymSign
+	bg_event  11, 27, BGEVENT_READ, EcruteakTradebackGuySign
 	bg_event 21, 21, BGEVENT_READ, EcruteakDanceTheaterSign
 	bg_event  2, 10, BGEVENT_READ, BurnedTowerSign
 	bg_event 24, 27, BGEVENT_READ, EcruteakCityPokecenterSign

@@ -1,6 +1,7 @@
 	object_const_def
 	const ECRUTEAKITEMFINDERHOUSE_COOLTRAINER_M
 	const ECRUTEAKITEMFINDERHOUSE_POKEDEX
+	const ELMSLAB_TRADEBACKKIDNPC
 
 EcruteakItemfinderHouse_MapScripts:
 	def_scene_scripts
@@ -48,6 +49,14 @@ EcruteakHistoryBook:
 
 .KeepReading:
 	writetext EcruteakThreeMonText
+	waitbutton
+	closetext
+	end
+
+TradebackNPCScript:
+	faceplayer
+	opentext
+	special TradebackNPC
 	waitbutton
 	closetext
 	end
@@ -175,3 +184,4 @@ EcruteakItemfinderHouse_MapEvents:
 	def_object_events
 	object_event  2,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakItemfinderGuy, -1
 	object_event  3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakHistoryBook, -1
+	object_event  5,  4, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TradebackNPCScript, -1
