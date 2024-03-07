@@ -3122,6 +3122,7 @@ wSilverCaveOutsideSceneID::                       db ; Crystal Trove removed Mt.
 
 ; fight counts
 wJackFightCount::    db
+wLevelCap::          db
 wHueyFightCount::    db
 wGavenFightCount::   db
 wBethFightCount::    db
@@ -3146,7 +3147,7 @@ wWiltonFightCount::  db
 wParryFightCount::   db
 wErinFightCount::    db
 
-	ds 100
+	ds 99
 
 wEventFlags:: flag_array NUM_EVENTS
 
