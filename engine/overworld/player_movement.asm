@@ -351,10 +351,12 @@ DoPlayerMovement::
 	and a
 	jr nz, .ExitWater
 
-	ld a, STEP_WALK
-	call .DoStep
-	scf
-	ret
+    call .FastSurfCheck
+    jr z, .fast
+    ld a, STEP_WALK
+    call .DoStep
+    scf
+    ret
 
 .ExitWater:
 	call .GetOutOfWater
@@ -748,6 +750,14 @@ ENDM
 	ret z
 	cp PLAYER_SKATE
 	ret
+
+.FastSurfCheck:
+    ld a, [wPlayerState]
+    cp PLAYER_SURF
+    ret nz
+    ldh a, [hJoypadDown]
+    and B_BUTTON
+    ret
 
 .CheckWalkable:
 ; Return 0 if tile a is land. Otherwise, return carry.
