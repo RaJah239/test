@@ -102,4 +102,5 @@ SpriteMons:
 	db MR__MIME
 	db SHUCKLE
 	db LARVITAR
+	db ARTICUNO
 	assert_table_length NUM_POKEMON_SPRITES

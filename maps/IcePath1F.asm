@@ -2,7 +2,8 @@
 	const ICEPATH1F_POKE_BALL1
 	const ICEPATH1F_POKE_BALL2
 	const ICEPATH1F_POKE_BALL3
-
+	const ICEPATH1F_ARTICUNO
+	
 IcePath1F_MapScripts:
 	def_scene_scripts
 
@@ -16,6 +17,25 @@ IcePath1FPPUp:
 
 IcePath1FProtein:
 	itemball PROTEIN
+
+IcePath1FArticuno:
+    faceplayer
+	opentext
+	writetext ArticunoText
+	cry ARTICUNO
+	pause 60
+	closetext
+	setevent EVENT_FOUGHT_ARTICUNO
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	loadwildmon ARTICUNO, 65
+	startbattle
+	disappear ICEPATH1F_ARTICUNO
+	reloadmapafterbattle
+	end
+
+ArticunoText:
+    text "Gyaoo!"
+	done
 
 IcePath1F_MapEvents:
 	db 0, 0 ; filler
@@ -34,4 +54,5 @@ IcePath1F_MapEvents:
 	def_object_events
 	object_event 31,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FHMWaterfall, EVENT_GOT_HM07_WATERFALL
 	object_event 32, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FPPUp, EVENT_ICE_PATH_1F_PP_UP
-	object_event 15,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FProtein, EVENT_ICE_PATH_1F_PROTEIN
+	object_event 36,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FProtein, EVENT_ICE_PATH_1F_PROTEIN
+	object_event  8, 28, SPRITE_ARTICUNO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IcePath1FArticuno, EVENT_ICE_PATH_1F_ARTICUNO
