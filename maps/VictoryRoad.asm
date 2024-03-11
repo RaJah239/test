@@ -7,6 +7,7 @@
 	const VICTORYROAD_POKE_BALL5
 	const VICTORYROAD_CHANSEY
 	const VICTORYROAD_ERIC_THE_EXPLORER
+	const VICTORYROAD_MOLTRES
 
 VictoryRoad_MapScripts:
 	def_scene_scripts
@@ -116,6 +117,25 @@ VictoryRoadHiddenMaxPotion:
 
 VictoryRoadHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_VICTORY_ROAD_HIDDEN_FULL_HEAL
+	
+VictoryRoadMoltres:
+    faceplayer
+	opentext
+	writetext MoltresText
+	cry MOLTRES
+	pause 15
+	closetext
+	setevent EVENT_FOUGHT_MOLTRES
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	loadwildmon MOLTRES, 75
+	startbattle
+	disappear VICTORYROAD_MOLTRES
+	reloadmapafterbattle
+	end
+	
+MoltresText:
+    text "Gyaoo!"
+	done
 
 VictoryRoadRivalBattleApproachMovement1:
 	step LEFT
@@ -308,3 +328,4 @@ VictoryRoad_MapEvents:
 	object_event  7, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadHPUp, EVENT_VICTORY_ROAD_HP_UP
 	object_event 16, 12, SPRITE_CHANSEY_OW, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadChanseyScript, -1
 	object_event 16, 30, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VictoryRoadEricTheExplorerScript, EVENT_VICTORY_ROAD_ERIC_THE_EXPLORER
+	object_event  3, 26, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VictoryRoadMoltres, EVENT_VICTORY_ROAD_MOLTRES

@@ -26,7 +26,7 @@
 	const EVENT_GOT_HM04_STRENGTH ; now unused in Crystal Trove
 	const EVENT_GOT_HM05_FLASH
 	const EVENT_GOT_HM06_WHIRLPOOL
-	const_skip ; unused
+	const EVENT_VICTORY_ROAD_MOLTRES
 ; Rods
 	const EVENT_GOT_OLD_ROD
 	const EVENT_GOT_GOOD_ROD
@@ -376,6 +376,7 @@
 	const EVENT_WHIRL_ISLAND_GROTTO_DEWGONG
 	const EVENT_MET_ERIC_THE_EXPLORER
 	const EVENT_VICTORY_ROAD_ERIC_THE_EXPLORER
+	const EVENT_FOUGHT_MOLTRES
 ; Unused: next 232 events
 
 	const_next 600
