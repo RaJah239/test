@@ -402,9 +402,9 @@
 	const EVENT_GOT_CALCIUM_FROM_ERIN
 	const EVENT_KENJI_ON_BREAK
 	const EVENT_GAVEN_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_SILVER_CAVE_ITEM_ROOMS_MEWTWO
 	const EVENT_BETH_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_FOUGHT_MEWTWO
 	const EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
 	const_skip ; unused in Crystal
 	const EVENT_REENA_ASKED_FOR_PHONE_NUMBER
