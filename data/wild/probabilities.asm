@@ -4,19 +4,21 @@ MACRO mon_prob
 ENDM
 
 GrassMonProbTable:
-	table_width 2, GrassMonProbTable
-	mon_prob 30,  0 ; 30% chance
-	mon_prob 60,  1 ; 30% chance
-	mon_prob 80,  2 ; 20% chance
-	mon_prob 90,  3 ; 10% chance
-	mon_prob 95,  4 ;  5% chance
-	mon_prob 99,  5 ;  4% chance
-	mon_prob 100, 6 ;  1% chance
-	assert_table_length NUM_GRASSMON
+    table_width 2, GrassMonProbTable
+    mon_prob 15,  0 ; 15% chance
+    mon_prob 30,  1 ; 15% chance
+    mon_prob 44,  2 ; 14% chance
+    mon_prob 58,  3 ; 14% chance
+    mon_prob 72,  4 ; 14% chance
+    mon_prob 86,  5 ; 14% chance
+    mon_prob 99,  6 ; 13% chance
+    mon_prob 100, 7 ; 1% chance
+    assert_table_length NUM_GRASSMON
 
 WaterMonProbTable:
 	table_width 2, WaterMonProbTable
-	mon_prob 60,  0 ; 60% chance
-	mon_prob 90,  1 ; 30% chance
-	mon_prob 100, 2 ; 10% chance
+	mon_prob 25,  0 ; 25% chance
+	mon_prob 50,  1 ; 25% chance
+	mon_prob 75,  2 ; 25% chance
+	mon_prob 100, 3 ; 25% chance
 	assert_table_length NUM_WATERMON

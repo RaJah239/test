@@ -52,7 +52,6 @@ ROMX $09
 	"bank9"
 ROMX $0a
 	"bankA"
-	"Trainer Backpics"
 ROMX $0b
 	"bankB"
 ROMX $0c
@@ -308,6 +307,7 @@ ROMX $79
 	"Extra Songs 1"
 ROMX $7a
 	"Events"
+	"Trainer Backpics"
 ROMX $7b
 	"Battle Tower Text"
 ROMX $7c

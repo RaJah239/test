@@ -8,5 +8,6 @@ SwarmWaterWildMons:
 ;	db 15, QWILFISH
 ;	db 15, QWILFISH
 ;	db 20, QWILFISH
+;	db 20, QWILFISH
 ;
 ;	db -1 ; end

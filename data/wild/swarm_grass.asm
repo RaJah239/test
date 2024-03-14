@@ -13,6 +13,7 @@ SwarmGrassWildMons:
 	db 5, BULBASAUR
 	db 5, BULBASAUR
 	db 5, BULBASAUR
+	db 5, BULBASAUR
 	; day
 	db 5, BULBASAUR
 	db 5, BULBASAUR
@@ -21,7 +22,9 @@ SwarmGrassWildMons:
 	db 5, BULBASAUR
 	db 5, BULBASAUR
 	db 5, BULBASAUR
+	db 5, BULBASAUR
 	; nite
+	db 5, BULBASAUR
 	db 5, BULBASAUR
 	db 5, BULBASAUR
 	db 5, BULBASAUR
@@ -41,6 +44,7 @@ SwarmGrassWildMons:
 	db 5, CHARMANDER
 	db 5, CHARMANDER
 	db 5, CHARMANDER
+	db 5, CHARMANDER
 	; day
 	db 5, CHARMANDER
 	db 5, CHARMANDER
@@ -49,7 +53,9 @@ SwarmGrassWildMons:
 	db 5, CHARMANDER
 	db 5, CHARMANDER
 	db 5, CHARMANDER
+	db 5, CHARMANDER
 	; nite
+	db 5, CHARMANDER
 	db 5, CHARMANDER
 	db 5, CHARMANDER
 	db 5, CHARMANDER
@@ -69,6 +75,7 @@ SwarmGrassWildMons:
 	db 5, SQUIRTLE
 	db 5, SQUIRTLE
 	db 5, SQUIRTLE
+	db 5, SQUIRTLE
 	; day
 	db 5, SQUIRTLE
 	db 5, SQUIRTLE
@@ -77,7 +84,9 @@ SwarmGrassWildMons:
 	db 5, SQUIRTLE
 	db 5, SQUIRTLE
 	db 5, SQUIRTLE
+	db 5, SQUIRTLE
 	; nite
+	db 5, SQUIRTLE
 	db 5, SQUIRTLE
 	db 5, SQUIRTLE
 	db 5, SQUIRTLE
@@ -97,6 +106,7 @@ SwarmGrassWildMons:
 	db 5, CHIKORITA
 	db 5, CHIKORITA
 	db 5, CHIKORITA
+	db 5, CHIKORITA
 	; day
 	db 5, CHIKORITA
 	db 5, CHIKORITA
@@ -105,7 +115,9 @@ SwarmGrassWildMons:
 	db 5, CHIKORITA
 	db 5, CHIKORITA
 	db 5, CHIKORITA
+	db 5, CHIKORITA
 	; nite
+	db 5, CHIKORITA
 	db 5, CHIKORITA
 	db 5, CHIKORITA
 	db 5, CHIKORITA
@@ -125,6 +137,7 @@ SwarmGrassWildMons:
 	db 5, CYNDAQUIL
 	db 5, CYNDAQUIL
 	db 5, CYNDAQUIL
+	db 5, CYNDAQUIL
 	; day
 	db 5, CYNDAQUIL
 	db 5, CYNDAQUIL
@@ -133,7 +146,9 @@ SwarmGrassWildMons:
 	db 5, CYNDAQUIL
 	db 5, CYNDAQUIL
 	db 5, CYNDAQUIL
+	db 5, CYNDAQUIL
 	; nite
+	db 5, CYNDAQUIL
 	db 5, CYNDAQUIL
 	db 5, CYNDAQUIL
 	db 5, CYNDAQUIL
@@ -153,6 +168,7 @@ SwarmGrassWildMons:
 	db 5, TOTODILE
 	db 5, TOTODILE
 	db 5, TOTODILE
+	db 5, TOTODILE
 	; day
 	db 5, TOTODILE
 	db 5, TOTODILE
@@ -161,7 +177,9 @@ SwarmGrassWildMons:
 	db 5, TOTODILE
 	db 5, TOTODILE
 	db 5, TOTODILE
+	db 5, TOTODILE
 	; nite
+	db 5, TOTODILE
 	db 5, TOTODILE
 	db 5, TOTODILE
 	db 5, TOTODILE
@@ -181,6 +199,7 @@ SwarmGrassWildMons:
 	db 5, PICHU
 	db 5, PICHU
 	db 5, PICHU
+	db 5, PICHU
 	; day
 	db 5, PICHU
 	db 5, PICHU
@@ -189,7 +208,9 @@ SwarmGrassWildMons:
 	db 5, PICHU
 	db 5, PICHU
 	db 5, PICHU
+	db 5, PICHU
 	; nite
+	db 5, PICHU
 	db 5, PICHU
 	db 5, PICHU
 	db 5, PICHU
@@ -209,6 +230,7 @@ SwarmGrassWildMons:
 	db 5, CLEFFA
 	db 5, CLEFFA
 	db 5, CLEFFA
+	db 5, CLEFFA
 	; day
 	db 5, CLEFFA
 	db 5, CLEFFA
@@ -217,7 +239,9 @@ SwarmGrassWildMons:
 	db 5, CLEFFA
 	db 5, CLEFFA
 	db 5, CLEFFA
+	db 5, CLEFFA
 	; nite
+	db 5, CLEFFA
 	db 5, CLEFFA
 	db 5, CLEFFA
 	db 5, CLEFFA
@@ -237,6 +261,7 @@ SwarmGrassWildMons:
 	db 5, IGGLYBUFF
 	db 5, IGGLYBUFF
 	db 5, IGGLYBUFF
+	db 5, IGGLYBUFF
 	; day
 	db 5, IGGLYBUFF
 	db 5, IGGLYBUFF
@@ -245,7 +270,9 @@ SwarmGrassWildMons:
 	db 5, IGGLYBUFF
 	db 5, IGGLYBUFF
 	db 5, IGGLYBUFF
+	db 5, IGGLYBUFF
 	; nite
+	db 5, IGGLYBUFF
 	db 5, IGGLYBUFF
 	db 5, IGGLYBUFF
 	db 5, IGGLYBUFF
@@ -265,6 +292,7 @@ SwarmGrassWildMons:
 	db 5, TOGEPI
 	db 5, TOGEPI
 	db 5, TOGEPI
+	db 5, TOGEPI
 	; day
 	db 5, TOGEPI
 	db 5, TOGEPI
@@ -273,7 +301,9 @@ SwarmGrassWildMons:
 	db 5, TOGEPI
 	db 5, TOGEPI
 	db 5, TOGEPI
+	db 5, TOGEPI
 	; nite
+	db 5, TOGEPI
 	db 5, TOGEPI
 	db 5, TOGEPI
 	db 5, TOGEPI
@@ -293,6 +323,7 @@ SwarmGrassWildMons:
 	db 5, TYROGUE
 	db 5, TYROGUE
 	db 5, TYROGUE
+	db 5, TYROGUE
 	; day
 	db 5, TYROGUE
 	db 5, TYROGUE
@@ -301,7 +332,9 @@ SwarmGrassWildMons:
 	db 5, TYROGUE
 	db 5, TYROGUE
 	db 5, TYROGUE
+	db 5, TYROGUE
 	; nite
+	db 5, TYROGUE
 	db 5, TYROGUE
 	db 5, TYROGUE
 	db 5, TYROGUE
@@ -321,6 +354,7 @@ SwarmGrassWildMons:
 	db 5, DITTO
 	db 5, DITTO
 	db 5, DITTO
+	db 5, DITTO
 	; day
 	db 5, DITTO
 	db 5, DITTO
@@ -329,7 +363,9 @@ SwarmGrassWildMons:
 	db 5, DITTO
 	db 5, DITTO
 	db 5, DITTO
+	db 5, DITTO
 	; nite
+	db 5, DITTO
 	db 5, DITTO
 	db 5, DITTO
 	db 5, DITTO

@@ -2,33 +2,38 @@ FleeMons:
 ; referenced by TryEnemyFlee and FastBallMultiplier
 
 SometimesFleeMons:
-	db MAGNEMITE
-	db GRIMER
-	db TANGELA
-	db MR__MIME
-	db EEVEE
-	db PORYGON
-	db DRATINI
+	db ABRA
+	db BULBASAUR
+	db CHARMANDER
+	db CHIKORITA
+	db CLEFFA
+	db CUBONE
+	db CYNDAQUIL
 	db DRAGONAIR
-	db TOGETIC
-	db UMBREON
-	db UNOWN
-	db SNUBBULL
-	db HERACROSS
+	db DRATINI
+	db ELEKID
+	db GRIMER
+	db IGGLYBUFF
+	db KANGASKHAN
+	db MAGBY
+	db MURKROW
+	db QUAGSIRE
+	db PHANPY
+	db PICHU
+	db SMOOCHUM
+	db SQUIRTLE
+	db TEDDIURSA
+	db TOGEPI
+	db TOTODILE
+	db TYROGUE
+	db RAIKOU
+	db ENTEI
 	db -1
 
 OftenFleeMons:
-	db CUBONE
-	db ARTICUNO
-	db ZAPDOS
-	db MOLTRES
-	db QUAGSIRE
 	db DELIBIRD
-	db PHANPY
-	db TEDDIURSA
 	db -1
 
 AlwaysFleeMons:
-	db RAIKOU
-	db ENTEI
+	db UNOWN
 	db -1
