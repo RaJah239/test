@@ -40,21 +40,17 @@ GoldenrodDeptStore2FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 GoldenrodDeptStore2FYoungsterText:
-	text "#GEAR can store"
-	line "up to ten phone"
-	cont "numbers."
-
-	para "It's hard to de-"
-	line "cide which numbers"
-	cont "to keep."
+	text "#GEAR stores 30"
+	line "phone numbers max!"
 	done
 
 GoldenrodDeptStore2FCooltrainerFText:
-	text "I got my ABRA at"
-	line "the GAME CORNER."
+	text "The slots are pay-"
+	line "out! I won enough"
 
-	para "Now it's my best"
-	line "partner."
+	para "coins to get a"
+	line "MR.MIME from the"
+	cont "GAME CORNER!"
 	done
 
 GoldenrodDeptStore2FGentlemanText:
