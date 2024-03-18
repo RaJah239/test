@@ -54,8 +54,9 @@ POKEGEAR: Now shows the detailed name of map you're currently in (based on Map G
 - Overworld Porygons added throughout the game for PC access.
 - Chanseys that heal the player’s party in the overworld added throughout the game.
 - Color coded starter Poké Balls.
-- Phone now holds up to 35 contacts / max in game.
 - Displays colored Pokémon pictures in the overworld.
+- Phone now holds up to 35 contacts / max in game.
+- Bag's item pocket now has a capacity of 84.
 - Edited PC text to allow for faster maneuvering.
 - Short beeping noise for low HP to replace the continuous beeping noise.
 - Lose money proportional to badges and lead level Pokémon on white out.

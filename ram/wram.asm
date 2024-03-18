@@ -3005,12 +3005,6 @@ wItems:: ds MAX_ITEMS * 2 + 1
 wNumKeyItems:: db
 wKeyItems:: ds MAX_KEY_ITEMS + 1
 
-wNumBalls:: db
-wBalls:: ds MAX_BALLS * 2 + 1
-
-wNumPCItems:: db
-wPCItems:: ds MAX_PC_ITEMS * 2 + 1
-
 wPokegearFlags::
 ; bit 0: map
 ; bit 1: radio
@@ -3118,7 +3112,10 @@ wMobileBattleRoomSceneID::                        db
 wSilverCavePokecenter1F::                         db ; Crystal Trove
 wSilverCaveOutsideSceneID::                       db ; Crystal Trove removed Mt. Moon scene with Rival and moved to Mt. Silver
 wUnionCaveGrottoSceneID::                         db ; Union Cave Grotto
-	ds 47
+	ds 21
+
+ wNumBalls:: db
+ wBalls:: ds MAX_BALLS * 2 + 1
 
 ; fight counts
 wJackFightCount::    db
@@ -3147,13 +3144,14 @@ wWiltonFightCount::  db
 wParryFightCount::   db
 wErinFightCount::    db
 
-	ds 99
+wNumPCItems:: db
+wPCItems:: ds MAX_PC_ITEMS * 2 + 1
 
 wEventFlags:: flag_array NUM_EVENTS
 
 wCurBox:: db
 
-	ds 2
+	ds 1
 
 wBoxNames:: ds BOX_NAME_LENGTH * NUM_BOXES
 
