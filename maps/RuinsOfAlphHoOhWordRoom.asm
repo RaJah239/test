@@ -1,7 +1,29 @@
+	object_const_def
+	const RUINSOFALPHHOOHWORDROOM_MEW
+
 RuinsOfAlphHoOhWordRoom_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+RuinsOfAlphHoOhWordRoomHooH:
+    faceplayer
+	opentext
+	writetext MewText
+	cry MEW
+	pause 15
+	closetext
+	setevent EVENT_FOUGHT_MEW
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	loadwildmon MEW, 90
+	startbattle
+	disappear RUINSOFALPHHOOHWORDROOM_MEW
+	reloadmapafterbattle
+	end
+	
+MewText:
+	text "Myuu…"
+	done
 
 RuinsOfAlphHoOhWordRoom_MapEvents:
 	db 0, 0 ; filler
@@ -16,3 +38,4 @@ RuinsOfAlphHoOhWordRoom_MapEvents:
 	def_bg_events
 
 	def_object_events
+	object_event 10,  4, SPRITE_MEW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphHoOhWordRoomHooH, EVENT_RUINSOFALPHHOOHWORDROOM_MEW
