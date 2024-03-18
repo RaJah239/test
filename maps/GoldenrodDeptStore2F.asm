@@ -40,7 +40,7 @@ GoldenrodDeptStore2FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 GoldenrodDeptStore2FYoungsterText:
-	text "#GEAR stores 30"
+	text "#GEAR stores 35"
 	line "phone numbers max!"
 	done
 

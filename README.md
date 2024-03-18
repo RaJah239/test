@@ -54,6 +54,7 @@ POKEGEAR: Now shows the detailed name of map you're currently in (based on Map G
 - Overworld Porygons added throughout the game for PC access.
 - Chanseys that heal the player’s party in the overworld added throughout the game.
 - Color coded starter Poké Balls.
+- Phone now holds up to 35 contacts / max in game.
 - Displays colored Pokémon pictures in the overworld.
 - Edited PC text to allow for faster maneuvering.
 - Short beeping noise for low HP to replace the continuous beeping noise.
@@ -114,7 +115,7 @@ POKEGEAR: Now shows the detailed name of map you're currently in (based on Map G
 # **General Credits List:**
 - Everyone that contributed to the pokecrystal disassembly, Pret’s Discord Server and pokecrystal tutorials which legitimately carried me.
 
-- I wanted to name these people in particular from Pret's Discord Server: GetKosiorekt, Nayru62, NickJam, Grate Oracle Lewot, Idain, Major_Agnostic, SourApple, lifeofmauri, FrenchOrange, PiaCRT, mauvemon, Ardorin, PerreteCartago, Rod , ElfinHilon10, dannye, FootFingers, Ferropexola, Handheld Hero, 8bitzeta, Pferomon, Vulcandth, ax6, FIQ and rangi42.
+- I wanted to name these people in particular from Pret's Discord Server: GetKosiorekt, Nayru62, NickJam, Grate Oracle Lewot, Idain, Major_Agnostic, SourApple, lifeofmauri, FrenchOrange, PiaCRT, mauvemon, Ardorin, PerreteCartago, Rod , cRz-Shadows, ElfinHilon10, dannye, FootFingers, Ferropexola, Handheld Hero, 8bitzeta, Pferomon, Vulcandth, ax6, FIQ and rangi42.
 
 # **Known Bugs:**
 
