@@ -10,6 +10,9 @@ OlivineGym_MapScripts:
 OlivineGymJasmineScript:
 	faceplayer
 	opentext
+    checkevent EVENT_BEAT_CHUCK
+    iffalse .LessThan5Badges
+; player has beaten Chuck
 	checkevent EVENT_BEAT_JASMINE
 	iftrue .FightDone
 	writetext Jasmine_SteelTypeIntro
@@ -39,6 +42,12 @@ OlivineGymJasmineScript:
 	waitbutton
 	closetext
 	end
+
+.LessThan5Badges:
+    writetext PlayerNotReady
+    waitbutton
+    closetext
+    end
 
 .GotIronTail:
 	writetext Jasmine_GoodLuck
@@ -116,6 +125,17 @@ Jasmine_SteelTypeIntro:
 
 	para "…Um… May I begin?"
 	done
+
+PlayerNotReady:
+    text "Um… excuse me."
+
+    para "You need five" 
+    line "badges to"
+	cont "challenge me."
+
+    para "I'll readily take"
+    line "you on then."
+    done
 
 Jasmine_BetterTrainer:
 	text "…You are a better"
