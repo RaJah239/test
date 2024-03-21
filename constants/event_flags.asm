@@ -313,7 +313,7 @@
 	const EVENT_LIZ_ASKED_FOR_PHONE_NUMBER
 	const_skip ; unused in Crystal
 	const EVENT_ANTHONY_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_BEAT_RED
 	const EVENT_TODD_ASKED_FOR_PHONE_NUMBER
 	const_skip ; unused in Crystal
 	const EVENT_GINA_ASKED_FOR_PHONE_NUMBER
