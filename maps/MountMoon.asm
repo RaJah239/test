@@ -7,6 +7,11 @@ MountMoon_MapScripts:
 	scene_script MountMoonNoopScene,           SCENE_MOUNTMOON_NOOP
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, .Flypoint
+
+.Flypoint:
+	setflag ENGINE_FLYPOINT_MT_MOON
+	return
 
 MountMoonRivalEncounterScene:
 	sdefer MountMoonRivalBattleScript
