@@ -11,12 +11,8 @@ OlivineCafe_MapScripts:
 OlivineCafeStrengthSailorScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_HM04_STRENGTH
-	iftrue .GotStrength
 	writetext OlivineCafeStrengthSailorText
 	promptbutton
-	verbosegiveitem HM_STRENGTH
-	setevent EVENT_GOT_HM04_STRENGTH
 .GotStrength:
 	writetext OlivineCafeStrengthSailorText_GotStrength
 	waitbutton
@@ -30,28 +26,31 @@ OlivineCafeSailorScript:
 	jumptextfaceplayer OlivineCafeSailorText
 
 OlivineCafeStrengthSailorText:
-	text "Hah! Your #MON"
-	line "sure look like"
-	cont "lightweights!"
-
-	para "They don't have"
-	line "the power to move"
-	cont "boulders aside."
-
-	para "Here, use this"
-	line "and teach them"
-	cont "STRENGTH!"
+	text "I'm satisfied!"
+	line "Can't eat another"
+	cont "bite!"
 	done
 
 OlivineCafeStrengthSailorText_GotStrength:
-	text "On the sea, the"
-	line "only thing you can"
+	text "Remember to only"
+	line "eat as much as"
 
-	para "count on is your"
-	line "own good self!"
+	para "you need and no"
+	line "more."
 
-	para "I'm so proud of my"
-	line "buff bod!"
+	para "It would be tough"
+	line "to do things if"
+	cont "you're stuffed."
+
+	para "Also, I heard"
+	line "JASMINE has the"
+	cont "HM for STRENGTH."
+
+	para "#MON need it"
+	line "to moves huge"
+
+	para "boulders outside"
+	line "of battles."
 	done
 
 OlivineCafeFishingGuruText:

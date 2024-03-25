@@ -17,6 +17,9 @@ OlivineLighthouseJasmine:
 	iftrue .ExplainedSickness
 	writetext JasmineCianwoodPharmacyText
 	promptbutton
+	verbosegiveitem HM_STRENGTH
+	promptbutton
+	verbosegiveitem POWER_GLOVE
 	setevent EVENT_JASMINE_EXPLAINED_AMPHYS_SICKNESS
 .ExplainedSickness:
 	writetext JasmineGetSomeMedicineText
@@ -157,7 +160,7 @@ OlivineLighthouseJasmineLeavesRightMovement:
 	step_end
 
 JasmineCianwoodPharmacyText:
-	text "JASMINE: … This"
+	text "JASMINE: …This"
 	line "#MON always"
 
 	para "kept the sea lit"
@@ -178,6 +181,14 @@ JasmineCianwoodPharmacyText:
 
 	para "And I can't leave"
 	line "AMPHY unattended…"
+	
+	para "…I'll give you"
+	line "this HM and item"
+	cont "for your troubles…"
+
+	para "…#MON need it"
+	line "to move boulders"
+	cont "outside battle…"
 	done
 
 JasmineGetSomeMedicineText:
