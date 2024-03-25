@@ -23,7 +23,7 @@
 	const EVENT_GOT_HM01_CUT
 	const EVENT_GOT_HM02_FLY
 	const EVENT_GOT_HM03_SURF
-	const EVENT_GOT_HM04_STRENGTH ; now unused in Crystal Trove
+	const_skip ; now unused in Crystal Trove
 	const EVENT_GOT_HM05_FLASH
 	const EVENT_GOT_HM06_WHIRLPOOL
 	const EVENT_VICTORY_ROAD_MOLTRES
