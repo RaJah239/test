@@ -31,8 +31,13 @@ DragonsDenB1FCheckRivalCallback:
 
 .CheckDay:
 	readvar VAR_WEEKDAY
+	ifequal MONDAY, .AppearRival
 	ifequal TUESDAY, .AppearRival
+	ifequal WEDNESDAY, .AppearRival
 	ifequal THURSDAY, .AppearRival
+	ifequal FRIDAY, .AppearRival
+	ifequal SATURDAY, .AppearRival
+	ifequal SUNDAY, .AppearRival
 	disappear DRAGONSDENB1F_RIVAL
 	endcallback
 
@@ -300,6 +305,12 @@ RivalText_Training1:
 
 	para "the greatest #-"
 	line "MON trainer…"
+	
+	para "We can meet at the"
+	line "#MON LEAGUE,"
+	
+	para "and battle there"
+	line "daily."	
 	done
 
 RivalText_Training2:
