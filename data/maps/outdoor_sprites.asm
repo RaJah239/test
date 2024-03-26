@@ -222,6 +222,7 @@ MahoganyGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
 	db SPRITE_SUICUNE_OW
+	db SPRITE_FISHING_GURU
 	db 0 ; end
 
 LakeOfRageGroupSprites:

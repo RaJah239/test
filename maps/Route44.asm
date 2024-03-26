@@ -10,6 +10,7 @@
 	const ROUTE44_POKE_BALL1
 	const ROUTE44_POKE_BALL2
 	const ROUTE44_POKE_BALL3
+	const ROUTE44_SUPER_ROD_FISHING_GURU
 
 Route44_MapScripts:
 	def_scene_scripts
@@ -497,6 +498,74 @@ Route44Sign2Text:
 	line "BLACKTHORN CITY"
 	done
 
+Route12SuperRodHouseFishingGuruScript1:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_SUPER_ROD
+	iftrue .GotSuperRod
+	writetext OfferSuperRodText1
+	yesorno
+	iffalse .Refused
+	writetext GiveSuperRodText1
+	promptbutton
+	verbosegiveitem SUPER_ROD
+	iffalse .NoRoom
+	setevent EVENT_GOT_SUPER_ROD
+.GotSuperRod:
+	writetext GaveSuperRodText1
+	waitbutton
+	closetext
+	end
+
+.Refused:
+	writetext DontWantSuperRodText1
+	waitbutton
+.NoRoom:
+	closetext
+	end
+
+OfferSuperRodText1:
+	text "I'm the FISHING"
+	line "GURU's younger"
+	cont "brother."
+
+	para "I can see that you"
+	line "like fishing."
+
+	para "There's no doubt"
+	line "in my mind at all!"
+
+	para "So? I know I'm"
+	line "right."
+	done
+
+GiveSuperRodText1:
+	text "Yes, yes. Just as"
+	line "I thought!"
+
+	para "Here, fishing fan!"
+	line "Take this--it's a"
+	cont "SUPER ROD."
+	done
+
+GaveSuperRodText1:
+	text "Try your hand at"
+	line "fishing wherever"
+	cont "there is water."
+
+	para "Remember--you can"
+	line "catch different"
+
+	para "#MON using"
+	line "different RODS."
+	done
+
+DontWantSuperRodText1:
+	text "Huh? My own eyes"
+	line "deceived me?"
+	done
+
+
 Route44_MapEvents:
 	db 0, 0 ; filler
 
@@ -522,3 +591,4 @@ Route44_MapEvents:
 	object_event 30,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRevive, EVENT_ROUTE_44_MAX_REVIVE
 	object_event 45,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44UltraBall, EVENT_ROUTE_44_ULTRA_BALL
 	object_event 14,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRepel, EVENT_ROUTE_44_MAX_REPEL
+	object_event 42,  5, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route12SuperRodHouseFishingGuruScript1, -1

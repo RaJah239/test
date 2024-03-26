@@ -1,5 +1,5 @@
 	object_const_def
-	const ROUTE12SUPERRODHOUSE_FISHING_GURU
+	const ROUTE12SUPERRODHOUSE_FISHING_GURU2
 
 Route12SuperRodHouse_MapScripts:
 	def_scene_scripts
@@ -9,68 +9,18 @@ Route12SuperRodHouse_MapScripts:
 Route12SuperRodHouseFishingGuruScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_SUPER_ROD
-	iftrue .GotSuperRod
 	writetext OfferSuperRodText
-	yesorno
-	iffalse .Refused
-	writetext GiveSuperRodText
-	promptbutton
-	verbosegiveitem SUPER_ROD
-	iffalse .NoRoom
-	setevent EVENT_GOT_SUPER_ROD
-.GotSuperRod:
-	writetext GaveSuperRodText
 	waitbutton
-	closetext
-	end
-
-.Refused:
-	writetext DontWantSuperRodText
-	waitbutton
-.NoRoom:
 	closetext
 	end
 
 OfferSuperRodText:
-	text "I'm the FISHING"
-	line "GURU's younger"
-	cont "brother."
+	text "My four brothers"
+	line "live in JOHTO."
 
-	para "I can see that you"
-	line "like fishing."
-
-	para "There's no doubt"
-	line "in my mind at all!"
-
-	para "So? I know I'm"
-	line "right."
-	done
-
-GiveSuperRodText:
-	text "Yes, yes. Just as"
-	line "I thought!"
-
-	para "Here, fishing fan!"
-	line "Take this--it's a"
-	cont "SUPER ROD."
-	done
-
-GaveSuperRodText:
-	text "Try your hand at"
-	line "fishing wherever"
-	cont "there is water."
-
-	para "Remember--you can"
-	line "catch different"
-
-	para "#MON using"
-	line "different RODS."
-	done
-
-DontWantSuperRodText:
-	text "Huh? My own eyes"
-	line "deceived me?"
+	para "You should pay"
+	line "them a visit if"
+	cont "you haven't."
 	done
 
 Route12SuperRodHouse_MapEvents:
@@ -85,4 +35,4 @@ Route12SuperRodHouse_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  5,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route12SuperRodHouseFishingGuruScript, -1
+	object_event  5,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route12SuperRodHouseFishingGuruScript, -1
