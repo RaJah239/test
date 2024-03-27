@@ -116,6 +116,10 @@ DragonShrineTakeTestScript:
 .PassedTheTest:
 	writetext DragonShrinePassedTestText
 	waitbutton
+	verbosegiveitem HM_WATERFALL
+	promptbutton
+	verbosegiveitem GEYSER_BOOTS
+	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
 	showemote EMOTE_SHOCK, PLAYER, 15
@@ -461,6 +465,13 @@ DragonShrinePassedTestText:
 	para "It will see you"
 	line "through at the"
 	cont "#MON LEAGUE."
+	
+	para "You'll need either"
+	line "of these to scale"
+
+	para "the waterfall that"
+	line "blocks access for"
+	cont "many."
 	done
 
 DragonShrineMustIInformLanceText:
