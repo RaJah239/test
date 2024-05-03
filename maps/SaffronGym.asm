@@ -10,6 +10,18 @@ SaffronGym_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_NEWMAP, ResetSaffronGymTrainersCallback
+
+ResetSaffronGymTrainersCallback:
+    checkevent EVENT_BEAT_SABRINA
+    iffalse .ResetTrainers
+    endcallback
+.ResetTrainers
+	clearevent EVENT_BEAT_MEDIUM_REBECCA
+	clearevent EVENT_BEAT_MEDIUM_DORIS
+	clearevent EVENT_BEAT_PSYCHIC_FRANKLIN
+	clearevent EVENT_BEAT_PSYCHIC_JARED
+    endcallback
 
 SaffronGymSabrinaScript:
 	faceplayer
