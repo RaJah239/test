@@ -13,6 +13,19 @@ DanceTheater_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+    callback MAPCALLBACK_NEWMAP, ResetDanceTheatreTrainersCallback
+
+ResetDanceTheatreTrainersCallback:
+    checkevent EVENT_GOT_HM03_SURF
+    iffalse .ResetTrainers
+    endcallback
+.ResetTrainers
+	clearevent EVENT_BEAT_KIMONO_GIRL_NAOKO
+	clearevent EVENT_BEAT_KIMONO_GIRL_SAYO
+	clearevent EVENT_BEAT_KIMONO_GIRL_ZUKI
+	clearevent EVENT_BEAT_KIMONO_GIRL_KUNI
+	clearevent EVENT_BEAT_KIMONO_GIRL_MIKI
+    endcallback
 
 TrainerKimonoGirlNaoko:
 	trainer KIMONO_GIRL, NAOKO, EVENT_BEAT_KIMONO_GIRL_NAOKO, KimonoGirlNaokoSeenText, KimonoGirlNaokoBeatenText, 0, .Script
@@ -106,8 +119,11 @@ DanceTheaterSurfGuy:
 	writetext SurfGuyLikeADanceText
 	promptbutton
 	verbosegiveitem HM_SURF
-	setevent EVENT_GOT_HM03_SURF
 	writetext SurfGuySurfExplanationText
+	promptbutton
+	verbosegiveitem PADDLE_BOAT
+	writetext SurfGuyPaddleBoatExplanationText
+	setevent EVENT_GOT_HM03_SURF
 	waitbutton
 	closetext
 	end
@@ -206,9 +222,9 @@ KimonoGirlKuniBeatenText:
 KimonoGirlKuniAfterBattleText:
 	text "I trained a lot,"
 	line "so I thought I was"
+	cont "a capable trainer."
 
-	para "a capable trainer."
-	line "I guess I'm not."
+	para "I guess I'm not."
 	done
 
 KimonoGirlMikiSeenText:
@@ -250,18 +266,26 @@ SurfGuyNeverLeftAScratchText:
 
 SurfGuyLadGiftText:
 	text "Lad! If you can"
-	line "defeat all the"
+	line "defeat the KIMONO"
+	cont "GIRLS all at once"
 
-	para "KIMONO GIRLS, I'll"
-	line "give you a gift."
+	para "without leaving,"
+	line "like GYM trainers,"
+
+	para "I'll give you two"
+	line "gifts."
 	done
 
 SurfGuyLassieGiftText:
 	text "Lassie, if you can"
-	line "defeat all the"
+	line "defeat the KIMONO"
+	cont "GIRLS all at once"
 
-	para "KIMONO GIRLS, I'll"
-	line "give you a gift."
+	para "without leaving,"
+	line "like GYM trainers,"
+
+	para "I'll give you two"
+	line "gifts."
 	done
 
 SurfGuyLikeADanceText:
@@ -283,6 +307,23 @@ SurfGuySurfExplanationText:
 	para "It's a move that"
 	line "lets #MON swim"
 	cont "across water."
+	
+	para "As promised, here's"
+	line "another gift!"
+	done
+
+SurfGuyPaddleBoatExplanationText:
+	text "It's a PADDLE BOAT!"
+
+	para "It works like SURF"
+	line "as well but does"
+	cont "not use #MON."
+
+	para "This city's GYM"
+	line "BADGE is needed by"
+
+	para "by both to cross"
+	line "water."
 	done
 
 SurfGuyElegantKimonoGirlsText:
