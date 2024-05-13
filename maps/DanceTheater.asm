@@ -119,6 +119,8 @@ DanceTheaterSurfGuy:
 	writetext SurfGuyLikeADanceText
 	promptbutton
 	verbosegiveitem HM_SURF
+	setevent EVENT_GOT_HM03_SURF
+	setevent EVENT_BURNED_TOWER_BLOCKER
 	writetext SurfGuySurfExplanationText
 	promptbutton
 	verbosegiveitem PADDLE_BOAT
@@ -252,16 +254,14 @@ KimonoGirlMikiAfterBattleText:
 SurfGuyNeverLeftAScratchText:
 	text "Not only are the"
 	line "KIMONO GIRLS great"
-
-	para "dancers, they're"
-	line "also skilled at"
+	cont "dancers, they're"
+	cont "also skilled at"
 	cont "#MON."
 
 	para "I always challenge"
 	line "them, but I've"
-
-	para "never even left a"
-	line "scratch…"
+	cont "never even left a"
+	cont "scratch…"
 	done
 
 SurfGuyLadGiftText:

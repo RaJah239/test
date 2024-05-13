@@ -6,6 +6,7 @@
 	const ECRUTEAKCITY_FISHER
 	const ECRUTEAKCITY_YOUNGSTER
 	const ECRUTEAKCITY_GRAMPS3
+	const ECRUTEAKCITY_SUPER_NERD
 
 EcruteakCity_MapScripts:
 	def_scene_scripts
@@ -41,6 +42,14 @@ EcruteakCityLass2Script:
 
 .ReleasedBeasts:
 	writetext EcruteakCityLass2Text_ReleasedBeasts
+	waitbutton
+	closetext
+	end
+
+BurnedToweSuperNerdScript:
+	faceplayer
+	opentext
+	writetext EcruteakSuperNerdBurnedTowerBlockerText
 	waitbutton
 	closetext
 	end
@@ -112,6 +121,20 @@ EcruteakCityGramps2Text:
 	para "odd old man will"
 	line "give you something"
 	cont "nice, I hear."
+	done
+
+EcruteakSuperNerdBurnedTowerBlockerText:
+	text "There's an invest-"
+	line "igation inside."
+
+	para "Go pass some time."
+
+	para "I hear, a man at"
+	line "the DANCE THEATER"
+
+	para "will gift someone"
+	line "a rare HM if they"
+	cont "fulfill his plea."
 	done
 
 EcruteakCityLass1Text:
@@ -285,3 +308,4 @@ EcruteakCity_MapEvents:
 	object_event  9, 22, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1
 	object_event 10, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCityYoungsterScript, -1
 	object_event  3,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, EVENT_ECRUTEAK_CITY_GRAMPS
+	object_event  5,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedToweSuperNerdScript, EVENT_BURNED_TOWER_BLOCKER
