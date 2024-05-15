@@ -11,6 +11,7 @@
 	const CIANWOODCITY_POKEFAN_F
 	const CIANWOODCITY_EUSINE
 	const CIANWOODCITY_SUICUNE
+	const CIANWOODCITY_GYM_BLOCKER
 
 CianwoodCity_MapScripts:
 	def_scene_scripts
@@ -166,6 +167,62 @@ CianwoodCityEusineDepartMovement:
 	step DOWN
 	step DOWN
 	step_end
+
+CianWoodGymBlockerScript:
+	faceplayer
+	opentext
+	checkevent EVENT_FOUGHT_EUSINE
+	iftrue .AllowInGym
+	writetext PKMNBLUR
+	waitbutton
+	closetext
+	end
+
+.AllowInGym
+	writetext IbetterGetBackintheGym
+	waitbutton
+	closetext
+	applymovement CIANWOODCITY_GYM_BLOCKER, CIANWOODCITY_GYM_BLOCKER1
+	playsound SFX_ENTER_DOOR
+	disappear CIANWOODCITY_GYM_BLOCKER
+	setevent EVENT_CIANWOOD_GYM_BLOCKER
+	end
+
+CIANWOODCITY_GYM_BLOCKER1:
+	step UP
+	step_end
+
+PKMNBLUR:
+    text "W-what was that!?"
+    
+	para "Some kind of blue"
+	line "blur? It raced up"
+	cont "North!"
+	
+	para "I'm a bit dizzy"
+	line "from training."
+	
+	para "Can you check it"
+	line "out for me?"
+    done 
+
+IbetterGetBackintheGym:
+	text "T-that was the"
+	line "legendary #MON"
+	cont "SUICUNE up north"
+	cont "of town!?!"
+	
+	para "I missed a once in"
+	line "lifetime chance!"
+	
+	para "Uh…"
+	
+	para "I better get back"
+	line "to GYM before I"
+	cont "get yelled at…"
+	
+	para "See ya."
+	done
 
 ChucksWifeEasierToFlyText:
 	text "You crossed the"
@@ -417,3 +474,4 @@ CianwoodCity_MapEvents:
 	object_event 10, 46, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
 	object_event 11, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CIANWOOD_CITY_EUSINE
 	object_event 10, 14, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
+	object_event  8, 44, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianWoodGymBlockerScript, EVENT_CIANWOOD_GYM_BLOCKER

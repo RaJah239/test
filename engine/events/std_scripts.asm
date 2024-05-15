@@ -613,6 +613,7 @@ InitializeEventsScript:
 	setevent EVENT_INITIALIZED_EVENTS
 	; here to place my events that initialize on game start
 	setevent EVENT_MAXIMA_APPEAR_MT_SILVER_OUTSIDE
+	clearevent EVENT_CIANWOOD_GYM_BLOCKER
 	endcallback
 
 AskNumber1MScript:
