@@ -260,6 +260,7 @@ SilverGroupSprites:
 	; 0 of max 9 walking sprites
 	db SPRITE_RIVAL
 	db SPRITE_MAXIMA
+	db SPRITE_POKE_BALL
 	db 0 ; end
 
 DungeonsGroupSprites:

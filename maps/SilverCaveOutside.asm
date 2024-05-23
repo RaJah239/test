@@ -1,6 +1,7 @@
 	object_const_def
-    const MTSILVER_RIVAL
-	const MTSILVER_SUPER_NERD
+    	const MTSILVER_RIVAL
+	const MTSILVER_MAXIMA
+	const MTSILVER_GS_BALL
 
 SilverCaveOutside_MapScripts:
 	def_scene_scripts
@@ -27,7 +28,7 @@ MtSilverSign:
 	jumptext MtSilverSignText
 
 SilverCaveOutsideHiddenFullRestore:
-	hiddenitem FULL_RESTORE, EVENT_SILVER_CAVE_OUTSIDE_HIDDEN_FULL_RESTORE
+	itemball FULL_RESTORE ;, EVENT_SILVER_CAVE_OUTSIDE_HIDDEN_FULL_RESTORE
 
 MtSilverSignText:
 	text "MT.SILVER"
@@ -291,8 +292,9 @@ MaximaMatchAfterText:
 	def_bg_events
 	bg_event 24, 19, BGEVENT_READ, MtSilverPokecenterSign
 	bg_event 17, 13, BGEVENT_READ, MtSilverSign
-	bg_event  9, 25, BGEVENT_ITEM, SilverCaveOutsideHiddenFullRestore
+	;bg_event  9, 25, BGEVENT_ITEM, SilverCaveOutsideHiddenFullRestore
 
 	def_object_events
 	object_event -3, 19, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_MT_SILVER
 	object_event 27, 20, SPRITE_MAXIMA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MaximaScript, EVENT_MAXIMA_APPEAR_MT_SILVER_OUTSIDE
+	object_event  9, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SilverCaveOutsideHiddenFullRestore, EVENT_SILVER_CAVE_OUTSIDE_HIDDEN_FULL_RESTORE
