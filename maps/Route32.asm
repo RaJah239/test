@@ -483,7 +483,7 @@ Route32GreatBall:
 	itemball GREAT_BALL
 
 Route32Repel:
-	itemball REPEL
+	itemball SMOKE_BALL
 
 Route32Sign:
 	jumptext Route32SignText

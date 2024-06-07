@@ -35,13 +35,8 @@ BlackthornMartCooltrainerMText:
 	done
 
 BlackthornMartBlackBeltText:
-	text "MAX REPEL keeps"
-	line "weak #MON away"
-	cont "from you."
-
-	para "It's the longest"
-	line "lasting of the"
-	cont "REPEL sprays."
+	text "The items on sale"
+	line "here are top tier."
 	done
 
 BlackthornMart_MapEvents:

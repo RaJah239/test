@@ -313,7 +313,7 @@ Route44UltraBall:
 	itemball ULTRA_BALL
 
 Route44MaxRepel:
-	itemball MAX_REPEL
+	itemball NUGGET
 
 Route44HiddenElixer:
 	hiddenitem ELIXER, EVENT_ROUTE_44_HIDDEN_ELIXER

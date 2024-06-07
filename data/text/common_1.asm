@@ -1118,8 +1118,7 @@ _BugCatchingContestIsOverText::
 	done
 
 _RepelWoreOffText::
-	text "REPEL's effect"
-	line "wore off."
+	text "!"
 	done
 
 _PlayerFoundItemText::

@@ -1204,9 +1204,7 @@ _ItemCantUseOnMonText::
 	prompt
 
 _RepelUsedEarlierIsStillInEffectText::
-	text "The REPEL used"
-	line "earlier is still"
-	cont "in effect."
+	text "!"
 	prompt
 
 _PlayedFluteText::
