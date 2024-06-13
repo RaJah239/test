@@ -378,7 +378,8 @@
 	const EVENT_VICTORY_ROAD_ERIC_THE_EXPLORER
 	const EVENT_FOUGHT_MOLTRES
 	const EVENT_NO_E4_REMATCH_UNTIL_RED_IS_BEATEN
-; Unused: next 231 events
+	const EVENT_VIRIDIAN_TRAINER_HOUSE_BLOCKER
+; Unused: next 230 events
 
 	const_next 600
 ; Kurt Apricorn events

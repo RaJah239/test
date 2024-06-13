@@ -20,6 +20,7 @@ Red:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_RED
 	setevent EVENT_NO_E4_REMATCH_UNTIL_RED_IS_BEATEN
+	setevent EVENT_VIRIDIAN_TRAINER_HOUSE_BLOCKER
 	special FadeOutMusic
 	opentext
 	writetext RedLeavesText
