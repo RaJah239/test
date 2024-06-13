@@ -65,6 +65,13 @@ LancesRoomLanceScript:
 	clearevent EVENT_NO_E4_REMATCH_UNTIL_RED_IS_BEATEN
 	opentext
 	writetext LanceBattleAfterText
+	promptbutton
+	writetext ReceivedSilverTrophy
+	playsound SFX_1ST_PLACE
+	pause 100
+	setevent EVENT_DECO_SILVER_TROPHY
+	waitbutton
+	writetext LanceBattleAfterTextTropySenttoBedroomPC
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
@@ -272,6 +279,20 @@ LanceBattleAfterText:
 
 	para "grow strong with"
 	line "your #MON."
+
+	para "You deserve this"
+	line "for your efforts."
+	done
+
+ReceivedSilverTrophy:
+	text "<PLAY_G> received"
+	line "SILVER TROPHY!"
+	done
+
+LanceBattleAfterTextTropySenttoBedroomPC:
+	text "SILVER TROPHY was"
+	line "sent to <PLAY_G>'s"
+	cont "bedroom PC."
 	done
 
 LancesRoomMaryOhNoOakText:
