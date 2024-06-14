@@ -143,9 +143,6 @@ CeruleanGymGuideScript:
 	closetext
 	end
 
-CeruleanGymHiddenMachinePart:
-	hiddenitem MACHINE_PART, EVENT_FOUND_MACHINE_PART_IN_CERULEAN_GYM
-
 CeruleanGymStatue1:
 	checkevent EVENT_TRAINERS_IN_CERULEAN_GYM
 	iffalse CeruleanGymStatue
@@ -207,34 +204,51 @@ CeruleanGymGruntBacksAwayMovement:
 	step_end
 
 CeruleanGymGruntIntroText:
-	text "Oops! I so sorry!"
-	line "You not hurt,"
-	cont "okay?"
-
-	para "I very busy."
-	line "No time for talk-"
-	cont "ing with you. Not"
-	cont "good for me if"
-	cont "seen by somebody."
+	text "Watch it kid!"
+	line "You're in my way!"
 	done
 
 CeruleanGymGruntBigMistakeText:
-	text "Oh no! You seen"
-	line "me already! I make"
-	cont "big mistake!"
+	text "Ah, someone has"
+	line "seen me, but no"
+
+	para "worries, I still"
+	line "have the MACHCINE"
+	cont "PART on me."
+	
+	para "I'll keep KANTO"
+	line "in the dark as"
+
+	para "long as I have"
+	line "it."
+	
+	para "What!? I was"
+	line "speaking out"
+	cont "aloud!?"
+	
+	para "Fine! Catch me if"
+	line "if you can!"
+	
+	para "You'll never find"
+	line "me!"
+	
+	para "I'm gonna head up"
+	line "north."
+	
+	para "What!?! All that"
+	line "was aloud too?"
+
+	para "Blast it!"
 	done
 
 CeruleanGymGruntByeText:
-	text "Hey, you! Forget"
-	line "you see me, okay?"
+	text "You had better"
+	line "promptly forget"
 
-	para "You see, hear,"
-	line "know nothing,"
-
-	para "okay?"
-	line "Bye, kid! Nothing!"
-
-	para "Bye-bye a go-go!"
+	para "all you saw and"
+	line "heard here."
+	
+	para "I'm outta here!"
 	done
 
 CeruleanGymNote1Text:
@@ -381,7 +395,6 @@ CeruleanGym_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  3,  8, BGEVENT_ITEM, CeruleanGymHiddenMachinePart
 	bg_event  2, 13, BGEVENT_READ, CeruleanGymStatue1
 	bg_event  6, 13, BGEVENT_READ, CeruleanGymStatue2
 

@@ -21,6 +21,9 @@ Route24RocketScript:
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	opentext
 	writetext Route24RocketAfterBattleText
+	waitbutton
+	verbosegiveitem MACHINE_PART
+	setevent EVENT_FOUND_MACHINE_PART_IN_CERULEAN_GYM
 	promptbutton
 	special FadeOutMusic
 	writetext Route24RocketDisappearsText
@@ -35,85 +38,87 @@ Route24RocketScript:
 	end
 
 Route24RocketSeenText:
-	text "Hey, kid! Me am a"
-	line "TEAM ROCKET member"
-	cont "kind of guy!"
+	text "Hey, kid! So you"
+	line "tracked me down"
+	cont "have you?"
 
-	para "Come from another"
-	line "country, a trainer"
-	cont "number one, me!"
+	para "Seems like you're"
+	line "not easy to shake."
+	
+	para "You must not know"
+	line "that I'm a member"
+	
+	para "of the dreadful"
+	line "TEAM ROCKET."
 
-	para "Think I did, if"
-	line "stop the energy,"
-
-	para "be big panic for"
-	line "here people!"
-
-	para "Secret it is my"
-	line "mission, so tell"
-	cont "you I not!"
-
-	para "But! If win you do"
-	line "versus me, a man I"
-
-	para "be and mine secret"
-	line "to you I tell."
-
-	para "Hey, kid! Battle"
-	line "begin we do!"
+	para "So you want this"
+	line "MACHINE PART that"
+	cont "badly do you?"
+	
+	para "Then you'll have"
+	line "to play by TEAM"
+	cont "ROCKET's rules and"
+	cont "take it by force!"
 	done
 
 Route24RocketBeatenText:
-	text "Ayieeeh! No, no,"
-	line "no, believe it I"
-	cont "can't!"
-
-	para "Strong very much"
-	line "be you! Match I am"
-	cont "not to you!"
+	text "Arrgh!! Strong!"
 	done
 
 Route24RocketAfterBattleText:
-	text "OK. Tell you mine"
-	line "secret will I."
+	text "You're truly"
+	line "powerful kid!"
 
-	para "MACHINE PART steal"
-	line "by me, hide it I"
+	para "I gave my all and"
+	line "then some!"
 
-	para "did in GYM of the"
-	line "CERULEAN."
+	para "By TEAM ROCKET's"
+	line "rules, you have"
 
-	para "Inside water put"
-	line "it I did. Look for"
+	para "usurped this by"
+	line "force."
 
-	para "in water center of"
-	line "GYM at."
-
-	para "But you forget me"
-	line "not!"
-
-	para "Beat you for sure"
-	line "will TEAM ROCKET."
-
-	para "Come from JOHTO"
-	line "will they, mine"
-
-	para "friends, yes. Will"
-	line "revenge they are."
+	para "Take it!"
 	done
 
 Route24RocketDisappearsText:
 	text "…"
 
-	para "You say what? TEAM"
-	line "ROCKET bye-bye a"
+	para "What's this you"
+	line "you say?"
+	
+	para "TEAM ROCKET has"
+	line "has been broken"
 
-	para "go-go? Broken it"
-	line "is says you?"
+	para "up? Again? And by"
+	line "you no less?"
+	
+	para "No wonder I stood"
+	line "no chance!"
+	
+	para "That'd explain why"
+	line "I have not been"
 
-	para "Oh, no! Should I"
-	line "do what now on"
-	cont "from, me?"
+	para "given orders for"
+	line "some time now."
+	
+	para "Your formidable"
+	line "strength indeed"
+
+	para "does seem capable"
+	line "of it…"
+
+	para "I've been talking"
+	line "aloud again…"
+
+	para "Hmm…"
+
+	para "I better get gone"
+	line "before someone"
+	cont "else spots me."
+
+	para "Good luck kid!"
+	line "Peace out!"
 	done
 
 Route24_MapEvents:
