@@ -6,7 +6,8 @@
 	const OPT_REPEL         ; 4
 	const OPT_MENU_CLOCK    ; 5
 	const OPT_FRAME         ; 6
-	const OPT_CANCEL        ; 7
+	const OPT_DND_MODE      ; 7
+	const OPT_CANCEL        ; 8
 DEF NUM_OPTIONS EQU const_value ; 8
 
 _Option:
@@ -84,6 +85,8 @@ StringOptions:
 	db "        :<LF>"
 	db "MENU CLOCK<LF>"
 	db "        :<LF>"
+	db "DO NOT DISTURB<LF>"
+	db "        :<LF>"
 	db "FRAME<LF>"
 	db "        :TYPE<LF>"
 	db "CANCEL@"
@@ -98,6 +101,7 @@ GetOptionPointer:
 	dw Options_Sound
 	dw Options_Repel
 	dw Options_MenuClock
+	dw Options_DNDMode
 	dw Options_Frame
 	dw Options_Cancel
 
@@ -408,7 +412,7 @@ Options_Frame:
 	ld [hl], a
 UpdateFrame:
 	ld a, [wTextboxFrame]
-	hlcoord 16, 13 ; where on the screen the number is drawn
+	hlcoord 16, 15 ; where on the screen the number is drawn
 	add "1"
 	ld [hl], a
 	call LoadFontsExtra
@@ -425,6 +429,44 @@ Options_Cancel:
 .Exit:
 	scf
 	ret
+
+Options_DNDMode:
+ 	ld hl, wOptions2
+ 	ldh a, [hJoyPressed]
+ 	bit D_LEFT_F, a
+ 	jr nz, .LeftPressed
+ 	bit D_RIGHT_F, a
+ 	jr z, .NonePressed
+ 	bit DND_MODE, [hl]
+ 	jr nz, .ToggleOff
+ 	jr .ToggleOn
+ 
+ .LeftPressed:
+ 	bit DND_MODE, [hl]
+ 	jr z, .ToggleOn
+ 	jr .ToggleOff
+ 
+ .NonePressed:
+ 	bit DND_MODE, [hl]
+ 	jr nz, .ToggleOn
+ 
+ .ToggleOff:
+ 	res DND_MODE, [hl]
+ 	ld de, .Off
+ 	jr .Display
+ 
+ .ToggleOn:
+ 	set DND_MODE, [hl]
+ 	ld de, .On
+ 
+ .Display:
+ 	hlcoord 11, 13
+ 	call PlaceString
+ 	and a
+ 	ret
+ 
+ .Off: db "OFF@"
+ .On:  db "ON @"
 
 OptionsControl:
 	ld hl, wJumptableIndex

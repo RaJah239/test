@@ -126,6 +126,11 @@ CheckPhoneCall::
 	and a
 	jr nz, .no_call
 
+	; No calls if phone is in Do Not Disturb mode
+	ld a, [wOptions2]
+	and 1 << DND_MODE
+	jr nz, .no_call
+
 	call GetAvailableCallers
 	call ChooseRandomCaller
 	jr nc, .no_call
