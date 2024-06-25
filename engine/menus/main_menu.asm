@@ -68,7 +68,7 @@ MainMenu:
 	db "CONTINUE@"
 	db "NEW GAME@"
 	db "OPTION@"
-	db "MYSTERY GIFT@"
+	db "RESET CLOCK@"
 	db "MOBILE@"
 	db "MOBILE STUDIUM@"
 if DEF(_DEBUG)
@@ -370,5 +370,5 @@ MainMenu_Continue:
 	ret
 
 MainMenu_MysteryGift:
-	farcall MysteryGift
+	farcall _ResetClock
 	ret
