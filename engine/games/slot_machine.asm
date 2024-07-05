@@ -1782,10 +1782,10 @@ Slots_GetPayout:
 .PayoutTable:
 	table_width 2, Slots_GetPayout.PayoutTable
 	dw 777 ; SLOTS_SEVEN
-	dw  80 ; SLOTS_POKEBALL
-	dw  60 ; SLOTS_CHERRY
-	dw 200 ; SLOTS_PIKACHU
-	dw 150 ; SLOTS_SQUIRTLE
+	dw 500 ; SLOTS_POKEBALL
+	dw  80 ; SLOTS_CHERRY
+	dw 300 ; SLOTS_PIKACHU
+	dw 200 ; SLOTS_SQUIRTLE
 	dw 100 ; SLOTS_STARYU
 	assert_table_length NUM_SLOT_REELS
 
@@ -1832,10 +1832,10 @@ Slots_PayoutText:
 .PayoutStrings:
 	table_width 6, Slots_PayoutText.PayoutStrings
 	dbw "777@", .LinedUpSevens      ; SLOTS_SEVEN
-	dbw "80@@", .LinedUpPokeballs   ; SLOTS_POKEBALL
-	dbw "60@@", .LinedUpMonOrCherry ; SLOTS_CHERRY
-	dbw "200@", .LinedUpMonOrCherry ; SLOTS_PIKACHU
-	dbw "150@", .LinedUpMonOrCherry ; SLOTS_SQUIRTLE
+	dbw "500@", .LinedUpPokeballs   ; SLOTS_POKEBALL
+	dbw "80@@", .LinedUpMonOrCherry ; SLOTS_CHERRY
+	dbw "300@", .LinedUpMonOrCherry ; SLOTS_PIKACHU
+	dbw "200@", .LinedUpMonOrCherry ; SLOTS_SQUIRTLE
 	dbw "100@", .LinedUpMonOrCherry ; SLOTS_STARYU
 	assert_table_length NUM_SLOT_REELS
 
