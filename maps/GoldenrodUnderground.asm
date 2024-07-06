@@ -404,7 +404,7 @@ GoldenrodUndergroundScript_ShopClosed:
 	end
 
 GoldenrodUndergroundCoinCase:
-	itemball COIN_CASE
+	itemball FOCUS_BAND
 
 GoldenrodUndergroundNoEntrySign:
 	jumptext GoldenrodUndergroundNoEntryText
