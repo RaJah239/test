@@ -5,6 +5,7 @@
 	const INDIGOPLATEAUPOKECENTER1F_RIVAL
 	const INDIGOPLATEAUPOKECENTER1F_GRAMPS
 	const INDIGOPLATEAUPOKECENTER1F_ABRA
+	const INDIGOPLATEAUPOKECENTER1F_COINCOLLECTORF
 
 IndigoPlateauPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -201,6 +202,169 @@ PlateauRivalLeavesMovement:
 	step DOWN
 	step_end
 
+CoinCollectorScript:
+	faceplayer
+	opentext
+	checkevent EVENT_MET_INDIGOPLATEAUPOKECENTER1F_COINCOLLECTORF
+	iftrue .LetsTrade
+	writetext CoinCollectorIntroText
+	setevent EVENT_MET_INDIGOPLATEAUPOKECENTER1F_COINCOLLECTORF
+	waitbutton
+.LetsTrade
+	writetext UpForATradeText
+	special DisplayCoinCaseBalance
+	yesorno
+	iffalse .Refused
+	checkcoins 9999
+	ifequal HAVE_LESS, .CoinCaseNotAtMax
+	loadmenu .MoveMenuHeader
+	verticalmenu
+	closewindow
+	writetext ThanksForDoingBusinessText
+	waitbutton
+	ifequal 1, .SacredAsh
+	ifequal 2, .EonMail
+	ifequal 3, .Nuggets
+	sjump .No
+
+.No
+	writetext NoTradingText
+	waitbutton
+	closetext
+	end
+
+.SacredAsh:
+	verbosegiveitem SACRED_ASH, 5
+	iffalse .NoRoom
+	ifequal TRUE, .ConcludeTransaction
+	closetext
+	end
+
+.EonMail:
+	verbosegiveitem EON_MAIL
+	iffalse .NoRoom
+	ifequal TRUE, .ConcludeTransaction
+	closetext
+
+.Nuggets:
+	promptbutton
+	verbosegiveitem NUGGET, 99
+	iffalse .NoRoom
+	ifequal TRUE, .ConcludeTransaction
+	closetext
+
+.NoRoom:
+	writetext CoinCollectorFNoRoomText
+	waitbutton
+	closetext
+	end
+
+.ConcludeTransaction:
+	takecoins 9999
+	waitsfx
+	playsound SFX_TRANSACTION
+	special DisplayCoinCaseBalance
+	writetext ThanksFortheTradeText
+	waitbutton
+	closetext
+	end 
+
+.Refused:
+	writetext ComOnByAnyTimeText
+	waitbutton
+	closetext
+	end
+
+.CoinCaseNotAtMax:
+	writetext YouNeedToFillItUpText
+	waitbutton
+	closetext
+	end
+
+.MoveMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, 15, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "SACRED ASH x5@"
+	db "EON MAIL   x1@"
+	db "NUGGET    x99@"
+	db "CANCEL@"
+
+CoinCollectorIntroText:
+	text "Hello. I'm VIOLET."
+	line "I enjoy collecting"
+	cont "coins."
+
+	para "A COIN COLLECTOR"
+	line "of sorts."
+
+	para "And you are?"
+
+	para "…"
+
+	para "<PLAY_G>? Nice to"
+	line "meet you!"
+
+	para "To make it here,"
+	line "you must be quite"
+	cont "the trainer!"
+
+	para "I think we may be"
+	line "able to help each-"
+	cont "other out."
+
+	para "For 9,999 coins or"
+	line "a full COIN CASE,"
+
+	para "I'll trade you"
+	line "something special."
+
+	para "How about it?"
+	done
+
+UpForATradeText:
+	text "VIOLET: Up for a"
+	line "trade <PLAY_G>?"
+
+	para "9,999 coins for"
+	line "something special?"
+	done
+
+CoinCollectorFNoRoomText:
+	text "Make space to con-"
+	line "clude our trade…"
+	done
+
+ComOnByAnyTimeText:
+	text "VIOLET: Come trade"
+	line "with me anytime."
+	done
+
+YouNeedToFillItUpText:
+	text "VIOLET: Hm… You're"
+	line "short on coins…"
+	done
+
+NoTradingText:
+	text "VIOLET: Not in a"
+	line "trading mood?"
+	done
+
+ThanksForDoingBusinessText:
+	text "I hope you value"
+	line "our trade!"
+	done
+
+ThanksFortheTradeText:
+	text "VIOLET: Let's trade"
+	line "again sometime!"
+	done
+
 IndigoPlateauPokecenter1FCooltrainerMText:
 	text "At the #MON"
 	line "LEAGUE, you'll get"
@@ -305,3 +469,4 @@ IndigoPlateauPokecenter1F_MapEvents:
 	object_event 16,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
 	object_event  1,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, EVENT_TELEPORT_GUY
 	object_event  0,  9, SPRITE_ABRA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, EVENT_TELEPORT_GUY
+	object_event  5, 10, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CoinCollectorScript, -1

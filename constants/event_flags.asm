@@ -268,7 +268,9 @@
 	const EVENT_DANA_GAVE_THUNDERSTONE
 	const EVENT_TULLY_GAVE_WATER_STONE
 	const EVENT_TIFFANY_GAVE_PINK_BOW
-; Unused: next 339 events
+; Crytal Trove events start here.
+	const EVENT_MET_INDIGOPLATEAUPOKECENTER1F_COINCOLLECTORF
+; Unused: next 338 events
 
 	const_next 600
 ; Kurt Apricorn events
