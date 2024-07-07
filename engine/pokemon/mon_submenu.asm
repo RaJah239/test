@@ -537,6 +537,18 @@ Can_Use_Sweet_Scent:
 	and a
 	jr z, .yes
 
+; Step 3: Check if TM/HM is in bag
+;	ld a, TM_TELEPORT
+;	ld [wCurItem], a
+;	ld hl, wNumItems
+;	call CheckItem
+;	ret nc ; .fail ; TM not in bag
+
+; Step 4: Check if Mon can learn Teleport via TM/HM/Move Tutor
+;	ld a, TELEPORT
+;	call CheckMonCanLearn_TM_HM
+;	jr c, .yes
+
 ; Step 3: Check if mon learns move via LVL-UP
 	ld a, TELEPORT
 	call CheckLvlUpMoves
