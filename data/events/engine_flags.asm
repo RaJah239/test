@@ -97,6 +97,7 @@ EngineFlags:
 	engine_flag wVisitedSpawns, SPAWN_AZALEA
 	engine_flag wVisitedSpawns, SPAWN_CIANWOOD
 	engine_flag wVisitedSpawns, SPAWN_GOLDENROD
+	engine_flag wVisitedSpawns, SPAWN_NATIONAL_PARK
 	engine_flag wVisitedSpawns, SPAWN_OLIVINE
 	engine_flag wVisitedSpawns, SPAWN_BATTLE_TOWER
 	engine_flag wVisitedSpawns, SPAWN_ECRUTEAK
