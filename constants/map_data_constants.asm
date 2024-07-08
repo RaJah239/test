@@ -75,6 +75,7 @@ DEF NUM_FISHGROUPS EQU const_value - 1
 	const SPAWN_HOME
 	const SPAWN_DEBUG
 ; kanto
+	const SPAWN_ROUTE_26
 	const SPAWN_PALLET
 	const SPAWN_VIRIDIAN
 	const SPAWN_PEWTER
@@ -127,6 +128,7 @@ DEF JOHTO_FLYPOINT EQU const_value
 	const FLY_MT_SILVER
 ; kanto
 DEF KANTO_FLYPOINT EQU const_value
+	const FLY_ROUTE_26
 	const FLY_PALLET
 	const FLY_VIRIDIAN
 	const FLY_PEWTER
