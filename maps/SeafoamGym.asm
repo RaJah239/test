@@ -19,6 +19,7 @@ SeafoamGymBlaineScript:
 	writetext BlaineIntroText
 	waitbutton
 	closetext
+	setflag ENGINE_FLYPOINT_ROUTE_20
 	winlosstext BlaineWinLossText, 0
 	loadtrainer BLAINE, BLAINE1
 	startbattle
