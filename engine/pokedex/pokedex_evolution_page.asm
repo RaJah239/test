@@ -495,7 +495,8 @@ EVO_place_Mon_Types:
 	ld b, d
 	call .determine_paladdr ; pal 1, 2, 3, or 4
 	farcall LoadDexTypePals
-	call SetPalettes
+	; call SetPalettes
+	call SetDefaultBGPAndOBP
 	call DelayFrame
 
 	ld a, [wBaseType1]

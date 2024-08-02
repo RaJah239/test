@@ -177,7 +177,7 @@ DEF WATER_WILDDATA_LENGTH EQU 2 + 1 + NUM_WATERMON * 2
 DEF FISHGROUP_DATA_LENGTH EQU 1 + 2 * 3
 
 DEF NUM_ROAMMON_MAPS EQU 16 ; RoamMaps table size (see data/wild/roammon_maps.asm)
-NUM_ROAMMONS EQU 2 ; G/S is three, and wram still has 3 roamers
+DEF NUM_ROAMMONS EQU 2 ; G/S is three, and wram still has 3 roamers
 ; but  Crystal only has 2. please change this if you want to use the 3rd
 
 ; treemon sets
@@ -203,7 +203,7 @@ DEF NUM_TREEMON_SETS EQU const_value
 ; const TREEMON_SET_ROCK is originally within NUM_TREEMON_SETS
 	const_def
 	const TREEMON_SET_ROCK
-NUM_ROCKSMASH_SETS EQU const_value
+DEF NUM_ROCKSMASH_SETS EQU const_value
 
 ; ChangeHappiness arguments (see data/events/happiness_changes.asm)
 	const_def 1
