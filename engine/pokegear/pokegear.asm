@@ -73,17 +73,6 @@ PokeGear:
 .InitTilemap:
 	call ClearBGPalettes
 	call ClearTilemap
-; ; time of day icons
-; 	push af
-; 	xor a
-; 	ldh [hBGMapMode], a
-; 	ld de, Pokedex_ExtraTiles tile $f
-; 	ld hl, vTiles2 tile $63
-; 	lb bc, BANK(Pokedex_ExtraTiles), 3 ; tiles
-; 	call Request2bpp
-; 	pop af
-; 	ldh [hBGMapMode], a
-;
 	call ClearSprites
 	call DisableLCD
 	xor a
@@ -255,6 +244,12 @@ InitPokegearTilemap:
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	ld a, $4f
 	call ByteFill
+
+	ld de, PokeGear_TimeofDayIcons
+	ld hl, vTiles2 tile $6d
+	lb bc, BANK(PokeGear_TimeofDayIcons), 3
+	call Request2bpp
+
 	ld a, [wPokegearCard]
 	maskbits NUM_POKEGEAR_CARDS
 	add a
@@ -633,29 +628,43 @@ Pokegear_UpdateClock:
 	ld de, .FishGrpStr
 	call PlaceString
 .print_tod
+	hlcoord 10, 1 ; hlcoord 13, 6
 	ld a, [wTimeOfDay]
 	and a
 	jr z, .Morn
 	cp 1
 	jr z, .Day
+	ld [hl], $6f ; nite icon
 	ld de, .NiteStr
 .got_tod		
 	hlcoord 14, 6
+	; inc hl
 	call PlaceString
 
-	hlcoord 11, 0
+	hlcoord 9, 0 ; hlcoord 11, 0
 	ld [hl], $30 ; round edge
 	inc hl
-	ld [hl], $7f
-	hlcoord 11, 2
+	ld a, $7f
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	hlcoord 9, 2 ; hlcoord 11, 2
 	ld [hl], $32
 	inc hl
-	ld [hl], $7f
+	ld a, $7f
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	hlcoord 9, 1
+	; ld [hli], a
+	ld [hl], a
 	ret
 .Morn
+	ld [hl], $6d ; morn icon
 	ld de, .MornStr
 	jr .got_tod
 .Day
+	ld [hl], $6e ; day icon
 	ld de, .DayStr
 	jr .got_tod
 
@@ -2842,9 +2851,14 @@ TownMapPals:
 	ld a, [hli]
 	push hl
 ; The palette map covers tiles $00 to $67; $68 and above use palette 0
+	cp $6d
+	jr z, .pal6
+	cp $6e
+	jr z, .pal6
+	cp $6f
+	jr z, .pal6
 	cp $68
 	jr nc, .pal0
-
 ; The palette data is condensed to nybbles, least-significant first.
 	ld hl, .PalMap
 	srl a
@@ -2871,6 +2885,9 @@ TownMapPals:
 	and PALETTE_MASK
 	jr .update
 
+.pal6
+	ld a, $6
+	jr .update
 .pal0
 	xor a
 .update
@@ -2961,6 +2978,9 @@ LoadTownMapGFX:
 	lb bc, BANK(TownMapGFX), 48
 	call DecompressRequest2bpp
 	ret
+
+PokeGear_TimeofDayIcons:
+INCBIN "gfx/pokegear/pokegear_timeofday_icons.2bpp"
 
 JohtoMap:
 INCBIN "gfx/pokegear/johto.bin"
