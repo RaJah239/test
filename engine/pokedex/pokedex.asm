@@ -2443,10 +2443,10 @@ Pokedex_CheckSeen:
 	ld a, [wTempSpecies]
 	dec a
 	call CheckSeenMon
-IF DEF(_DEBUG)
-	ld a, 1 ; DEBUG, to unlock all unseen mon
-	and a ; DEBUG, to unlock all unseen mon
-ENDC
+; IF DEF(_DEBUG)
+; 	ld a, 1 ; DEBUG, to unlock all unseen mon
+; 	and a ; DEBUG, to unlock all unseen mon
+; ENDC
 	pop hl
 	pop de
 	ret

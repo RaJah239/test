@@ -458,6 +458,7 @@ DEX_NO_CUSTOM_GFX_PrintType_Short:
 	db "ICE @"
 	db "DRGN@"
 	db "DARK@"
+	db "FAIR@"
 ENDC
 
 INCLUDE "data/pokemon/dex_entry_pointers.asm"
