@@ -329,9 +329,13 @@ DisplayDexMonType_CustomGFX:
 	call GetBaseData
 	ld a, [wBaseType1]
 
+IF SWAP_DARK_GHOST_TYPES == TRUE
+	call Pokedex_swap_GhostDark_Indexes
+ENDC
 	ld c, a ; farcall will clobber a for the bank
 	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
 	ld a, c
+IF USE_GEN3_STYLE_TYPE_GFX == TRUE
 ; load the tiles
 	ld hl, TypeLightIconGFX
 	ld bc, 4 * LEN_2BPP_TILE
@@ -356,6 +360,12 @@ DisplayDexMonType_CustomGFX:
 
 	ld a, $0
 	ldh [rVBK], a
+ELSE 
+; IF USE_GEN3_STYLE_TYPE_GFX == FALSE
+	hlcoord 10, 4
+	call DEX_NO_CUSTOM_GFX_PrintType_Short
+ENDC
+
 ; 2nd Type
 	ld a, [wBaseType1]
 	ld b, a
@@ -363,9 +373,15 @@ DisplayDexMonType_CustomGFX:
 	cp b
 	ret z
 
+IF SWAP_DARK_GHOST_TYPES == TRUE
+	call Pokedex_swap_GhostDark_Indexes
+ENDC
+
 	ld c, a ; farcall will clobber a for the bank
 	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
 	ld a, c
+
+IF USE_GEN3_STYLE_TYPE_GFX == TRUE	
 ; load type 2 tiles
 	ld hl, TypeDarkIconGFX
 	ld bc, 4 * LEN_2BPP_TILE
@@ -389,38 +405,60 @@ DisplayDexMonType_CustomGFX:
 	ld [hl], $7e
 	ld a, $0
 	ldh [rVBK], a
+ELSE
+; IF USE_GEN3_STYLE_TYPE_GFX == FALSE
+	hlcoord 14, 4
+	ld [hl], "/"
+	inc hl
+	call DEX_NO_CUSTOM_GFX_PrintType_Short
+ENDC	
 	ret
 
-; DEX_NO_CUSTOM_GFX_PrintType_Short:
-; ; Print type a at hl.
-; 	; shouldnt need to double index
-; 	push hl
-; 	ld hl, .Types
-; 	ld bc, 4 ; since each entry is 4 bytes
-; 	call AddNTimes
-; 	ld d, h
-; 	ld e, l
-; 	pop hl
-; 	jp PlaceString
+IF SWAP_DARK_GHOST_TYPES == TRUE
+Pokedex_swap_GhostDark_Indexes:
+	cp GHOST
+	jr nz, .check_dark
+	ld a, DARK
+	jr .done
+.check_dark
+	cp DARK
+	jr nz, .done
+	ld a, GHOST
+.done
+	ret	
+ENDC
 
-; .Types
-; 	db "NRM@"
-; 	db "FGT@"
-; 	db "FLY@"
-; 	db "PSN@"
-; 	db "GRD@"
-; 	db "RCK@"
-; 	db "BUG@"
-; 	db "GST@"
-; 	db "STL@"
-; 	db "FIR@"
-; 	db "WTR@"
-; 	db "GRS@"
-; 	db "ELC@"
-; 	db "PSY@"
-; 	db "ICE@"
-; 	db "DRG@"
-; 	db "DRK@"
+IF USE_GEN3_STYLE_TYPE_GFX == FALSE
+DEX_NO_CUSTOM_GFX_PrintType_Short:
+; Print type a at hl.
+	push hl
+	ld hl, .Types
+	ld bc, 5 ; since each entry is 4 bytes
+	call AddNTimes
+	ld d, h
+	ld e, l
+	pop hl
+	jp PlaceString
+
+.Types
+	db "NORM@"
+	db "FIGT@"
+	db "FLY @"
+	db "PSN @"
+	db "GRND@"
+	db "ROCK@"
+	db "BUG @"
+	db "GHST@"
+	db "STEL@"
+	db "FIRE@"
+	db "WATR@"
+	db "GRAS@"
+	db "ELEC@"
+	db "PSY @"
+	db "ICE @"
+	db "DRGN@"
+	db "DARK@"
+ENDC
 
 INCLUDE "data/pokemon/dex_entry_pointers.asm"
 INCLUDE "engine/pokedex/pokedex_evolution_page.asm"
