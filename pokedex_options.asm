@@ -1,7 +1,7 @@
 ; using 'Increase Pokémon sprite animation size'?
 ; https://github.com/pret/pokecrystal/wiki/Increase-Pok%C3%A9mon-sprite-animation-size
 	; NOTE this should only be enabled if you've already implemented the tutorial
-DEF USING_INCREASED_SPRITE_ANIMATION EQU TRUE
+DEF USING_INCREASED_SPRITE_ANIMATION EQU FALSE
 
 
 ; using 'Expand tilesets from 192 to 255 tiles'?
