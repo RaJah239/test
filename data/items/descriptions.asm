@@ -45,7 +45,7 @@ ItemDescriptions:
 	dw HedgerDesc
 	dw PaddleBoatDesc
 	dw DireHitDesc
-	dw TeruSama3Desc
+	dw ExpCharmDesc
 	dw FreshWaterDesc
 	dw SodaPopDesc
 	dw LemonadeDesc
@@ -432,6 +432,10 @@ PaddleBoatDesc:
 DireHitDesc:
 	db   "Ups critical hit"
 	next "ratio. (1 BTL)@"
+
+ExpCharmDesc:
+	db   "Earns extra EXP."
+	next "points in battle.@"
 
 FreshWaterDesc:
 	db   "Restores #MON"
@@ -958,7 +962,6 @@ TeruSama8Desc:
 TeruSama7Desc:
 TeruSama5Desc:
 TeruSama4Desc:
-TeruSama3Desc:
 TeruSama2Desc:
 TeruSama19Desc:
 TeruSama26Desc:

@@ -50,7 +50,7 @@
 	const HEDGER       ; 2a
 	const PADDLE_BOAT  ; 2b
 	const DIRE_HIT     ; 2c
-	const ITEM_2D      ; 2d
+	const EXP_CHARM    ; 2d
 	const FRESH_WATER  ; 2e
 	const SODA_POP     ; 2f
 	const LEMONADE     ; 30

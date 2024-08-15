@@ -44,7 +44,7 @@ ItemNames::
 	li "HEDGER"
 	li "PADDLE BOAT"
 	li "DIRE HIT"
-	li "TERU-SAMA"
+	li "EXP. CHARM"
 	li "FRESH WATER"
 	li "SODA POP"
 	li "LEMONADE"

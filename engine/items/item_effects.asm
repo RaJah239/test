@@ -58,7 +58,7 @@ ItemEffects:
 	dw HedgerEffect        ; HEDGER
 	dw PaddleBoatEffect    ; PADDLE_BOAT
 	dw DireHitEffect       ; DIRE_HIT
-	dw NoEffect            ;
+	dw NoEffect            ; EXP_CHARM / ITEM_2D
 	dw RestoreHPEffect     ; FRESH_WATER
 	dw RestoreHPEffect     ; SODA_POP
 	dw RestoreHPEffect     ; LEMONADE
