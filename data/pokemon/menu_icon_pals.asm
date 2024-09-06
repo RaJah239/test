@@ -133,7 +133,7 @@ MonMenuIconPals::
 	icon_pals BROWN, BLUE ; PINSIR
 	icon_pals BROWN, RED ; TAUROS
 	icon_pals RED, BROWN ; MAGIKARP
-	icon_pals BLUE, BROWN ; GYARADOS
+	icon_pals BLUE, RED ; GYARADOS
 	icon_pals BLUE, RED ; LAPRAS
 	icon_pals PURPLE, BLUE ; DITTO
 	icon_pals BROWN, GRAY ; EEVEE
