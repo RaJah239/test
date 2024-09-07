@@ -743,6 +743,25 @@ _UsedInsteadText::
 
 _MoveNameText::
 	text_ram wStringBuffer2
+	text_end
+
+_EndUsedMove1Text::
+	text "!"
+	done
+
+_EndUsedMove2Text::
+	text "!"
+	done
+
+_EndUsedMove3Text::
+	text "!"
+	done
+
+_EndUsedMove4Text::
+	text "!"
+	done
+
+_EndUsedMove5Text::
 	text "!"
 	done
 
@@ -1034,11 +1053,6 @@ _PokecenterPCCantUseText::
 	cont "use this!"
 	prompt
 
-_PlayersPCTurnOnText::
-	text "<PLAYER> turned on"
-	line "the PC."
-	prompt
-
 _PlayersPCAskWhatDoText::
 	text "What do you want"
 	line "to do?"
@@ -1095,32 +1109,16 @@ _PokecenterPCWhoseText::
 	text "Access whose PC?"
 	done
 
-_PokecenterBillsPCText::
-	text "BILL's PC"
-	line "accessed."
-
 	para "#MON Storage"
 	line "System opened."
 	prompt
-
-_PokecenterPlayersPCText::
-	text "Accessed own PC."
-
-	para "Item Storage"
-	line "System opened."
-	prompt
-
-_PokecenterOaksPCText::
-	text "PROF.OAK's PC"
-	line "accessed."
 
 	para "#DEX Rating"
 	line "System opened."
 	prompt
 
 _PokecenterPCOaksClosedText::
-	text "…"
-	line "Link closed…"
+	text "…shutting down…"
 	done
 
 _OakPCText1::
@@ -1281,11 +1279,6 @@ _OakRating19::
 
 	para "dreamt about this!"
 	line "Congratulations!"
-	done
-
-_OakPCText4::
-	text "The link to PROF."
-	line "OAK's PC closed."
 	done
 
 _MemoryGameYeahText::

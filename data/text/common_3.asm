@@ -180,8 +180,7 @@ _SavedTheGameText::
 
 _AnotherSaveFileText::
 	text "There is another"
-	line "save file. Is it"
-	cont "OK to overwrite?"
+	line "save. Overwrite?"
 	done
 
 _SaveFileCorruptedText::
@@ -190,20 +189,13 @@ _SaveFileCorruptedText::
 	prompt
 
 _ChangeBoxSaveText::
-	text "When you change a"
-	line "#MON BOX, data"
-	cont "will be saved. OK?"
+	text "Box swapping saves"
+	line "the game. OK?"
 	done
 
 _MoveMonWOMailSaveText::
-	text "Each time you move"
-	line "a #MON, data"
-	cont "will be saved. OK?"
-	done
-
-_WindowAreaExceededErrorText:: ; unreferenced
-	text "The window save"
-	line "area was exceeded."
+	text "Each #MON moved"
+	line "saves. Proceed?"
 	done
 
 _WindowPoppingErrorText::
