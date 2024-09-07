@@ -1555,6 +1555,9 @@ AI_Smart_Spite:
 	dec [hl]
 	ret
 
+.dismiss ; unreferenced
+	jp AIDiscourageMove
+
 AI_Smart_DestinyBond:
 AI_Smart_Reversal:
 AI_Smart_SkullBash:
@@ -1662,9 +1665,10 @@ AI_Smart_Thief:
 	ret
 
 AI_Smart_Conversion2:
+; BUG: "Smart" AI discourages Conversion2 after the first turn (see docs/bugs_and_glitches.md)
 	ld a, [wLastPlayerMove]
 	and a
-	jr z, .discourage
+	jr nz, .discourage
 
 	push hl
 	dec a
@@ -1741,7 +1745,7 @@ AI_Smart_MeanLook:
 	jp z, AIDiscourageMove
 
 ; 80% chance to greatly encourage this move if the enemy is badly poisoned.
-	ld a, [wPlayerSubStatus5]
+    ld a, [wPlayerSubStatus5]
 	bit SUBSTATUS_TOXIC, a
 	jr nz, .encourage
 
@@ -2930,7 +2934,9 @@ AI_Aggressive:
 ; If no damaging move deals damage to the player (immune),
 ; no move will be discouraged
 
-; Figure out which attack does the most damage and put it in c.
+; Also greatly discourages ineffective moves since this overrides the
+; regular type matchup layer
+
 	ld hl, wEnemyMonMoves
 	ld bc, 0
 	ld de, 0
@@ -3000,6 +3006,20 @@ AI_Aggressive:
 	jr z, .checkmove2
 
 	call AIGetEnemyMove
+	
+; This routine overrides the type matchup AI layer, since it's typically
+	; superior to it. As a result, deal with ineffective moves here too which
+	; is discouraged far more than other less damaging moves.
+	push hl
+	push de
+	push bc
+	farcall BattleCheckTypeMatchup
+	pop bc
+	pop de
+	pop hl
+	ld a, [wTypeMatchup]
+	and a
+	call z, AIDiscourageMove
 
 ; Ignore this move if its power is 0 or 1.
 ; Moves such as Seismic Toss, Hidden Power,
