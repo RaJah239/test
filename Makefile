@@ -1,10 +1,10 @@
 roms := \
-	pokecrystal.gbc \
-	pokecrystal11.gbc \
-	pokecrystal_au.gbc \
-	pokecrystal_debug.gbc \
-	pokecrystal11_debug.gbc
-patches := pokecrystal11.patch
+	crystaltrove.gbc \
+	crystaltrove11.gbc \
+	crystaltrove_au.gbc \
+	crystaltrove_debug.gbc \
+	crystaltrove11_debug.gbc
+patches := crystaltrove11.patch
 
 rom_obj := \
 	audio.o \
@@ -25,12 +25,12 @@ rom_obj := \
 	lib/mobile/main.o \
 	lib/mobile/mail.o
 
-pokecrystal_obj         := $(rom_obj:.o=.o)
-pokecrystal11_obj       := $(rom_obj:.o=11.o)
-pokecrystal_au_obj      := $(rom_obj:.o=_au.o)
-pokecrystal_debug_obj   := $(rom_obj:.o=_debug.o)
-pokecrystal11_debug_obj := $(rom_obj:.o=11_debug.o)
-pokecrystal11_vc_obj    := $(rom_obj:.o=11_vc.o)
+crystaltrove_obj         := $(rom_obj:.o=.o)
+crystaltrove11_obj       := $(rom_obj:.o=11.o)
+crystaltrove_au_obj      := $(rom_obj:.o=_au.o)
+crystaltrove_debug_obj   := $(rom_obj:.o=_debug.o)
+crystaltrove11_debug_obj := $(rom_obj:.o=11_debug.o)
+crystaltrove11_vc_obj    := $(rom_obj:.o=11_vc.o)
 
 
 ### Build tools
@@ -56,13 +56,13 @@ RGBLINK ?= $(RGBDS)rgblink
 .PRECIOUS:
 .SECONDARY:
 
-all: crystal
-crystal:         pokecrystal.gbc
-crystal11:       pokecrystal11.gbc
-crystal_au:      pokecrystal_au.gbc
-crystal_debug:   pokecrystal_debug.gbc
-crystal11_debug: pokecrystal11_debug.gbc
-crystal11_vc:    pokecrystal11.patch
+all: crystal free_space
+crystal:         crystaltrove.gbc
+crystal11:       crystaltrove11.gbc
+crystal_au:      crystaltrove_au.gbc
+crystal_debug:   crystaltrove_debug.gbc
+crystal11_debug: crystaltrove11_debug.gbc
+crystal11_vc:    crystaltrove11.patch
 
 clean: tidy
 	find gfx \
@@ -88,12 +88,12 @@ tidy:
 	      $(patches:.patch=_vc.sym) \
 	      $(patches:.patch=_vc.map) \
 	      $(patches:%.patch=vc/%.constants.sym) \
-	      $(pokecrystal_obj) \
-	      $(pokecrystal11_obj) \
-	      $(pokecrystal11_vc_obj) \
-	      $(pokecrystal_au_obj) \
-	      $(pokecrystal_debug_obj) \
-	      $(pokecrystal11_debug_obj) \
+	      $(crystaltrove_obj) \
+	      $(crystaltrove11_obj) \
+	      $(crystaltrove11_vc_obj) \
+	      $(crystaltrove_au_obj) \
+	      $(crystaltrove_debug_obj) \
+	      $(crystaltrove11_debug_obj) \
 	      rgbdscheck.o
 	$(MAKE) clean -C tools/
 
@@ -103,6 +103,8 @@ compare: $(roms) $(patches)
 tools:
 	$(MAKE) -C tools/
 
+free_space:
+	tools/free_space.awk BANK=all crystaltrove.map
 
 RGBASMFLAGS = -Q8 -P includes.asm -Weverything -Wnumeric-string=2 -Wtruncation=1
 # Create a sym/map for debug purposes if `make` run with `DEBUG=1`
@@ -110,12 +112,12 @@ ifeq ($(DEBUG),1)
 RGBASMFLAGS += -E
 endif
 
-$(pokecrystal_obj):         RGBASMFLAGS +=
-$(pokecrystal11_obj):       RGBASMFLAGS += -D _CRYSTAL11
-$(pokecrystal_au_obj):      RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL_AU
-$(pokecrystal_debug_obj):   RGBASMFLAGS += -D _DEBUG
-$(pokecrystal11_debug_obj): RGBASMFLAGS += -D _CRYSTAL11 -D _DEBUG
-$(pokecrystal11_vc_obj):    RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL11_VC
+$(crystaltrove_obj):         RGBASMFLAGS +=
+$(crystaltrove11_obj):       RGBASMFLAGS += -D _CRYSTAL11
+$(crystaltrove_au_obj):      RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL_AU
+$(crystaltrove_debug_obj):   RGBASMFLAGS += -D _DEBUG
+$(crystaltrove11_debug_obj): RGBASMFLAGS += -D _CRYSTAL11 -D _DEBUG
+$(crystaltrove11_vc_obj):    RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL11_VC
 
 %.patch: vc/%.constants.sym %_vc.gbc %.gbc vc/%.patch.template
 	tools/make_patch $*_vc.sym $^ $@
@@ -139,12 +141,12 @@ $1: $2 $$(shell tools/scan_includes $2) $(preinclude_deps) | rgbdscheck.o
 endef
 
 # Dependencies for shared objects objects
-$(foreach obj, $(pokecrystal_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
-$(foreach obj, $(pokecrystal11_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
-$(foreach obj, $(pokecrystal_au_obj), $(eval $(call DEP,$(obj),$(obj:_au.o=.asm))))
-$(foreach obj, $(pokecrystal_debug_obj), $(eval $(call DEP,$(obj),$(obj:_debug.o=.asm))))
-$(foreach obj, $(pokecrystal11_debug_obj), $(eval $(call DEP,$(obj),$(obj:11_debug.o=.asm))))
-$(foreach obj, $(pokecrystal11_vc_obj), $(eval $(call DEP,$(obj),$(obj:11_vc.o=.asm))))
+$(foreach obj, $(crystaltrove_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
+$(foreach obj, $(crystaltrove11_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
+$(foreach obj, $(crystaltrove_au_obj), $(eval $(call DEP,$(obj),$(obj:_au.o=.asm))))
+$(foreach obj, $(crystaltrove_debug_obj), $(eval $(call DEP,$(obj),$(obj:_debug.o=.asm))))
+$(foreach obj, $(crystaltrove11_debug_obj), $(eval $(call DEP,$(obj),$(obj:11_debug.o=.asm))))
+$(foreach obj, $(crystaltrove11_vc_obj), $(eval $(call DEP,$(obj),$(obj:11_vc.o=.asm))))
 
 # Dependencies for VC files that need to run scan_includes
 %.constants.sym: %.constants.asm $(shell tools/scan_includes %.constants.asm) $(preinclude_deps) | rgbdscheck.o
@@ -153,12 +155,12 @@ $(foreach obj, $(pokecrystal11_vc_obj), $(eval $(call DEP,$(obj),$(obj:11_vc.o=.
 endif
 
 
-pokecrystal_opt         = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-pokecrystal11_opt       = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-pokecrystal_au_opt      = -Cjv -t PM_CRYSTAL -i BYTU -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-pokecrystal_debug_opt   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-pokecrystal11_debug_opt = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
-pokecrystal11_vc_opt    = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+crystaltrove_opt         = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+crystaltrove11_opt       = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+crystaltrove_au_opt      = -Cjv -t PM_CRYSTAL -i BYTU -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+crystaltrove_debug_opt   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+crystaltrove11_debug_opt = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
+crystaltrove11_vc_opt    = -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0
 
 %.gbc: $$(%_obj) layout.link
 	$(RGBLINK) -n $*.sym -m $*.map -l layout.link -o $@ $(filter %.o,$^)
