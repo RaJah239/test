@@ -1147,10 +1147,10 @@ VitaminEffect:
 
 	add hl, bc
 	ld a, [hl]
-	cp 100
+	cp 252
 	jr nc, NoEffectMessage
 
-	add 10
+	add 4
 	ld [hl], a
 	call UpdateStatsAfterItem
 
