@@ -780,6 +780,7 @@ LoadGreenPage:
 	db "MOVE@"
 
 LoadBluePage:
+	call StatsScreen_PrintAffection
 	call .PlaceOTInfo
 	hlcoord 10, 8
 	ld de, SCREEN_WIDTH
@@ -839,6 +840,24 @@ IDNoString:
 OTString:
 	db "OT/@"
 
+StatsScreen_PrintAffection:
+	ld de, AffectionString
+    hlcoord 0, 15
+    call PlaceString
+
+    hlcoord 1, 16
+    lb bc, 1, 3
+    ld de, wTempMonHappiness
+    call PrintNum
+    ld de, .outofMaxAffectionString
+    hlcoord 3, 17
+    call PlaceString
+    ret
+.outofMaxAffectionString:
+    db "/255@"
+
+AffectionString:
+ db "AFFECTION:@"
 
 StatsScreen_placeCaughtLocation:
 	ld de, .MetAtMapString
