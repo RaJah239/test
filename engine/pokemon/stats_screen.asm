@@ -878,7 +878,7 @@ ld hl, wTempMonDVs
     ld [wNamedObjectIndex], a
 	farcall GetTypeName
 	ld de, wStringBuffer1
-	hlcoord 1, 16
+	hlcoord 2, 16
 	call PlaceString
 	ret
 
