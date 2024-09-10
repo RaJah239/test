@@ -56,7 +56,7 @@ RGBLINK ?= $(RGBDS)rgblink
 .PRECIOUS:
 .SECONDARY:
 
-all: crystal free_space
+all: crystal
 crystal:         crystaltrove.gbc
 crystal11:       crystaltrove11.gbc
 crystal_au:      crystaltrove_au.gbc
@@ -102,9 +102,6 @@ compare: $(roms) $(patches)
 
 tools:
 	$(MAKE) -C tools/
-
-free_space:
-	tools/free_space.awk BANK=all crystaltrove.map
 
 RGBASMFLAGS = -Q8 -P includes.asm -Weverything -Wnumeric-string=2 -Wtruncation=1
 # Create a sym/map for debug purposes if `make` run with `DEBUG=1`
