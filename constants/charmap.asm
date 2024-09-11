@@ -98,7 +98,7 @@
 	charmap "⁂",         $3f ; gfx/stats/stats_tiles.png, tile 14
 	charmap "<DEX_⁂>",   $64 ; gfx/stats/stats_tiles.png, tile 14, VRAM0
 	charmap "<DEX_→>", 	  $eb; gfx/pokedex/inversed_rightarrow.1bpp
-	; at the moment, this arrow is in the same slot as the non-inversed right arrow, but in VRAM 1. 
+	; at the moment, this arrow is in the same slot as the non-inversed right arrow, but in VRAM 1.
 	; since people could theoretically load it wherever they choose, I am keeping this charmap
 
 	charmap ">",		 $bb
@@ -237,7 +237,7 @@
 
 ; Japanese kana, for those bits of text that were not translated to English
 
-	charmap "ガ", $05
+	charmap "♥",  $05
 	charmap "ギ", $06
 	charmap "グ", $07
 	charmap "ゲ", $08

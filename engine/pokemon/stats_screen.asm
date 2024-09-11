@@ -845,7 +845,7 @@ LoadOrangePage:
 	ld de, HiddenPowerTypeString
 	hlcoord 1, 15
 	call PlaceString
-	
+
 ld hl, wTempMonDVs
 	; Type:
 
@@ -1049,7 +1049,7 @@ StatsScreen_Print_HiddenPow_Info:
 	ld de, .hp_1_text
 .print2
 	; hlcoord 13, 16
-	call PlaceString_UnownFont	
+	call PlaceString_UnownFont
 	ret
 .hidden_pow_text:
 	db "HIDDEN POWER@"
@@ -1118,11 +1118,11 @@ PlaceString_UnownFont:
 	inc de
 	sub "A"
 	add $BA ; FIRST_UNOWN_CHAR
-	
+
 	ld [hli], a
 	push hl
 	push de
-	jr .loop	
+	jr .loop
 .skip_space:
 	ld [hl], a
 	inc hl
@@ -1157,7 +1157,7 @@ StatsScreen_PrintAffection:
     db "/255@"
 
 AffectionString:
- db "AFFECTION:@"
+ db "♥:@"
 
 StatsScreen_PrintDVs:
 	hlcoord 1, 12
@@ -1252,7 +1252,7 @@ StatsScreen_PrintDVs:
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
 	hlcoord 10, 13
 	call PrintNum
-	; hlcoord 18, 15 ; 1, 4, 7, 10, 13 
+	; hlcoord 18, 15 ; 1, 4, 7, 10, 13
 	; call PrintNum
 
 	; HP
@@ -1271,13 +1271,13 @@ StatsScreen_PrintDVs:
 	ld [wPokedexStatus], a
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 3, 13 ; 1, 4, 7, 10, 13 
+	hlcoord 3, 13 ; 1, 4, 7, 10, 13
 	call PrintNum
 	ret
 
 .DVstring1:
 	db "DVS: ATK    DEF   @"
-.DVstring2:	
+.DVstring2:
 	; db "ATK    DEF@"
 	db "HP   SPC    SPE   @"
 ; .DVstring3:
@@ -1299,7 +1299,7 @@ StatsScreen_placeCaughtLocation:
 	ld de, wStringBuffer1
 	hlcoord 2, 10
 	call PlaceString
-	ret	
+	ret
 .unknown_location:
 	ld de, .MetUnknownMapString
 	hlcoord 2, 10
@@ -1353,7 +1353,7 @@ StatsScreen_placeCaughtLevel:
 	ld de, .MetUnknownLevelString
 	hlcoord 11, 9
 	call PlaceString
-	ret   
+	ret
 .MetUnknownLevelString:
 	db "TRADE@"
 
