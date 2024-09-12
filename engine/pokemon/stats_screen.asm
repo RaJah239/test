@@ -780,7 +780,7 @@ LoadGreenPage:
 	db "---@"
 
 .Move:
-	db "MOVE@"
+	db "MOVES@"
 
 LoadBluePage:
 	call StatsScreen_PrintAffection
@@ -843,7 +843,7 @@ LoadOrangePage:
 	call StatsScreen_placeCaughtLocation
 	call StatsScreen_PrintDVs
 	ld de, HiddenPowerTypeString
-	hlcoord 1, 15
+	hlcoord 1, 16
 	call PlaceString
 	
 ld hl, wTempMonDVs
@@ -879,140 +879,150 @@ ld hl, wTempMonDVs
     ld [wNamedObjectIndex], a
 	farcall GetTypeName
 	ld de, wStringBuffer1
-	hlcoord 2, 16
+	hlcoord 2, 17
 	call PlaceString
 	ret
 
 StatsScreen_PrintDVs:
-	hlcoord 1, 12
-	ld de, .DVstring1
+	hlcoord 1, 11
+	ld de, .EffortValuesString
 	call PlaceString
-	hlcoord 1, 13
-	ld de, .DVstring2
+	hlcoord 2, 12
+	ld de, .EVstring1
 	call PlaceString
-	; hlcoord 1, 14
-	; ld de, .DVstring3
-	; call PlaceString
+	hlcoord 2, 13
+	ld de, .EVstring2
+	call PlaceString
+	hlcoord 2, 14
+	ld de, .EVstring3
+	call PlaceString
 
-	; we're using wPokedexStatus because why not, nobody using it atm lol
-	; ATK DV
-	ld a, [wTempMonDVs] ; only get the first byte of the word
-	and %11110000 ; most significant nybble of first byte in word-sized wTempMonDVs
-	swap a ; so we can print it properly
+	; HP EVs
+	ld a, [wTempMonHPEV]
+	ld [wPokedexStatus], a
+	pop bc
+	jr z, .handle_this
+	ld a, c
+	add 4
+	ld b, 0
+	ld c, a
+.handle_this
+	push bc
+	ld de, wPokedexStatus
+	lb bc, 1, 3 ; 3 digits
+	hlcoord 6, 12
+	call PrintNum
+
+	; ATK EVs
+	ld a, [wTempMonAtkEV]
 	ld [wPokedexStatus], a
 	ld c, 0
-	; calc HP stat contribution
-	and 1 ; a still has the ATK DV
+	and 1
 	jr z, .atk_not_odd
 	ld a, 0
 	add 8
 	ld b, 0
 	ld c, a
-	;
 .atk_not_odd
 	push bc
 	ld de, wPokedexStatus
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 10, 12
+	lb bc, 1, 3 ; 3 digits
+	hlcoord 6, 13
 	call PrintNum
 
-	; DEF DV
-	ld a, [wTempMonDVs] ; only get the first byte of the word
-	and %00001111 ; least significant nybble, don't need to swap the bits of the byte
-	ld [wPokedexStatus], a ;DEF
+	; DEF EVs
+	ld a, [wTempMonDefEV]
+	ld [wPokedexStatus], a 
 	; calc HP stat contribution
 	pop bc
-	and 1 ; a still has the DEF DV
+	and 1
 	jr z, .def_not_odd
 	ld a, c
 	add 4
 	ld b, 0
 	ld c, a
-	;
 .def_not_odd
 	push bc
 	ld de, wPokedexStatus
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 17, 12
+	lb bc, 1, 3 ; 3 digits
+	hlcoord 6, 14
 	call PrintNum
 
-	; SPE DV
-	ld a, [wTempMonDVs + 1] ; second byte of word
-	and %11110000 ; most significant nybble of 2nd byte in word-sized wTempMonDVs
-	swap a ; so we can print it properly
-	ld [wPokedexStatus], a ;SPEED
-	; calc HP stat contribution
+	; SPE EVs
+	ld a, [wTempMonSpdEV]
+	ld [wPokedexStatus], a
 	pop bc
-	and 1 ; a still has the SPEED DV
+	and 1
 	jr z, .speed_not_odd
 	ld a, c
 	add 2
 	ld b, 0
 	ld c, a
-	;
 .speed_not_odd
 	push bc
 	ld de, wPokedexStatus
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 17, 13 ; 1, 5, 9, 13
+	lb bc, 1, 3 ; 3 digits
+	hlcoord 14, 12
 	call PrintNum
 
-	; SPC DV
-	ld a, [wTempMonDVs + 1] ; second byte of word
-	and %00001111 ; least significant nybble, don't need to swap the bits of the byte
-	ld [wPokedexStatus], a ;SPC
+	; SpAtk EVs
+	ld a, [wTempMonSpclAtkEV]
+	ld [wPokedexStatus], a
 	; calc HP stat contribution
 	pop bc
-	and 1 ; a still has the DEF DV
+	and 1
 	jr z, .spc_not_odd
 	ld a, c
 	add 1
 	ld b, 0
 	ld c, a
-	;
 .spc_not_odd
 	push bc
 	ld de, wPokedexStatus
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 10, 13
+	lb bc, 1, 3 ; 3 digits
+	hlcoord 14, 13
 	call PrintNum
-	; hlcoord 18, 15 ; 1, 4, 7, 10, 13 
-	; call PrintNum
 
-	; HP
-	; HP DV is determined by the last bit of each of these four DVs
-	; odd Attack DV adds 8, Defense adds 4, Speed adds 2, and Special adds 1
-	;For example, a Lugia with the DVs 5 Atk, 15 Def, 13 Spe, and 13 Spc will have:
-	; 5 Attack = Odd, HP += 8
-	; 15 Defense = Odd, HP += 4
-	; 13 Speed = Odd, HP += 2
-	; 13 Special = Odd, HP += 1
-	;resulting in an HP stat of 15
-	; THANKS SMOGON
-	; going to "and 1" each final value and push a counter to stack to preserve it
+
+	; SpDef EVs
+	ld a, [wTempMonSpclDefEV]
+	ld [wPokedexStatus], a
+	pop bc
+	and 1
+	jr z, .spc_not_odd1
+	ld a, c
+	add 1
+	ld b, 0
+	ld c, a
+.spc_not_odd1
+	push bc
+	ld de, wPokedexStatus
+	lb bc, 1, 3 ; 3 digits
+	hlcoord 14, 14
+	call PrintNum
+
 	pop bc
 	ld a, c
 	ld [wPokedexStatus], a
 	ld de, wPokedexStatus
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2 ; bytes, digits
-	hlcoord 3, 13 ; 1, 4, 7, 10, 13 
-	call PrintNum
 	ret
 
-.DVstring1:
-	db "DVS: ATK    DEF   @"
-.DVstring2:	
-	; db "ATK    DEF@"
-	db "HP   SPC    SPE   @"
-; .DVstring3:
-; 	db "SPC    SPE    HP@"
+.EffortValuesString:
+	db "EFFORT VALUES:@"
+.EVstring1:	
+	db "HP      SPE@"
+.EVstring2:
+ 	db "ATK     SPA@"
+.EVstring3:
+ 	db "DEF     SPD@"
 
 HiddenPowerTypeString:
 	db "HIDDEN POWER:@"
 
 StatsScreen_placeCaughtLocation:
 	ld de, .MetAtMapString
-	hlcoord 1, 9
+	hlcoord 1, 8
 	call PlaceString
 	ld a, [wTempMonCaughtLocation]
 	and CAUGHT_LOCATION_MASK
@@ -1024,12 +1034,12 @@ StatsScreen_placeCaughtLocation:
 	ld e, a
 	farcall GetLandmarkName
 	ld de, wStringBuffer1
-	hlcoord 2, 10
+	hlcoord 2, 9
 	call PlaceString
 	ret	
 .unknown_location:
 	ld de, .MetUnknownMapString
-	hlcoord 2, 10
+	hlcoord 2, 9
 	call PlaceString
 	ret
 .MetAtMapString:
@@ -1050,7 +1060,7 @@ StatsScreen_placeCaughtTime:
 	ld e, l
 	call CopyName1
 	ld de, wStringBuffer2
-	hlcoord 6, 9
+	hlcoord 6, 8
 	call PlaceString
 	ret
 .unknown_time
@@ -1061,7 +1071,7 @@ StatsScreen_placeCaughtTime:
 	ld e, l
 	call CopyName1
 	ld de, wStringBuffer2
-	hlcoord 6, 9
+	hlcoord 6, 8
 	call PlaceString
 	ret
 .times
@@ -1082,17 +1092,17 @@ StatsScreen_placeCaughtLevel:
 
 .print
 	ld [wTextDecimalByte], a
-	hlcoord 12, 9
+	hlcoord 12, 8
 	ld de, wTextDecimalByte
 	lb bc, PRINTNUM_LEFTALIGN | 1, 3
 	call PrintNum
-	hlcoord 11, 9
+	hlcoord 11, 8
 	ld [hl], "<LV>"
 	ret
 
 .unknown_level
 	ld de, .MetUnknownLevelString
-	hlcoord 11, 9
+	hlcoord 11, 8
 	call PlaceString
 	ret   
 .MetUnknownLevelString:
