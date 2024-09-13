@@ -31,18 +31,18 @@
 
 Rival1Group:
 	; RIVAL1 (1)
-	db "?@", TRAINERTYPE_NORMAL
-	db  5, CHIKORITA
+	db "?@", TRAINERTYPE_ITEM
+	db 5, CHIKORITA,	BERRY
 	db -1 ; end
 
 	; RIVAL1 (2)
-	db "?@", TRAINERTYPE_NORMAL
-	db  5, CYNDAQUIL
+	db "?@", TRAINERTYPE_ITEM
+	db 5, CYNDAQUIL,	BERRY
 	db -1 ; end
 
 	; RIVAL1 (3)
-	db "?@", TRAINERTYPE_NORMAL
-	db  5, TOTODILE
+	db "?@", TRAINERTYPE_ITEM
+	db 5, TOTODILE,	BERRY
 	db -1 ; end
 
 	; RIVAL1 (4)
