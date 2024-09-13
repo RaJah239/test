@@ -485,6 +485,7 @@ AideScript_WalkBalls1:
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksRight1
 	turnobject PLAYER, DOWN
 	scall AideScript_GiveYouBalls
+	scall AideScript_EXPShare
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksLeft1
 	end
 
@@ -492,6 +493,7 @@ AideScript_WalkBalls2:
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksRight2
 	turnobject PLAYER, DOWN
 	scall AideScript_GiveYouBalls
+	scall AideScript_EXPShare
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksLeft2
 	end
 
@@ -503,8 +505,15 @@ AideScript_GiveYouBalls:
 	scall AideScript_ReceiveTheBalls
 	giveitem POKE_BALL, 5
 	writetext AideText_ExplainBalls
+	end
+
+AideScript_EXPShare:
 	promptbutton
-	itemnotify
+	writetext AideText_GetEXPShare
+	promptbutton
+	verbosegiveitem EXP_SHARE
+	writetext AideText_EXPShareInfoText
+	promptbutton
 	closetext
 	setscene SCENE_ELMSLAB_NOOP
 	end
@@ -1291,6 +1300,19 @@ ElmsLabOfficerText2:
 
 	para "Thanks for helping"
 	line "my investigation!"
+	done
+
+AideText_GetEXPShare:
+	text "Please take this"
+	line "too."
+
+	para "It's EXP SHARE!"
+	done
+	
+AideText_EXPShareInfoText:
+	text "It shares"
+	line "EXP. Points with"
+	cont "all your #MON."
 	done
 
 ElmsLabWindowText1:
