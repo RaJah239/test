@@ -156,6 +156,8 @@ INCLUDE "engine/battle/read_trainer_party.asm"
 ;SECTION "Enemy Trainer Parties 1", ROMX
 INCLUDE "data/trainers/parties.asm"
 
+;SECTION "Rival's Teams", ROMX
+INCLUDE "data/trainers/rivalteams.asm"
 
 SECTION "Battle Core", ROMX
 
