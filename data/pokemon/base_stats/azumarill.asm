@@ -1,7 +1,7 @@
 	db AZUMARILL ; 184
 
 	db 100,  50,  80,  50,  50,  80
-	evs  3,   0,   0,   0,   0,   0
+	evs  2,   1,   1,   1,   1,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER,NORMAL ; type

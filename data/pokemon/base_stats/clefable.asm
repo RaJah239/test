@@ -1,7 +1,7 @@
 	db CLEFABLE ; 036
 
 	db  95,  70,  73,  60,  85,  90
-	evs  3,   0,   0,   0,   0,   0
+	evs  2,   1,   1,   1,   1,   2
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, STEEL ; type

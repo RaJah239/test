@@ -1,7 +1,7 @@
 	db ODDISH ; 043
 
 	db  45,  50,  55,  30,  75,  65
-	evs  0,   0,   0,   0,   1,   0
+	evs  1,   1,   1,   0,   1,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, POISON ; type

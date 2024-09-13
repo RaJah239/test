@@ -1,7 +1,7 @@
 	db NIDORINA ; 030
 
 	db  70,  62,  67,  56,  55,  55
-	evs  2,   0,   0,   0,   0,   0
+	evs  1,   1,   1,   1,   1,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db POISON, POISON ; type

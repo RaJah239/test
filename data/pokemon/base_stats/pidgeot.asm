@@ -1,7 +1,7 @@
 	db PIDGEOT ; 018
 
 	db  83,  80,  75,  91,  70,  70
-	evs  0,   0,   0,   3,   0,   0
+	evs  1,   1,   1,   2,   1,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, FLYING ; type

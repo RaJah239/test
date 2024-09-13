@@ -1,7 +1,7 @@
 	db GLOOM ; 044
 
 	db  60,  65,  70,  40,  85,  75
-	evs  0,   0,   0,   0,   2,   0
+	evs  1,   1,   1,   0,   1,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db GRASS, POISON ; type

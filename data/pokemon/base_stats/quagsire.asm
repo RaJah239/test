@@ -1,7 +1,7 @@
 	db QUAGSIRE ; 195
 
 	db  95,  85,  85,  35,  65,  65
-	evs  2,   0,   0,   0,   0,   0
+	evs  2,   1,   1,   0,   1,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, GROUND ; type

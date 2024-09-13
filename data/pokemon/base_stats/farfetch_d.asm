@@ -1,7 +1,7 @@
 	db FARFETCH_D ; 083
 
 	db  52,  65,  55,  60,  58,  62
-	evs  0,   1,   0,   0,   0,   0
+	evs  1,   1,   1,   1,   1,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, FLYING ; type

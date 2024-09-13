@@ -1,7 +1,7 @@
 	db KABUTO ; 140
 
 	db  30,  80,  90,  55,  55,  45
-	evs  0,   0,   1,   0,   0,   0
+	evs  0,   1,   2,   1,   1,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db ROCK, WATER ; type

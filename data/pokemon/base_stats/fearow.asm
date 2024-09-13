@@ -1,7 +1,7 @@
 	db FEAROW ; 022
 
 	db  65,  90,  65, 100,  61,  61
-	evs  0,   0,   0,   2,   0,   0
+	evs  1,   2,   1,   2,   1,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, FLYING ; type

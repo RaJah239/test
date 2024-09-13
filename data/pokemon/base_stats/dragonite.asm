@@ -1,7 +1,7 @@
 	db DRAGONITE ; 149
 
 	db  91, 134,  95,  80, 100, 100
-	evs  0,   3,   0,   0,   0,   0
+	evs  2,   3,   2,   1,   2,   2
 	;   hp  atk  def  spd  sat  sdf
 
 	db DRAGON, FLYING ; type

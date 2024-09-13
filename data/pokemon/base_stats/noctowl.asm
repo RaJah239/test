@@ -1,7 +1,7 @@
 	db NOCTOWL ; 164
 
 	db 100,  50,  50,  70,  76,  96
-	evs  2,   0,   0,   0,   0,   0
+	evs  2,   1,   1,   1,   1,   2
 	;   hp  atk  def  spd  sat  sdf
 
 	db GHOST, FLYING ; type

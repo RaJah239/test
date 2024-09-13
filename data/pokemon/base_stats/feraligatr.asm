@@ -1,7 +1,7 @@
 	db FERALIGATR ; 160
 
 	db  85, 105, 100,  78,  79,  83
-	evs  0,   2,   1,   0,   0,   0
+	evs  1,   2,   2,   1,   1,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, WATER ; type

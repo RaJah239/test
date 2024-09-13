@@ -1,7 +1,7 @@
 	db PUPITAR ; 247
 
 	db  70,  84,  70,  51,  65,  70
-	evs  0,   2,   0,   0,   0,   0
+	evs  1,   1,   1,   1,   1,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db ROCK, GROUND ; type

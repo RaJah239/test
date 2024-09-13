@@ -1,7 +1,7 @@
 	db GOLDEEN ; 118
 
 	db  45,  67,  60,  63,  35,  50
-	evs  0,   1,   0,   0,   0,   0
+	evs  1,   1,   1,   1,   0,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, WATER ; type

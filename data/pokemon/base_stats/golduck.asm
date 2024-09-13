@@ -1,7 +1,7 @@
 	db GOLDUCK ; 055
 
 	db  80,  82,  78,  85,  95,  80
-	evs  0,   0,   0,   0,   2,   0
+	evs  1,   1,   1,   1,   2,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, PSYCHIC_TYPE ; type

@@ -1,7 +1,7 @@
 	db GRIMER ; 088
 
 	db  80,  80,  50,  25,  40,  50
-	evs  1,   0,   0,   0,   0,   0
+	evs  1,   1,   1,   0,   0,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db POISON, POISON ; type

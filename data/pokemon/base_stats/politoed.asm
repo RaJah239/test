@@ -1,7 +1,7 @@
 	db POLITOED ; 186
 
 	db  90,  75,  75,  70,  90, 100
-	evs  0,   0,   0,   0,   0,   3
+	evs  2,   1,   1,   1,   2,   2
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, WATER ; type

@@ -1,7 +1,7 @@
 	db MAROWAK ; 105
 
 	db  60,  80, 110,  45,  50,  80
-	evs  0,   0,   2,   0,   0,   0
+	evs  1,   1,   2,   1,   1,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db GROUND, GHOST ; type

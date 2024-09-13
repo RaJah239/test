@@ -1,7 +1,7 @@
 	db MARILL ; 183
 
 	db  70,  20,  50,  40,  20,  50
-	evs  2,   0,   0,   0,   0,   0
+	evs  1,   0,   1,   0,   0,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER,NORMAL ; type
