@@ -159,6 +159,8 @@ INCLUDE "data/trainers/parties.asm"
 ;SECTION "Rival's Teams", ROMX
 INCLUDE "data/trainers/rivalteams.asm"
 
+INCLUDE "data/trainers/randomparty.asm"
+
 SECTION "Battle Core", ROMX
 
 INCLUDE "engine/battle/core.asm"
