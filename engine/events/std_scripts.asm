@@ -611,6 +611,8 @@ InitializeEventsScript:
 	setevent EVENT_SAFFRON_TRAIN_STATION_POPULATION
 	setevent EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
 	setevent EVENT_INITIALIZED_EVENTS
+	; here to place my events that initialize on game start
+	setevent EVENT_MAXIMA_APPEAR_MT_SILVER_OUTSIDE
 	endcallback
 
 AskNumber1MScript:

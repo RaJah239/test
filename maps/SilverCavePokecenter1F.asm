@@ -33,6 +33,7 @@ SilverCavePokecenter1MaximaEventScript:
 	setscene SCENE_MRPOKEMONSHOUSE_NOOP
 	disappear SILVERCAVEPOKECENTER1F_MAXIMA
 	setevent EVENT_MET_SILVERCAVEPOKECENTER1F_MAXIMA
+	clearevent EVENT_MAXIMA_APPEAR_MT_SILVER_OUTSIDE
 	end
 
 MasterMaximaWalksToPlayer:
