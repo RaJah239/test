@@ -85,7 +85,7 @@ MasterMaximaIntroText:
 
 	para "Say <PLAY_G>…"
 
-	para "I challenge you to"
+	para "Let's have a"
 	line "#MON battle!"
 
 	para "Oh? I see."
@@ -204,7 +204,7 @@ MoneyCollectorIntroText:
 	para "when all used on a"
 	line "single #MON has"
 
-	para "it reach it's max-"
+	para "it reach its max-"
 	line "imum potential!"
 	
 	para "The items are:"
