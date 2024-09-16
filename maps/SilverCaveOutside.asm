@@ -236,7 +236,6 @@ MaximaIntroText:
 	line "many magnificent"
 	cont "battles <PLAY_G>!"
 	done
-	
 
 NotFinishedBeatRedText:
 	text "Oh? Still on your"

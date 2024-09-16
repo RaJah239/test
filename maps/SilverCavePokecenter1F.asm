@@ -56,10 +56,10 @@ MasterMaximaIntroText:
 
 	para "…"
 	
-	para "Hm…so your name is"
-	line "<PLAY_G>?"
+	para "Hm… So you're"
+	line "<PLAY_G> you say?"
 
-	para "It's nice to make"
+	para "Delighted to make"
 	line "your acquaintance!"
 
 	para "Sorry. I may have"
@@ -129,6 +129,10 @@ SilverCavePokecenter1FMoneyCollectorMScript:
 	iffalse .Refused
 	checkmoney YOUR_MONEY, 999999
 	ifequal HAVE_LESS, .MoneyNotAtMax
+	writetext ReceivedTrainingKit
+	playsound SFX_1ST_PLACE
+	pause 100
+	waitbutton
 	giveitem RARE_CANDY_XC
 	giveitem RARE_CANDY, 10
 	giveitem HP_UP, 63
@@ -257,6 +261,11 @@ MoneyCollectorMNoRoomText:
 DropByAnyTimeText:
 	text "VICTOR: Drop by"
 	line "anytime."
+	done
+
+ReceivedTrainingKit:
+	text "<PLAY_G> received"
+	line "TRAINING KIT!"
 	done
 
 ThanksFortheMoneyText:
