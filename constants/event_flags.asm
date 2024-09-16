@@ -271,7 +271,8 @@
 ; Crytal Trove events start here.
 	const EVENT_MET_INDIGOPLATEAUPOKECENTER1F_COINCOLLECTORF
 	const SILVERCAVEPOKECENTER1F_MONEYCOLLECTORM
-; Unused: next 337 events
+	const EVENT_MET_SILVERCAVEPOKECENTER1F_MAXIMA
+; Unused: next 336 events
 
 	const_next 600
 ; Kurt Apricorn events

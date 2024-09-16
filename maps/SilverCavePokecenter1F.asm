@@ -1,11 +1,114 @@
 	object_const_def
 	const SILVERCAVEPOKECENTER1F_NURSE
 	const SILVERCAVEPOKECENTER1F_MONEYCOLLECTOR_M
+	const SILVERCAVEPOKECENTER1F_MAXIMA
 
 SilverCavePokecenter1F_MapScripts:
 	def_scene_scripts
+	scene_script SilverCavePokecenter1FScene, SCENE_SILVERCAVEPOKECENTER1F_MAXIMA
+	scene_script SilverCavePokecenter1FNoop1, SCENE_SILVERCAVEPOKECENTER1F_NOOP
 
 	def_callbacks
+
+SilverCavePokecenter1FScene:
+	sdefer SilverCavePokecenter1MaximaEventScript
+       end
+SilverCavePokecenter1FNoop1:
+       end
+
+SilverCavePokecenter1MaximaEventScript:
+	showemote EMOTE_SHOCK, SILVERCAVEPOKECENTER1F_MAXIMA, 15
+	turnobject SILVERCAVEPOKECENTER1F_MAXIMA, DOWN
+	opentext
+	writetext MasterMaximaSpottedText
+	waitbutton
+	closetext
+	applymovement SILVERCAVEPOKECENTER1F_MAXIMA, MasterMaximaWalksToPlayer
+	opentext
+	writetext MasterMaximaIntroText
+    waitbutton
+   	closetext
+	applymovement SILVERCAVEPOKECENTER1F_MAXIMA, MasterMaximaWalksLeaves
+	playsound SFX_ENTER_DOOR
+	setscene SCENE_MRPOKEMONSHOUSE_NOOP
+	disappear SILVERCAVEPOKECENTER1F_MAXIMA
+	setevent EVENT_MET_SILVERCAVEPOKECENTER1F_MAXIMA
+	end
+
+MasterMaximaWalksToPlayer:
+	step RIGHT
+	step DOWN
+	step_end
+
+MasterMaximaWalksLeaves:
+	step RIGHT
+	step DOWN
+	step_end
+
+MasterMaximaSpottedText:
+	text "Wow, this is rare."
+	done
+
+MasterMaximaIntroText:
+    text "Why hello there."
+	line "I'm MAXIMA."
+
+	para "…"
+	
+	para "Hm…so your name is"
+	line "<PLAY_G>?"
+
+	para "It's nice to make"
+	line "your acquaintance!"
+
+	para "Sorry. I may have"
+	line "startled you."
+
+	para "You've certainly"
+	line "made if far."
+	
+	para "I commend you."
+
+	para "I didn't think any-"
+	line "one would be here."
+
+	para "I was visiting my"
+	line "pal, VICTOR here."
+
+	para "He helps trainers'"
+	line "get their #MON"
+	cont "to their peak."
+
+	para "I'm sure he'd be"
+	line "delighted to meet"
+	cont "you."
+
+	para "Say <PLAY_G>…"
+
+	para "I challenge you to"
+	line "#MON battle!"
+
+	para "Oh? I see."
+	
+	para "So you're on a"
+	line "mission to climb"
+	cont "MT.SIVLER you say?"
+	
+	para "I won't get in your"
+	line "way."
+	
+	para "But, after you're"
+	line "done, return and"
+
+	para "let's have one of"
+	line "many magnificent"
+	cont "battles!"
+	
+	para "I'll be outside"
+	line "meantime."
+
+	para "Bye for now."
+	done
 
 SilverCavePokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
@@ -198,3 +301,4 @@ SilverCavePokecenter1F_MapEvents:
 	def_object_events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverCavePokecenter1FNurseScript, -1
 	object_event  1,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverCavePokecenter1FMoneyCollectorMScript, -1
+	object_event  2,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 2, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverCavePokecenter1MaximaEventScript, EVENT_MET_SILVERCAVEPOKECENTER1F_MAXIMA

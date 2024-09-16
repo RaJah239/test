@@ -84,4 +84,5 @@ MapScenes::
 	scene_var MOUNT_MOON_SQUARE,                           wMountMoonSquareSceneID
 	scene_var MOBILE_TRADE_ROOM,                           wMobileTradeRoomSceneID
 	scene_var MOBILE_BATTLE_ROOM,                          wMobileBattleRoomSceneID
+	scene_var SILVER_CAVE_POKECENTER_1F,                   wSilverCavePokecenter1F
 	db -1 ; end
