@@ -703,6 +703,9 @@ DEF KRIS EQU __trainer_class__
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
 
+	trainerclass MAXIMA
+	const MAXIMA1
+
  	const_def
  	const RANDOMLIST_0
 

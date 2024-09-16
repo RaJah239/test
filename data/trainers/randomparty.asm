@@ -13,28 +13,28 @@
 SECTION "Random Party Lists", ROMX
 
 ; EXAMPLE -: The Trainer's Group must be above RandomPartyLists::
-;TrainerGroup: 
-;	; MAXIMA (1)
+MaximaGroup: 
+	; MAXIMA (1)
 	db "MAXIMA@", TRAINERTYPE_RANDOM | TRAINERTYPE_NICKNAME | TRAINERTYPE_DVS | TRAINERTYPE_EVS | TRAINERTYPE_ITEM | TRAINERTYPE_MOVES, 1, RANDOMLIST_0 ; RANDOMLIST_0 matches const RANDOMLIST_0
-;	db -1 ; end
+	db -1 ; end
 
 RandomPartyLists::
 
 ; EXAMPLE from above continued -:
-;   ; RANDOMLIST_0
-;   db 2
-;	db 1, VENUSAUR
-;			db "DINO@"		; Nickname
-;			db $EA, $AA		; atk|def dv, spd|spc dv
-;			ds 6, MAX_EV	; hp, atk, def, spd, sat, sdf 
-;			db LEFTOVERS	; NO_ITEM is a thing
-;			db SLEEP_POWDER, LEECH_SEED, GIGA_DRAIN, ROCK_SLIDE ; Moveset - NO_MOVE is a thing
-;			db $fe ; End of Pokemon
-;	db 1, CHARIZARD
-;			db "ZARD@"		; Nickname
-;			db $DE, $DD		; atk|def dv, spd|spc dv
-;			ds 6, MAX_EV	; hp, atk, def, spd, sat, sdf 
-;			db LEFTOVERS	; NO_ITEM is a thing
-;			db SLEEP_POWDER, LEECH_SEED, GIGA_DRAIN, ROCK_SLIDE ; Moveset - NO_MOVE is a thing
-;			db $fe ; End of Pokemon
-;	db -1 ; end
+   ; RANDOMLIST_0
+   db 2
+	db 1, VENUSAUR
+			db "DINO@"		; Nickname
+			db $EA, $AA		; atk|def dv, spd|spc dv
+			ds 6, MAX_EV	; hp, atk, def, spd, sat, sdf 
+			db LEFTOVERS	; NO_ITEM is a thing
+			db SLEEP_POWDER, LEECH_SEED, GIGA_DRAIN, ROCK_SLIDE ; Moveset - NO_MOVE is a thing
+			db $fe ; End of Pokemon
+	db 1, CHARIZARD
+			db "ZARD@"		; Nickname
+			db $DE, $DD		; atk|def dv, spd|spc dv
+			ds 6, MAX_EV	; hp, atk, def, spd, sat, sdf 
+			db LEFTOVERS	; NO_ITEM is a thing
+			db SLEEP_POWDER, LEECH_SEED, GIGA_DRAIN, ROCK_SLIDE ; Moveset - NO_MOVE is a thing
+			db $fe ; End of Pokemon
+	db -1 ; end
