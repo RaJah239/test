@@ -20,7 +20,7 @@ ItemDescriptions:
 	dw SuperPotionDesc
 	dw PotionDesc
 	dw EscapeRopeDesc
-	dw RepelDesc
+	dw RareCandyXCDesc
 	dw MaxElixerDesc
 	dw FireStoneDesc
 	dw ThunderStoneDesc
@@ -334,8 +334,9 @@ EscapeRopeDesc:
 	db   "Use for escaping"
 	next "from caves, etc.@"
 
-RepelDesc:
-	db   "!@"
+RareCandyXCDesc:
+	db   "Shifts a #MON's"
+	next "level to 90.@"
 
 MaxElixerDesc:
 	db   "Fully restores the"

@@ -19,7 +19,7 @@ ItemNames::
 	li "SUPER POTION"
 	li "POTION"
 	li "ESCAPE ROPE"
-	li "REPEL"
+	li "XC CANDY"
 	li "MAX ELIXER"
 	li "FIRE STONE"
 	li "THUNDERSTONE"

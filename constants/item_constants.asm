@@ -25,7 +25,7 @@
 	const SUPER_POTION ; 11
 	const POTION       ; 12
 	const ESCAPE_ROPE  ; 13
-	const REPEL        ; 14
+	const RARE_CANDY_XC; 14
 	const MAX_ELIXER   ; 15
 	const FIRE_STONE   ; 16
 	const THUNDERSTONE ; 17
