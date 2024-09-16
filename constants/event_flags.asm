@@ -270,7 +270,8 @@
 	const EVENT_TIFFANY_GAVE_PINK_BOW
 ; Crytal Trove events start here.
 	const EVENT_MET_INDIGOPLATEAUPOKECENTER1F_COINCOLLECTORF
-; Unused: next 338 events
+	const SILVERCAVEPOKECENTER1F_MONEYCOLLECTORM
+; Unused: next 337 events
 
 	const_next 600
 ; Kurt Apricorn events
