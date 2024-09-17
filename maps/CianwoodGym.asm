@@ -68,6 +68,7 @@ CianwoodGymChuckScript:
 	setevent EVENT_BEAT_BLACKBELT_LAO
 	setevent EVENT_BEAT_BLACKBELT_NOB
 	setevent EVENT_BEAT_BLACKBELT_LUNG
+	setmapscene CIANWOOD_CITY, SCENE_CIANWOODCITY_CHUCKS_WIFE_HM
 	writetext ChuckExplainBadgeText
 	promptbutton
 	verbosegiveitem TM_DYNAMICPUNCH

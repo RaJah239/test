@@ -16,6 +16,7 @@ CianwoodCity_MapScripts:
 	def_scene_scripts
 	scene_script CianwoodCityNoop1Scene, SCENE_CIANWOODCITY_NOOP
 	scene_script CianwoodCityNoop2Scene, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
+	scene_script CianwoodCityNoop3Scene, SCENE_CIANWOODCITY_CHUCKS_WIFE_HM
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, CianwoodCityFlypointAndSuicuneCallback
@@ -24,6 +25,9 @@ CianwoodCityNoop1Scene:
 	end
 
 CianwoodCityNoop2Scene:
+	end
+
+CianwoodCityNoop3Scene:
 	end
 
 CianwoodCityFlypointAndSuicuneCallback:
@@ -86,26 +90,13 @@ CianwoodCityChucksWife:
 	checkevent EVENT_GOT_HM02_FLY
 	iftrue .GotFly
 	writetext ChucksWifeEasierToFlyText
-	promptbutton
-	checkevent EVENT_BEAT_CHUCK
-	iftrue .BeatChuck
-	writetext ChucksWifeBeatChuckText
 	waitbutton
 	closetext
 	end
 
-.BeatChuck:
-	writetext ChucksWifeGiveHMText
-	promptbutton
-	verbosegiveitem HM_FLY
-	iffalse .Done
-	setevent EVENT_GOT_HM02_FLY
-	writetext ChucksWifeFlySpeechText
-	promptbutton
 .GotFly:
 	writetext ChucksWifeChubbyText
 	waitbutton
-.Done:
 	closetext
 	end
 
@@ -188,19 +179,6 @@ ChucksWifeEasierToFlyText:
 
 	para "#MON knew how"
 	line "to FLY…"
-	done
-
-ChucksWifeBeatChuckText:
-	text "But you can't use"
-	line "FLY without this"
-	cont "city's GYM BADGE."
-
-	para "If you beat the"
-	line "GYM LEADER here,"
-	cont "come see me."
-
-	para "I'll have a nice"
-	line "gift for you."
 	done
 
 ChucksWifeGiveHMText:
@@ -374,6 +352,32 @@ CianwoodPokeSeerSignText:
 	line "AHEAD"
 	done
 
+CianwoodCityChucksWifeGivesHM:
+	showemote EMOTE_SHOCK, CIANWOODCITY_POKEFAN_F, 15
+	applymovement CIANWOODCITY_POKEFAN_F, CianwoodCityChucksWifeApproachMovement
+	setscene SCENE_CIANWOODCITY_NOOP
+	opentext
+	writetext ChucksWifeGiveHMText
+	promptbutton
+	verbosegiveitem HM_FLY
+	iffalse .Done
+	setevent EVENT_GOT_HM02_FLY
+	writetext ChucksWifeFlySpeechText
+	promptbutton
+	writetext ChucksWifeChubbyText
+	waitbutton
+.Done:
+	closetext
+	end
+
+
+
+CianwoodCityChucksWifeApproachMovement:
+	step LEFT
+	step LEFT
+	step UP
+	step_end
+
 CianwoodCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -388,6 +392,7 @@ CianwoodCity_MapEvents:
 
 	def_coord_events
 	coord_event 11, 16, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE, CianwoodCitySuicuneAndEusine
+	coord_event  8, 44, SCENE_CIANWOODCITY_CHUCKS_WIFE_HM, CianwoodCityChucksWifeGivesHM
 
 	def_bg_events
 	bg_event 20, 34, BGEVENT_READ, CianwoodCitySign
@@ -409,6 +414,6 @@ CianwoodCity_MapEvents:
 	object_event  5, 29, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event 10, 27, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  4, 19, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event 10, 46, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
+	object_event 10, 46, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
 	object_event 11, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CIANWOOD_CITY_EUSINE
 	object_event 10, 14, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
