@@ -106,6 +106,7 @@
 	const SPRITE_KRIS_RUN
 	const SPRITE_CHRIS_SURF
 	const SPRITE_KRIS_SURF
+	const SPRITE_CHANSEY_OW
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
