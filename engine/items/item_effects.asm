@@ -189,7 +189,7 @@ ItemEffects:
 	dw RestoreHPEffect     ; BERRY
 	dw RestoreHPEffect     ; GOLD_BERRY
 	dw SquirtbottleEffect  ; SQUIRTBOTTLE
-	dw NoEffect            ; ITEM_B0
+	dw LanternEffect       ; LANTERN
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
 	dw NoEffect            ; ITEM_B3
@@ -3025,4 +3025,10 @@ PowerGloveEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
 	farcall StrengthFunction
+	ret
+
+LanternEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall FlashFunction
 	ret

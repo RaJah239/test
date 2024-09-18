@@ -175,7 +175,7 @@ ItemNames::
 	li "BERRY"
 	li "GOLD BERRY"
 	li "SQUIRTBOTTLE"
-	li "TERU-SAMA"
+	li "LANTERN"
 	li "PARK BALL"
 	li "RAINBOW WING"
 	li "TERU-SAMA"
