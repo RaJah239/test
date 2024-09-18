@@ -434,6 +434,7 @@ DEF KRIS EQU __trainer_class__
 	const HUEY2
 	const HUEY3
 	const HUEY4
+	const STEELE ; newly added to Crystal Trove to replace NOB in Chuck's GYM.
 
 	trainerclass SUPER_NERD ; 29
 	const STAN
@@ -529,7 +530,7 @@ DEF KRIS EQU __trainer_class__
 	const YOSHI
 	const KENJI2 ; unused
 	const LAO
-	const NOB
+	const NOB    ; unused now, was previously used in Chuck's GYM - Crystal Trove
 	const KIYO
 	const LUNG
 	const KENJI3
