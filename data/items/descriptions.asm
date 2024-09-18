@@ -42,7 +42,7 @@ ItemDescriptions:
 	dw ReviveDesc
 	dw MaxReviveDesc
 	dw GuardSpecDesc
-	dw SuperRepelDesc
+	dw HedgerDesc
 	dw MaxRepelDesc
 	dw DireHitDesc
 	dw TeruSama3Desc
@@ -421,8 +421,9 @@ GuardSpecDesc:
 	db   "Prevents stats"
 	next "reduction. (1 BTL)@"
 
-SuperRepelDesc:
-	db   "!@"
+HedgerDesc:
+	db   "Cuts trees without"
+	next "a #MON!@"
 
 MaxRepelDesc:
 	db   "!@"

@@ -55,7 +55,7 @@ ItemEffects:
 	dw ReviveEffect        ; REVIVE
 	dw ReviveEffect        ; MAX_REVIVE
 	dw GuardSpecEffect     ; GUARD_SPEC
-	dw SuperRepelEffect    ; SUPER_REPEL
+	dw HedgerEffect        ; HEDGER
 	dw MaxRepelEffect      ; MAX_REPEL
 	dw DireHitEffect       ; DIRE_HIT
 	dw NoEffect            ; ITEM_2D
@@ -3008,3 +3008,9 @@ ExpShareToggleOff:
 ExpShareToggleOn:
 	text_far _ExpShareToggleOn
 	text_end
+
+HedgerEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall CutFunction
+	ret

@@ -41,7 +41,7 @@ ItemNames::
 	li "REVIVE"
 	li "MAX REVIVE"
 	li "GUARD SPEC."
-	li "SUPER REPEL"
+	li "HEDGER"
 	li "MAX REPEL"
 	li "DIRE HIT"
 	li "TERU-SAMA"

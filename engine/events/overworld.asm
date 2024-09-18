@@ -312,7 +312,6 @@ Script_CutFromMenu:
 	special UpdateTimePals
 
 Script_Cut:
-	callasm GetPartyNickname
 	writetext UseCutText
 	refreshmap
 	callasm CutDownTreeOrGrass
@@ -1962,6 +1961,18 @@ TryCutOW::
 	ld hl, wNumItems
 	call CheckItem
 	jr z, .cant_cut
+
+	ld a, HEDGER
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr c, .can_cut
+
+	ld d, CUT
+	call CheckPartyMove
+	jr c, .cant_cut
+
+.can_cut
 
 ; Step 3
 	ld d, CUT
