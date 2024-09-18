@@ -625,16 +625,15 @@ TrySurfOW::
 	jr z, .yes
 
 ; Step 4
-	ld d, SURF
-	call CheckPartyMove
-	jr c, .quit
-
 	ld a, PADDLE_BOAT
 	ld [wCurItem], a
 	ld hl, wNumItems
 	call CheckItem
-	jr nc, .quit
+	jr c, .yes
 
+	ld d, SURF
+	call CheckPartyMove
+	jr c, .quit
 .yes
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
