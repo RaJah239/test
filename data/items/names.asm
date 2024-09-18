@@ -42,7 +42,7 @@ ItemNames::
 	li "MAX REVIVE"
 	li "GUARD SPEC."
 	li "HEDGER"
-	li "MAX REPEL"
+	li "PADDLE BOAT"
 	li "DIRE HIT"
 	li "TERU-SAMA"
 	li "FRESH WATER"

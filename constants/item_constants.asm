@@ -48,7 +48,7 @@
 	const MAX_REVIVE   ; 28
 	const GUARD_SPEC   ; 29
 	const HEDGER       ; 2a
-	const MAX_REPEL    ; 2b
+	const PADDLE_BOAT  ; 2b
 	const DIRE_HIT     ; 2c
 	const ITEM_2D      ; 2d
 	const FRESH_WATER  ; 2e

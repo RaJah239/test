@@ -314,9 +314,8 @@ _BlindingFlashText::
 	text_end
 
 _UsedSurfText::
-	text_ram wStringBuffer2
-	text " used"
-	line "SURF!"
+	text "Started traversing"
+	line "the water."
 	done
 
 _CantSurfText::

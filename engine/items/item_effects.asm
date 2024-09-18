@@ -56,7 +56,7 @@ ItemEffects:
 	dw ReviveEffect        ; MAX_REVIVE
 	dw GuardSpecEffect     ; GUARD_SPEC
 	dw HedgerEffect        ; HEDGER
-	dw MaxRepelEffect      ; MAX_REPEL
+	dw PaddleBoatEffect    ; PADDLE_BOAT
 	dw DireHitEffect       ; DIRE_HIT
 	dw NoEffect            ; ITEM_2D
 	dw RestoreHPEffect     ; FRESH_WATER
@@ -3013,4 +3013,10 @@ HedgerEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
 	farcall CutFunction
+	ret
+
+PaddleBoatEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall SurfFunction
 	ret

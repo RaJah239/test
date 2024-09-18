@@ -43,7 +43,7 @@ ItemDescriptions:
 	dw MaxReviveDesc
 	dw GuardSpecDesc
 	dw HedgerDesc
-	dw MaxRepelDesc
+	dw PaddleBoatDesc
 	dw DireHitDesc
 	dw TeruSama3Desc
 	dw FreshWaterDesc
@@ -425,8 +425,9 @@ HedgerDesc:
 	db   "Cuts trees without"
 	next "a #MON!@"
 
-MaxRepelDesc:
-	db   "!@"
+PaddleBoatDesc:
+	db   "Paddle boat used"
+	next "to cross water!@"
 
 DireHitDesc:
 	db   "Ups critical hit"
