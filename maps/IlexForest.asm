@@ -350,8 +350,11 @@ IlexForestCharcoalMasterScript:
 	writetext Text_CharcoalMasterIntro
 	promptbutton
 	verbosegiveitem HM_CUT
-	setevent EVENT_GOT_HM01_CUT
 	writetext Text_CharcoalMasterOutro
+	promptbutton
+	verbosegiveitem HEDGER
+	writetext Text_CharcoalMasterFinal
+	setevent EVENT_GOT_HM01_CUT
 	waitbutton
 	closetext
 	setevent EVENT_ILEX_FOREST_FARFETCHD
@@ -794,16 +797,26 @@ Text_CharcoalMasterIntro:
 
 Text_CharcoalMasterOutro:
 	text "That's the CUT HM."
-	line "Teach that to a"
 
-	para "#MON to clear"
-	line "small trees."
+	para "#MON able to"
+	line "learn it can clear"
+	cont "small trees."
 
-	para "Of course, you"
-	line "have to have the"
+	para "Take this too!"
+	done
 
-	para "GYM BADGE from"
-	line "AZALEA to use it."
+Text_CharcoalMasterFinal:
+	text "That's a HEDGER!"
+	line "It's a Key Item."
+
+	para "It functions like"
+	line "the CUT HM."
+
+	para "They both need the"
+	line "AZALEA GYM BADGE"
+
+	para "to be able to CUT"
+	line "down small trees."
 	done
 
 Text_CharcoalMasterTalkAfter:
