@@ -171,7 +171,7 @@ ItemDescriptions:
 	dw GorgeousBoxDesc
 	dw SunStoneDesc
 	dw PolkadotBowDesc
-	dw TeruSama22Desc
+	dw PowerGloveDesc
 	dw UpGradeDesc
 	dw BerryDesc
 	dw GoldBerryDesc
@@ -913,8 +913,9 @@ PolkadotBowDesc:
 	db   "Powers up normal-"
 	next "type moves. (HOLD)@"
 
-TeruSama22Desc:
-	db   "?@"
+PowerGloveDesc:
+	db   "Gives the STRENGTH"
+	next "to push boulders.@"
 
 UpGradeDesc:
 	db   "A mysterious box"

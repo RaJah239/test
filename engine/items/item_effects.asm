@@ -184,7 +184,7 @@ ItemEffects:
 	dw GorgeousBoxEffect   ; GORGEOUS_BOX
 	dw EvoStoneEffect      ; SUN_STONE
 	dw NoEffect            ; POLKADOT_BOW
-	dw NoEffect            ; ITEM_AB
+	dw PowerGloveEffect    ; POWER_GLOVE
 	dw NoEffect            ; UP_GRADE
 	dw RestoreHPEffect     ; BERRY
 	dw RestoreHPEffect     ; GOLD_BERRY
@@ -3019,4 +3019,10 @@ PaddleBoatEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
 	farcall SurfFunction
+	ret
+
+PowerGloveEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall StrengthFunction
 	ret
