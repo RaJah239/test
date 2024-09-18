@@ -162,7 +162,7 @@ ItemDescriptions:
 	dw LevelBallDesc
 	dw LureBallDesc
 	dw FastBallDesc
-	dw TeruSama21Desc
+	dw StabilizerDesc
 	dw LightBallDesc
 	dw FriendBallDesc
 	dw MoonBallDesc
@@ -878,8 +878,9 @@ FastBallDesc:
 	db   "A BALL for catch-"
 	next "ing fast #MON.@"
 
-TeruSama21Desc:
-	db   "?@"
+StabilizerDesc:
+	db   "Dispels whirlpools"
+	next "on its own!@"
 
 LightBallDesc:
 	db   "An odd, electrical"

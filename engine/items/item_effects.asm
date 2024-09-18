@@ -175,7 +175,7 @@ ItemEffects:
 	dw PokeBallEffect      ; LEVEL_BALL
 	dw PokeBallEffect      ; LURE_BALL
 	dw PokeBallEffect      ; FAST_BALL
-	dw NoEffect            ; ITEM_A2
+	dw StabilizerEffect    ; STABILIZER
 	dw NoEffect            ; LIGHT_BALL
 	dw PokeBallEffect      ; FRIEND_BALL
 	dw PokeBallEffect      ; MOON_BALL
@@ -3031,4 +3031,10 @@ LanternEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
 	farcall FlashFunction
+	ret
+
+StabilizerEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall WhirlpoolFunction
 	ret
