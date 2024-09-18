@@ -287,6 +287,11 @@ _BadgeRequiredText::
 	line "is required."
 	prompt
 
+_CantDepositText::
+	text "Can't deposit TM/HM"
+	line "or Key Items."
+	prompt
+
 _CantUseItemText::
 	text "Can't use that"
 	line "here."

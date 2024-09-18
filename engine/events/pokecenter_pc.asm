@@ -450,17 +450,32 @@ PlayerDepositItemMenu:
 	text_end
 
 .TryDepositItem:
-	ld a, [wSpriteUpdatesEnabled]
-	push af
-	ld a, FALSE
-	ld [wSpriteUpdatesEnabled], a
-	farcall CheckItemMenu
-	ld a, [wItemAttributeValue]
-	ld hl, .dw
-	rst JumpTable
-	pop af
-	ld [wSpriteUpdatesEnabled], a
+    farcall CheckItemPocket
+    ld a, [wItemAttributeValue]
+    cp KEY_ITEM		; Check if it's a Key Item item
+    jr z, .CantDeposit
+    cp TM_HM        ; Check if it's a TM or HM item
+    jr z, .CantDeposit
+    ld a, [wSpriteUpdatesEnabled]
+    push af
+    ld a, FALSE
+    ld [wSpriteUpdatesEnabled], a
+    farcall CheckItemMenu
+    ld a, [wItemAttributeValue]
+    ld hl, .dw
+    rst JumpTable
+    pop af
+    ld [wSpriteUpdatesEnabled], a
+    ret
+
+.CantDeposit
+	ld hl, .CantDepositText
+	call MenuTextboxBackup ; push text to queue
 	ret
+
+.CantDepositText
+	text_far _CantDepositText
+	text_end
 
 .dw
 ; entries correspond to ITEMMENU_* constants
