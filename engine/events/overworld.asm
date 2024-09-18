@@ -1209,15 +1209,15 @@ TryStrengthOW:
 	jr z, .yes
 
 ; Step 4
-	ld d, STRENGTH
-	call CheckPartyMove
-	jr c, .nope
-
 	ld a, POWER_GLOVE
 	ld [wCurItem], a
 	ld hl, wNumItems
 	call CheckItem
-	jr nc, .nope
+	jr c, .yes
+
+	ld d, STRENGTH
+	call CheckPartyMove
+	jr c, .nope
 
 .yes
 	ld hl, wBikeFlags
