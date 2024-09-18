@@ -77,9 +77,12 @@ SageLiScript:
 	writetext SageLiTakeThisFlashText
 	promptbutton
 	verbosegiveitem HM_FLASH
+	writetext SageLiFlashExplanationText
+	promptbutton
+	verbosegiveitem LANTERN
+	writetext SageLiBadgeRequirementExplanationText
 	setevent EVENT_GOT_HM05_FLASH
 	setevent EVENT_BEAT_SAGE_LI
-	writetext SageLiFlashExplanationText
 	waitbutton
 	closetext
 	end
@@ -246,7 +249,15 @@ SageLiFlashExplanationText:
 	line "even the darkest"
 	cont "of all places."
 
-	para "But to use it out"
+	para "You may take this"
+	line "as well!"
+	done
+
+SageLiBadgeRequirementExplanationText:
+	text "LATERN is the item"
+	line "version of FLASH!"
+
+	para "To use both out"
 	line "of battle, you"
 
 	para "need the BADGE"
