@@ -286,6 +286,8 @@ RocketBaseElectrodeScript:
 	writetext RocketBaseLanceElectrodeDoneText
 	promptbutton
 	verbosegiveitem HM_WHIRLPOOL
+	promptbutton
+	verbosegiveitem STABILIZER
 	setevent EVENT_GOT_HM06_WHIRLPOOL
 	writetext RocketBaseLanceWhirlpoolText
 	waitbutton
@@ -724,11 +726,11 @@ RocketBaseLanceElectrodeDoneText:
 	line "the #MON."
 
 	para "Oh, yes. You"
-	line "should take this."
+	line "should take these."
 
-	para "I found it here,"
-	line "but I don't have"
-	cont "any need for it."
+	para "I found them here,"
+	line "but I don't need"
+	cont "them."
 	done
 
 RocketBaseLanceWhirlpoolText:
@@ -738,10 +740,17 @@ RocketBaseLanceWhirlpoolText:
 	para "#MON to get"
 	line "across wild water."
 
+	para "The second item is"
+	line "a STABILIZER."
+
+	para "It does the same"
+	line "WHIRLPOOL does out"
+	cont "of battles."
+
 	para "But keep this in"
 	line "mind."
 
-	para "You can use that"
+	para "You can use both"
 	line "out of battle only"
 
 	para "with the BADGE"
