@@ -13,6 +13,7 @@ Route36_MapScripts:
 	def_scene_scripts
 	scene_script Route36Noop1Scene, SCENE_ROUTE36_NOOP
 	scene_script Route36Noop2Scene, SCENE_ROUTE36_SUICUNE
+	scene_script Route36Noop3Scene, SCENE_ROUTE36_GUY_GIVES_ROCK_SMASH_TM
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, Route36ArthurCallback
@@ -21,6 +22,9 @@ Route36Noop1Scene:
 	end
 
 Route36Noop2Scene:
+	end
+
+Route36Noop3Scene:
 	end
 
 Route36ArthurCallback:
@@ -77,6 +81,7 @@ WateredWeirdTreeScript:: ; export (for when you use Squirtbottle from pack)
 	loadwildmon SUDOWOODO, 20
 	startbattle
 	setevent EVENT_FOUGHT_SUDOWOODO
+	setmapscene ROUTE_36, SCENE_ROUTE36_GUY_GIVES_ROCK_SMASH_TM
 	ifequal DRAW, DidntCatchSudowoodo
 	disappear ROUTE36_WEIRD_TREE
 	reloadmapafterbattle
@@ -120,24 +125,50 @@ Route36FloriaScript:
 	closetext
 	end
 
-Route36RockSmashGuyScript:
-	faceplayer
+GuyGivesRockSmashTMScript:
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, RIGHT
+	applymovement ROUTE36_FISHER, Route36RockSmashGuyApproachMovement
+	setscene SCENE_ROUTE36_NOOP
 	opentext
-	checkevent EVENT_GOT_TM08_ROCK_SMASH
-	iftrue .AlreadyGotRockSmash
-	checkevent EVENT_FOUGHT_SUDOWOODO
-	iftrue .ClearedSudowoodo
-	writetext RockSmashGuyText1
-	waitbutton
-	closetext
-	end
-
-.ClearedSudowoodo:
 	writetext RockSmashGuyText2
 	promptbutton
 	verbosegiveitem TM_ROCK_SMASH
 	iffalse .NoRoomForTM
 	setevent EVENT_GOT_TM08_ROCK_SMASH
+	writetext RockSmashGuyText3
+	waitbutton
+.NoRoomForTM:
+	closetext
+	applymovement ROUTE36_FISHER, Route36RockSmashGuyLeaveMovement
+	end
+
+Route36RockSmashGuyApproachMovement:
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step_end
+
+Route36RockSmashGuyLeaveMovement:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_end
+
+Route36RockSmashGuyScript:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_TM08_ROCK_SMASH
+	iftrue .AlreadyGotRockSmash
+	writetext RockSmashGuyText1
+	waitbutton
+	closetext
+	end
+
 .AlreadyGotRockSmash:
 	writetext RockSmashGuyText3
 	waitbutton
@@ -478,8 +509,8 @@ RockSmashGuyText1:
 	done
 
 RockSmashGuyText2:
-	text "Did you clear that"
-	line "wretched tree?"
+	text "You cleared that"
+	line "wretched tree!"
 
 	para "I'm impressed!"
 	line "I want you to"
@@ -649,6 +680,7 @@ Route36_MapEvents:
 	def_coord_events
 	coord_event 20,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
 	coord_event 22,  7, SCENE_ROUTE36_SUICUNE, Route36SuicuneScript
+	coord_event 35,  9, SCENE_ROUTE36_GUY_GIVES_ROCK_SMASH_TM, GuyGivesRockSmashTMScript
 
 	def_bg_events
 	bg_event 29,  1, BGEVENT_READ, Route36TrainerTips2
@@ -661,7 +693,7 @@ Route36_MapEvents:
 	object_event 31, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyAlan1, -1
 	object_event 35,  9, SPRITE_SUDOWOODO, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
 	object_event 51,  8, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1
-	object_event 44,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1
+	object_event 41,  9, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1
 	object_event 21,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36FruitTree, -1
 	object_event 46,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY
 	object_event 33, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FloriaScript, EVENT_FLORIA_AT_SUDOWOODO
