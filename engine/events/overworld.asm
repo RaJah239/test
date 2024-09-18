@@ -1973,6 +1973,12 @@ TryCutOW::
 	call CheckItem
 	jr z, .cant_cut
 
+; Step 3
+	ld d, CUT
+	call CheckPartyCanLearnMove
+       and a
+	jr z, .can_cut
+
 	ld a, HEDGER
 	ld [wCurItem], a
 	ld hl, wNumItems
@@ -1982,20 +1988,7 @@ TryCutOW::
 	ld d, CUT
 	call CheckPartyMove
 	jr c, .cant_cut
-
 .can_cut
-
-; Step 3
-	ld d, CUT
-	call CheckPartyCanLearnMove
-       and a
-	jr z, .yes
-
-; Step 4
-	ld d, CUT
-	call CheckPartyMove
-	jr c, .cant_cut
-.yes
 	ld a, BANK(AskCutScript)
 	ld hl, AskCutScript
 	call CallScript
