@@ -1490,16 +1490,14 @@ TryHeadbuttOW::
 	call CheckPartyCanLearnMove
     and a
 	jr z, .can_use ; cannot learn headbutt
-
+.no
+	xor a
+	ret
 .can_use
 	ld a, BANK(AskHeadbuttScript)
 	ld hl, AskHeadbuttScript
 	call CallScript
 	scf
-	ret
-
-.no
-	xor a
 	ret
 
 AskHeadbuttScript:
