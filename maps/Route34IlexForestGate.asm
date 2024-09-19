@@ -3,6 +3,7 @@
 	const ROUTE34ILEXFORESTGATE_BUTTERFREE
 	const ROUTE34ILEXFORESTGATE_LASS
 	const ROUTE34ILEXFORESTGATE_TEACHER2
+	const ROUTE34ILEXFORESTGATE_PORYGON_PC
 
 Route34IlexForestGate_MapScripts:
 	def_scene_scripts
@@ -134,6 +135,21 @@ Route34IlexForestGateLassText:
 	cont "type #MON."
 	done
 
+Route34IlexForestGatePorygonPCScript:
+	faceplayer
+	opentext
+	writetext Route34IlexForestGatePorygonPCText
+	cry PORYGON
+	pause 10
+	special PokemonCenterPC
+	reloadmappart
+	end
+
+Route34IlexForestGatePorygonPCText:
+	text "#MON Storage"
+	line "System opened."
+	done
+
 Route34IlexForestGate_MapEvents:
 	db 0, 0 ; filler
 
@@ -153,3 +169,4 @@ Route34IlexForestGate_MapEvents:
 	object_event  9,  4, SPRITE_BUTTERFREE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateButterfreeScript, -1
 	object_event  3,  4, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateLassScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS
 	object_event  5,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateTeacherScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_TEACHER_IN_WALKWAY
+	object_event  1,  1, SPRITE_PORYGON_OW, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGatePorygonPCScript, -1
