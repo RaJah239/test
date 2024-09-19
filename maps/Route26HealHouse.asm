@@ -12,14 +12,11 @@ Route26HealHouseTeacherScript:
 	writetext Route26HealHouseRestAWhileText
 	waitbutton
 	closetext
-	special FadeOutToBlack
-	special ReloadSpritesNoPalettes
+	special FadeOutToWhite
 	special StubbedTrainerRankings_Healings
-	playmusic MUSIC_HEAL
+	playsound SFX_FULL_HEAL
 	special HealParty
-	pause 60
-	special FadeInFromBlack
-	special RestartMapMusic
+	special FadeInFromWhite
 	opentext
 	writetext Route26HealHouseKeepAtItText
 	waitbutton
@@ -39,11 +36,7 @@ Route26HealHouseRestAWhileText:
 
 Route26HealHouseKeepAtItText:
 	text "There!"
-
-	para "Your #MON are"
-	line "looking good!"
-
-	para "Keep at it!"
+	line "Keep at it!"
 	done
 
 Route26HealHouse_MapEvents:
@@ -60,4 +53,4 @@ Route26HealHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, Route26HealHouseBookshelf
 
 	def_object_events
-	object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route26HealHouseTeacherScript, -1
+	object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route26HealHouseTeacherScript, -1
