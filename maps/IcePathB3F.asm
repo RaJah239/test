@@ -2,6 +2,7 @@
 	const ICEPATHB3F_POKE_BALL
 	const ICEPATHB3F_ROCK
 	const ICEPATHB3F_PORYGON_PC
+	const ICEPATHB3F_CHANSEY
 
 IcePathB3F_MapScripts:
 	def_scene_scripts
@@ -13,6 +14,23 @@ IcePathB3FNevermeltice:
 
 IcePathB3FRock:
 	jumpstd SmashRockScript
+
+IcePathB3FChanseyScript:
+	faceplayer
+	opentext
+	writetext IcePathB3FChanseyHealText
+	cry CHANSEY
+	pause 10
+	closetext
+	special StubbedTrainerRankings_Healings
+	playsound SFX_FULL_HEAL
+	special HealParty
+	end
+	
+IcePathB3FChanseyHealText:
+	text "Seyyyy!"
+	done
+
 
 IcePathB3FPorygonPCScript:
 	faceplayer
@@ -44,3 +62,4 @@ IcePathB3F_MapEvents:
 	object_event  5,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePathB3FNevermeltice, EVENT_ICE_PATH_B3F_NEVERMELTICE
 	object_event  6,  6, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB3FRock, -1
 	object_event  3,  3, SPRITE_PORYGON_OW, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB3FPorygonPCScript, -1
+	object_event  4,  3, SPRITE_CHANSEY_OW, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB3FChanseyScript, -1
