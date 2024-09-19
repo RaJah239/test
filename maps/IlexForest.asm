@@ -10,6 +10,7 @@
 	const ILEXFOREST_POKE_BALL2
 	const ILEXFOREST_POKE_BALL3
 	const ILEXFOREST_POKE_BALL4
+	const ILEXFOREST_CHANSEY
 
 IlexForest_MapScripts:
 	def_scene_scripts
@@ -945,6 +946,24 @@ BugCatcherWayneAfterBattleText:
 	cont "places too."
 	done
 
+IlexForestChanseyScript:
+	faceplayer
+	opentext
+	writetext IlexForestChanseyHealText
+	cry CHANSEY
+	pause 10
+	closetext
+	special FadeOutToWhite
+	special StubbedTrainerRankings_Healings
+	playsound SFX_FULL_HEAL
+	special HealParty
+	special FadeInFromWhite
+	end
+	
+IlexForestChanseyHealText:
+	text "Seyyyy!"
+	done
+
 IlexForest_MapEvents:
 	db 0, 0 ; filler
 
@@ -974,3 +993,4 @@ IlexForest_MapEvents:
 	object_event  9, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestXAttack, EVENT_ILEX_FOREST_X_ATTACK
 	object_event 17,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestAntidote, EVENT_ILEX_FOREST_ANTIDOTE
 	object_event 27,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
+	object_event 10,  4, SPRITE_CHANSEY_OW, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestChanseyScript, -1
