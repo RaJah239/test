@@ -1,6 +1,7 @@
 	object_const_def
 	const ICEPATHB3F_POKE_BALL
 	const ICEPATHB3F_ROCK
+	const ICEPATHB3F_PORYGON_PC
 
 IcePathB3F_MapScripts:
 	def_scene_scripts
@@ -12,6 +13,21 @@ IcePathB3FNevermeltice:
 
 IcePathB3FRock:
 	jumpstd SmashRockScript
+
+IcePathB3FPorygonPCScript:
+	faceplayer
+	opentext
+	writetext IcePathB3PorygonPCText
+	cry PORYGON
+	pause 10
+	special PokemonCenterPC
+	reloadmappart
+	end
+
+IcePathB3PorygonPCText:
+	text "#MON Storage"
+	line "System opened."
+	done
 
 IcePathB3F_MapEvents:
 	db 0, 0 ; filler
@@ -27,3 +43,4 @@ IcePathB3F_MapEvents:
 	def_object_events
 	object_event  5,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePathB3FNevermeltice, EVENT_ICE_PATH_B3F_NEVERMELTICE
 	object_event  6,  6, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB3FRock, -1
+	object_event  3,  3, SPRITE_PORYGON_OW, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IcePathB3FPorygonPCScript, -1
