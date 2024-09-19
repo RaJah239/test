@@ -155,7 +155,7 @@ ItemDescriptions:
 	dw BerserkGeneDesc
 	dw TeruSama18Desc
 	dw TeruSama19Desc
-	dw TeruSama20Desc
+	dw GeyserBootsDesc
 	dw SacredAshDesc
 	dw HeavyBallDesc
 	dw FlowerMailDesc
@@ -851,8 +851,9 @@ TeruSama18Desc:
 TeruSama19Desc:
 	db   "?@"
 
-TeruSama20Desc:
-	db   "?@"
+GeyserBootsDesc:
+	db   "Makes one able to"
+	next "scale waterfalls!@"
 
 SacredAshDesc:
 	db   "Fully heals all"

@@ -168,7 +168,7 @@ ItemEffects:
 	dw NoEffect            ; BERSERK_GENE
 	dw NoEffect            ; ITEM_99
 	dw NoEffect            ; ITEM_9A
-	dw NoEffect            ; ITEM_9B
+	dw GeyserBootsEffect   ; GRAVITY_BUOY
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
 	dw NoEffect            ; FLOWER_MAIL
@@ -3037,4 +3037,10 @@ StabilizerEffect:
 	ld a, 1
 	ld [wUsingHMItem], a
 	farcall WhirlpoolFunction
+	ret
+
+GeyserBootsEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	farcall WaterfallFunction
 	ret

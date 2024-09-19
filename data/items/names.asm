@@ -154,7 +154,7 @@ ItemNames::
 	li "BERSERK GENE"
 	li "TERU-SAMA"
 	li "TERU-SAMA"
-	li "TERU-SAMA"
+	li "GEYSER BOOTS"
 	li "SACRED ASH"
 	li "HEAVY BALL"
 	li "FLOWER MAIL"

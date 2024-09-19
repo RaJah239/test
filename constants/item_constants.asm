@@ -160,7 +160,7 @@
 	const BERSERK_GENE ; 98
 	const ITEM_99      ; 99
 	const ITEM_9A      ; 9a
-	const ITEM_9B      ; 9b
+	const GEYSER_BOOTS ; 9b
 	const SACRED_ASH   ; 9c
 	const HEAVY_BALL   ; 9d
 	const FLOWER_MAIL  ; 9e

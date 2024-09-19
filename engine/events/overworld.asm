@@ -849,6 +849,12 @@ TryWaterfallOW::
 	jr z, .yes
 
 ; Step 4
+	ld a, GEYSER_BOOTS
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jr c, .yes
+
 	ld d, WATERFALL
 	call CheckPartyMove
 	jr c, .failed
