@@ -121,8 +121,14 @@ MoomooScript:
 .HappyCow:
 	writetext MoomooHappyMooText
 	cry MILTANK
+	pause 10
 	waitbutton
 	closetext
+	special FadeOutToWhite
+	special StubbedTrainerRankings_Healings
+	playsound SFX_FULL_HEAL
+	special HealParty
+	special FadeInFromWhite
 	end
 
 Route39BarnTwinMoomooIsSickText:
@@ -146,7 +152,10 @@ Route39BarnItsCryIsWeakText:
 	done
 
 MoomooHappyMooText:
-	text "MILTANK: Mooo!"
+	text "MOOMOO is happy!"
+
+	para "Used MILK DRINK"
+	line "on your party!"
 	done
 
 Route39BarnAskGiveBerryText:
