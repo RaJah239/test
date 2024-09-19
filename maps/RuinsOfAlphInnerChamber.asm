@@ -2,6 +2,7 @@
 	const RUINSOFALPHINNERCHAMBER_FISHER
 	const RUINSOFALPHINNERCHAMBER_TEACHER
 	const RUINSOFALPHINNERCHAMBER_GRAMPS
+	const RUINSOFALPHINNERCHAMBER_CHANSEY
 
 RuinsOfAlphInnerChamber_MapScripts:
 	def_scene_scripts
@@ -74,6 +75,24 @@ RuinsOfAlphInnerChamberStatueText:
 	cont "MON."
 	done
 
+RuinsOfAlphInnerChamberChanseyScript:
+	faceplayer
+	opentext
+	writetext RuinsOfAlphInnerChamberChanseyHealText
+	cry CHANSEY
+	pause 10
+	closetext
+	special FadeOutToWhite
+	special StubbedTrainerRankings_Healings
+	playsound SFX_FULL_HEAL
+	special HealParty
+	special FadeInFromWhite
+	end
+	
+RuinsOfAlphInnerChamberChanseyHealText:
+	text "Seyyyy!"
+	done
+
 RuinsOfAlphInnerChamber_MapEvents:
 	db 0, 0 ; filler
 
@@ -122,3 +141,4 @@ RuinsOfAlphInnerChamber_MapEvents:
 	object_event  3,  7, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberFisherScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
 	object_event 14, 13, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberTeacherScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
 	object_event 11, 19, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberGrampsScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
+	object_event  8, 11, SPRITE_CHANSEY_OW, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberChanseyScript, -1
