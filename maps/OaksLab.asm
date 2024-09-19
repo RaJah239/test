@@ -2,7 +2,7 @@
 	const OAKSLAB_OAK
 	const OAKSLAB_SCIENTIST1
 	const OAKSLAB_SCIENTIST2
-	const OAKSLAB_SCIENTIST3
+	const OAKSLAB_PORYGON_PC
 
 OaksLab_MapScripts:
 	def_scene_scripts
@@ -56,9 +56,6 @@ OaksAssistant1Script:
 
 OaksAssistant2Script:
 	jumptextfaceplayer OaksAssistant2Text
-
-OaksAssistant3Script:
-	jumptextfaceplayer OaksAssistant3Text
 
 OaksLabBookshelf:
 	jumpstd DifficultBookshelfScript
@@ -192,15 +189,6 @@ OaksAssistant1Text:
 	done
 
 OaksAssistant2Text:
-	text "Thanks to your"
-	line "work on the #-"
-	cont "DEX, the PROF's"
-
-	para "research is coming"
-	line "along great."
-	done
-
-OaksAssistant3Text:
 	text "Don't tell anyone,"
 	line "but PROF.OAK'S"
 
@@ -252,6 +240,21 @@ OaksLabPCText:
 	line "TOWN 8-)"
 	done
 
+OaksLabPorygonPCScript:
+	faceplayer
+	opentext
+	writetext OaksLabPorygonPCText
+	cry PORYGON
+	pause 10
+	special PokemonCenterPC
+	reloadmappart
+	end
+
+OaksLabPorygonPCText:
+	text "#MON Storage"
+	line "System opened."
+	done
+
 OaksLab_MapEvents:
 	db 0, 0 ; filler
 
@@ -282,5 +285,5 @@ OaksLab_MapEvents:
 	def_object_events
 	object_event  4,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Oak, -1
 	object_event  1,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant1Script, -1
-	object_event  8,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant2Script, -1
-	object_event  1,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant3Script, -1
+	object_event  7,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant2Script, -1
+	object_event  0,  4, SPRITE_PORYGON_OW, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OaksLabPorygonPCScript, -1
