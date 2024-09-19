@@ -4,7 +4,7 @@
 	evs  2,   1,   1,   1,   1,   1
 	;   hp  atk  def  spd  sat  sdf
 
-	db DRAGON, GROUND ; type
+	db NORMAL, NORMAL ; type
 	db 190 ; catch rate
 	db 75 ; base exp
 	db NO_ITEM, NO_ITEM ; items

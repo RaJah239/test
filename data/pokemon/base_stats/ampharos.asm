@@ -4,7 +4,7 @@
 	evs  2,   1,   1,   1,   2,   2
 	;   hp  atk  def  spd  sat  sdf
 
-	db DRAGON, ELECTRIC ; type
+	db ELECTRIC, ELECTRIC ; type
 	db 45 ; catch rate
 	db 194 ; base exp
 	db NO_ITEM, NO_ITEM ; items

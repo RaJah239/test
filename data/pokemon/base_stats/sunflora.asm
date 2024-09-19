@@ -4,7 +4,7 @@
 	evs  1,   1,   1,   0,   2,   1
 	;   hp  atk  def  spd  sat  sdf
 
-	db GRASS, FIRE ; type
+	db GRASS, GRASS ; type
 	db 120 ; catch rate
 	db 146 ; base exp
 	db NO_ITEM, NO_ITEM ; items

@@ -4,7 +4,7 @@
 	evs  1,   0,   0,   1,   0,   1
 	;   hp  atk  def  spd  sat  sdf
 
-	db GHOST, FLYING ; type
+	db NORMAL, FLYING ; type
 	db 255 ; catch rate
 	db 58 ; base exp
 	db NO_ITEM, NO_ITEM ; items

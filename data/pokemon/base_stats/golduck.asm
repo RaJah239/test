@@ -4,7 +4,7 @@
 	evs  1,   1,   1,   1,   2,   1
 	;   hp  atk  def  spd  sat  sdf
 
-	db WATER, PSYCHIC_TYPE ; type
+	db WATER, WATER ; type
 	db 75 ; catch rate
 	db 174 ; base exp
 	db NO_ITEM, NO_ITEM ; items

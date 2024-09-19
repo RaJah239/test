@@ -4,7 +4,7 @@
 	evs  2,   1,   1,   1,   1,   2
 	;   hp  atk  def  spd  sat  sdf
 
-	db NORMAL, STEEL ; type
+	db NORMAL, NORMAL ; type
 	db 25 ; catch rate
 	db 129 ; base exp
 	db MYSTERYBERRY, MOON_STONE ; items

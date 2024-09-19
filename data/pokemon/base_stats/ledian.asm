@@ -4,7 +4,7 @@
 	evs  1,   0,   1,   1,   1,   2
 	;   hp  atk  def  spd  sat  sdf
 
-	db BUG, FIGHTING ; type
+	db BUG, FLYING ; type
 	db 90 ; catch rate
 	db 134 ; base exp
 	db NO_ITEM, NO_ITEM ; items
