@@ -3,6 +3,7 @@
 	const OAKSLAB_SCIENTIST1
 	const OAKSLAB_SCIENTIST2
 	const OAKSLAB_PORYGON_PC
+	const OAKSLAB_CHANSEY
 
 OaksLab_MapScripts:
 	def_scene_scripts
@@ -255,6 +256,24 @@ OaksLabPorygonPCText:
 	line "System opened."
 	done
 
+OaksLabChanseyScript:
+	faceplayer
+	opentext
+	writetext OaksLabChanseyHealText
+	cry CHANSEY
+	pause 10
+	closetext
+	special FadeOutToWhite
+	special StubbedTrainerRankings_Healings
+	playsound SFX_FULL_HEAL
+	special HealParty
+	special FadeInFromWhite
+	end
+	
+OaksLabChanseyHealText:
+	text "Seyyyy!"
+	done
+
 OaksLab_MapEvents:
 	db 0, 0 ; filler
 
@@ -287,3 +306,4 @@ OaksLab_MapEvents:
 	object_event  1,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant1Script, -1
 	object_event  7,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OaksAssistant2Script, -1
 	object_event  0,  4, SPRITE_PORYGON_OW, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OaksLabPorygonPCScript, -1
+	object_event  8,  4, SPRITE_CHANSEY_OW, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OaksLabChanseyScript, -1
