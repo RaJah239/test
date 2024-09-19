@@ -1,5 +1,6 @@
 	object_const_def
 	const ROUTE26HEALHOUSE_TEACHER
+	const ROUTE26HEALHOUSE_PORYGON_PC
 
 Route26HealHouse_MapScripts:
 	def_scene_scripts
@@ -39,6 +40,21 @@ Route26HealHouseKeepAtItText:
 	line "Keep at it!"
 	done
 
+Route26HealHousePorygonPCScript:
+	faceplayer
+	opentext
+	writetext Route26HealHousePorygonPCText
+	cry PORYGON
+	pause 10
+	special PokemonCenterPC
+	reloadmappart
+	end
+
+Route26HealHousePorygonPCText:
+	text "#MON Storage"
+	line "System opened."
+	done
+
 Route26HealHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -54,3 +70,4 @@ Route26HealHouse_MapEvents:
 
 	def_object_events
 	object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route26HealHouseTeacherScript, -1
+	object_event  4,  1, SPRITE_PORYGON_OW, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26HealHousePorygonPCScript, -1
