@@ -1780,8 +1780,6 @@ DepositPokemon:
 	xor a ; REMOVE_PARTY
 	ld [wPokemonWithdrawDepositParameter], a
 	farcall RemoveMonFromPartyOrBox
-	ld a, [wCurPartySpecies]
-	call PlayMonCry
 	hlcoord 0, 0
 	lb bc, 15, 8
 	call ClearBox
