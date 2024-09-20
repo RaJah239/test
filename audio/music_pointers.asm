@@ -109,4 +109,5 @@ Music:
 	dba Music_MobileCenter
 	dba Music_FinalBattle
 	dba Music_RBYIndigoPlateau
+	dba Music_Grottos
 	assert_table_length NUM_MUSIC_SONGS

@@ -153,6 +153,7 @@ SECTION "New Songs", ROMX
 
 INCLUDE "audio/music/finalbattle.asm"
 INCLUDE "audio/music/indigoplateaurby.asm"
+INCLUDE "audio/music/grottos.asm"
 
 SECTION "Sound Effects", ROMX
 

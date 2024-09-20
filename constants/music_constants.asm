@@ -107,6 +107,7 @@
 	const MUSIC_MOBILE_CENTER                ; 66
 	const MUSIC_FINAL_BATTLE                 ; 67
 	const MUSIC_RBY_INDIGO_PLATEAU           ; 68
+	const MUSIC_GROTTOS                      ; 69
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
