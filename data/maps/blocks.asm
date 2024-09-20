@@ -362,6 +362,9 @@ VioletKylesHouse_Blocks:
 UnionCaveB1F_Blocks:
 	INCBIN "maps/UnionCaveB1F.blk"
 
+UnionCaveGrottos_Blocks:
+	INCBIN "maps/UnionCaveGrottos.blk"
+
 UnionCaveB2F_Blocks:
 	INCBIN "maps/UnionCaveB2F.blk"
 

@@ -178,6 +178,7 @@ UnionCaveB1F_MapEvents:
 	warp_event  7, 19, UNION_CAVE_1F, 1
 	warp_event  3, 33, UNION_CAVE_1F, 2
 	warp_event 17, 31, UNION_CAVE_B2F, 1
+	warp_event 15, 19, UNION_CAVE_GROTTOS, 1
 
 	def_coord_events
 
