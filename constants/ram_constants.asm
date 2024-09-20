@@ -311,6 +311,9 @@ DEF CELEBIEVENT_FOREST_IS_RESTLESS_F EQU 2
 	const DAILYFLAGS2_MOVE_TUTOR_F                        ; 6
 	const DAILYFLAGS2_BUENAS_PASSWORD_F                   ; 7
 
+; wDailyFlags3::
+	const DAILYFLAGS3_ENGINE_DAILY_UNION_CAVE_GROTTOS_F
+
 ; wSwarmFlags::
 	const_def
 	const SWARMFLAGS_BUENAS_PASSWORD_F           ; 0
