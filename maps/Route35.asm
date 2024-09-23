@@ -20,7 +20,6 @@ TrainerBirdKeeperBryan:
 	trainer BIRD_KEEPER, BRYAN, EVENT_BEAT_BIRD_KEEPER_BRYAN, BirdKeeperBryanSeenText, BirdKeeperBryanBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BirdKeeperBryanAfterBattleText
 	waitbutton
@@ -32,7 +31,6 @@ TrainerJugglerIrwin:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_JUGGLER_IRWIN
-	endifjustbattled
 	opentext
 	checkcellnum PHONE_JUGGLER_IRWIN
 	iftrue Route35NumberAcceptedM
@@ -86,7 +84,6 @@ TrainerCamperIvan:
 	trainer CAMPER, IVAN, EVENT_BEAT_CAMPER_IVAN, CamperIvanSeenText, CamperIvanBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext CamperIvanAfterBattleText
 	waitbutton
@@ -97,7 +94,6 @@ TrainerCamperElliot:
 	trainer CAMPER, ELLIOT, EVENT_BEAT_CAMPER_ELLIOT, CamperElliotSeenText, CamperElliotBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext CamperElliotAfterBattleText
 	waitbutton
@@ -108,7 +104,6 @@ TrainerPicnickerBrooke:
 	trainer PICNICKER, BROOKE, EVENT_BEAT_PICNICKER_BROOKE, PicnickerBrookeSeenText, PicnickerBrookeBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PicnickerBrookeAfterBattleText
 	waitbutton
@@ -119,7 +114,6 @@ TrainerPicnickerKim:
 	trainer PICNICKER, KIM, EVENT_BEAT_PICNICKER_KIM, PicnickerKimSeenText, PicnickerKimBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PicnickerKimAfterBattleText
 	waitbutton
@@ -131,7 +125,6 @@ TrainerBugCatcherArnie:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_BUG_CATCHER_ARNIE
-	endifjustbattled
 	opentext
 	checkflag ENGINE_ARNIE_READY_FOR_REMATCH
 	iftrue .WantsBattle
@@ -227,7 +220,6 @@ TrainerFirebreatherWalt:
 	trainer FIREBREATHER, WALT, EVENT_BEAT_FIREBREATHER_WALT, FirebreatherWaltSeenText, FirebreatherWaltBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext FirebreatherWaltAfterBattleText
 	waitbutton

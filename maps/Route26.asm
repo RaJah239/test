@@ -22,7 +22,6 @@ TrainerCooltrainermJake:
 	trainer COOLTRAINERM, JAKE, EVENT_BEAT_COOLTRAINERM_JAKE, CooltrainermJakeSeenText, CooltrainermJakeBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext CooltrainermJakeAfterBattleText
 	waitbutton
@@ -34,7 +33,6 @@ TrainerCooltrainermGaven3:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_COOLTRAINERM_GAVEN
-	endifjustbattled
 	opentext
 	checkflag ENGINE_GAVEN_READY_FOR_REMATCH
 	iftrue .WantsBattle
@@ -126,7 +124,6 @@ TrainerCooltrainerfJoyce:
 	trainer COOLTRAINERF, JOYCE, EVENT_BEAT_COOLTRAINERF_JOYCE, CooltrainerfJoyceSeenText, CooltrainerfJoyceBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext CooltrainerfJoyceAfterBattleText
 	waitbutton
@@ -138,7 +135,6 @@ TrainerCooltrainerfBeth1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_COOLTRAINERF_BETH
-	endifjustbattled
 	opentext
 	checkflag ENGINE_BETH_READY_FOR_REMATCH
 	iftrue .WantsBattle
@@ -230,7 +226,6 @@ TrainerPsychicRichard:
 	trainer PSYCHIC_T, RICHARD, EVENT_BEAT_PSYCHIC_RICHARD, PsychicRichardSeenText, PsychicRichardBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PsychicRichardAfterBattleText
 	waitbutton
@@ -241,7 +236,6 @@ TrainerFisherScott:
 	trainer FISHER, SCOTT, EVENT_BEAT_FISHER_SCOTT, FisherScottSeenText, FisherScottBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext FisherScottAfterBattleText
 	waitbutton

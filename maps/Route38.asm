@@ -16,7 +16,6 @@ TrainerBirdKeeperToby:
 	trainer BIRD_KEEPER, TOBY, EVENT_BEAT_BIRD_KEEPER_TOBY, BirdKeeperTobySeenText, BirdKeeperTobyBeatenText, 0, .Script
 
 .Script
-	endifjustbattled
 	opentext
 	writetext BirdKeeperTobyAfterBattleText
 	waitbutton
@@ -27,7 +26,6 @@ TrainerSailorHarry:
 	trainer SAILOR, HARRY, EVENT_BEAT_SAILOR_HARRY, SailorHarrySeenText, SailorHarryBeatenText, 0, .Script
 
 .Script
-	endifjustbattled
 	opentext
 	writetext SailorHarryAfterBattleText
 	waitbutton
@@ -39,7 +37,6 @@ TrainerLassDana1:
 
 .Script
 	loadvar VAR_CALLERID, PHONE_LASS_DANA
-	endifjustbattled
 	opentext
 	checkflag ENGINE_DANA_READY_FOR_REMATCH
 	iftrue .DanaRematch
@@ -177,7 +174,6 @@ TrainerSchoolboyChad1:
 
 .Script
 	loadvar VAR_CALLERID, PHONE_SCHOOLBOY_CHAD
-	endifjustbattled
 	opentext
 	checkflag ENGINE_CHAD_READY_FOR_REMATCH
 	iftrue .ChadRematch
@@ -293,7 +289,6 @@ TrainerBeautyValerie:
 	trainer BEAUTY, VALERIE, EVENT_BEAT_BEAUTY_VALERIE, BeautyValerieSeenText, BeautyValerieBeatenText, 0, .Script
 
 .Script
-	endifjustbattled
 	opentext
 	writetext BeautyValerieAfterBattleText
 	waitbutton
@@ -304,7 +299,6 @@ TrainerBeautyOlivia:
 	trainer BEAUTY, OLIVIA, EVENT_BEAT_BEAUTY_OLIVIA, BeautyOliviaSeenText, BeautyOliviaBeatenText, 0, .Script
 
 .Script
-	endifjustbattled
 	opentext
 	writetext BeautyOliviaAfterBattleText
 	waitbutton

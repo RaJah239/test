@@ -21,7 +21,6 @@ TrainerPokemaniacMiller:
 	trainer POKEMANIAC, MILLER, EVENT_BEAT_POKEMANIAC_MILLER, PokemaniacMillerSeenText, PokemaniacMillerBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PokemaniacMillerAfterBattleText
 	waitbutton
@@ -32,7 +31,6 @@ TrainerSupernerdMarkus:
 	trainer SUPER_NERD, MARKUS, EVENT_BEAT_SUPER_NERD_MARKUS, SupernerdMarkusSeenText, SupernerdMarkusBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SupernerdMarkusAfterBattleText
 	waitbutton

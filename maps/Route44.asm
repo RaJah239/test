@@ -21,7 +21,6 @@ TrainerBirdKeeperVance1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_BIRDKEEPER_VANCE
-	endifjustbattled
 	opentext
 	checkflag ENGINE_VANCE_READY_FOR_REMATCH
 	iftrue .WantsBattle
@@ -151,7 +150,6 @@ TrainerPsychicPhil:
 	trainer PSYCHIC_T, PHIL, EVENT_BEAT_PSYCHIC_PHIL, PsychicPhilSeenText, PsychicPhilBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PsychicPhilAfterBattleText
 	waitbutton
@@ -163,7 +161,6 @@ TrainerFisherWilton1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_FISHER_WILTON
-	endifjustbattled
 	opentext
 	checkflag ENGINE_WILTON_READY_FOR_REMATCH
 	iftrue .WantsBattle
@@ -257,7 +254,6 @@ TrainerFisherEdgar:
 	trainer FISHER, EDGAR, EVENT_BEAT_FISHER_EDGAR, FisherEdgarSeenText, FisherEdgarBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext FisherEdgarAfterBattleText
 	waitbutton
@@ -268,7 +264,6 @@ TrainerCooltrainerfCybil:
 	trainer COOLTRAINERF, CYBIL, EVENT_BEAT_COOLTRAINERF_CYBIL, CooltrainerfCybilSeenText, CooltrainerfCybilBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext CooltrainerfCybilAfterBattleText
 	waitbutton
@@ -279,7 +274,6 @@ TrainerPokemaniacZach:
 	trainer POKEMANIAC, ZACH, EVENT_BEAT_POKEMANIAC_ZACH, PokemaniacZachSeenText, PokemaniacZachBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PokemaniacZachAfterBattleText
 	waitbutton
@@ -290,7 +284,6 @@ TrainerCooltrainermAllen:
 	trainer COOLTRAINERM, ALLEN, EVENT_BEAT_COOLTRAINERM_ALLEN, CooltrainermAllenSeenText, CooltrainermAllenBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext CooltrainermAllenAfterBattleText
 	waitbutton

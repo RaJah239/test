@@ -17,7 +17,6 @@ TrainerPokemaniacAndrew:
 	trainer POKEMANIAC, ANDREW, EVENT_BEAT_POKEMANIAC_ANDREW, PokemaniacAndrewSeenText, PokemaniacAndrewBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PokemaniacAndrewAfterBattleText
 	waitbutton
@@ -28,7 +27,6 @@ TrainerPokemaniacCalvin:
 	trainer POKEMANIAC, CALVIN, EVENT_BEAT_POKEMANIAC_CALVIN, PokemaniacCalvinSeenText, PokemaniacCalvinBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PokemaniacCalvinAfterBattleText
 	waitbutton
@@ -39,7 +37,6 @@ TrainerHikerPhillip:
 	trainer HIKER, PHILLIP, EVENT_BEAT_HIKER_PHILLIP, HikerPhillipSeenText, HikerPhillipBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext HikerPhillipAfterBattleText
 	waitbutton
@@ -50,7 +47,6 @@ TrainerHikerLeonard:
 	trainer HIKER, LEONARD, EVENT_BEAT_HIKER_LEONARD, HikerLeonardSeenText, HikerLeonardBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext HikerLeonardAfterBattleText
 	waitbutton

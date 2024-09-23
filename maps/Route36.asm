@@ -197,7 +197,6 @@ TrainerSchoolboyAlan1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_SCHOOLBOY_ALAN
-	endifjustbattled
 	opentext
 	checkflag ENGINE_ALAN_READY_FOR_REMATCH
 	iftrue .ChooseRematch
@@ -334,7 +333,6 @@ TrainerPsychicMark:
 	trainer PSYCHIC_T, MARK, EVENT_BEAT_PSYCHIC_MARK, PsychicMarkSeenText, PsychicMarkBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PsychicMarkAfterBattleText
 	waitbutton

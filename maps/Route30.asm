@@ -41,7 +41,6 @@ TrainerYoungsterJoey:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_YOUNGSTER_JOEY
-	endifjustbattled
 	opentext
 	checkflag ENGINE_JOEY_READY_FOR_REMATCH
 	iftrue .Rematch
@@ -187,7 +186,6 @@ TrainerYoungsterMikey:
 	trainer YOUNGSTER, MIKEY, EVENT_BEAT_YOUNGSTER_MIKEY, YoungsterMikeySeenText, YoungsterMikeyBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext YoungsterMikeyAfterText
 	waitbutton
@@ -198,7 +196,6 @@ TrainerBugCatcherDon:
 	trainer BUG_CATCHER, DON, EVENT_BEAT_BUG_CATCHER_DON, BugCatcherDonSeenText, BugCatcherDonBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BugCatcherDonAfterText
 	waitbutton

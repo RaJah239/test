@@ -482,7 +482,6 @@ TrainerScientistJed:
 	trainer SCIENTIST, JED, EVENT_BEAT_SCIENTIST_JED, ScientistJedSeenText, ScientistJedBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext ScientistJedAfterBattleText
 	waitbutton
@@ -493,7 +492,6 @@ TrainerGruntM16:
 	trainer GRUNTM, GRUNTM_16, EVENT_BEAT_ROCKET_GRUNTM_16, GruntM16SeenText, GruntM16BeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext GruntM16AfterBattleText
 	waitbutton

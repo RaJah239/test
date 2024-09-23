@@ -28,7 +28,6 @@ TrainerCamperSpencer:
 	trainer CAMPER, SPENCER, EVENT_BEAT_CAMPER_SPENCER, CamperSpencerSeenText, CamperSpencerBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext CamperSpencerAfterBattleText
 	waitbutton
@@ -39,7 +38,6 @@ TrainerPokemaniacBen:
 	trainer POKEMANIAC, BEN, EVENT_BEAT_POKEMANIAC_BEN, PokemaniacBenSeenText, PokemaniacBenBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PokemaniacBenAfterBattleText
 	waitbutton
@@ -51,7 +49,6 @@ TrainerPokemaniacBrent:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_POKEMANIAC_BRENT
-	endifjustbattled
 	opentext
 	checkflag ENGINE_BRENT_READY_FOR_REMATCH
 	iftrue .WantsBattle
@@ -155,7 +152,6 @@ TrainerPokemaniacRon:
 	trainer POKEMANIAC, RON, EVENT_BEAT_POKEMANIAC_RON, PokemaniacRonSeenText, PokemaniacRonBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PokemaniacRonAfterBattleText
 	waitbutton
@@ -166,7 +162,6 @@ TrainerFisherMarvin:
 	trainer FISHER, MARVIN, EVENT_BEAT_FISHER_MARVIN, FisherMarvinSeenText, FisherMarvinBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext FisherMarvinAfterBattleText
 	waitbutton
@@ -178,7 +173,6 @@ TrainerPicnickerTiffany:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_PICNICKER_TIFFANY
-	endifjustbattled
 	opentext
 	checkflag ENGINE_TIFFANY_READY_FOR_REMATCH
 	iftrue .WantsBattle

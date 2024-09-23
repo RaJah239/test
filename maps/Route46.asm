@@ -15,7 +15,6 @@ TrainerCamperTed:
 	trainer CAMPER, TED, EVENT_BEAT_CAMPER_TED, CamperTedSeenText, CamperTedBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext CamperTedAfterBattleText
 	waitbutton
@@ -27,7 +26,6 @@ TrainerPicnickerErin1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_PICNICKER_ERIN
-	endifjustbattled
 	opentext
 	checkflag ENGINE_ERIN_READY_FOR_REMATCH
 	iftrue .WantsBattle
@@ -149,7 +147,6 @@ TrainerHikerBailey:
 	trainer HIKER, BAILEY, EVENT_BEAT_HIKER_BAILEY, HikerBaileySeenText, HikerBaileyBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext HikerBaileyAfterBattleText
 	waitbutton
