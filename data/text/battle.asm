@@ -232,11 +232,10 @@ BattleText_EnemyIsAboutToUseWillPlayerChangeMon:
 	done
 
 BattleText_EnemySentOut:
-	text "<ENEMY>"
-	line "sent out"
-	cont "@"
+	text "@" 
 	text_ram wEnemyMonNickname
-	text "!"
+	text " was"
+	line "sent out!"
 	done
 
 BattleText_TheresNoWillToBattle:
@@ -254,9 +253,8 @@ BattleText_CantEscape2:
 	prompt
 
 BattleText_TheresNoEscapeFromTrainerBattle:
-	text "No! There's no"
-	line "running from a"
-	cont "trainer battle!"
+	text "Can't run from a"
+	line "trainer battle!"
 	prompt
 
 BattleText_GotAwaySafely:
@@ -297,9 +295,8 @@ BattleText_UsersStringBuffer1Activated:
 	prompt
 
 BattleText_ItemsCantBeUsedHere:
-	text "Items can't be"
-	line "used in trainer"
-	cont "battles!"
+	text "Items unusable in"
+	line "trainer battles!"
 	prompt
 
 BattleText_MonIsAlreadyOut:
@@ -962,7 +959,7 @@ WasDefrostedText:
 
 PutACurseText:
 	text "<USER>"
-	line "cut its own HP and"
+	line "cut its own HP to"
 
 	para "put a CURSE on"
 	line "<TARGET>!"
