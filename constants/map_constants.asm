@@ -105,6 +105,7 @@ ENDM
 	map_const UNION_CAVE_B2F,                              10, 18 ; 39
 	map_const SLOWPOKE_WELL_B1F,                           10,  9 ; 40
 	map_const SLOWPOKE_WELL_B2F,                           10,  9 ; 41
+	map_const SLOWPOKE_WELL_GROTTO,                         4,  4 ; Crystal Trove
 	map_const OLIVINE_LIGHTHOUSE_1F,                       10,  9 ; 42
 	map_const OLIVINE_LIGHTHOUSE_2F,                       10,  9 ; 43
 	map_const OLIVINE_LIGHTHOUSE_3F,                       10,  9 ; 44

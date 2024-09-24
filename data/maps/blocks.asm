@@ -660,6 +660,9 @@ SlowpokeWellB1F_Blocks:
 SlowpokeWellB2F_Blocks:
 	INCBIN "maps/SlowpokeWellB2F.blk"
 
+SlowpokeWellGrotto_Blocks:
+	INCBIN "maps/SlowpokeWellGrotto.blk"
+
 IlexForest_Blocks:
 	INCBIN "maps/IlexForest.blk"
 

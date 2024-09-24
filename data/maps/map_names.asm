@@ -126,10 +126,11 @@ Dungeons_Map_Names: ;newgroup DUNGEONS
 	dw Dungeons_Map_Name36 ; map_const RUINS_OF_ALPH_AERODACTYL_WORD_ROOM,          10,  7 ; 36
 	dw Dungeons_Map_Name37 ; map_const UNION_CAVE_1F,                               10, 18 ; 37
 	dw Dungeons_Map_Name38 ; map_const UNION_CAVE_B1F,                              10, 18 ; 38
-	dw Dungeons_Map_Name92 ; map_const UNION_CAVE_GROTTOS,                          10, 18 ; 38
+	dw Dungeons_Map_Name92 ; map_const UNION_CAVE_GROTTOS,                          10, 18 ; 92
 	dw Dungeons_Map_Name39 ; map_const UNION_CAVE_B2F,                              10, 18 ; 39
 	dw Dungeons_Map_Name40 ; map_const SLOWPOKE_WELL_B1F,                           10,  9 ; 40
 	dw Dungeons_Map_Name41 ; map_const SLOWPOKE_WELL_B2F,                           10,  9 ; 41
+	dw Dungeons_Map_Name93 ; map_const SLOWPOKE_WELL_GROTTO,                        10,  9 ; 93
 	dw Dungeons_Map_Name42 ; map_const OLIVINE_LIGHTHOUSE_1F,                       10,  9 ; 42
 	dw Dungeons_Map_Name43 ; map_const OLIVINE_LIGHTHOUSE_2F,                       10,  9 ; 43
 	dw Dungeons_Map_Name44 ; map_const OLIVINE_LIGHTHOUSE_3F,                       10,  9 ; 44
@@ -675,14 +676,16 @@ Dungeons_Map_Name37: ; map_const UNION_CAVE_1F,; 37
 	db "UNION CAVE 1F@"
 Dungeons_Map_Name38: ; map_const UNION_CAVE_B1F,; 38
 	db "UNION CAVE B1F@"
-Dungeons_Map_Name92: ; map_const UNION_CAVE_GROTTOS,; 38
-	db "UNION_CAVE_GROTTOS@"
+Dungeons_Map_Name92: ; map_const UNION_CAVE_GROTTOS,; 39
+	db "UNION CAVE GROTTO@"
 Dungeons_Map_Name39: ; map_const UNION_CAVE_B2F,; 39
 	db "UNION CAVE B2F@"
 Dungeons_Map_Name40: ; map_const SLOWPOKE_WELL_B1F,; 40
 	db "SLOWPOKE WELL B1@"
 Dungeons_Map_Name41: ; map_const SLOWPOKE_WELL_B2F,; 41
 	db "SLOWPOKE WELL B2@"
+Dungeons_Map_Name93: ; map_const SLOWPOKE_WELL_GROTTO,; 93
+	db "S. WELL GROTTO@"
 Dungeons_Map_Name42: ; map_const OLIVINE_LIGHTHOUSE_1F,; 42
 	db "LIGHTHOUSE 1F@"
 Dungeons_Map_Name43: ; map_const OLIVINE_LIGHTHOUSE_2F,; 43
