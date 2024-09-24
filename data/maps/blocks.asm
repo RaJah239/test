@@ -782,6 +782,9 @@ SilverCaveItemRooms_Blocks:
 DayCare_Blocks:
 	INCBIN "maps/DayCare.blk"
 
+HatchRoom_Blocks:
+	INCBIN "maps/HatchRoom.blk"
+
 SoulHouse_Blocks:
 	INCBIN "maps/SoulHouse.blk"
 

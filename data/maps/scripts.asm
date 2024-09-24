@@ -70,7 +70,7 @@ INCLUDE "maps/IlexForestAzaleaGate.asm"
 INCLUDE "maps/IlexForestGrotto.asm"
 INCLUDE "maps/Route34IlexForestGate.asm"
 INCLUDE "maps/DayCare.asm"
-
+INCLUDE "maps/HatchRoom.asm"
 
 SECTION "Map Scripts 5", ROMX
 
