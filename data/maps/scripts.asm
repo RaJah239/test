@@ -67,6 +67,7 @@ INCLUDE "maps/OlivineLighthouse6F.asm"
 INCLUDE "maps/GoldenrodPokecenter1F.asm"
 INCLUDE "maps/PokecomCenterAdminOfficeMobile.asm"
 INCLUDE "maps/IlexForestAzaleaGate.asm"
+INCLUDE "maps/IlexForestGrotto.asm"
 INCLUDE "maps/Route34IlexForestGate.asm"
 INCLUDE "maps/DayCare.asm"
 

@@ -142,6 +142,7 @@ Dungeons_Map_Names: ;newgroup DUNGEONS
 	dw Dungeons_Map_Name50 ; map_const TEAM_ROCKET_BASE_B2F,                        15,  9 ; 50
 	dw Dungeons_Map_Name51 ; map_const TEAM_ROCKET_BASE_B3F,                        15,  9 ; 51
 	dw Dungeons_Map_Name52 ; map_const ILEX_FOREST,                                 15, 27 ; 52
+	dw Dungeons_Map_Name94 ; map_const ILEX_FOREST_GROTTO,                          15, 27 ; 52
 	dw Dungeons_Map_Name53 ; map_const GOLDENROD_UNDERGROUND,                       15, 18 ; 53
 	dw Dungeons_Map_Name54 ; map_const GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 15, 18 ; 54
 	dw Dungeons_Map_Name55 ; map_const GOLDENROD_DEPT_STORE_B1F,                    10,  9 ; 55
@@ -708,6 +709,8 @@ Dungeons_Map_Name51: ; map_const TEAM_ROCKET_BASE_B3F,; 51
 	db "ROCKET BASE B3F@"
 Dungeons_Map_Name52: ; map_const ILEX_FOREST,; 52
 	db "ILEX FOREST@"
+Dungeons_Map_Name94: ; map_const ILEX_FOREST_GROTTO,; 94
+	db "ILEX FOREST GROTTO@"
 Dungeons_Map_Name53: ; map_const GOLDENROD_UNDERGROUND,; 53
 	db "GOLD. UNDERGROUND@"
 Dungeons_Map_Name54: ; map_const GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES,; 54

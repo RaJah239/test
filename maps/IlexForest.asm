@@ -970,7 +970,8 @@ IlexForest_MapEvents:
 	warp_event  1,  5, ROUTE_34_ILEX_FOREST_GATE, 3
 	warp_event  3, 42, ILEX_FOREST_AZALEA_GATE, 1
 	warp_event  3, 43, ILEX_FOREST_AZALEA_GATE, 2
-
+	warp_event 26, 53, ILEX_FOREST_GROTTO, 1
+	warp_event 27, 53, ILEX_FOREST_GROTTO, 2
 	def_coord_events
 
 	def_bg_events

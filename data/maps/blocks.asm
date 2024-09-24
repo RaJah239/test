@@ -666,6 +666,9 @@ SlowpokeWellGrotto_Blocks:
 IlexForest_Blocks:
 	INCBIN "maps/IlexForest.blk"
 
+IlexForestGrotto_Blocks:
+	INCBIN "maps/IlexForestGrotto.blk"
+
 DarkCaveVioletEntrance_Blocks:
 	INCBIN "maps/DarkCaveVioletEntrance.blk"
 
