@@ -357,6 +357,7 @@ INCLUDE "maps/MobileBattleRoom.asm"
 SECTION "Map Scripts 18", ROMX
 
 INCLUDE "maps/Route36.asm"
+INCLUDE "maps/Route36Grotto.asm"
 INCLUDE "maps/FuchsiaCity.asm"
 INCLUDE "maps/BlackthornGym1F.asm"
 INCLUDE "maps/BlackthornGym2F.asm"

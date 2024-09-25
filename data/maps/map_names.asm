@@ -274,6 +274,7 @@ Violet_Map_Names: ;newgroup VIOLET
 	dw Violet_Map_Name100 ; map_const ROUTE_32_GROTTO,;  1
 	dw Violet_Map_Name2 ; map_const ROUTE_35,;  2
 	dw Violet_Map_Name3 ; map_const ROUTE_36,;  3
+	dw Violet_Map_Name101 ; map_const ROUTE_36_GROTTO,;  18
 	dw Violet_Map_Name4 ; map_const ROUTE_37,;  4
 	dw Violet_Map_Name5 ; map_const VIOLET_CITY ; 5
 	dw Violet_Map_Name6 ; map_const VIOLET_MART ;  6
@@ -929,6 +930,8 @@ Violet_Map_Name2: ; map_const ROUTE_35,;  2
 	db "ROUTE 35@"
 Violet_Map_Name3: ; map_const ROUTE_36,;  3
 	db "ROUTE 36@"
+Violet_Map_Name101: ; map_const ROUTE_36_GROTTO,;  3
+	db "ROUTE 36 GROTTO@"
 Violet_Map_Name4: ; map_const ROUTE_37,;  4
 	db "ROUTE 37@"
 Violet_Map_Name5: ; map_const VIOLET_CITY,;  5
