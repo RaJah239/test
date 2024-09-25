@@ -459,6 +459,7 @@ ENDM
 	map_attributes DarkCaveVioletEntrance, DARK_CAVE_VIOLET_ENTRANCE, $09, 0
 	map_attributes DarkCaveVioletEntranceGrotto, DARK_CAVE_VIOLET_ENTRANCE_GROTTO, $09, 0
 	map_attributes DarkCaveBlackthornEntrance, DARK_CAVE_BLACKTHORN_ENTRANCE, $09, 0
+	map_attributes DarkCaveBlackthornEntranceGrotto, DARK_CAVE_BLACKTHORN_ENTRANCE_GROTTO, $09, 0
 	map_attributes DragonsDen1F, DRAGONS_DEN_1F, $09, 0
 	map_attributes DragonsDenB1F, DRAGONS_DEN_B1F, $71, 0
 	map_attributes DragonShrine, DRAGON_SHRINE, $00, 0

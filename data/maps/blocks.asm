@@ -681,6 +681,9 @@ DarkCaveVioletEntranceGrotto_Blocks:
 DarkCaveBlackthornEntrance_Blocks:
 	INCBIN "maps/DarkCaveBlackthornEntrance.blk"
 
+DarkCaveBlackthornEntranceGrotto_Blocks:
+	INCBIN "maps/DarkCaveBlackthornEntranceGrotto.blk"
+
 RuinsOfAlphResearchCenter_Blocks:
 	INCBIN "maps/RuinsOfAlphResearchCenter.blk"
 

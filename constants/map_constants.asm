@@ -146,6 +146,7 @@ ENDM
 	map_const DARK_CAVE_VIOLET_ENTRANCE,                   20, 18 ; 78
 	map_const DARK_CAVE_VIOLET_ENTRANCE_GROTTO,             4,  4 ;
 	map_const DARK_CAVE_BLACKTHORN_ENTRANCE,               15, 18 ; 79
+	map_const DARK_CAVE_BLACKTHORN_ENTRANCE_GROTTO,         4,  4 ; 79
 	map_const DRAGONS_DEN_1F,                               5,  9 ; 80
 	map_const DRAGONS_DEN_B1F,                             20, 18 ; 81
 	map_const DRAGON_SHRINE,                                5,  5 ; 82
