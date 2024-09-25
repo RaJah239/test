@@ -24,6 +24,7 @@ GoldenrodBikeShopClerkScript:
 	itemnotify
 	setflag ENGINE_BIKE_SHOP_CALL_ENABLED
 	setevent EVENT_GOT_BICYCLE
+	setevent EVENT_DAY_CARE_OWNERS_GRANDSON_BLOCKS
 .GotBicycle:
 	writetext GoldenrodBikeShopClerkFirstRateBikesText
 	waitbutton

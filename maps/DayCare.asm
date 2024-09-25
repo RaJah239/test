@@ -1,6 +1,7 @@
 	object_const_def
 	const DAYCARE_GRAMPS
 	const DAYCARE_GRANNY
+	const ROUTE34_DAY_CARE_OWNERS_GRANDSON
 
 DayCare_MapScripts:
 	def_scene_scripts
@@ -128,6 +129,37 @@ DayCareText_DescribeOddEgg:
 	line "it around."
 	done
 
+DayCareOwnersGrandsonScript:
+	faceplayer
+	opentext
+	writetext DayCareOwnersGrandsonCantLetYouInTheBack
+	waitbutton
+	closetext
+	end
+
+DayCareOwnersGrandsonCantLetYouInTheBack:
+	text "Sorry! I can't let"
+	line "you enter back."
+	
+	para "We've a new hatch-"
+	line "ing room there."
+	
+	para "Only bicycle own-"
+	line "ers are allowed."
+	
+	para "GOLDENROD CITY now"
+	line "has bicycle shop."
+	
+	para "If you get one, I"
+	line "will let you pass."
+	
+	para "Also, if grandpa's"
+	line "not around, he'd"
+
+	para "be in the hatching"
+	line "room."
+	done
+
 DayCareText_PartyFull:
 	text "You've no room for"
 	line "this."
@@ -140,7 +172,6 @@ DayCare_MapEvents:
 	warp_event  0,  5, ROUTE_34, 3
 	warp_event  0,  6, ROUTE_34, 4
 	warp_event  2,  7, ROUTE_34, 5
-	warp_event  3,  7, ROUTE_34, 5
 
 	def_coord_events
 
@@ -151,3 +182,4 @@ DayCare_MapEvents:
 	def_object_events
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Inside, EVENT_DAY_CARE_MAN_IN_DAY_CARE
 	object_event  5,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DayCareLadyScript, -1
+	object_event  2,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, DayCareOwnersGrandsonScript, EVENT_DAY_CARE_OWNERS_GRANDSON_BLOCKS
