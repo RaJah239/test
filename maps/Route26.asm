@@ -416,6 +416,8 @@ Route26_MapEvents:
 	warp_event  7,  5, VICTORY_ROAD_GATE, 3
 	warp_event 15, 57, ROUTE_26_HEAL_HOUSE, 1
 	warp_event  5, 71, DAY_OF_WEEK_SIBLINGS_HOUSE, 1
+	warp_event  0, 76, ROUTE_26_GROTTO, 1
+	warp_event  0, 77, ROUTE_26_GROTTO, 2
 
 	def_coord_events
 

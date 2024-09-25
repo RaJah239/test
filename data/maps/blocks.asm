@@ -106,6 +106,9 @@ Route30_Blocks:
 Route26_Blocks:
 	INCBIN "maps/Route26.blk"
 
+Route26Grotto_Blocks:
+	INCBIN "maps/Route26Grotto.blk"
+
 Route42_Blocks:
 	INCBIN "maps/Route42.blk"
 

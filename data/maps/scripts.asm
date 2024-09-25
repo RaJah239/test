@@ -437,6 +437,7 @@ SECTION "Map Scripts 22", ROMX
 INCLUDE "maps/EcruteakCity.asm"
 INCLUDE "maps/BlackthornCity.asm"
 INCLUDE "maps/Route26.asm"
+INCLUDE "maps/Route26Grotto.asm"
 INCLUDE "maps/Route28.asm"
 INCLUDE "maps/Route31.asm"
 INCLUDE "maps/Route39.asm"

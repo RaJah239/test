@@ -513,6 +513,7 @@ Viridian_Map_Names: ;newgroup VIRIDIAN ; 23
 New_Bark_Map_Names: ; newgroup NEW_BARK ; 24
 	table_width 2, New_Bark_Map_Names
 	dw New_Bark_Map_Name1 ; map_const ROUTE_26,                                    10, 54 ;  1
+	dw New_Bark_Map_Name103 ; map_const ROUTE_26_GROTTO,                            8,  7 ;  5
 	dw New_Bark_Map_Name2 ; map_const ROUTE_27,                                    40,  9 ;  2
 	dw New_Bark_Map_Name3 ; map_const ROUTE_29,                                    30,  9 ;  3
 	dw New_Bark_Map_Name99 ; map_const ROUTE_29_GROTTO,                             4,  5 ;  99
@@ -1308,6 +1309,8 @@ Viridian_Map_Name13: ; map_const VICTORY_ROAD_GATE, 13
 	db "VICTORY ROAD GATE@"
 New_Bark_Map_Name1: ; map_const ROUTE_26,  1
 	db "ROUTE 26@"
+New_Bark_Map_Name103: ; map_const ROUTE_26_GROTTO,  1
+	db "ROUTE 26 GROTTO@"
 New_Bark_Map_Name2: ; map_const ROUTE_27,  2
 	db "ROUTE 27@"
 New_Bark_Map_Name3: ; map_const ROUTE_29, ;  3
