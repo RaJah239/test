@@ -563,6 +563,9 @@ MountMortarB1F_Blocks:
 IcePath1F_Blocks:
 	INCBIN "maps/IcePath1F.blk"
 
+IcePath1FGrotto_Blocks:
+	INCBIN "maps/IcePath1FGrotto.blk"
+
 IcePathB1F_Blocks:
 	INCBIN "maps/IcePathB1F.blk"
 

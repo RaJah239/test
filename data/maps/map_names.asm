@@ -156,6 +156,7 @@ Dungeons_Map_Names: ;newgroup DUNGEONS
 	dw Dungeons_Map_Name59 ; map_const MOUNT_MORTAR_2F_INSIDE,                      20, 18 ; 59
 	dw Dungeons_Map_Name60 ; map_const MOUNT_MORTAR_B1F,                            20, 18 ; 60
 	dw Dungeons_Map_Name61 ; map_const ICE_PATH_1F,                                 20, 18 ; 61
+	dw Dungeons_Map_Name108 ; map_const ICE_PATH_1F_GROTTO,                          4,  4 ;
 	dw Dungeons_Map_Name62 ; map_const ICE_PATH_B1F,                                10, 18 ; 62
 	dw Dungeons_Map_Name63 ; map_const ICE_PATH_B2F_MAHOGANY_SIDE,                  10,  9 ; 63
 	dw Dungeons_Map_Name64 ; map_const ICE_PATH_B2F_BLACKTHORN_SIDE ; 64
@@ -750,6 +751,8 @@ Dungeons_Map_Name60: ; map_const MOUNT_MORTAR_B1F,; 60
 	db "MT. MORTAR B1F@"
 Dungeons_Map_Name61: ; map_const ICE_PATH_1F,; 61
 	db "ICE PATH 1F@"
+Dungeons_Map_Name108: ; map_const ICE_PATH_1F_GROTTO,;
+	db "ICE PATH GROTTO@"
 Dungeons_Map_Name62: ; map_const ICE_PATH_B1F,; 62
 	db "ICE PATH B1F@"
 Dungeons_Map_Name63: ; map_const ICE_PATH_B2F_MAHOGANY_SIDE,; 63
