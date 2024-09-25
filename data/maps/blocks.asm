@@ -130,6 +130,9 @@ FuchsiaCity_Blocks:
 Route38_Blocks:
 	INCBIN "maps/Route38.blk"
 
+Route38Grotto_Blocks:
+	INCBIN "maps/Route38Grotto.blk"
+
 OlivineTimsHouse_Blocks:
 OlivineHouseBeta_Blocks:
 OlivinePunishmentSpeechHouse_Blocks:

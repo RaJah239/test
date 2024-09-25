@@ -470,7 +470,8 @@ Route38_MapEvents:
 	def_warp_events
 	warp_event 35,  8, ROUTE_38_ECRUTEAK_GATE, 1
 	warp_event 35,  9, ROUTE_38_ECRUTEAK_GATE, 2
-
+	warp_event 36, 16, ROUTE_38_GROTTO, 1
+	warp_event 36, 17, ROUTE_38_GROTTO, 2
 	def_coord_events
 
 	def_bg_events

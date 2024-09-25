@@ -48,6 +48,7 @@ ENDM
 	map_const ROUTE_39_BARN,                                4,  4 ; 10
 	map_const ROUTE_39_FARMHOUSE,                           4,  4 ; 11
 	map_const ROUTE_38,                                    20,  9 ; 12
+	map_const ROUTE_38_GROTTO,                              8,  7 ; 15
 	map_const ROUTE_39,                                    10, 18 ; 13
 	map_const OLIVINE_CITY,                                20, 18 ; 14
 	endgroup

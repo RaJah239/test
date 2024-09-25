@@ -70,6 +70,7 @@ Olivine_Map_Names: ;newgroup OLIVINE ;  1
 	dw Olivine_Map_Name10 ; map_const ROUTE_39_BARN ; 10
 	dw Olivine_Map_Name11 ; map_const ROUTE_39_FARMHOUSE ; 11
 	dw Olivine_Map_Name12 ; map_const ROUTE_38, ; 12
+	dw Olivine_Map_Name107 ; map_const ROUTE_38_GROTTO, ; 15
 	dw Olivine_Map_Name13 ; map_const ROUTE_39, ; 13
 	dw Olivine_Map_Name14 ; map_const OLIVINE_CITY ; 14
 	assert_table_length NUM_OLIVINE_MAPS
@@ -594,6 +595,8 @@ Olivine_Map_Name11: ; map_const ROUTE_39_FARMHOUSE ; 11
 	db "ROUTE 39 HOUSE@"
 Olivine_Map_Name12: ; map_const ROUTE_38, ; 12
 	db "ROUTE 38@"
+Olivine_Map_Name107: ; map_const ROUTE_38_GROTTO, ; 15
+	db "ROUTE 38 GROTTO@"
 Olivine_Map_Name13: ; map_const ROUTE_39, ; 13
 	db "ROUTE 39@"
 Olivine_Map_Name14: ; map_const OLIVINE_CITY ; 14
