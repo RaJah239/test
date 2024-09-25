@@ -548,6 +548,9 @@ MountMortar1FOutside_Blocks:
 MountMortar1FInside_Blocks:
 	INCBIN "maps/MountMortar1FInside.blk"
 
+MountMortar1FInsideGrotto_Blocks:
+	INCBIN "maps/MountMortar1FInsideGrotto.blk"
+
 MountMortar2FInside_Blocks:
 	INCBIN "maps/MountMortar2FInside.blk"
 

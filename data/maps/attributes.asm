@@ -438,6 +438,7 @@ ENDM
 	map_attributes GoldenrodUndergroundWarehouse, GOLDENROD_UNDERGROUND_WAREHOUSE, $00, 0
 	map_attributes MountMortar1FOutside, MOUNT_MORTAR_1F_OUTSIDE, $09, 0
 	map_attributes MountMortar1FInside, MOUNT_MORTAR_1F_INSIDE, $09, 0
+	map_attributes MountMortar1FInsideGrotto, MOUNT_MORTAR_1F_INSIDE_GROTTO, $09, 0
 	map_attributes MountMortar2FInside, MOUNT_MORTAR_2F_INSIDE, $09, 0
 	map_attributes MountMortarB1F, MOUNT_MORTAR_B1F, $09, 0
 	map_attributes IcePath1F, ICE_PATH_1F, $09, 0

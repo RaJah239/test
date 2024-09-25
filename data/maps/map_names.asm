@@ -151,6 +151,7 @@ Dungeons_Map_Names: ;newgroup DUNGEONS
 	dw Dungeons_Map_Name56 ; map_const GOLDENROD_UNDERGROUND_WAREHOUSE,             10,  9 ; 56
 	dw Dungeons_Map_Name57 ; map_const MOUNT_MORTAR_1F_OUTSIDE,                     20, 18 ; 57
 	dw Dungeons_Map_Name58 ; map_const MOUNT_MORTAR_1F_INSIDE,                      20, 27 ; 58
+	dw Dungeons_Map_Name106 ; map_const MOUNT_MORTAR_1F_INSIDE_GROTTO,               4,  4 ;
 	dw Dungeons_Map_Name59 ; map_const MOUNT_MORTAR_2F_INSIDE,                      20, 18 ; 59
 	dw Dungeons_Map_Name60 ; map_const MOUNT_MORTAR_B1F,                            20, 18 ; 60
 	dw Dungeons_Map_Name61 ; map_const ICE_PATH_1F,                                 20, 18 ; 61
@@ -738,6 +739,8 @@ Dungeons_Map_Name57: ; map_const MOUNT_MORTAR_1F_OUTSIDE,; 57
 	db "MT. MORTAR OUTSIDE@"
 Dungeons_Map_Name58: ; map_const MOUNT_MORTAR_1F_INSIDE,; 58
 	db "MT. MORTAR 1F@"
+Dungeons_Map_Name106: ; map_const MOUNT_MORTAR_1F_INSIDE_GROTTO,; 58
+	db "MT. MORTAR GROTTO@"
 Dungeons_Map_Name59: ; map_const MOUNT_MORTAR_2F_INSIDE,; 59
 	db "MT. MORTAR 2F@"
 Dungeons_Map_Name60: ; map_const MOUNT_MORTAR_B1F,; 60
