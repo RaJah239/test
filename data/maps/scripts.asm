@@ -22,6 +22,7 @@ INCLUDE "maps/GoldenrodGameCorner.asm"
 SECTION "Map Scripts 2", ROMX
 
 INCLUDE "maps/RuinsOfAlphOutside.asm"
+INCLUDE "maps/RuinsOfAlphOutsideGrotto.asm"
 INCLUDE "maps/RuinsOfAlphHoOhChamber.asm"
 INCLUDE "maps/RuinsOfAlphKabutoChamber.asm"
 INCLUDE "maps/RuinsOfAlphOmanyteChamber.asm"

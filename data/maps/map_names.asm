@@ -110,6 +110,7 @@ Dungeons_Map_Names: ;newgroup DUNGEONS
 	dw Dungeons_Map_Name20 ; map_const RADIO_TOWER_4F ; 20
 	dw Dungeons_Map_Name21 ; map_const RADIO_TOWER_5F ; 21
 	dw Dungeons_Map_Name22 ; map_const RUINS_OF_ALPH_OUTSIDE,                       10, 18 ; 22
+	dw Dungeons_Map_Name102 ; map_const RUINS_OF_ALPH_OUTSIDE_GROTTO,               10, 18 ; 22
 	dw Dungeons_Map_Name23 ; map_const RUINS_OF_ALPH_HO_OH_CHAMBER ; 23
 	dw Dungeons_Map_Name24; map_const RUINS_OF_ALPH_KABUTO_CHAMBER ; 24
 	dw Dungeons_Map_Name25; map_const RUINS_OF_ALPH_OMANYTE_CHAMBER ; 25
@@ -652,6 +653,8 @@ Dungeons_Map_Name21: ; map_const RADIO_TOWER_5F ; 21
 	db "RADIO TOWER 5F@"
 Dungeons_Map_Name22: ; map_const RUINS_OF_ALPH_OUTSIDE, ; 22
 	db "RUINS OF ALPH@"
+Dungeons_Map_Name102: ; map_const RUINS_OF_ALPH_OUTSIDE_GROTTO, ; 22
+	db "ALPH RUINS GROTTO@"
 Dungeons_Map_Name23: ; map_const RUINS_OF_ALPH_HO_OH_CHAMBER ; 23
 	db "HO-OH CHAMBER@"
 Dungeons_Map_Name24: ; map_const RUINS_OF_ALPH_KABUTO_CHAMBER ; 24

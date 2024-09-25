@@ -401,6 +401,9 @@ GoldenrodMagnetTrainStation_Blocks:
 RuinsOfAlphOutside_Blocks:
 	INCBIN "maps/RuinsOfAlphOutside.blk"
 
+RuinsOfAlphOutsideGrotto_Blocks:
+	INCBIN "maps/RuinsOfAlphOutsideGrotto.blk"
+
 RuinsOfAlphInnerChamber_Blocks:
 	INCBIN "maps/RuinsOfAlphInnerChamber.blk"
 
