@@ -322,6 +322,8 @@ Route42_MapEvents:
 	warp_event 10,  5, MOUNT_MORTAR_1F_OUTSIDE, 1
 	warp_event 28,  9, MOUNT_MORTAR_1F_OUTSIDE, 2
 	warp_event 46,  7, MOUNT_MORTAR_1F_OUTSIDE, 3
+	warp_event 40, 15, ROUTE_42_GROTTO, 1
+
 
 	def_coord_events
 	coord_event 24, 14, SCENE_ROUTE42_SUICUNE, Route42SuicuneScript
