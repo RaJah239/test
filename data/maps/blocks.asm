@@ -675,6 +675,9 @@ IlexForestGrotto_Blocks:
 DarkCaveVioletEntrance_Blocks:
 	INCBIN "maps/DarkCaveVioletEntrance.blk"
 
+DarkCaveVioletEntranceGrotto_Blocks:
+	INCBIN "maps/DarkCaveVioletEntranceGrotto.blk"
+
 DarkCaveBlackthornEntrance_Blocks:
 	INCBIN "maps/DarkCaveBlackthornEntrance.blk"
 
