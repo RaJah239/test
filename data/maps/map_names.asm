@@ -271,6 +271,7 @@ Lake_of_Rage_Map_Names: ;newgroup LAKE_OF_RAGE
 Violet_Map_Names: ;newgroup VIOLET
 	table_width 2, Violet_Map_Names                                               ; 10
 	dw Violet_Map_Name1 ; map_const ROUTE_32,;  1
+	dw Violet_Map_Name100 ; map_const ROUTE_32_GROTTO,;  1
 	dw Violet_Map_Name2 ; map_const ROUTE_35,;  2
 	dw Violet_Map_Name3 ; map_const ROUTE_36,;  3
 	dw Violet_Map_Name4 ; map_const ROUTE_37,;  4
@@ -922,6 +923,8 @@ Lake_of_Rage_Map_Name6: ; map_const LAKE_OF_RAGE ; 6
 
 Violet_Map_Name1: ; map_const ROUTE_32,;  1
 	db "ROUTE 32@"
+Violet_Map_Name100: ; map_const ROUTE_32_GROTTO,;  1
+	db "ROUTE 32 GROTTO@"
 Violet_Map_Name2: ; map_const ROUTE_35,;  2
 	db "ROUTE 35@"
 Violet_Map_Name3: ; map_const ROUTE_36,;  3
@@ -1297,7 +1300,6 @@ Viridian_Map_Name12: ; map_const ROUTE_2_GATE ; 12
 	db "ROUTE 2 GATE@"
 Viridian_Map_Name13: ; map_const VICTORY_ROAD_GATE, 13
 	db "VICTORY ROAD GATE@"
-
 New_Bark_Map_Name1: ; map_const ROUTE_26,  1
 	db "ROUTE 26@"
 New_Bark_Map_Name2: ; map_const ROUTE_27,  2

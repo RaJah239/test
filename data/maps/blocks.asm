@@ -3,6 +3,9 @@ SECTION "Map Blocks 1", ROMX
 Route32_Blocks:
 	INCBIN "maps/Route32.blk"
 
+Route32Grotto_Blocks:
+	INCBIN "maps/Route32Grotto.blk"
+
 Route40_Blocks:
 	INCBIN "maps/Route40.blk"
 

@@ -533,6 +533,7 @@ ENDM
 	map_attributes VioletPokecenter1F, VIOLET_POKECENTER_1F, $00, 0
 	map_attributes VioletKylesHouse, VIOLET_KYLES_HOUSE, $00, 0
 	map_attributes Route32RuinsOfAlphGate, ROUTE_32_RUINS_OF_ALPH_GATE, $00, 0
+	map_attributes Route32Grotto, ROUTE_32_GROTTO, $00, 0
 	map_attributes Route32Pokecenter1F, ROUTE_32_POKECENTER_1F, $00, 0
 	map_attributes Route35GoldenrodGate, ROUTE_35_GOLDENROD_GATE, $00, 0
 	map_attributes Route35NationalParkGate, ROUTE_35_NATIONAL_PARK_GATE, $00, 0
