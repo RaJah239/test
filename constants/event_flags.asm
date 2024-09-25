@@ -280,7 +280,8 @@
 	const EVENT_UNION_CAVE_GROTTO_TYROGUE_OW
 	const EVENT_UNION_CAVE_GROTTO_ONIX_OW
 	const EVENT_DAY_CARE_OWNERS_GRANDSON_BLOCKS
-; Unused: next 328 events
+	const EVENT_DAY_CARE_OWNERS_GRANDSON_ODD_EGG
+; Unused: next 327 events
 
 	const_next 600
 ; Kurt Apricorn events
