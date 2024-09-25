@@ -409,6 +409,7 @@ SECTION "Map Scripts 20", ROMX
 INCLUDE "maps/CherrygroveCity.asm"
 INCLUDE "maps/Route35.asm"
 INCLUDE "maps/Route43.asm"
+INCLUDE "maps/Route43Grotto.asm"
 INCLUDE "maps/Route44.asm"
 INCLUDE "maps/Route45.asm"
 INCLUDE "maps/Route19.asm"

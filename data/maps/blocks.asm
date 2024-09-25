@@ -226,6 +226,9 @@ Route35_Blocks:
 Route43_Blocks:
 	INCBIN "maps/Route43.blk"
 
+Route43Grotto_Blocks:
+	INCBIN "maps/Route43Grotto.blk"
+
 Route39_Blocks:
 	INCBIN "maps/Route39.blk"
 

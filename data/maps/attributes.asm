@@ -527,6 +527,7 @@ ENDM
 	map_attributes LakeOfRageMagikarpHouse, LAKE_OF_RAGE_MAGIKARP_HOUSE, $00, 0
 	map_attributes Route43MahoganyGate, ROUTE_43_MAHOGANY_GATE, $00, 0
 	map_attributes Route43Gate, ROUTE_43_GATE, $00, 0
+	map_attributes Route43Grotto, ROUTE_43_GROTTO, $00, 0
 	map_attributes VioletMart, VIOLET_MART, $00, 0
 	map_attributes VioletGym, VIOLET_GYM, $00, 0
 	map_attributes EarlsPokemonAcademy, EARLS_POKEMON_ACADEMY, $00, 0

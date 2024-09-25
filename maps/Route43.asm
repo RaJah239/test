@@ -501,7 +501,8 @@ Route43_MapEvents:
 	warp_event 17, 35, ROUTE_43_GATE, 3
 	warp_event 17, 31, ROUTE_43_GATE, 1
 	warp_event 18, 31, ROUTE_43_GATE, 2
-
+	warp_event  0, 38, ROUTE_43_GROTTO, 1
+	warp_event  0, 39, ROUTE_43_GROTTO, 2
 	def_coord_events
 
 	def_bg_events

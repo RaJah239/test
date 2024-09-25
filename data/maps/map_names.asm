@@ -266,7 +266,8 @@ Lake_of_Rage_Map_Names: ;newgroup LAKE_OF_RAGE
 	dw Lake_of_Rage_Map_Name3 ; map_const ROUTE_43_MAHOGANY_GATE ;  3
 	dw Lake_of_Rage_Map_Name4 ; map_const ROUTE_43_GATE ;  4
 	dw Lake_of_Rage_Map_Name5 ; map_const ROUTE_43,                                    10, 27 ;  5
-	dw Lake_of_Rage_Map_Name6 ; map_const LAKE_OF_RAGE,                                20, 18 ;  6
+	dw Lake_of_Rage_Map_Name104 ; map_const ROUTE_43_GROTTO,                            8,  7 ;  6
+	dw Lake_of_Rage_Map_Name6 ; map_const LAKE_OF_RAGE,                                20, 18 ;  7
 	assert_table_length NUM_LAKE_OF_RAGE_MAPS
 
 Violet_Map_Names: ;newgroup VIOLET
@@ -923,6 +924,8 @@ Lake_of_Rage_Map_Name4: ; map_const ROUTE_43_GATE ;  4
 	db "ROUTE 43, GATE 2@"
 Lake_of_Rage_Map_Name5: ; map_const ROUTE_43 ;  5
 	db "ROUTE 43@"
+Lake_of_Rage_Map_Name104: ; map_const ROUTE_43 ;  5
+	db "ROUTE 43 GROTTO@"
 Lake_of_Rage_Map_Name6: ; map_const LAKE_OF_RAGE ; 6
 	db "LAKE OF RAGE@"
 
