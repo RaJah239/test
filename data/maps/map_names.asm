@@ -105,6 +105,7 @@ Dungeons_Map_Names: ;newgroup DUNGEONS
 	dw Dungeons_Map_Name13 ; map_const BURNED_TOWER_1F,                             10,  9 ; 13
 	dw Dungeons_Map_Name14 ; map_const BURNED_TOWER_B1F,                            10,  9 ; 14
 	dw Dungeons_Map_Name15 ; map_const NATIONAL_PARK,                               20, 27 ; 15
+	dw Dungeons_Map_Name109 ; map_const NATIONAL_PARK_GROTTO,                        5,  4 ; Crystal Trove
 	dw Dungeons_Map_Name16 ; map_const NATIONAL_PARK_BUG_CONTEST,                   20, 27 ; 16
 	dw Dungeons_Map_Name17 ; map_const RADIO_TOWER_1F ; 17
 	dw Dungeons_Map_Name18 ; map_const RADIO_TOWER_2F ; 18
@@ -649,6 +650,8 @@ Dungeons_Map_Name14: ; map_const BURNED_TOWER_B1F, ; 14
 	db "BURNED TOWER B1F@"
 Dungeons_Map_Name15: ; map_const NATIONAL_PARK, ; 15
 	db "NATIONAL PARK@"
+Dungeons_Map_Name109: ; map_const NATIONAL_PARK_GROTTO, ; Crystal Trove
+	db "N. PARK GROTTO@"
 Dungeons_Map_Name16: ; map_const NATIONAL_PARK_BUG_CONTEST,; 16
 	db "PARK: BUG CONTEST@"
 Dungeons_Map_Name17: ; map_const RADIO_TOWER_1F ; 17

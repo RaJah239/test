@@ -391,6 +391,7 @@ ENDM
 	map_attributes BurnedTower1F, BURNED_TOWER_1F, $00, 0
 	map_attributes BurnedTowerB1F, BURNED_TOWER_B1F, $09, 0
 	map_attributes NationalPark, NATIONAL_PARK, $00, 0
+	map_attributes NationalParkGrotto, NATIONAL_PARK_GROTTO, $00, 0
 	map_attributes NationalParkBugContest, NATIONAL_PARK_BUG_CONTEST, $00, 0
 	map_attributes RadioTower1F, RADIO_TOWER_1F, $00, 0
 	map_attributes RadioTower2F, RADIO_TOWER_2F, $00, 0

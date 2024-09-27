@@ -399,6 +399,9 @@ NationalPark_Blocks:
 NationalParkBugContest_Blocks:
 	INCBIN "maps/NationalPark.blk"
 
+NationalParkGrotto_Blocks:
+	INCBIN "maps/NationalParkGrotto.blk"
+
 Route5UndergroundPathEntrance_Blocks:
 Route6UndergroundPathEntrance_Blocks:
 	INCBIN "maps/UndergroundPathEntrance.blk"
