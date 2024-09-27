@@ -281,7 +281,8 @@
 	const EVENT_UNION_CAVE_GROTTO_ONIX_OW
 	const EVENT_DAY_CARE_OWNERS_GRANDSON_BLOCKS
 	const EVENT_DAY_CARE_OWNERS_GRANDSON_ODD_EGG
-; Unused: next 327 events
+	const EVENT_GAME_BOY_KID_BLOCKER_NATIONAL_PARK_GROTTO
+; Unused: next 326 events
 
 	const_next 600
 ; Kurt Apricorn events

@@ -11,11 +11,19 @@
 	const NATIONALPARKBUGCONTEST_YOUNGSTER7
 	const NATIONALPARKBUGCONTEST_POKE_BALL1
 	const NATIONALPARKBUGCONTEST_POKE_BALL2
-
+	const NATIONALPARKBUGCONTEST_GAMEBOY_KID_BLOCKER
+	
 NationalParkBugContest_MapScripts:
+
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, NationalParkBugContestGameBoyKidBlockerCallback
+
+
+NationalParkBugContestGameBoyKidBlockerCallback:
+	clearevent EVENT_GAME_BOY_KID_BLOCKER_NATIONAL_PARK_GROTTO
+	endcallback
 
 BugCatchingContestant1AScript:
 	faceplayer
@@ -97,6 +105,14 @@ BugCatchingContestant10AScript:
 	closetext
 	end
 
+NationalParkBugContestGameBoyKidBlockerScript:
+	faceplayer
+	opentext
+	writetext NationalParkBugContestGameBoyKidBlockerText
+	waitbutton
+	closetext
+	end
+
 NationalParkBugContestRelaxationSquareSign:
 	jumptext NationalParkBugContestRelaxationSquareText
 
@@ -114,6 +130,10 @@ NationalParkBugContestTMDig:
 
 NationalParkBugContestHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_NATIONAL_PARK_HIDDEN_FULL_HEAL
+
+NationalParkBugContestGameBoyKidBlockerText:
+	text "Let's do our best!"
+	done
 
 BugCatchingContestant1AText:
 	text "DON: I'm going to"
@@ -248,3 +268,4 @@ NationalParkBugContest_MapEvents:
 	object_event 17, 34, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BugCatchingContestant10AScript, EVENT_BUG_CATCHING_CONTESTANT_10A
 	object_event 35, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkBugContestParlyzHeal, EVENT_NATIONAL_PARK_PARLYZ_HEAL
 	object_event  1, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkBugContestTMDig, EVENT_NATIONAL_PARK_TM_DIG
+	object_event 27,  6, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, NationalParkBugContestGameBoyKidBlockerScript, EVENT_GAME_BOY_KID_BLOCKER_NATIONAL_PARK_GROTTO
