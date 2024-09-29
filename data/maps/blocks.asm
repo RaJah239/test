@@ -467,6 +467,9 @@ AzaleaTown_Blocks:
 CianwoodCity_Blocks:
 	INCBIN "maps/CianwoodCity.blk"
 
+CianwoodCityGrotto_Blocks:
+	INCBIN "maps/CianwoodCityGrotto.blk"
+
 GoldenrodCity_Blocks:
 	INCBIN "maps/GoldenrodCity.blk"
 

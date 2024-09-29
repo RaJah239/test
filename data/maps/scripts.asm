@@ -422,6 +422,7 @@ INCLUDE "maps/Route25.asm"
 SECTION "Map Scripts 21", ROMX
 
 INCLUDE "maps/CianwoodCity.asm"
+INCLUDE "maps/CianwoodCityGrotto.asm"
 INCLUDE "maps/Route27.asm"
 INCLUDE "maps/Route29.asm"
 INCLUDE "maps/Route29Grotto.asm"

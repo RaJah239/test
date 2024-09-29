@@ -483,6 +483,7 @@ Cianwood_Map_Names: ;newgroup CIANWOOD
 	dw Cianwood_Map_Name1 ; map_const ROUTE_40,                                    10, 18 ;  1
 	dw Cianwood_Map_Name2 ; map_const ROUTE_41,                                    25, 27 ;  2
 	dw Cianwood_Map_Name3 ; map_const CIANWOOD_CITY,                               15, 27 ;  3
+	dw Cianwood_Map_Name110 ; map_const CIANWOOD_CITY_GROTTO,                       4,  4 ;  Crystal Trove
 	dw Cianwood_Map_Name4 ; map_const MANIAS_HOUSE ;  4
 	dw Cianwood_Map_Name5 ; map_const CIANWOOD_GYM ;  5
 	dw Cianwood_Map_Name6 ; map_const CIANWOOD_POKECENTER_1F ;  6
@@ -1272,6 +1273,8 @@ Cianwood_Map_Name2: ; map_const ROUTE_41, ;  2
 	db "ROUTE 41@"
 Cianwood_Map_Name3: ; map_const CIANWOOD_CITY ;  3
 	db "CIANWOOD CITY@"
+Cianwood_Map_Name110: ; map_const CIANWOOD_CITY_GROTTO ;  Crystal Trove
+	db "CIANWOOD GROTTO@"
 Cianwood_Map_Name4: ; map_const MANIAS_HOUSE ;  4
 	db "MANIA'S HOUSE@"
 Cianwood_Map_Name5: ; map_const CIANWOOD_GYM ;  5
