@@ -108,6 +108,11 @@
 	const SPRITE_KRIS_SURF
 	const SPRITE_CHANSEY_OW
 	const SPRITE_PORYGON_OW
+	const SPRITE_QWILFISH_OW
+	const SPRITE_LANTURN_OW
+	const SPRITE_MANTINE_OW
+	const SPRITE_SEAKING_OW
+	const SPRITE_OCTILLERY_OW
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
