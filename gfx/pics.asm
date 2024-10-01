@@ -467,7 +467,7 @@ ClefairyBackpic:     INCBIN "gfx/pokemon/clefairy/back.2bpp.lz"
 VenonatBackpic:      INCBIN "gfx/pokemon/venonat/back.2bpp.lz"
 BellossomBackpic:    INCBIN "gfx/pokemon/bellossom/back.2bpp.lz"
 Rival1Pic:           INCBIN "gfx/trainers/rival1.2bpp.lz"
-SwinubBackpic:       INCBIN "gfx/pokemon/swinub/back.2bpp.lz"
+
 
 
 SECTION "Pics 15", ROMX
@@ -642,7 +642,7 @@ SkarmoryBackpic:     INCBIN "gfx/pokemon/skarmory/back.2bpp.lz"
 MetapodBackpic:      INCBIN "gfx/pokemon/metapod/back.2bpp.lz"
 JigglypuffBackpic:   INCBIN "gfx/pokemon/jigglypuff/back.2bpp.lz"
 OddishBackpic:       INCBIN "gfx/pokemon/oddish/back.2bpp.lz"
-UnownDBackpic:       INCBIN "gfx/pokemon/unown_d/back.2bpp.lz"
+
 
 
 SECTION "Pics 18", ROMX
@@ -781,6 +781,9 @@ INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 SECTION "Pics 20", ROMX
 OmastarBackpic:     INCBIN "gfx/pokemon/omastar/back.2bpp.lz"
 MaximaPic:          INCBIN "gfx/trainers/maxima.2bpp.lz"
+SwinubBackpic:      INCBIN "gfx/pokemon/swinub/back.2bpp.lz"
+UnownDBackpic:      INCBIN "gfx/pokemon/unown_d/back.2bpp.lz"
+
 
 SECTION "Pics 21", ROMX
 
