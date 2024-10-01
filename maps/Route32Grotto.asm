@@ -10,7 +10,7 @@ Route32Grotto_MapEvents:
     db 0, 0 ; filler
 
     def_warp_events
-	warp_event  7,  7, ROUTE_32, 5
+	warp_event  6,  7, ROUTE_32, 5
 
     def_coord_events
 
