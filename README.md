@@ -51,7 +51,8 @@ POKEGEAR: Now shows the detailed name of map you're currently in (based on Map G
 
 # **Credits List:**
 
-- TODO
+- Qwilfish, Mantine, Kingdra, Octillery, Starmie overworld sprites done by FrenchOrange
+- Chansey, Porygon, Lanturn, Seaking overworld sprites done by Megaman-Omega
 
 # **To do List:**
 
