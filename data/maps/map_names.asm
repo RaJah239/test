@@ -192,6 +192,7 @@ Dungeons_Map_Names: ;newgroup DUNGEONS
 	dw Dungeons_Map_Name89 ; map_const SAFARI_ZONE_FUCHSIA_GATE_BETA ; 89
 	dw Dungeons_Map_Name90 ; map_const SAFARI_ZONE_BETA,                            10, 18 ; 90
 	dw Dungeons_Map_Name91 ; map_const VICTORY_ROAD,; 91
+	dw Dungeons_Map_Name113 ; map_const VICTORY_ROAD_GROTTO,                               ; Crystal Trove
 	assert_table_length NUM_DUNGEONS_MAPS
 	
 
@@ -828,6 +829,8 @@ Dungeons_Map_Name90: ; map_const SAFARI_ZONE_BETA,; 90
 	db "SAFARI ZONE@"
 Dungeons_Map_Name91: ; map_const VICTORY_ROAD,;  4
 	db "VICTORY ROAD@"
+Dungeons_Map_Name113: ; map_const VICTORY_ROAD_GROTTO,;  Crystal Trove
+	db "VICTORY RD. GROTTO@"
 
 Ecruteak_Map_Name1: ; map_const ECRUTEAK_TIN_TOWER_ENTRANCE,;  1
 	db "TIN TOWER PATH@"
