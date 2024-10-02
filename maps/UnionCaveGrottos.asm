@@ -127,7 +127,7 @@ UnionCaveGrottos_MapEvents:
     db 0, 0 ; filler
 
     def_warp_events
-	warp_event  5,  5, UNION_CAVE_B1F, 6
+	warp_event  4,  5, UNION_CAVE_B1F, 6
 
 
     def_coord_events
