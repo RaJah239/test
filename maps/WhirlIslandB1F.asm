@@ -48,7 +48,7 @@ WhirlIslandB1F_MapEvents:
 	warp_event  9, 31, WHIRL_ISLAND_SW, 3
 	warp_event 23, 31, WHIRL_ISLAND_SW, 2
 	warp_event 31, 29, WHIRL_ISLAND_SE, 2
-	warp_event 25, 21, WHIRL_ISLAND_B2F, 1
+	warp_event 25, 19, WHIRL_ISLAND_B2F, 1
 	warp_event 13, 27, WHIRL_ISLAND_B2F, 2
 	warp_event 17, 21, WHIRL_ISLAND_CAVE, 1
 
