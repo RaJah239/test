@@ -327,8 +327,11 @@ CooltrainermDarinAfterBattleText:
 	para "MASTER of our"
 	line "dragon-user clan."
 
-	para "You're not allowed"
-	line "to just go in!"
+	para "There's also Grotto"
+	line "here."
+	
+	para "It's said to have"
+	line "2 rare #MON."
 	done
 
 CooltrainerfCaraSeenText:
@@ -405,6 +408,7 @@ DragonsDenB1F_MapEvents:
 	def_warp_events
 	warp_event 20,  3, DRAGONS_DEN_1F, 3
 	warp_event 19, 29, DRAGON_SHRINE, 1
+	warp_event 34, 15, DRAGONS_DEN_GROTTO, 1
 
 	def_coord_events
 	coord_event 19, 30, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM, DragonsDenB1F_ClairScene
@@ -416,7 +420,7 @@ DragonsDenB1F_MapEvents:
 	bg_event 31, 15, BGEVENT_ITEM, DragonsDenB1FHiddenMaxElixer
 
 	def_object_events
-	object_event 35, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FDragonFangScript, EVENT_DRAGONS_DEN_B1F_DRAGON_FANG
+	object_event 35, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FDragonFangScript, EVENT_DRAGONS_DEN_B1F_DRAGON_FANG
 	object_event 14, 30, SPRITE_CLAIR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DRAGONS_DEN_CLAIR
 	object_event 20, 23, SPRITE_RIVAL, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenB1FRivalScript, EVENT_RIVAL_DRAGONS_DEN
 	object_event 20,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainermDarin, -1

@@ -909,6 +909,9 @@ WiseTriosRoom_Blocks:
 DragonsDen1F_Blocks:
 	INCBIN "maps/DragonsDen1F.blk"
 
+DragonsDenGrotto_Blocks:
+	INCBIN "maps/DragonsDenGrotto.blk"
+
 DragonsDenB1F_Blocks:
 	INCBIN "maps/DragonsDenB1F.blk"
 

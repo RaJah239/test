@@ -180,6 +180,7 @@ Dungeons_Map_Names: ;newgroup DUNGEONS
 	dw Dungeons_Map_Name79 ; map_const DARK_CAVE_BLACKTHORN_ENTRANCE,               15, 18 ; 79
 	dw Dungeons_Map_Name98 ; map_const DARK_CAVE_BLACKTHORN_ENTRANCE_GROTTO,        15, 18 ; 79
 	dw Dungeons_Map_Name80 ; map_const DRAGONS_DEN_1F ; 80
+	dw Dungeons_Map_Name112 ; map_const DRAGONS_DEN_GROTTO                                 ; Crystal Trove
 	dw Dungeons_Map_Name81 ; map_const DRAGONS_DEN_B1F,                             20, 18 ; 81
 	dw Dungeons_Map_Name82 ; map_const DRAGON_SHRINE ; 82
 	dw Dungeons_Map_Name83 ; map_const TOHJO_FALLS,                                 15,  9 ; 83
@@ -803,6 +804,8 @@ Dungeons_Map_Name98: ; map_const DARK_CAVE_BLACKTHORN_ENTRANCE_GROTTO,; 98
 	db "DARK CAVE E.GROTTO@"
 Dungeons_Map_Name80: ; map_const DRAGONS_DEN_1F ; 80
 	db "DRAGONS DEN 1F@"
+Dungeons_Map_Name112: ; map_const DRAGONS_DEN_GROTTO ; Crystal Trove
+	db "DRAGON'S GROTTO@"
 Dungeons_Map_Name81: ; map_const DRAGONS_DEN_B1F,; 81
 	db "DRAGONS DEN B1@"
 Dungeons_Map_Name82: ; map_const DRAGON_SHRINE ; 82
