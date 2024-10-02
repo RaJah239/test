@@ -51,6 +51,7 @@ WhirlIslandB1F_MapEvents:
 	warp_event 25, 19, WHIRL_ISLAND_B2F, 1
 	warp_event 13, 27, WHIRL_ISLAND_B2F, 2
 	warp_event 17, 21, WHIRL_ISLAND_CAVE, 1
+	warp_event 26, 25, WHIRL_ISLAND_GROTTO, 1
 
 	def_coord_events
 

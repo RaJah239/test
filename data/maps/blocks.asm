@@ -602,6 +602,9 @@ WhirlIslandSE_Blocks:
 WhirlIslandB1F_Blocks:
 	INCBIN "maps/WhirlIslandB1F.blk"
 
+WhirlIslandGrotto_Blocks:
+	INCBIN "maps/WhirlIslandGrotto.blk"
+
 WhirlIslandB2F_Blocks:
 	INCBIN "maps/WhirlIslandB2F.blk"
 

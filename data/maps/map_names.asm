@@ -168,6 +168,7 @@ Dungeons_Map_Names: ;newgroup DUNGEONS
 	dw Dungeons_Map_Name69 ; map_const WHIRL_ISLAND_CAVE ; 69
 	dw Dungeons_Map_Name70 ; map_const WHIRL_ISLAND_SE ; 70
 	dw Dungeons_Map_Name71 ; map_const WHIRL_ISLAND_B1F,                            20, 18 ; 71
+	dw Dungeons_Map_Name111 ; map_const WHIRL_ISLAND_GROTTO,                         8,  7 ; Crystal Trove
 	dw Dungeons_Map_Name72 ; map_const WHIRL_ISLAND_B2F,                            10, 18 ; 72
 	dw Dungeons_Map_Name73 ; map_const WHIRL_ISLAND_LUGIA_CHAMBER,                  10,  9 ; 73
 	dw Dungeons_Map_Name74 ; map_const SILVER_CAVE_ROOM_1,                          10, 18 ; 74
@@ -777,6 +778,8 @@ Dungeons_Map_Name70: ; map_const WHIRL_ISLAND_SE ; 70
 	db "WHIRL ISLANDS S.E.@"
 Dungeons_Map_Name71: ; map_const WHIRL_ISLAND_B1F,; 71
 	db "WHIRL ISLANDS B1F@"
+Dungeons_Map_Name111: ; map_const WHIRL_ISLAND_GROTTO,; Crystal Trove
+	db "W. ISLANDS GROTTO@"
 Dungeons_Map_Name72: ; map_const WHIRL_ISLAND_B2F,; 72
 	db "WHIRL ISLANDS B2F@"
 Dungeons_Map_Name73: ; map_const WHIRL_ISLAND_LUGIA_CHAMBER,; 73
