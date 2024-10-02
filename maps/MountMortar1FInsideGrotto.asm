@@ -10,7 +10,7 @@ MountMortar1FInsideGrotto_MapEvents:
     db 0, 0 ; filler
 
     def_warp_events
-	warp_event  5,  5, MOUNT_MORTAR_1F_INSIDE, 7
+	warp_event  4,  5, MOUNT_MORTAR_1F_INSIDE, 7
 
     def_coord_events
 
