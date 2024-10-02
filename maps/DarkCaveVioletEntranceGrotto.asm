@@ -10,7 +10,7 @@ DarkCaveVioletEntranceGrotto_MapEvents:
     db 0, 0 ; filler
 
     def_warp_events
-	warp_event  5,  5, DARK_CAVE_VIOLET_ENTRANCE, 4
+	warp_event  4,  5, DARK_CAVE_VIOLET_ENTRANCE, 4
 
     def_coord_events
 
