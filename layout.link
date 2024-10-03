@@ -111,7 +111,6 @@ ROMX $24
 	"bank24"
 ROMX $25
 	"Maps"
-	"Events"
 ROMX $26
 	"Map Scripts 11"
 ROMX $27
@@ -308,6 +307,7 @@ ROMX $78
 ROMX $79
 	"Extra Songs 1"
 ROMX $7a
+	"Events"
 ROMX $7b
 	"Battle Tower Text"
 ROMX $7c
