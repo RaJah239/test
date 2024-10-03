@@ -18,7 +18,7 @@ This hack will not include:
 Everything else is fare game.
 
 
-# **Nayru's Pokedex Project:**
+# **Nayru's Pokedex Project (Rom Hack's Base):**
 
 ![image](https://raw.githubusercontent.com/Nayru62/Nayru62-Pokecrystal-Tutorials/main/demos/NayrusPokedex_demo_28SEP2023.gif)
 ![image](https://github.com/Nayru62/Nayru62-Pokecrystal-Tutorials/blob/main/demos/area_page_28SEP2023.png)
@@ -26,38 +26,100 @@ Everything else is fare game.
 ![image](https://raw.githubusercontent.com/Nayru62/Nayru62-Pokecrystal-Tutorials/main/demos/pokegear_28SEP2023.png)
 
 
-*Bundled:* [Idain's](https://github.com/Idain) [Custom Dex Colors](https://github.com/pret/pokecrystal/wiki/Customizable-Pok%C3%A9dex-Color) and [Toggle Shiny Palettes](https://github.com/pret/pokecrystal/wiki/Option-to-show-shiny-colors-in-Pok%C3%A9dex), doesnt impact you if you dont want it.
+*Bundled:* [Idain's](https://github.com/Idain) [Custom Dex Colors](https://github.com/pret/pokecrystal/wiki/Customizable-Pok%C3%A9dex-Color) and [Toggle Shiny Palettes](https://github.com/pret/pokecrystal/wiki/Option-to-show-shiny-colors-in-Pok%C3%A9dex)
 
 *REQUIRED:* (bug/design flaw fix about Radio Tower)
-- [Unique Mon Icons](https://github.com/pret/pokecrystal/wiki/Add-a-new-party-menu-icon) (or at least adapt to the new Bank structure, actual icons used are irrelevant)
-- [Replace StatExp with EVs](https://github.com/pret/pokecrystal/wiki/Replace-stat-experience-with-EVs),
+- [Unique Mon Icons](https://github.com/pret/pokecrystal/wiki/Add-a-new-party-menu-icon)
 - [Expanded Tilesets to 255](https://github.com/pret/pokecrystal/wiki/Expand-tilesets-from-192-to-255-tiles), 
-- my Gen3 Type/Status/Cat Tiles. Pokedex portion must be implemented. Other parts, optional.
+- Naryu's Gen3 Type/Status/Cat Tiles. Pokedex portion must be implemented. Other parts, optional.
 
-FEATURES:  Base stats and info, Move Info, Detailed area info, Evoulation chart, and sprite page showing animated sprites (reflects shiny toggle too).
+FEATURES:  Base stats and info, Move Info, Detailed area info, Evolution chart, and sprite page showing animated sprites (reflects shiny toggle too).
 
-Move Information: Lvl-Up Moves -> Field Moves (plus lvl learned and/or TM/HM/Move Tutor) -> Egg Moves -> TMs. I have fully functional code commented out to include HMs. But I decided not to since Field Moves serve the same purpse. But, if you've messed with adding or deleting Field Moves, I reccomend scrapping the Field Moves code and restoring the HM code. Please feel free to DM about this if it's an issue. I'm working on better solutions at some point.
+Move Information: Lvl-Up Moves -> Field Moves (plus lvl learned and/or TM/HM/Move Tutor) -> Egg Moves -> TMs.
 
-AREA Pages: Currently supports Johto/Kanto Walking/grass/surfing encounters plus their swarms. Fishing Rods information is also included. Right now, all it will show you is the relevant Fishing Group Name. In the near future, it will print Route information like the other pages.
-To check your local Fishing Group, check your PokeGear.
+AREA Pages: Currently supports Johto/Kanto Walking/grass/surfing encounters plus their swarms. Fishing Rods information is also included. Right now, all it will show you is the relevant Fishing Group Name. To check your local Fishing Group, check the PokeGear.
 
 POKEGEAR: Now shows the detailed name of map you're currently in (based on Map Group & Map Number) and it also reads the map's attribute to see it's fishing group, if it has one.
 
-# **Full List of Features:**
-- TODO
+# **Full List of Quality of Life Features:**
+- Select + B resets the game. 
+- Instant Text speed added & set to Default. Removed SLOW and MEDIUM text speeds.
+- Removed the artificial save delay.
+- Replace Menu Account with a small clock in the top left corner of the screen.
+- Clock Reset added to Main Menu.
+- All encounters can be turned On/Off from the Options Menu.
+- Do Not Disturb mode added Options Menu; prevent all non essential phone calls.
+- Running shoes added (default Run, press B to walk).
+- Surf faster by default, press B to surf at regular speed.
+- Overworld Porygons added throughout the game for PC access.
+- Chanseys that heal the player’s party in the overworld added throughout the game.
+- Color coded starter Poké Balls.
+- Displays colored Pokémon pictures in the overworld.
+- Edited PC text to allow for faster maneuvering.
+- Short beeping noise for low HP to replace the continuous beeping noise.
+- Lose money proportional to badges and lead level Pokémon on white out.
+- Survive poisoning with 1 HP.
+- Field moves are useable of a Pokémon can learn the TM/HM and is in the respective pocket.
+- Items that act like HMs added (except Fly) to prevent softlocks.
+- Animate tiles when text boxes are open.
+- Pokémon eggs get laid 100% of the time after a set number of steps.
+- Refusing eggs no longer prevents Pokémon from laying more.
+- Eggs can be released via the PC.
+- Hatch Room was added to the Day Care out back. Only accessible via Bicycle. The old man appears there if your Pokémon laid any eggs and there’s a Porygon PC as well.
+- Press A or B to stop the Bicycle in the Day Care's Hatch Room or Kanto’s Cycling Road.
+- Slot Machines payout were adjusted as coins are now used for a lot of things.
+- Name Rater can change traded Pokémon’s nicknames.
+- New Fly Points added for Route 20/Blaine’s Gym, Route 32, Route 26, Tohjo Falls/Route 27, Battle Tower, National Park, Mt. Moon and Rock Tunnel.
+- Old man and Abra at the Indigo Plateau Pokémon Center doesn't leave.
+- 20 Grotto-like maps added throughout the game. 
+- Each Grotto have 5 Pokémon per day (except two). Only one can be caught/fought and then none will appear until the next day. It is rare for them to appear. Needs to be re-entered a few times to have one spawn.
+
+# **Pokémon // Battle Related:**
+- Affection added to Pokémon's 3rd (blue) stat page.
+- Gen 3+ Effort Values (EVs) system replaced vanilla Stat Experience and Pokémon EV yield on KO readjusted. EV yeild can be seen in the Pokédex.
+- 4th (orange) Stat Page added to Pokémon - met time, level & location caught, Hidden Power type and EVs earned are all displayed.
+- Vitamins give 4 EVs and prices re-adjusted. Pokémon can max out EVs with items alone. 
+- Reworked Exp Share to give party wide Experience and EVs even when at the level cap or level 100. If a Pokémon cannot level up, deposit and withdraw them via the PC to gain the stat changes. 
+- Catching Pokémon yield Exp and EVs. 
+- DVs no longer affect battle stats. Pokémon of the same specie at the same level without EVs have the same Battle stats. DVs now only affect chance for shininess and Hidden Power Type.
+- Hidden Power’s battle strength is always 70 and type is determined the same way as vanilla. 
+- Battle HUD updated.
+- More information added to Move Menu.
+- Item usage is forbidden and forced Set mode is enabled for all trainers.
+- Removed the 25% failure chance for AI status moves.
+- Removed the gym badges boosts.
+- Level caps added (not fully implemented yet).
+- Quick Claw activation text added.
+- Sacred Ash acts like a Pokémon Center heal and does not require any KO’d Pokémon for its activation.
+- Gym trainers reset when exiting if the leader hasn't been defeated.
+
+# **Asset Credits List:**
+- RBY text frame added from Polished Crystal
+- Chris' run sprite by Tom Wang  and Kris' run sprite by Seasick both from GitHub
+- Do Not Disturb mode by lifeofmauri on Discord
+- Take off Encounters by lifeofmauri on Discord
+- Item usage is forbidden by lifeofmauri on Discord
+- Cooltrainer Male overworld sprite eye fix by Major Agnostic on Discord
+- Battle HUD update by Idain and Major Agnostic on Discord
+- Qwilfish, Mantine and Octillery overworld sprites by FrenchOrange on Discord
+- Chansey, Porygon, Lanturn and Seaking overworld sprites by Megaman-Omega from DeviantArt
+- Charizard, Dragonite and Feraligatr back sprites by mauvesea on Discord
+- Surf faster - cRz-Shadows on Discord
+- RBY Indigo Plateau & Champion Theme by dannye from Discord & GitHub.
+
+# **General Credits List:**
+- Everyone that contributed to the pokecrystal disassembly, Pret’s Discord Server and pokecrystal tutorials which legitimately carried me.
+
+- I wanted to name these people in particular from Pret's Discord Server: GetKosiorekt, Nayru62, NickJam, Grate Oracle Lewot, Idain, Major_Agnostic, SourApple, lifeofmauri, FrenchOrange, PiaCRT, mauvemon, Ardorin, PerreteCartago, Rod , ElfinHilon10, dannye, FootFingers, Ferropexola, Handheld Hero, 8bitzeta, Pferomon, Vulcandth, ax6, FIQ and rangi42.
 
 # **Known Bugs:**
-- TODO
 
-# **Credits List:**
-
-- Qwilfish, Mantine and Octillery overworld sprites by FrenchOrange
-- Chansey, Porygon, Lanturn and Seaking overworld sprites by Megaman-Omega
-- Charizard, Dragonite and Feraligatr back sprites by mauvesea
+- Pressing Select while viewing the Pic menu in the Pokedex to see a shiny, then pressing Start exits the Pictures.
 
 # **To do List:**
 
-- TODO
+- Replace Pokeseer with a move tutor.
+- Turn Teleport into a TM and remove comments on this commit: https://github.com/RaJah239/Crystal-Trove/commit/e6a08d6a2d4779008761c17dc2fb5b28ca853cd6 and probably have Sabrina give it.
 
 # Pokémon Crystal [![Build Status][ci-badge]][ci]
 
