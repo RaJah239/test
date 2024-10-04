@@ -72,7 +72,7 @@ POKEGEAR: Now shows the detailed name of map you're currently in (based on Map G
 - New Fly Points added for Route 20/Blaine’s Gym, Route 32, Route 26, Tohjo Falls/Route 27, Battle Tower, National Park, Mt. Moon and Rock Tunnel.
 - Old man and Abra at the Indigo Plateau Pokémon Center doesn't leave.
 - 20 Grotto-like maps added throughout the game. 
-- Each Grotto have 5 Pokémon per day (except two). Only one can be caught/fought and then none will appear until the next day. It is rare for them to appear. Needs to be re-entered a few times to have one spawn.
+- Each Grotto have 5 Pokémon (except two). There is a 1/20 to have one appear on each entry. May need to be entered a few times to have one spawn.
 
 # **Pokémon // Battle Related:**
 - Affection added to Pokémon's 3rd (blue) stat page.
