@@ -14,7 +14,7 @@ UnionCaveGrottos_MapScripts:
 UnionCaveGrottosPokemonOW:
     checkflag ENGINE_DAILY_UNION_CAVE_GROTTOS
     iftrue .NoAppear
-    random 20 ; random 5 - this makes is always have a Pokemon.
+    random 20 ; random 5 - this makes it always have a Pokemon.
     ifequal 0, .AppearSandshrew
     ifequal 1, .AppearMachop
     ifequal 2, .AppearCubone

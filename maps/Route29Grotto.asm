@@ -14,7 +14,7 @@ Route29Grotto_MapScripts:
 Route29GrottoPokemonOW:
     checkflag ENGINE_DAILY_ROUTE_29_GROTTO
     iftrue .NoAppear
-    random 20 ; random 5 - this makes is always have a Pokemon.
+    random 20 ; random 5 - this makes it always have a Pokemon.
     ifequal 0, .AppearSentret
     ifequal 1, .AppearHoppip
     ifequal 2, .AppearLedyba

@@ -46,4 +46,9 @@ SpriteMons:
 	db LEDYBA
 	db SPINARAK
 	db HOOTHOOT
+	db GEODUDE
+	db RHYHORN
+	db DIGLETT
+	db ZUBAT
+	db MARILL
 	assert_table_length NUM_POKEMON_SPRITES
