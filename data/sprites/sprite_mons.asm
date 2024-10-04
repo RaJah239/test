@@ -66,4 +66,9 @@ SpriteMons:
 	db RATICATE
 	db WEEZING
 	db MUK
+	db BUTTERFREE
+	db BEEDRILL
+	db PINECO
+	db ODDISH
+	db PARAS
 	assert_table_length NUM_POKEMON_SPRITES
