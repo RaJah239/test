@@ -153,10 +153,11 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_GYARADOS ; a0
 	const SPRITE_LUGIA ; a1
 	const SPRITE_HO_OH ; a2
+; Crystal Trove
 	const SPRITE_SANDSHREW_OW
 	const SPRITE_CUBONE_OW
 	const SPRITE_ONIX_OW
-	const SPRITE_TYROGUE_OW
+	const SPRITE_WOOPER_OW
 DEF NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)

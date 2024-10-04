@@ -36,8 +36,9 @@ SpriteMons:
 	db GYARADOS
 	db LUGIA
 	db HO_OH
+; Crystal Trove
 	db SANDSHREW
 	db CUBONE
 	db ONIX
-	db TYROGUE
+	db WOOPER
 	assert_table_length NUM_POKEMON_SPRITES
