@@ -41,4 +41,9 @@ SpriteMons:
 	db CUBONE
 	db ONIX
 	db WOOPER
+	db SENTRET
+	db HOPPIP
+	db LEDYBA
+	db SPINARAK
+	db HOOTHOOT
 	assert_table_length NUM_POKEMON_SPRITES
