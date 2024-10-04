@@ -61,4 +61,9 @@ SpriteMons:
 	db VULPIX
 	db NIDORAN_M
 	db NIDORAN_F
+	db SLOWPOKE
+	db POLIWHIRL
+	db RATICATE
+	db WEEZING
+	db MUK
 	assert_table_length NUM_POKEMON_SPRITES
