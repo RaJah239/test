@@ -12,8 +12,8 @@ Route29Grotto_MapScripts:
 	callback MAPCALLBACK_OBJECTS, Route29GrottoPokemonOW
  
 Route29GrottoPokemonOW:
-    checkflag ENGINE_DAILY_ROUTE_29_GROTTO
-    iftrue .NoAppear
+    checkevent EVENT_INITIALIZED_EVENTS
+    iffalse .NoAppear
     random 20 ; random 5 - this makes it always have a Pokemon.
     ifequal 0, .AppearSentret
     ifequal 1, .AppearHoppip
@@ -75,7 +75,6 @@ Route29GrottoSentretScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear ROUTE29GROTTO_SENTRET
-    setflag ENGINE_DAILY_ROUTE_29_GROTTO
     reloadmapafterbattle
     end
 
@@ -86,7 +85,6 @@ Route29GrottoHoppipScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear ROUTE29GROTTO_HOPPIP
-    setflag ENGINE_DAILY_ROUTE_29_GROTTO
     reloadmapafterbattle
     end
 
@@ -97,7 +95,6 @@ Route29GrottoLedybaScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear ROUTE29GROTTO_LEDYBA
-    setflag ENGINE_DAILY_ROUTE_29_GROTTO
     reloadmapafterbattle
     end
 
@@ -108,7 +105,6 @@ Route29GrottoSpinarkScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear ROUTE29GROTTO_SPINARAK
-    setflag ENGINE_DAILY_ROUTE_29_GROTTO
     reloadmapafterbattle
     end
 
@@ -119,7 +115,6 @@ Route29GrottoHoothootScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear ROUTE29GROTTO_HOOTHOOT
-    setflag ENGINE_DAILY_ROUTE_29_GROTTO
     reloadmapafterbattle
     end
 

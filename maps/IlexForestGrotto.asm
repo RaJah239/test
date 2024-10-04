@@ -12,8 +12,8 @@ IlexForestGrotto_MapScripts:
  	callback MAPCALLBACK_OBJECTS, IlexForestGrottoPokemonOW
  
 IlexForestGrottoPokemonOW:
-    checkflag ENGINE_DAILY_ILEX_FOREST_GROTTO
-    iftrue .NoAppear
+    checkevent EVENT_INITIALIZED_EVENTS
+    iffalse .NoAppear
     random 20 ; random 5 - this makes it always have a Pokemon.
     ifequal 0, .AppearButterfree
     ifequal 1, .AppearBeedrill
@@ -75,7 +75,6 @@ IlexForestGrottoButterfreeScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear ILEXFORESTGROTTO_BUTTERFREE
-    setflag ENGINE_DAILY_ILEX_FOREST_GROTTO
     reloadmapafterbattle
     end
 
@@ -86,7 +85,6 @@ IlexForestGrottoBeedrillScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear ILEXFORESTGROTTO_BEEDRILL
-    setflag ENGINE_DAILY_ILEX_FOREST_GROTTO
     reloadmapafterbattle
     end
 
@@ -97,7 +95,6 @@ IlexForestGrottoPinecoScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear ILEXFORESTGROTTO_PINECO
-    setflag ENGINE_DAILY_ILEX_FOREST_GROTTO
     reloadmapafterbattle
     end
 
@@ -108,7 +105,6 @@ IlexForestGrottoOddishScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear ILEXFORESTGROTTO_ODDISH
-    setflag ENGINE_DAILY_ILEX_FOREST_GROTTO
     reloadmapafterbattle
     end
 
@@ -119,7 +115,6 @@ IlexForestGrottoParaScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear ILEXFORESTGROTTO_PARAS
-    setflag ENGINE_DAILY_ILEX_FOREST_GROTTO
     reloadmapafterbattle
     end
 

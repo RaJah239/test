@@ -12,8 +12,8 @@ RuinsOfAlphOutsideGrotto_MapScripts:
  	callback MAPCALLBACK_OBJECTS, RuinsofAlphGrottoPokemonOW
  
 RuinsofAlphGrottoPokemonOW:
-    checkflag ENGINE_DAILY_RUINS_OF_ALPH_GROTTO
-    iftrue .NoAppear
+    checkevent EVENT_INITIALIZED_EVENTS
+    iffalse .NoAppear
     random 20 ; random 5 - this makes it always have a Pokemon.
     ifequal 0, .AppearXatu
     ifequal 1, .AppearGirafarig
@@ -75,7 +75,6 @@ RuinsOfAlphGrottoXatuScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear RUINSOFALPHGROTTO_XATU
-    setflag ENGINE_DAILY_RUINS_OF_ALPH_GROTTO
     reloadmapafterbattle
     end
 
@@ -86,7 +85,6 @@ RuinsOfAlphGrottoGirafarigScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear RUINSOFALPHGROTTO_GIRAFARIG
-    setflag ENGINE_DAILY_RUINS_OF_ALPH_GROTTO
     reloadmapafterbattle
     end
 
@@ -97,7 +95,6 @@ RuinsOfAlphGrottoSmeargleScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear RUINSOFALPHGROTTO_SMEARGLE
-    setflag ENGINE_DAILY_RUINS_OF_ALPH_GROTTO
     reloadmapafterbattle
     end
 
@@ -108,7 +105,6 @@ RuinsOfAlphGrottoEeveeScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear RUINSOFALPHGROTTO_EEVEE
-    setflag ENGINE_DAILY_RUINS_OF_ALPH_GROTTO
     reloadmapafterbattle
     end
 
@@ -119,7 +115,6 @@ RuinsOfAlphGrottoExeggcuteScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear RUINSOFALPHGROTTO_EXEGGCUTE
-    setflag ENGINE_DAILY_RUINS_OF_ALPH_GROTTO
     reloadmapafterbattle
     end
 

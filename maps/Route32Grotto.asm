@@ -12,8 +12,8 @@ Route32Grotto_MapScripts:
  	callback MAPCALLBACK_OBJECTS, Route32GrottoPokemonOW
  
 Route32GrottoPokemonOW:
-    checkflag ENGINE_DAILY_ROUTE_32_GROTTO
-    iftrue .NoAppear
+    checkevent EVENT_INITIALIZED_EVENTS
+    iffalse .NoAppear
     random 20 ; random 5 - this makes it always have a Pokemon.
     ifequal 0, .AppearEkans
     ifequal 1, .AppearSpearow
@@ -75,7 +75,6 @@ Route32GrottoEkansScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear ROUTE32GROTTO_EKANS
-    setflag ENGINE_DAILY_ROUTE_32_GROTTO
     reloadmapafterbattle
     end
 
@@ -86,7 +85,6 @@ Route32GrottoSpearowScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear ROUTE32GROTTO_SPEAROW
-    setflag ENGINE_DAILY_ROUTE_32_GROTTO
     reloadmapafterbattle
     end
 
@@ -97,7 +95,6 @@ Route32GrottoVulpixScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear ROUTE32GROTTO_VULPIX
-    setflag ENGINE_DAILY_ROUTE_32_GROTTO
     reloadmapafterbattle
     end
 
@@ -108,7 +105,6 @@ Route32GrottoNidoranMScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear ROUTE32GROTTO_NIDORAN_M
-    setflag ENGINE_DAILY_ROUTE_32_GROTTO
     reloadmapafterbattle
     end
 
@@ -119,7 +115,6 @@ Route32GrottoNidoranFScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear ROUTE32GROTTO_NIDORAN_F
-    setflag ENGINE_DAILY_ROUTE_32_GROTTO
     reloadmapafterbattle
     end
 

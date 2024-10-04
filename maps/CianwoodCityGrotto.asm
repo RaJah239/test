@@ -12,8 +12,8 @@ CianwoodCityGrotto_MapScripts:
      callback MAPCALLBACK_OBJECTS, CianwoodGrottosPokemonOW
  
 CianwoodGrottosPokemonOW:
-    checkflag ENGINE_DAILY_CIANWOOD_GROTTOS
-    iftrue .NoAppear
+    checkevent EVENT_INITIALIZED_EVENTS
+    iffalse .NoAppear
     random 20 ; random 5 - this makes is always have a Pokemon.
     ifequal 0, .AppearQwilfish
     ifequal 1, .AppearLantern
@@ -76,7 +76,6 @@ CianwoodCityGrottoQwilfish:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear CIANWOOD_GROTTO_QWILFISH
-    setflag ENGINE_DAILY_CIANWOOD_GROTTOS
     reloadmapafterbattle
     end
 
@@ -87,7 +86,6 @@ CianwoodCityGrottoLanturn:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear CIANWOOD_GROTTO_LANTURN
-    setflag ENGINE_DAILY_CIANWOOD_GROTTOS
     reloadmapafterbattle
     end
 
@@ -98,7 +96,6 @@ CianwoodCityGrottoMantine:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear CIANWOOD_GROTTO_MANTINE
-    setflag ENGINE_DAILY_CIANWOOD_GROTTOS
     reloadmapafterbattle
     end
 
@@ -109,7 +106,6 @@ CianwoodCityGrottoSeaking:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear CIANWOOD_GROTTO_SEAKING
-    setflag ENGINE_DAILY_CIANWOOD_GROTTOS
     reloadmapafterbattle
     end
 
@@ -120,7 +116,6 @@ CianwoodCityGrottoOctillery:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear CIANWOOD_GROTTO_OCTILLERY
-    setflag ENGINE_DAILY_CIANWOOD_GROTTOS
     reloadmapafterbattle
     end
 

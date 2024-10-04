@@ -12,8 +12,8 @@ DarkCaveVioletEntranceGrotto_MapScripts:
  	callback MAPCALLBACK_OBJECTS, DarkCaveWestGrottoPokemonOW
  
 DarkCaveWestGrottoPokemonOW:
-    checkflag ENGINE_DAILY_DARK_CAVE_WEST_GROTTO
-    iftrue .NoAppear
+    checkevent EVENT_INITIALIZED_EVENTS
+    iffalse .NoAppear
     random 20 ; random 5 - this makes it always have a Pokemon.
     ifequal 0, .AppearGeodude
     ifequal 1, .AppearRhyhorn
@@ -75,7 +75,6 @@ DarkCaveWestGrottoGeodudeScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear DARKCAVEWESTGROTTO_GEODUDE
-    setflag ENGINE_DAILY_DARK_CAVE_WEST_GROTTO
     reloadmapafterbattle
     end
 
@@ -86,7 +85,6 @@ DarkCaveWestGrottoRhyhornScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear DARKCAVEWESTGROTTO_RHYHORN
-    setflag ENGINE_DAILY_DARK_CAVE_WEST_GROTTO
     reloadmapafterbattle
     end
 
@@ -97,7 +95,6 @@ DarkCaveWestGrottoDiglettScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear DARKCAVEWESTGROTTO_DIGLETT
-    setflag ENGINE_DAILY_DARK_CAVE_WEST_GROTTO
     reloadmapafterbattle
     end
 
@@ -108,7 +105,6 @@ DarkCaveWestGrottoZubatScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear DARKCAVEWESTGROTTO_ZUBAT
-    setflag ENGINE_DAILY_DARK_CAVE_WEST_GROTTO
     reloadmapafterbattle
     end
 
@@ -119,7 +115,6 @@ DarkCaveWestGrottoMarillScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear DARKCAVEWESTGROTTO_MARILL
-    setflag ENGINE_DAILY_DARK_CAVE_WEST_GROTTO
     reloadmapafterbattle
     end
 

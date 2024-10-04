@@ -12,8 +12,8 @@ SlowpokeWellGrotto_MapScripts:
  	callback MAPCALLBACK_OBJECTS, SlowpokeWellGrottoPokemonOW
  
 SlowpokeWellGrottoPokemonOW:
-    checkflag ENGINE_DAILY_SLOWPOKE_WELL_GROTTO
-    iftrue .NoAppear
+    checkevent EVENT_INITIALIZED_EVENTS
+    iffalse .NoAppear
     random 20 ; random 5 - this makes it always have a Pokemon.
     ifequal 0, .AppearSlowpoke
     ifequal 1, .AppearPoliwhirl
@@ -75,7 +75,6 @@ SlowpokeWellGrottoSlowpokeScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear SLOWPOKEWELLGROTTO_SLOWPOKE
-    setflag ENGINE_DAILY_SLOWPOKE_WELL_GROTTO
     reloadmapafterbattle
     end
 
@@ -86,7 +85,6 @@ SlowpokeWellGrottoPoliwhirlScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear SLOWPOKEWELLGROTTO_POLIWHIRL
-    setflag ENGINE_DAILY_SLOWPOKE_WELL_GROTTO
     reloadmapafterbattle
     end
 
@@ -97,7 +95,6 @@ SlowpokeWellGrottoRaticateScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear SLOWPOKEWELLGROTTO_RATICATE
-    setflag ENGINE_DAILY_SLOWPOKE_WELL_GROTTO
     reloadmapafterbattle
     end
 
@@ -108,7 +105,6 @@ SlowpokeWellGrottoWeezingScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear SLOWPOKEWELLGROTTO_WEEZING
-    setflag ENGINE_DAILY_SLOWPOKE_WELL_GROTTO
     reloadmapafterbattle
     end
 
@@ -119,7 +115,6 @@ SlowpokeWellGrottoMukScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear SLOWPOKEWELLGROTTO_MUK
-    setflag ENGINE_DAILY_SLOWPOKE_WELL_GROTTO
     reloadmapafterbattle
     end
 

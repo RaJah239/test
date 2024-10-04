@@ -12,8 +12,8 @@ UnionCaveGrottos_MapScripts:
     callback MAPCALLBACK_OBJECTS, UnionCaveGrottosPokemonOW
 
 UnionCaveGrottosPokemonOW:
-    checkflag ENGINE_DAILY_UNION_CAVE_GROTTOS
-    iftrue .NoAppear
+    checkevent EVENT_INITIALIZED_EVENTS
+    iffalse .NoAppear
     random 20 ; random 5 - this makes it always have a Pokemon.
     ifequal 0, .AppearSandshrew
     ifequal 1, .AppearMachop
@@ -75,7 +75,6 @@ UnionCaveGrottoSandshrew:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear UNIONCAVEGROTTOS_SANDSHREW
-    setflag ENGINE_DAILY_UNION_CAVE_GROTTOS
     reloadmapafterbattle
     end
 
@@ -86,7 +85,6 @@ UnionCaveGrottoMachop:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear UNIONCAVEGROTTOS_MACHOP
-    setflag ENGINE_DAILY_UNION_CAVE_GROTTOS
     reloadmapafterbattle
     end
 
@@ -97,7 +95,6 @@ UnionCaveGrottoCubone:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear UNIONCAVEGROTTOS_CUBONE
-    setflag ENGINE_DAILY_UNION_CAVE_GROTTOS
     reloadmapafterbattle
     end
 
@@ -108,7 +105,6 @@ UnionCaveGrottoWooper:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear UNIONCAVEGROTTOS_WOOPER
-    setflag ENGINE_DAILY_UNION_CAVE_GROTTOS
     reloadmapafterbattle
     end
 
@@ -119,7 +115,6 @@ UnionCaveGrottoOnix:
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
     disappear UNIONCAVEGROTTOS_ONIX
-    setflag ENGINE_DAILY_UNION_CAVE_GROTTOS
     reloadmapafterbattle
     end
 
