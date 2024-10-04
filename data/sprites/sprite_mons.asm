@@ -71,4 +71,9 @@ SpriteMons:
 	db PINECO
 	db ODDISH
 	db PARAS
+	db MEOWTH
+	db PIDGEOTTO
+	db SNUBBULL
+	db KADABRA
+	db DROWZEE
 	assert_table_length NUM_POKEMON_SPRITES
