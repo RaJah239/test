@@ -781,9 +781,9 @@ NamePlayer:
 	ret
 
 .Chris:
-	db "CHRIS@@@@@@"
+	db "LUCT@@@@@@"
 .Kris:
-	db "KRIS@@@@@@@"
+	db "LUCT@@@@@@@"
 
 StorePlayerName:
 	ld a, "@"
