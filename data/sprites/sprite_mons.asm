@@ -56,4 +56,9 @@ SpriteMons:
 	db SMEARGLE
 	db EEVEE
 	db EXEGGCUTE
+	db EKANS
+	db SPEAROW
+	db VULPIX
+	db NIDORAN_M
+	db NIDORAN_F
 	assert_table_length NUM_POKEMON_SPRITES
