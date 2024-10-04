@@ -51,4 +51,9 @@ SpriteMons:
 	db DIGLETT
 	db ZUBAT
 	db MARILL
+	db XATU
+	db GIRAFARIG
+	db SMEARGLE
+	db EEVEE
+	db EXEGGCUTE
 	assert_table_length NUM_POKEMON_SPRITES
