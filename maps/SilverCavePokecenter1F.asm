@@ -310,5 +310,5 @@ SilverCavePokecenter1F_MapEvents:
 
 	def_object_events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverCavePokecenter1FNurseScript, -1
-	object_event  1,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverCavePokecenter1FMoneyCollectorMScript, -1
+	object_event  1,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 1, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, SilverCavePokecenter1FMoneyCollectorMScript, -1
 	object_event  2,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 2, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SilverCavePokecenter1MaximaEventScript, EVENT_MET_SILVERCAVEPOKECENTER1F_MAXIMA
