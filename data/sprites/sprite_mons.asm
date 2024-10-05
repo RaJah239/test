@@ -76,4 +76,9 @@ SpriteMons:
 	db SNUBBULL
 	db KADABRA
 	db DROWZEE
+	db SUNKERN
+	db PSYDUCK
+	db SCYTHER
+	db PINSIR
+	db VENONAT
 	assert_table_length NUM_POKEMON_SPRITES

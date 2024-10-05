@@ -193,6 +193,11 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_SNUBBULL_OW
 	const SPRITE_KADABRA_OW
 	const SPRITE_DROWZEE_OW
+	const SPRITE_SUNKERN_OW
+	const SPRITE_PSYDUCK_OW
+	const SPRITE_SCYTHER_OW
+	const SPRITE_PINSIR_OW
+	const SPRITE_VENONAT_OW
 DEF NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
