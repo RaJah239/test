@@ -81,4 +81,9 @@ SpriteMons:
 	db SCYTHER
 	db PINSIR
 	db VENONAT
+	db BELLSPROUT
+	db GROWLITHE
+	db MAREEP
+	db YANMA
+	db HOUNDOUR
 	assert_table_length NUM_POKEMON_SPRITES
