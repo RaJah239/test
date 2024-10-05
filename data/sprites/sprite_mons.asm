@@ -86,4 +86,9 @@ SpriteMons:
 	db MAREEP
 	db YANMA
 	db HOUNDOUR
+	db DODRIO
+	db RAPIDASH
+	db TAUROS
+	db MILTANK
+	db ELECTRODE
 	assert_table_length NUM_POKEMON_SPRITES
