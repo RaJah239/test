@@ -91,4 +91,9 @@ SpriteMons:
 	db TAUROS
 	db MILTANK
 	db ELECTRODE
+	db GLIGAR
+	db MAGNETON
+	db MAGCARGO
+	db DUNSPARCE
+	db MISDREAVUS
 	assert_table_length NUM_POKEMON_SPRITES

@@ -208,6 +208,11 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_TAUROS_OW
 	const SPRITE_MILTANK_OW
 	const SPRITE_ELECTRODE_OW
+	const SPRITE_GLIGAR_OW
+	const SPRITE_MAGNETON_OW
+	const SPRITE_MAGCARGO_OW
+	const SPRITE_DUNSPARCE_OW
+	const SPRITE_MISDREAVUS_OW
 DEF NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
