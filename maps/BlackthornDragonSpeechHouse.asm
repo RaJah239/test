@@ -1,6 +1,6 @@
 	object_const_def
 	const BLACKTHORNDRAGONSPEECHHOUSE_GRANNY
-	const BLACKTHORNDRAGONSPEECHHOUSE_EKANS
+	const BLACKTHORNDRAGONSPEECHHOUSE_DUNSPARCE
 
 BlackthornDragonSpeechHouse_MapScripts:
 	def_scene_scripts
@@ -10,10 +10,10 @@ BlackthornDragonSpeechHouse_MapScripts:
 BlackthornDragonSpeechHouseGrannyScript:
 	jumptextfaceplayer BlackthornDragonSpeechHouseGrannyText
 
-BlackthornDragonSpeechHouseDratiniScript:
+BlackthornDragonSpeechHouseDunsparceScript:
 	opentext
-	writetext BlackthornDragonSpeechHouseDratiniText
-	cry DRATINI
+	writetext BlackthornDragonSpeechHouseDunsparceText
+	cry DUNSPARCE
 	waitbutton
 	closetext
 	end
@@ -33,8 +33,8 @@ BlackthornDragonSpeechHouseGrannyText:
 	line "this town."
 	done
 
-BlackthornDragonSpeechHouseDratiniText:
-	text "DRATINI: Draa!"
+BlackthornDragonSpeechHouseDunsparceText:
+	text "DUNSPARCE: Dun!"
 	done
 
 BlackthornDragonSpeechHouse_MapEvents:
@@ -50,4 +50,4 @@ BlackthornDragonSpeechHouse_MapEvents:
 
 	def_object_events
 	object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornDragonSpeechHouseGrannyScript, -1
-	object_event  5,  5, SPRITE_EKANS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornDragonSpeechHouseDratiniScript, -1
+	object_event  5,  5, SPRITE_DUNSPARCE_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornDragonSpeechHouseDunsparceScript, -1

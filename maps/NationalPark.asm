@@ -56,11 +56,11 @@ NationalParkYoungster2Script:
 NationalParkTeacher2Script:
 	jumptextfaceplayer NationalParkTeacher2Text
 
-NationalParkPersian:
+NationalParkSnubbullScript:
 	faceplayer
 	opentext
-	writetext NationalParkPersianText
-	cry PERSIAN
+	writetext NationalParkSnubbullText
+	cry SNUBBULL
 	waitbutton
 	closetext
 	end
@@ -375,8 +375,8 @@ NationalParkTeacher2Text:
 	line "want to battle…"
 	done
 
-NationalParkPersianText:
-	text "PERSIAN: Fufushaa!"
+NationalParkSnubbullText:
+	text "SNUBBULL: Rrr…?"
 	done
 
 NationalParkGameboyKidText:
@@ -537,7 +537,7 @@ NationalPark_MapEvents:
 	object_event 11, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster1Script, -1
 	object_event 10, 41, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkYoungster2Script, -1
 	object_event 17, 41, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkTeacher2Script, -1
-	object_event 26, 40, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkPersian, -1
+	object_event 26, 40, SPRITE_SNUBBULL_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NationalParkSnubbullScript, -1
 	object_event 27, 23, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyJack1, -1
 	object_event 18, 29, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanfBeverly1, -1
 	object_event 16,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanmWilliam, -1

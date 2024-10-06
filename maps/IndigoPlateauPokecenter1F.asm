@@ -4,7 +4,7 @@
 	const INDIGOPLATEAUPOKECENTER1F_COOLTRAINER_M
 	const INDIGOPLATEAUPOKECENTER1F_RIVAL
 	const INDIGOPLATEAUPOKECENTER1F_GRAMPS
-	const INDIGOPLATEAUPOKECENTER1F_ABRA
+	const INDIGOPLATEAUPOKECENTER1F_KADABRA
 	const INDIGOPLATEAUPOKECENTER1F_COINCOLLECTORF
 
 IndigoPlateauPokecenter1F_MapScripts:
@@ -168,10 +168,10 @@ TeleportGuyScript:
 	closetext
 	end
 
-AbraScript:
+KadabraScript:
 	opentext
-	writetext AbraText
-	cry ABRA
+	writetext KadabraText
+	cry KADABRA
 	waitbutton
 	closetext
 	end
@@ -430,7 +430,7 @@ PlateauRivalLoseText:
 	done
 
 TeleportGuyText1:
-	text "Want my ABRA to"
+	text "Want my KADABRA to"
 	line "TELEPORT you home?"
 	done
 
@@ -443,8 +443,8 @@ TeleportGuyNoText:
 	text "OK, all the best!"
 	done
 
-AbraText:
-	text "ABRA: Aabra…"
+KadabraText:
+	text "KADABRA: Dabra!"
 	done
 
 IndigoPlateauPokecenter1F_MapEvents:
@@ -468,5 +468,5 @@ IndigoPlateauPokecenter1F_MapEvents:
 	object_event 11, 11, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerMScript, -1
 	object_event 16,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
 	object_event  1,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, EVENT_TELEPORT_GUY
-	object_event  0,  9, SPRITE_ABRA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, EVENT_TELEPORT_GUY
+	object_event  0,  9, SPRITE_KADABRA_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, KadabraScript, EVENT_TELEPORT_GUY
 	object_event  5, 10, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, CoinCollectorScript, -1
