@@ -96,4 +96,9 @@ SpriteMons:
 	db MAGCARGO
 	db DUNSPARCE
 	db MISDREAVUS
+	db LICKITUNG
+	db AIPOM
+	db STANTLER
+	db PRIMEAPE
+	db MURKROW
 	assert_table_length NUM_POKEMON_SPRITES

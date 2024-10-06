@@ -116,7 +116,7 @@
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
-	const_next $80
+	const_next $71
 DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_UNOWN ; 80
 	const SPRITE_GEODUDE ; 81
@@ -213,23 +213,28 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_MAGCARGO_OW
 	const SPRITE_DUNSPARCE_OW
 	const SPRITE_MISDREAVUS_OW
+	const SPRITE_LICKITUNG_OW
+	const SPRITE_AIPOM_OW
+	const SPRITE_STANTLER_OW
+	const SPRITE_PRIMEAPE_OW
+	const SPRITE_MURKROW_OW
 DEF NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
-	const_next $e0
-	const SPRITE_DAY_CARE_MON_1 ; e0
-	const SPRITE_DAY_CARE_MON_2 ; e1
+	const_next $f4
+	const SPRITE_DAY_CARE_MON_1 ; f4
+	const SPRITE_DAY_CARE_MON_2 ; f5
 
 ; wVariableSprites indexes (see wram.asm)
-	const_next $f0
+	const_next $f6
 DEF SPRITE_VARS EQU const_value
-	const SPRITE_CONSOLE ; f0
-	const SPRITE_DOLL_1 ; f1
-	const SPRITE_DOLL_2 ; f2
-	const SPRITE_BIG_DOLL ; f3
-	const SPRITE_FUCHSIA_GYM_1 ; f4
-	const SPRITE_FUCHSIA_GYM_2 ; f5
-	const SPRITE_FUCHSIA_GYM_3 ; f6
-	const SPRITE_FUCHSIA_GYM_4 ; f7
-	const SPRITE_COPYCAT ; f8
-	const SPRITE_JANINE_IMPERSONATOR ; f9
+	const SPRITE_CONSOLE ; f6
+	const SPRITE_DOLL_1 ; f7
+	const SPRITE_DOLL_2 ; f8
+	const SPRITE_BIG_DOLL ; f9
+	const SPRITE_FUCHSIA_GYM_1 ; fa
+	const SPRITE_FUCHSIA_GYM_2 ; fb
+	const SPRITE_FUCHSIA_GYM_3 ; fc
+	const SPRITE_FUCHSIA_GYM_4 ; fd
+	const SPRITE_COPYCAT ; fe
+	const SPRITE_JANINE_IMPERSONATOR ; ff
