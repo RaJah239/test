@@ -87,4 +87,9 @@ SpriteMons:
 	db GENGAR
 	db TENTACRUEL
 	db TEDDIURSA
+	db TANGELA
+	db FARFETCH_D
+	db SKARMORY
+	db KANGASKHAN
+	db HERACROSS
 	assert_table_length NUM_POKEMON_SPRITES

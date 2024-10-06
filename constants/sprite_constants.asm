@@ -197,6 +197,11 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_GENGAR_OW
 	const SPRITE_TENTACRUEL_OW
 	const SPRITE_TEDDIURSA_OW
+	const SPRITE_TANGELA_OW
+	const SPRITE_FARFETCH_D_OW
+	const SPRITE_SKARMORY_OW
+	const SPRITE_KANGASKHAN_OW
+	const SPRITE_HERACROSS_OW
 DEF NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
