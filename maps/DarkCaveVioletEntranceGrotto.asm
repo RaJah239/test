@@ -1,6 +1,6 @@
 	object_const_def
 	const DARKCAVEWESTGROTTO_GEODUDE
-	const DARKCAVEWESTGROTTO_RHYHORN
+	const DARKCAVEWESTGROTTO_TEDDIURSA
 	const DARKCAVEWESTGROTTO_DIGLETT
 	const DARKCAVEWESTGROTTO_ZUBAT
 	const DARKCAVEWESTGROTTO_MARILL
@@ -16,46 +16,46 @@ DarkCaveWestGrottoPokemonOW:
     iffalse .NoAppear
     random 20 ; random 5 - this makes it always have a Pokemon.
     ifequal 0, .AppearGeodude
-    ifequal 1, .AppearRhyhorn
+    ifequal 1, .AppearTeddiursa
     ifequal 2, .AppearDiglett
     ifequal 3, .AppearZubat
     ifequal 4, .AppearMarill
 .NoAppear:
     disappear DARKCAVEWESTGROTTO_GEODUDE
-    disappear DARKCAVEWESTGROTTO_RHYHORN
+    disappear DARKCAVEWESTGROTTO_TEDDIURSA
     disappear DARKCAVEWESTGROTTO_DIGLETT
     disappear DARKCAVEWESTGROTTO_ZUBAT
     disappear DARKCAVEWESTGROTTO_MARILL
     endcallback
 
 .AppearGeodude:
-    disappear DARKCAVEWESTGROTTO_RHYHORN
+    disappear DARKCAVEWESTGROTTO_TEDDIURSA
     disappear DARKCAVEWESTGROTTO_DIGLETT
     disappear DARKCAVEWESTGROTTO_ZUBAT
     disappear DARKCAVEWESTGROTTO_MARILL
     appear DARKCAVEWESTGROTTO_GEODUDE
     endcallback
 
-.AppearRhyhorn:
+.AppearTeddiursa:
     disappear DARKCAVEWESTGROTTO_GEODUDE
     disappear DARKCAVEWESTGROTTO_DIGLETT
     disappear DARKCAVEWESTGROTTO_ZUBAT
     disappear DARKCAVEWESTGROTTO_MARILL
-    appear DARKCAVEWESTGROTTO_RHYHORN
+    appear DARKCAVEWESTGROTTO_TEDDIURSA
     endcallback
 
 .AppearDiglett:
     disappear DARKCAVEWESTGROTTO_GEODUDE
     disappear DARKCAVEWESTGROTTO_ZUBAT
     disappear DARKCAVEWESTGROTTO_MARILL
-    disappear DARKCAVEWESTGROTTO_RHYHORN
+    disappear DARKCAVEWESTGROTTO_TEDDIURSA
     appear DARKCAVEWESTGROTTO_DIGLETT
     endcallback
 
 .AppearZubat:
     disappear DARKCAVEWESTGROTTO_GEODUDE
     disappear DARKCAVEWESTGROTTO_MARILL
-    disappear DARKCAVEWESTGROTTO_RHYHORN
+    disappear DARKCAVEWESTGROTTO_TEDDIURSA
     disappear DARKCAVEWESTGROTTO_DIGLETT
     appear DARKCAVEWESTGROTTO_ZUBAT
     endcallback
@@ -63,7 +63,7 @@ DarkCaveWestGrottoPokemonOW:
 .AppearMarill:
     disappear DARKCAVEWESTGROTTO_GEODUDE
     disappear DARKCAVEWESTGROTTO_ZUBAT
-    disappear DARKCAVEWESTGROTTO_RHYHORN
+    disappear DARKCAVEWESTGROTTO_TEDDIURSA
     disappear DARKCAVEWESTGROTTO_DIGLETT
     appear DARKCAVEWESTGROTTO_MARILL
     endcallback
@@ -78,13 +78,13 @@ DarkCaveWestGrottoGeodudeScript:
     reloadmapafterbattle
     end
 
-DarkCaveWestGrottoRhyhornScript:
+DarkCaveWestGrottoTeddiursaScript:
     faceplayer
-    cry RHYHORN
-    loadwildmon RHYHORN, 9
+    cry TEDDIURSA
+    loadwildmon TEDDIURSA, 9
     loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
     startbattle
-    disappear DARKCAVEWESTGROTTO_RHYHORN
+    disappear DARKCAVEWESTGROTTO_TEDDIURSA
     reloadmapafterbattle
     end
 
@@ -130,7 +130,7 @@ DarkCaveVioletEntranceGrotto_MapEvents:
 
     def_object_events
 	object_event  4,  3, SPRITE_GEODUDE_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, DarkCaveWestGrottoGeodudeScript, EVENT_DARK_CAVE_WEST_GROTTO_GEODUDE
-	object_event  3,  5, SPRITE_RHYHORN_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, DarkCaveWestGrottoRhyhornScript, EVENT_DARK_CAVE_WEST_GROTTO_RHYHORN
+	object_event  3,  5, SPRITE_TEDDIURSA_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, DarkCaveWestGrottoTeddiursaScript, EVENT_DARK_CAVE_WEST_GROTTO_TEDDIURSA
 	object_event  4,  4, SPRITE_DIGLETT_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, DarkCaveWestGrottoDiglettScript, EVENT_DARK_CAVE_WEST_GROTTO_DIGLETT
 	object_event  3,  2, SPRITE_ZUBAT_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DarkCaveWestGrottoZubatScript, EVENT_DARK_CAVE_WEST_GROTTO_ZUBAT
 	object_event  2,  3, SPRITE_MARILL_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DarkCaveWestGrottoMarillScript, EVENT_DARK_CAVE_WEST_GROTTO_MARILL

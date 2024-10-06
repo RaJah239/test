@@ -27,7 +27,7 @@ SpriteMons:
 	db SPINARAK
 	db HOOTHOOT
 	db GEODUDE
-	db RHYHORN
+	db RHYDON
 	db DIGLETT
 	db ZUBAT
 	db MARILL
@@ -86,4 +86,5 @@ SpriteMons:
 	db RAIKOU
 	db GENGAR
 	db TENTACRUEL
+	db TEDDIURSA
 	assert_table_length NUM_POKEMON_SPRITES

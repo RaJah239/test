@@ -137,7 +137,7 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_SPINARAK_OW
 	const SPRITE_HOOTHOOT_OW
 	const SPRITE_GEODUDE_OW
-	const SPRITE_RHYHORN_OW
+	const SPRITE_RHYDON_OW
 	const SPRITE_DIGLETT_OW
 	const SPRITE_ZUBAT_OW
 	const SPRITE_MARILL_OW
@@ -196,6 +196,7 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_RAIKOU_OW
 	const SPRITE_GENGAR_OW
 	const SPRITE_TENTACRUEL_OW
+	const SPRITE_TEDDIURSA_OW
 DEF NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
