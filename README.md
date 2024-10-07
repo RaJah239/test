@@ -68,6 +68,8 @@ POKEGEAR: Now shows the detailed name of map you're currently in (based on Map G
 - Hatch Room was added to the Day Care out back. Only accessible via Bicycle. The old man appears there if your Pokémon laid any eggs and there’s a Porygon PC as well.
 - Press A or B to stop the Bicycle in the Day Care's Hatch Room or Kanto’s Cycling Road.
 - Slot Machines payout were adjusted as coins are now used for a lot of things.
+- Smashed rock may contain items.
+- Gen 1 fossils added and a way to revive them.
 - Name Rater can change traded Pokémon’s nicknames.
 - New Fly Points added for Route 20/Blaine’s Gym, Route 32, Route 26, Tohjo Falls/Route 27, Battle Tower, National Park, Mt. Moon and Rock Tunnel.
 - Old man and Kadabra at the Indigo Plateau Pokémon Center doesn't leave.
