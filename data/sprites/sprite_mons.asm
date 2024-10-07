@@ -99,4 +99,6 @@ SpriteMons:
 	db WOBBUFFET
 	db KINGLER
 	db DONPHAN
+	db MR__MIME
+	db SHUCKLE
 	assert_table_length NUM_POKEMON_SPRITES
