@@ -780,7 +780,7 @@ INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 SECTION "Pics 20", ROMX
 OmastarBackpic:     INCBIN "gfx/pokemon/omastar/back.2bpp.lz"
-MaximaPic:          INCBIN "gfx/trainers/pokemaniac.2bpp.lz"
+MaximaPic:          INCBIN "gfx/trainers/maxima_trainer.2bpp.lz"
 SwinubBackpic:      INCBIN "gfx/pokemon/swinub/back.2bpp.lz"
 UnownDBackpic:      INCBIN "gfx/pokemon/unown_d/back.2bpp.lz"
 
