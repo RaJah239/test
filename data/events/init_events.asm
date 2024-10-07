@@ -126,6 +126,7 @@ InitialEvents:
 ; here to place my events that initialize on game start
 	dw EVENT_MAXIMA_APPEAR_MT_SILVER_OUTSIDE
 	dw EVENT_DAY_CARE_OWNERS_GRANDSON_ODD_EGG
+	dw EVENT_VICTORY_ROAD_ERIC_THE_EXPLORER
 	dw -1 ; end
 
 InitialEngineFlags:

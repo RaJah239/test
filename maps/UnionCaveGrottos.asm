@@ -156,6 +156,7 @@ UnionCaveGrottosEricTheExplorerScript:
 	setscene SCENE_UNION_CAVE_GROTTOS_NOOP
 	disappear UNIONCAVEGROTTOS_ERIC_THE_EXPLORER
 	setevent EVENT_MET_ERIC_THE_EXPLORER
+	clearevent EVENT_VICTORY_ROAD_ERIC_THE_EXPLORER
 	end
 
 EricTakesAStepUp:
@@ -199,9 +200,8 @@ UnionCaveGrottoEricTheExplorerYoureAnAdventurerTooText:
 	para "times visit this"
 	line "Grotto."
 
-	para "I made it. I aim"
-	line "seek them all out"
-	cont "add signs."	
+	para "I made it. I'll"
+	line "add signs to each."	
 	
 	para "There're many more"
 	line "Grottos out there!"
@@ -210,8 +210,9 @@ UnionCaveGrottoEricTheExplorerYoureAnAdventurerTooText:
 	line "do!"
 	
 	para "Let's meet again!"
-	line "Enjoy your adven-"
-	cont "ture - I will too!"
+	
+	para "Enjoy your adven-"
+	line "ture - I will too!"
 	cont "Bye!"
 	done
 

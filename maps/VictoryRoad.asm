@@ -6,6 +6,7 @@
 	const VICTORYROAD_POKE_BALL4
 	const VICTORYROAD_POKE_BALL5
 	const VICTORYROAD_CHANSEY
+	const VICTORYROAD_ERIC_THE_EXPLORER
 
 VictoryRoad_MapScripts:
 	def_scene_scripts
@@ -255,6 +256,25 @@ VictoryRoadChanseyHealText:
 	text "Seyyyy!"
 	done
 
+VictoryRoadEricTheExplorerScript:
+	faceplayer
+	opentext
+	writetext VictoryRoadEricTheExplorerText
+	waitbutton
+	closetext
+	end
+
+VictoryRoadEricTheExplorerText:
+	text "Hi <PLAY_G>! We"
+	line "meet again!"
+	
+	para "This seems to be"
+	line "the final Grotto."
+	
+	para "Did you find them"
+	line "all? There are 21!"
+	done
+
 VictoryRoad_MapEvents:
 	db 0, 0 ; filler
 
@@ -287,3 +307,4 @@ VictoryRoad_MapEvents:
 	object_event 15, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadFullHeal, EVENT_VICTORY_ROAD_FULL_HEAL
 	object_event  7, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadHPUp, EVENT_VICTORY_ROAD_HP_UP
 	object_event 16, 12, SPRITE_CHANSEY_OW, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryRoadChanseyScript, -1
+	object_event 16, 30, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VictoryRoadEricTheExplorerScript, EVENT_VICTORY_ROAD_ERIC_THE_EXPLORER
