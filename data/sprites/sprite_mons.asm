@@ -92,4 +92,9 @@ SpriteMons:
 	db SKARMORY
 	db KANGASKHAN
 	db HERACROSS
+	db DELIBIRD
+	db SNEASEL
+	db PILOSWINE
+	db CLOYSTER
+	db DEWGONG
 	assert_table_length NUM_POKEMON_SPRITES
