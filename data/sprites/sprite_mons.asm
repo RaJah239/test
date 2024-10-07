@@ -3,7 +3,6 @@ SpriteMons:
 	table_width 1, SpriteMons
 	db UNOWN
 	db WEEDLE
-	db SHELLDER
 	db MAGIKARP
 	db SQUIRTLE
 	db PIKACHU

@@ -51,7 +51,7 @@ DecorationAttributes:
 	decoration DECO_DOLL,    MAGIKARP,        SET_UP_DOLL,       EVENT_DECO_MAGIKARP_DOLL,           SPRITE_MAGIKARP
 	decoration DECO_DOLL,    ODDISH,          SET_UP_DOLL,       EVENT_DECO_ODDISH_DOLL,             SPRITE_ODDISH_OW
 	decoration DECO_DOLL,    GENGAR,          SET_UP_DOLL,       EVENT_DECO_GENGAR_DOLL,             SPRITE_GENGAR_OW
-	decoration DECO_DOLL,    SHELLDER,        SET_UP_DOLL,       EVENT_DECO_SHELLDER_DOLL,           SPRITE_SHELLDER
+	decoration DECO_DOLL,    CLOYSTER,        SET_UP_DOLL,       EVENT_DECO_CLOYSTER_DOLL,           SPRITE_CLOYSTER_OW
 	decoration DECO_DOLL,    MUK,             SET_UP_DOLL,       EVENT_DECO_MUK_DOLL,                SPRITE_MUK_OW
 	decoration DECO_DOLL,    ELECTRODE,       SET_UP_DOLL,       EVENT_DECO_ELECTRODE_DOLL,          SPRITE_ELECTRODE_OW
 	decoration DECO_DOLL,    WEEDLE,          SET_UP_DOLL,       EVENT_DECO_WEEDLE_DOLL,             SPRITE_WEEDLE
