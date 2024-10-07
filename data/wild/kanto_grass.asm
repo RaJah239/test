@@ -127,7 +127,7 @@ KantoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons VICTORY_ROAD
-	db 25 percent, 25 percent, 25 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 70, RHYDON
 	db 70, GOLEM
@@ -158,7 +158,7 @@ KantoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons TOHJO_FALLS
-	db 30 percent, 30 percent, 30 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 33, KINGLER
 	db 34, CORSOLA
@@ -716,7 +716,7 @@ KantoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_21
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 77, TANGELA
 	db 76, MR__MIME
@@ -902,7 +902,7 @@ KantoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_28
-	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 87, RAPIDASH
 	db 86, ARCANINE

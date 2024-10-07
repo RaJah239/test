@@ -107,7 +107,7 @@ JohtoWaterWildMons:
 	end_water_wildmons
 
 	def_water_wildmons SILVER_CAVE_ROOM_2
-	db 30 percent ; encounter rate
+	db 10 percent ; encounter rate
 	db 87, KINGDRA
 	db 86, GYARADOS
 	db 85, OMASTAR
@@ -131,11 +131,11 @@ JohtoWaterWildMons:
 	end_water_wildmons
 
 	def_water_wildmons DRAGONS_DEN_B1F
-	db 50 percent ; encounter rate
+	db 10 percent ; encounter rate
 	db 65, GYARADOS
 	db 65, KINGDRA
 	db 50, DRAGONAIR
-	db 25, DRATINI
+	db 5, DRATINI
 	end_water_wildmons
 
 	def_water_wildmons OLIVINE_PORT
@@ -219,7 +219,7 @@ JohtoWaterWildMons:
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_44
-	db 20 percent ; encounter rate
+	db 10 percent ; encounter rate
 	db 52, LANTURN
 	db 53, POLITOED
 	db 53, POLIWRATH
@@ -284,7 +284,7 @@ JohtoWaterWildMons:
 	end_water_wildmons
 
 	def_water_wildmons LAKE_OF_RAGE
-	db 20 percent ; encounter rate
+	db 10 percent ; encounter rate
 	db 47, GYARADOS
 	db 48, GYARADOS
 	db 49, GYARADOS
@@ -300,7 +300,7 @@ JohtoWaterWildMons:
 	end_water_wildmons
 
 	def_water_wildmons SILVER_CAVE_OUTSIDE
-	db 30 percent ; encounter rate
+	db 10 percent ; encounter rate
 	db 87, KINGDRA
 	db 85, KINGLER
 	db 86, CORSOLA

@@ -131,11 +131,11 @@ KantoWaterWildMons:
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_28
-	db 30 percent ; encounter rate
+	db 10 percent ; encounter rate
 	db 87, KINGDRA
 	db 85, KINGLER
 	db 86, CORSOLA
-	db 85, LAPRAS
+	db 85, AZUMARILL
 	end_water_wildmons
 
 	def_water_wildmons PALLET_TOWN
@@ -171,7 +171,7 @@ KantoWaterWildMons:
 	end_water_wildmons
 
 	def_water_wildmons CELADON_CITY
-	db 20 percent ; encounter rate
+	db 10 percent ; encounter rate
 	db 72, MUK
 	db 73, QWILFISH
 	db 74, MUK
@@ -179,7 +179,7 @@ KantoWaterWildMons:
 	end_water_wildmons
 
 	def_water_wildmons FUCHSIA_CITY
-	db 50 percent ; encounter rate
+	db 10 percent ; encounter rate
 	db 75, GYARADOS
 	db 75, GYARADOS
 	db 75, GYARADOS
