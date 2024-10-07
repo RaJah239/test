@@ -21,7 +21,7 @@ SwarmGrampsScript:
 	iftrue .skiprandomswarm
 	writetext GeneralPreSwarmText
 	promptbutton
-	random 12
+	random 15
 	ifequal 0, .bulbasaur
 	ifequal 1, .charmander
 	ifequal 2, .squirtle
@@ -34,6 +34,9 @@ SwarmGrampsScript:
 	ifequal 9, .togepi
 	ifequal 10, .tyrogue
 	ifequal 11, .ditto
+	ifequal 12, .smoochum
+	ifequal 13, .elekid
+	ifequal 14, .magby
 
 .bulbasaur
 	setflag ENGINE_SWARM
@@ -131,6 +134,30 @@ SwarmGrampsScript:
 	closetext
 	end
 
+.smoochum
+	setflag ENGINE_SWARM
+	swarm DARK_CAVE_VIOLET_ENTRANCE
+	writetext SwarmSmoochumText
+	waitbutton
+	closetext
+	end
+
+.elekid
+	setflag ENGINE_SWARM
+	swarm ROUTE_32
+	writetext SwarmElekidText
+	waitbutton
+	closetext
+	end
+
+.magby
+	setflag ENGINE_SWARM
+	swarm ROUTE_33
+	writetext SwarmMagbyText
+	waitbutton
+	closetext
+	end
+
 .skiprandomswarm
 	writetext SkipSwarmText
 	waitbutton
@@ -215,6 +242,24 @@ SwarmDittoText:
 	cont "ROUTE 35!"
 	done
 
+SwarmSmoochumText:
+	text "There's a swarm of"
+	line "SMOOCHUM in"
+	cont "DARK CAVE!"
+	done
+
+SwarmElekidText:
+	text "There's a swarm of"
+	line "ELEKID on"
+	cont "ROUTE 32!"
+	done
+
+SwarmMagbyText:
+	text "There's a swarm of"
+	line "MAGBY on"
+	cont "ROUTE 33!"
+	done
+
 SkipSwarmText:
 	text "You forgot which"
 	line "#MON is swarm-"
@@ -223,7 +268,7 @@ SkipSwarmText:
 	para "Me too! I'm old."
 
 	para "What I do remember"
-	line "is there are 12"
+	line "is there are 15"
 	cont "#MON swarms."
 
 	para "You ought visit"

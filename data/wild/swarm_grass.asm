@@ -373,4 +373,97 @@ SwarmGrassWildMons:
 	db 5, DITTO
 	db 5, DITTO
 	db 5, DITTO
+
+; Smoochum swarm
+	map_id DARK_CAVE_VIOLET_ENTRANCE
+	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
+	; morn
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	; day
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	; nite
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+	db 5, SMOOCHUM
+
+; Elekid swarm
+	map_id ROUTE_32
+	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
+	; morn
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	; day
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	; nite
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+	db 5, ELEKID
+
+; Magby swarm
+	map_id ROUTE_33
+	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
+	; morn
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	; day
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	; nite
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
+	db 5, MAGBY
 	db -1 ; end

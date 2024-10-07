@@ -68,6 +68,7 @@ POKEGEAR: Now shows the detailed name of map you're currently in (based on Map G
 - Hatch Room was added to the Day Care out back. Only accessible via Bicycle. The old man appears there if your Pokémon laid any eggs and there’s a Porygon PC as well.
 - Press A or B to stop the Bicycle in the Day Care's Hatch Room or Kanto’s Cycling Road.
 - Slot Machines payout were adjusted as coins are now used for a lot of things.
+- Swarm system reworked to trigger by talking to NPC daily. Swarms include Gen 1 and 2 starters, all baby Pokémon and Ditto.
 - Smashed rock may contain items.
 - Gen 1 fossils added and a way to revive them.
 - Name Rater can change traded Pokémon’s nicknames.
