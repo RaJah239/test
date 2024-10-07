@@ -319,11 +319,11 @@ Route29TeacherText:
 	done
 
 Route29FisherText:
-	text "I wanted to take a"
-	line "break, so I saved"
+	text "A wild #MON I"
+	line "was fighting fled."
 
-	para "to record my"
-	line "progress."
+	para "Most #MON can"
+	line "flee battles."
 	done
 
 Route29CooltrainerMText_WaitingForNight:
