@@ -96,4 +96,7 @@ SpriteMons:
 	db PILOSWINE
 	db CLOYSTER
 	db DEWGONG
+	db WOBBUFFET
+	db KINGLER
+	db DONPHAN
 	assert_table_length NUM_POKEMON_SPRITES
