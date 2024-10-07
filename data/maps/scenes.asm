@@ -85,4 +85,5 @@ MapScenes::
 	scene_var MOBILE_BATTLE_ROOM,                          wMobileBattleRoomSceneID
 	scene_var SILVER_CAVE_POKECENTER_1F,                   wSilverCavePokecenter1F
 	scene_var SILVER_CAVE_OUTSIDE,                         wSilverCaveOutsideSceneID
+	scene_var UNION_CAVE_GROTTOS,                          wUnionCaveGrottoSceneID
 	db -1 ; end

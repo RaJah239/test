@@ -374,7 +374,8 @@
 	const EVENT_WHIRL_ISLAND_GROTTO_STARMIE
 	const EVENT_WHIRL_ISLAND_GROTTO_TENTACRUEL
 	const EVENT_WHIRL_ISLAND_GROTTO_DEWGONG
-; Unused: next 234 events
+	const EVENT_MET_ERIC_THE_EXPLORER
+; Unused: next 233 events
 
 	const_next 600
 ; Kurt Apricorn events

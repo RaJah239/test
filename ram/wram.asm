@@ -3118,7 +3118,8 @@ wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 wSilverCavePokecenter1F::                         db ; Crystal Trove
 wSilverCaveOutsideSceneID::                       db ; Crystal Trove removed Mt. Moon scene with Rival and moved to Mt. Silver
-	ds 48
+wUnionCaveGrottoSceneID::                         db ; Union Cave Grotto
+	ds 47
 
 ; fight counts
 wJackFightCount::    db

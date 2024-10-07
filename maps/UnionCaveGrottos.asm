@@ -4,12 +4,21 @@
     const UNIONCAVEGROTTOS_CUBONE
     const UNIONCAVEGROTTOS_WOOPER
     const UNIONCAVEGROTTOS_ONIX
+    const UNIONCAVEGROTTOS_ERIC_THE_EXPLORER
 
 UnionCaveGrottos_MapScripts:
     def_scene_scripts
+	scene_script UnionCaveGrottosScene, SCENE_UNION_CAVE_GROTTOS_MET_ERIC
+	scene_script UnionCaveGrottosNoop1, SCENE_UNION_CAVE_GROTTOS_NOOP
 
     def_callbacks
     callback MAPCALLBACK_OBJECTS, UnionCaveGrottosPokemonOW
+
+UnionCaveGrottosScene:
+	sdefer UnionCaveGrottosEricTheExplorerScript
+       end
+UnionCaveGrottosNoop1:
+       end
 
 UnionCaveGrottosPokemonOW:
     checkevent EVENT_INITIALIZED_EVENTS
@@ -130,6 +139,82 @@ UnionCaveGrottoSignText:
 	cont "WOOPER."
 	done
 
+UnionCaveGrottosEricTheExplorerScript:
+	showemote EMOTE_SHOCK, UNIONCAVEGROTTOS_ERIC_THE_EXPLORER, 15
+	turnobject UNIONCAVEGROTTOS_ERIC_THE_EXPLORER, RIGHT
+	turnobject PLAYER, LEFT
+	opentext
+	writetext UnionCaveGrottoEricTheExplorerYoureAnAdventurerTooText
+	waitbutton
+	closetext
+	applymovement UNIONCAVEGROTTOS_ERIC_THE_EXPLORER, EricTakesAStepUp
+	applymovement PLAYER, PlayerTakesAStepLeft
+	turnobject PLAYER, UP
+	applymovement UNIONCAVEGROTTOS_ERIC_THE_EXPLORER, UnionCaveGrottoEricTheExplorerExits
+	turnobject PLAYER, RIGHT
+	playsound SFX_ENTER_DOOR
+	setscene SCENE_UNION_CAVE_GROTTOS_NOOP
+	disappear UNIONCAVEGROTTOS_ERIC_THE_EXPLORER
+	setevent EVENT_MET_ERIC_THE_EXPLORER
+	end
+
+EricTakesAStepUp:
+	step UP
+	step_end
+
+PlayerTakesAStepLeft:
+	step LEFT
+	step_end
+
+UnionCaveGrottoEricTheExplorerExits:
+	step RIGHT
+	step DOWN
+	step_end
+
+UnionCaveGrottoEricTheExplorerYoureAnAdventurerTooText:
+	text "Whoa! Hi, I'm Eric"
+	line "the explorer."
+	
+	para "You must be one"
+	line "too!"
+	
+	para "<PLAY_G> is it?"
+	line "Happy to meet ya!"
+	
+	para "You've caught me at"
+	line "a great time - I'm"
+	
+	para "on a quest to find"
+	line "all Grottos and"
+	
+	para "note the #MON"
+	line "that visit each."
+	
+	para "See this sign to"
+	line "my left?"
+	
+	para "It lists all the"
+	line "#MON that some-"
+	
+	para "times visit this"
+	line "Grotto."
+
+	para "I made it. I aim"
+	line "seek them all out"
+	cont "add signs."	
+	
+	para "There're many more"
+	line "Grottos out there!"
+	
+	para "I've got work to"
+	line "do!"
+	
+	para "Let's meet again!"
+	line "Enjoy your adven-"
+	cont "ture - I will too!"
+	cont "Bye!"
+	done
+
 UnionCaveGrottos_MapEvents:
     db 0, 0 ; filler
 
@@ -148,3 +233,4 @@ UnionCaveGrottos_MapEvents:
 	object_event  3,  3, SPRITE_CUBONE_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, UnionCaveGrottoCubone, EVENT_UNION_CAVE_GROTTO_CUBONE_OW
 	object_event  5,  4, SPRITE_WOOPER_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, UnionCaveGrottoWooper, EVENT_UNION_CAVE_GROTTO_WOOPER_OW
 	object_event  2,  4, SPRITE_ONIX_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, UnionCaveGrottoOnix, EVENT_UNION_CAVE_GROTTO_ONIX_OW
+	object_event  3,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, UnionCaveGrottosEricTheExplorerScript, EVENT_MET_ERIC_THE_EXPLORER
