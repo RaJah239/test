@@ -101,7 +101,7 @@ POKEGEAR: Now shows the detailed name of map you're currently in (based on Map G
 - Item usage is forbidden by lifeofmauri on Discord
 - Cooltrainer Male overworld sprite eye fix by Major Agnostic on Discord
 - Battle HUD update by Idain and Major Agnostic on Discord
-- Qwilfish, Mantine and Octillery overworld sprites by FrenchOrange on Discord
+- Corsola, Dratini, Kingdra, Starmie, Mantine, Octillery and Qwilfish swimming overworld sprites by FrenchOrange on Discord
 - Chansey, Porygon, Lanturn and Seaking overworld sprites by Megaman-Omega from DeviantArt
 - Charizard, Dragonite and Feraligatr back sprites by mauvesea on Discord
 - Surf faster - cRz-Shadows on Discord
