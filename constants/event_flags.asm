@@ -368,7 +368,8 @@
 	const EVENT_ROUTE_26_GROTTO_GENGAR
 	const EVENT_ROUTE_26_GROTTO_SHUCKLE
 	const EVENT_VICTORY_ROAD_GROTTO_LARVITAR
-; Unused: next 240 events
+	const EVENT_DRAGONS_DEN_GROTTO_DRATINI
+; Unused: next 239 events
 
 	const_next 600
 ; Kurt Apricorn events

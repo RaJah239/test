@@ -111,4 +111,5 @@ OverworldSprites:
 	overworld_sprite MantineOWSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SeakingOWSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite OctilleryOWSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite DratiniOWSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	assert_table_length NUM_OVERWORLD_SPRITES

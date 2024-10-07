@@ -106,6 +106,7 @@
 	const SPRITE_MANTINE_OW
 	const SPRITE_SEAKING_OW
 	const SPRITE_OCTILLERY_OW
+	const SPRITE_DRATINI_OW
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)

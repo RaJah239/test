@@ -41,4 +41,4 @@ VictoryRoadGrotto_MapEvents:
     def_bg_events
 
     def_object_events
-	object_event  5,  5, SPRITE_LARVITAR_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VictoryRoadGrottoLarvitarScript, EVENT_VICTORY_ROAD_GROTTO_LARVITAR
+	object_event  5,  5, SPRITE_LARVITAR_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VictoryRoadGrottoLarvitarScript, EVENT_DRAGONS_DEN_GROTTO_DRATINI
