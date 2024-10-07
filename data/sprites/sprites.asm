@@ -115,4 +115,14 @@ OverworldSprites:
 	overworld_sprite KingdraOWSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CorsolaOWSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite StarmieOWSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite GiovanniSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite ProtonSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite PetrelSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite AgathaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite LoreleiSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite ScarletSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite ArianaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite ArcherSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite EusineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite MaximaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	assert_table_length NUM_OVERWORLD_SPRITES

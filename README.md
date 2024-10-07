@@ -99,6 +99,7 @@ POKEGEAR: Now shows the detailed name of map you're currently in (based on Map G
 - Do Not Disturb mode by lifeofmauri on Discord
 - Take off Encounters by lifeofmauri on Discord
 - Item usage is forbidden by lifeofmauri on Discord
+- Scarlet/Chiaki and Maxima's overworld and trainer sprite by TheBrawlUnit from DeviantArt
 - Cooltrainer Male overworld sprite eye fix by Major Agnostic on Discord
 - Battle HUD update by Idain and Major Agnostic on Discord
 - Corsola, Dratini, Kingdra, Starmie, Mantine, Octillery and Qwilfish swimming overworld sprites by FrenchOrange on Discord

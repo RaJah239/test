@@ -259,7 +259,7 @@ SilverGroupSprites:
 ; Route28, SilverCaveOutside
 	; 0 of max 9 walking sprites
 	db SPRITE_RIVAL
-	db SPRITE_SUPER_NERD
+	db SPRITE_MAXIMA
 	db 0 ; end
 
 DungeonsGroupSprites:

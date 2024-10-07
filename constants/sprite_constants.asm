@@ -110,10 +110,20 @@
 	const SPRITE_KINGDRA_OW
 	const SPRITE_CORSOLA_OW
 	const SPRITE_STARMIE_OW
+	const SPRITE_GIOVANNI
+	const SPRITE_PROTON
+	const SPRITE_PETREL
+	const SPRITE_AGATHA
+	const SPRITE_LORELEI
+	const SPRITE_SCARLET
+	const SPRITE_ARIANA
+	const SPRITE_ARCHER
+	const SPRITE_EUSINE
+	const SPRITE_MAXIMA
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
-	const_next $71
+	const_next $77
 DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_UNOWN ; 80
 	const SPRITE_WEEDLE ; 83
