@@ -118,6 +118,18 @@ UnionCaveGrottoOnix:
     reloadmapafterbattle
     end
 
+ UnionCaveGrottoSign:
+	jumptext  UnionCaveGrottoSignText
+
+UnionCaveGrottoSignText:
+	text "This Grotto gets"
+	line "visited by:"
+
+	para "SANDSHREW, MACHOP,"
+	line "CUBONE, ONIX and"
+	cont "WOOPER."
+	done
+
 UnionCaveGrottos_MapEvents:
     db 0, 0 ; filler
 
@@ -128,10 +140,11 @@ UnionCaveGrottos_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  2,  5, BGEVENT_READ, UnionCaveGrottoSign
 
     def_object_events
 	object_event  2,  2, SPRITE_SANDSHREW_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, UnionCaveGrottoSandshrew, EVENT_UNION_CAVE_GROTTO_SANDSHREW_OW
 	object_event  5,  2, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, UnionCaveGrottoMachop, EVENT_UNION_CAVE_GROTTO_MACHOP_OW
 	object_event  3,  3, SPRITE_CUBONE_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, UnionCaveGrottoCubone, EVENT_UNION_CAVE_GROTTO_CUBONE_OW
 	object_event  5,  4, SPRITE_WOOPER_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, UnionCaveGrottoWooper, EVENT_UNION_CAVE_GROTTO_WOOPER_OW
-	object_event  2,  5, SPRITE_ONIX_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, UnionCaveGrottoOnix, EVENT_UNION_CAVE_GROTTO_ONIX_OW
+	object_event  2,  4, SPRITE_ONIX_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, UnionCaveGrottoOnix, EVENT_UNION_CAVE_GROTTO_ONIX_OW
