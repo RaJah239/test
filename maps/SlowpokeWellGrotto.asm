@@ -118,6 +118,18 @@ SlowpokeWellGrottoMukScript:
     reloadmapafterbattle
     end
 
+SlowpokeWellGrottoSign:
+	jumptext  SlowpokeWellGrottoSignText
+
+SlowpokeWellGrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "SLOWPOKE, WEEZING,"
+	line "RATICATE, MUK and"
+	cont "POLIWHIRL."
+	done
+
 SlowpokeWellGrotto_MapEvents:
     db 0, 0 ; filler
 
@@ -127,6 +139,7 @@ SlowpokeWellGrotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  4,  2, BGEVENT_READ, SlowpokeWellGrottoSign
 
     def_object_events
 	object_event  4,  3, SPRITE_SLOWPOKE_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SlowpokeWellGrottoSlowpokeScript, EVENT_SLOWPOKE_WELL_GROTTO_SLOWPOKE

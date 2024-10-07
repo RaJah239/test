@@ -118,6 +118,18 @@ DarkCaveBlackthornEntranceGrottoSudowoodoScript:
     reloadmapafterbattle
     end
 
+DarkCaveBlackthornEntranceGrottoSign:
+	jumptext  DarkCaveBlackthornEntranceGrottoSignText
+
+DarkCaveBlackthornEntranceGrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "SUDOWOODO, RHYDON,"
+	line "KINGLER, DONPHAN"
+	cont "and WOBBUFFET."
+	done
+
 DarkCaveBlackthornEntranceGrotto_MapEvents:
     db 0, 0 ; filler
 
@@ -127,6 +139,7 @@ DarkCaveBlackthornEntranceGrotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  2,  5, BGEVENT_READ, DarkCaveBlackthornEntranceGrottoSign
 
     def_object_events
 	object_event  5,  4, SPRITE_WOBBUFFET_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DarkCaveBlackthornEntranceGrottoWobbuffetScript, EVENT_DARK_CAVE_BLACK_THORN_ENTRANCE_GROTTO_WOBBUFFET

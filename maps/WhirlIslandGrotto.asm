@@ -119,6 +119,18 @@ WhirlIslandGrottoDewgongScript:
     reloadmapafterbattle
     end
 
+WhirlIslandGrottoSign:
+	jumptext  WhirlIslandGrottoSignText
+
+WhirlIslandGrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "KINGDRA, DEWGONG,"
+	line "STARMIE, CORSOLA"
+	cont "and TENTACRUEL."
+	done
+
 WhirlIslandGrotto_MapEvents:
     db 0, 0 ; filler
 
@@ -128,6 +140,7 @@ WhirlIslandGrotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  9,  8, BGEVENT_READ, WhirlIslandGrottoSign
 
     def_object_events
 	object_event  9,  6, SPRITE_KINGDRA_OW, SPRITEMOVEDATA_SWIM_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WhirlIslandGrottoKingdraScript, EVENT_WHIRL_ISLAND_GROTTO_KINGDRA

@@ -118,6 +118,18 @@ RuinsOfAlphGrottoExeggcuteScript:
     reloadmapafterbattle
     end
 
+RuinsOfAlphGrottoSign:
+	jumptext  RuinsOfAlphGrottoSignText
+
+RuinsOfAlphGrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "EXEGGCUTE, EEVEE,"
+	line "SMEARGLE, XATU and"
+	cont "GIRAFARIG."
+	done
+
 RuinsOfAlphOutsideGrotto_MapEvents:
     db 0, 0 ; filler
 
@@ -128,6 +140,7 @@ RuinsOfAlphOutsideGrotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  2,  7, BGEVENT_READ, RuinsOfAlphGrottoSign
 
     def_object_events
 	object_event  4,  5, SPRITE_XATU_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphGrottoXatuScript, EVENT_RUINS_OF_ALPH_GROTTO_XATU

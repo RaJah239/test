@@ -118,6 +118,18 @@ IcePath1FGrottoDewgonScript:
     reloadmapafterbattle
     end
 
+IcePath1FGrottoSign:
+	jumptext  IcePath1FGrottoSignText
+
+IcePath1FGrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "CLOYSTER, DEWGONG,"
+	line "SNEASEL, DELIBIRD"
+	cont "and PILOSWINE."
+	done
+
 IcePath1FGrotto_MapEvents:
     db 0, 0 ; filler
 
@@ -127,10 +139,11 @@ IcePath1FGrotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  2,  2, BGEVENT_READ, IcePath1FGrottoSign
 
     def_object_events
 	object_event  4,  1, SPRITE_DELIBIRD_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, IcePath1FGrottoDelibirdScript, EVENT_ICE_PATH_1F_GROTTO_DELIBIRD
 	object_event  2,  0, SPRITE_SNEASEL_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IcePath1FGrottoSneaselScript, EVENT_ICE_PATH_1F_GROTTO_SNEASEL
 	object_event  4,  4, SPRITE_PILOSWINE_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IcePath1FGrottoPiloswineScript, EVENT_ICE_PATH_1F_GROTTO_PILOSWINE
 	object_event  1,  4, SPRITE_CLOYSTER_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, IcePath1FGrottoCloysterScript, EVENT_ICE_PATH_1F_GROTTO_CLOYSTER
-	object_event  2,  2,SPRITE_DEWGONG_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IcePath1FGrottoDewgonScript, EVENT_ICE_PATH_1F_GROTTO_DEWGONG
+	object_event  1,  1,SPRITE_DEWGONG_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IcePath1FGrottoDewgonScript, EVENT_ICE_PATH_1F_GROTTO_DEWGONG

@@ -118,6 +118,18 @@ Route29GrottoHoothootScript:
     reloadmapafterbattle
     end
 
+Route29GrottoSign:
+	jumptext  Route29GrottoSignText
+
+Route29GrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "SENTRET, HOOTHOOT,"
+	line "LEDYBA, HOPPIP and"
+	cont "HOOTHOOT."
+	done
+
 Route29Grotto_MapEvents:
     db 0, 0 ; filler
 
@@ -128,6 +140,7 @@ Route29Grotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  8,  9, BGEVENT_READ, Route29GrottoSign
 
     def_object_events
 	object_event  9,  4, SPRITE_SENTRET_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route29GrottoSentretScript, EVENT_ROUTE_29_GROTTO_SENTRET

@@ -118,6 +118,18 @@ Route36GrottoHoundourScript:
     reloadmapafterbattle
     end
 
+Route36GrottoSign:
+	jumptext  Route36GrottoSignText
+
+Route36GrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "HOUNDOUR, YANMA,"
+	line "GROWLITHE, MAREEP"
+	cont "and BELLSPROUT."
+	done
+
 Route36Grotto_MapEvents:
     db 0, 0 ; filler
 
@@ -128,6 +140,7 @@ Route36Grotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  8,  5, BGEVENT_READ, Route36GrottoSign
 
     def_object_events
 	object_event  8,  6, SPRITE_BELLSPROUT_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route36GrottoBellsproutScript, EVENT_ROUTE_36_GROTTO_BELLSPROUT

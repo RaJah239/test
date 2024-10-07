@@ -119,6 +119,18 @@ CianwoodCityGrottoOctillery:
     reloadmapafterbattle
     end
 
+CianwoodCityGrottoSign:
+	jumptext  CianwoodCityGrottoSignText
+
+CianwoodCityGrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "QWILFISH, LANTURN,"
+	line "MANTINE, SEAKING"
+	cont "and OCTILLERY."
+	done
+
 CianwoodCityGrotto_MapEvents:
     db 0, 0 ; filler
 
@@ -128,6 +140,7 @@ CianwoodCityGrotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  4,  9, BGEVENT_READ, CianwoodCityGrottoSign
 
     def_object_events
 	object_event  9,  7, SPRITE_QWILFISH_OW, SPRITEMOVEDATA_SWIM_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityGrottoQwilfish, EVENT_CIANWOOD_GROTTO_QWILFISH_OW

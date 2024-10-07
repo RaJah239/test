@@ -118,6 +118,18 @@ DarkCaveWestGrottoMarillScript:
     reloadmapafterbattle
     end
 
+DarkCaveWestGrottoSign:
+	jumptext  DarkCaveWestGrottoSignText
+
+DarkCaveWestGrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "GEODUDE, DIGLETT,"
+	line "ZUBAT, MARILL and"
+	cont "TEDDIURSA."
+	done
+
 DarkCaveVioletEntranceGrotto_MapEvents:
     db 0, 0 ; filler
 
@@ -127,6 +139,7 @@ DarkCaveVioletEntranceGrotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  5,  2, BGEVENT_READ, DarkCaveWestGrottoSign
 
     def_object_events
 	object_event  4,  3, SPRITE_GEODUDE_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, DarkCaveWestGrottoGeodudeScript, EVENT_DARK_CAVE_WEST_GROTTO_GEODUDE

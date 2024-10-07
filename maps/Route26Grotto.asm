@@ -118,6 +118,18 @@ Route26GrottoShuckleScript:
     reloadmapafterbattle
     end
 
+Route26GrottoSign:
+	jumptext  Route26GrottoSignText
+
+Route26GrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+	
+	para "CHANSEY, GENGAR,"
+	line "SHUCKLE, MR.MIME"
+	cont "and KANGASKHAN."
+	done
+
 Route26Grotto_MapEvents:
     db 0, 0 ; filler
 
@@ -128,6 +140,7 @@ Route26Grotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  5,  8, BGEVENT_READ, Route26GrottoSign
 
     def_object_events
 	object_event  4,  7, SPRITE_CHANSEY_OW, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route26GrottoChanseyScript, EVENT_ROUTE_26_GROTTO_CHANSEY

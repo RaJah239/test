@@ -118,6 +118,18 @@ MountMortar1FInsideGrottoMisdreavusScript:
     reloadmapafterbattle
     end
 
+MountMortar1FInsideGrottoSign:
+	jumptext  MountMortar1FInsideGrottoSignText
+
+MountMortar1FInsideGrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "GLIGAR, DUNSPARCE,"
+	line "MAGNETON, MAGCARGO"
+	cont "and MISDREAVUS."
+	done
+
 MountMortar1FInsideGrotto_MapEvents:
     db 0, 0 ; filler
 
@@ -127,6 +139,7 @@ MountMortar1FInsideGrotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  5,  4, BGEVENT_READ, MountMortar1FInsideGrottoSign
 
     def_object_events
 	object_event  4,  2, SPRITE_GLIGAR_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, MountMortar1FInsideGrottoGligarScript, EVENT_MOUNT_MORTAR_1F_INSIDE_GROTTO_GLIGAR

@@ -118,6 +118,18 @@ Route34GrottoDrowzeeScript:
     reloadmapafterbattle
     end
 
+Route34GrottoSign:
+	jumptext  Route34GrottoSignText
+
+Route34GrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "SNUBBULL, KADABRA,"
+	line "PIDGEOTTO, MEOWTH"
+	cont "and DROWZEE."
+	done
+
 Route34Grotto_MapEvents:
     db 0, 0 ; filler
 
@@ -128,6 +140,7 @@ Route34Grotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  4,  4, BGEVENT_READ, Route34GrottoSign
 
     def_object_events
 	object_event  5,  4, SPRITE_MEOWTH_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route34GrottoMeowthScript, EVENT_ROUTE_34_GROTTO_MEOWTH

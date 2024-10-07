@@ -118,6 +118,17 @@ IlexForestGrottoParaScript:
     reloadmapafterbattle
     end
 
+IlexForestGrottoSign:
+	jumptext  IlexForestGrottoSignText
+
+IlexForestGrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "BEEDRILL, ODDISH,"
+	line "PINECO, PARAS and"
+	cont "BUTTERFREE."
+	done
 
 IlexForestGrotto_MapEvents:
     db 0, 0 ; filler
@@ -129,6 +140,7 @@ IlexForestGrotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  7,  5, BGEVENT_READ, IlexForestGrottoSign
 
     def_object_events
 	object_event  2,  3, SPRITE_BUTTERFREE_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, IlexForestGrottoButterfreeScript, EVENT_ILEX_FOREST_GROTTO_BUTTERFREE

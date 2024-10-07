@@ -30,6 +30,15 @@ DragonsDenGrottoDratiniScript:
     reloadmapafterbattle
     end
 
+DragonsDenGrottoSign:
+	jumptext  DragonsDenGrottoSignText
+
+DragonsDenGrottoSignText:
+	text "This GROTTO gets"
+	line "visited by:"
+	cont "DRATINI."
+	done
+
 DragonsDenGrotto_MapEvents:
     db 0, 0 ; filler
 
@@ -39,6 +48,7 @@ DragonsDenGrotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  2,  5, BGEVENT_READ, DragonsDenGrottoSign
 
     def_object_events
 	object_event  3,  3, SPRITE_DRATINI_OW, SPRITEMOVEDATA_SWIM_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DragonsDenGrottoDratiniScript, EVENT_CIANWOOD_GROTTO_QWILFISH_OW

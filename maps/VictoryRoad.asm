@@ -269,7 +269,7 @@ VictoryRoadEricTheExplorerText:
 	line "meet again!"
 	
 	para "This seems to be"
-	line "the final Grotto."
+	line "the final GROTTO."
 	
 	para "Did you find them"
 	line "all? There are 21!"

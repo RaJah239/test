@@ -30,6 +30,15 @@ VictoryRoadGrottoLarvitarScript:
     reloadmapafterbattle
     end
 
+VictoryRoadGrottoSign:
+	jumptext VictoryRoadGrottoSignText
+
+VictoryRoadGrottoSignText:
+	text "This GROTTO gets"
+	line "visited by:"
+	cont "LARVITAR."
+	done
+
 VictoryRoadGrotto_MapEvents:
     db 0, 0 ; filler
 
@@ -39,6 +48,7 @@ VictoryRoadGrotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  6,  5, BGEVENT_READ, VictoryRoadGrottoSign
 
     def_object_events
 	object_event  5,  5, SPRITE_LARVITAR_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VictoryRoadGrottoLarvitarScript, EVENT_DRAGONS_DEN_GROTTO_DRATINI

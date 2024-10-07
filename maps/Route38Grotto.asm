@@ -118,6 +118,18 @@ Route38GrottoElectrodeScript:
     reloadmapafterbattle
     end
 
+Route38GrottoSign:
+	jumptext  Route38GrottoSignText
+
+Route38GrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "MILTANK, DODRIO,"
+	line "TAUROS, RAPIDASH"
+	cont "and ELECTRODE."
+	done
+
 Route38Grotto_MapEvents:
     db 0, 0 ; filler
 
@@ -128,6 +140,7 @@ Route38Grotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  6,  9, BGEVENT_READ, Route38GrottoSign
 
     def_object_events
 	object_event  9,  5, SPRITE_DODRIO_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route38GrottoDodrioScript, EVENT_ROUTE_38_GROTTO_DODRIO

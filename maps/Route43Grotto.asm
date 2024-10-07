@@ -68,7 +68,7 @@ Route43GrottoPokemonOW:
     appear ROUTE43GROTTO_HERACROSS
     endcallback
 
-Route42GrottoTangelaScript:
+Route43GrottoTangelaScript:
     faceplayer
     cry TANGELA
     loadwildmon TANGELA, 38
@@ -78,7 +78,7 @@ Route42GrottoTangelaScript:
     reloadmapafterbattle
     end
 
-Route42GrottoFarfetchDScript:
+Route43GrottoFarfetchDScript:
     faceplayer
     cry FARFETCH_D
     loadwildmon FARFETCH_D, 38
@@ -88,7 +88,7 @@ Route42GrottoFarfetchDScript:
     reloadmapafterbattle
     end
 
-Route42GrottoSkarmoryScript:
+Route43GrottoSkarmoryScript:
     faceplayer
     cry SKARMORY
     loadwildmon SKARMORY, 38
@@ -98,7 +98,7 @@ Route42GrottoSkarmoryScript:
     reloadmapafterbattle
     end
 
-Route42GrottoKangaskhanScript:
+Route43GrottoKangaskhanScript:
     faceplayer
     cry KANGASKHAN
     loadwildmon KANGASKHAN, 38
@@ -108,7 +108,7 @@ Route42GrottoKangaskhanScript:
     reloadmapafterbattle
     end
 
-Route42GrottoHeracrossScript:
+Route43GrottoHeracrossScript:
     faceplayer
     cry HERACROSS
     loadwildmon HERACROSS, 38
@@ -117,6 +117,20 @@ Route42GrottoHeracrossScript:
     disappear ROUTE43GROTTO_HERACROSS
     reloadmapafterbattle
     end
+
+Route43GrottoSign:
+	jumptext  Route43GrottoSignText
+
+Route43GrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "SKARMORY, TANGELA,"
+	line "KANGASKHAN,"
+
+	para "HERACROSS and"
+	line "FARFETCH'D."
+	done
 
 Route43Grotto_MapEvents:
     db 0, 0 ; filler
@@ -128,10 +142,11 @@ Route43Grotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  6,  9, BGEVENT_READ, Route43GrottoSign
 
     def_object_events
-	object_event  5,  6, SPRITE_TANGELA_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route42GrottoTangelaScript, EVENT_ROUTE_42_GROTTO_TANGELA
-	object_event  6,  4, SPRITE_FARFETCH_D_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route42GrottoFarfetchDScript, EVENT_ROUTE_42_GROTTO_FARFETCH_D
-	object_event  5,  9, SPRITE_SKARMORY_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route42GrottoSkarmoryScript, EVENT_ROUTE_42_GROTTO_SKARMORY
-	object_event  7,  5, SPRITE_KANGASKHAN_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route42GrottoKangaskhanScript, EVENT_ROUTE_42_GROTTO_KANGASKHAN
-	object_event  4,  5, SPRITE_HERACROSS_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route42GrottoHeracrossScript, EVENT_ROUTE_42_GROTTO_HERACROSS
+	object_event  5,  6, SPRITE_TANGELA_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route43GrottoTangelaScript, EVENT_ROUTE_42_GROTTO_TANGELA
+	object_event  6,  4, SPRITE_FARFETCH_D_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route43GrottoFarfetchDScript, EVENT_ROUTE_42_GROTTO_FARFETCH_D
+	object_event  5,  9, SPRITE_SKARMORY_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route43GrottoSkarmoryScript, EVENT_ROUTE_42_GROTTO_SKARMORY
+	object_event  7,  5, SPRITE_KANGASKHAN_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route43GrottoKangaskhanScript, EVENT_ROUTE_42_GROTTO_KANGASKHAN
+	object_event  4,  5, SPRITE_HERACROSS_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route43GrottoHeracrossScript, EVENT_ROUTE_42_GROTTO_HERACROSS

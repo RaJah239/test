@@ -118,6 +118,18 @@ Route42GrottoMurkrowScript:
     reloadmapafterbattle
     end
 
+Route42GrottoSign:
+	jumptext  Route42GrottoSignText
+
+Route42GrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "STANTLER, MURKROW,"
+	line "PRIMEAPE, AIPOM"
+	cont "and LICKITUNG."
+	done
+
 Route42Grotto_MapEvents:
     db 0, 0 ; filler
 
@@ -127,6 +139,7 @@ Route42Grotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  4,  6, BGEVENT_READ, Route42GrottoSign
 
     def_object_events
 	object_event  5,  4, SPRITE_LICKITUNG_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route42GrottoLickitungScript, EVENT_ROUTE_42_GROTTO_LICKITUNG

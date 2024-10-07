@@ -118,6 +118,18 @@ NationalParkVenonatScript:
     reloadmapafterbattle
     end
 
+NationalParkGrottoSign:
+	jumptext  NationalParkGrottoSignText
+
+NationalParkGrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "PSYDUCK, SCYTHER,"
+	line "PINSIR, VENONAT"
+	cont "and SUNKERN."
+	done
+
 NationalParkGrotto_MapEvents:
     db 0, 0 ; filler
 
@@ -128,6 +140,7 @@ NationalParkGrotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  7,  3, BGEVENT_READ, NationalParkGrottoSign
 
     def_object_events
 	object_event  3,  4, SPRITE_SUNKERN_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NationalParkSunkernScript, EVENT_NATIONAL_PARK_GROTTO_SUNKERN

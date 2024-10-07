@@ -131,7 +131,7 @@ UnionCaveGrottoOnix:
 	jumptext  UnionCaveGrottoSignText
 
 UnionCaveGrottoSignText:
-	text "This Grotto gets"
+	text "This Grotto get"
 	line "visited by:"
 
 	para "SANDSHREW, MACHOP,"
@@ -186,7 +186,7 @@ UnionCaveGrottoEricTheExplorerYoureAnAdventurerTooText:
 	line "a great time - I'm"
 	
 	para "on a quest to find"
-	line "all Grottos and"
+	line "all GROTTOS and"
 	
 	para "note the #MON"
 	line "that visit each."
@@ -204,7 +204,7 @@ UnionCaveGrottoEricTheExplorerYoureAnAdventurerTooText:
 	line "add signs to each."	
 	
 	para "There're many more"
-	line "Grottos out there!"
+	line "GROTTOS out there!"
 	
 	para "I've got work to"
 	line "do!"

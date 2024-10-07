@@ -118,6 +118,18 @@ Route32GrottoNidoranFScript:
     reloadmapafterbattle
     end
 
+Route32GrottoSign:
+	jumptext  Route32GrottoSignText
+
+Route32GrottoSignText:
+	text "This GROTTO get"
+	line "visited by:"
+
+	para "NIDORAN-M, VULPIX,"
+	line "SPEAROW, EKANS and"
+	cont "NIDORAN-F."
+	done
+
 Route32Grotto_MapEvents:
     db 0, 0 ; filler
 
@@ -127,6 +139,7 @@ Route32Grotto_MapEvents:
     def_coord_events
 
     def_bg_events
+	bg_event  4,  4, BGEVENT_READ, Route32GrottoSign
 
     def_object_events
 	object_event  4,  7, SPRITE_EKANS_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Route32GrottoEkansScript, EVENT_ROUTE_32_GROTTO_EKANS
