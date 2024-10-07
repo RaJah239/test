@@ -19,40 +19,114 @@ SwarmGrampsScript:
 	opentext
 	checkflag ENGINE_SWARM
 	iftrue .skiprandomswarm
-	random 3
-	ifequal 0, .dunsparce
-	ifequal 1, .yanma
-	ifequal 2, .qwilfish
-	ifequal 3, .vulpix
+	writetext GeneralPreSwarmText
+	promptbutton
+	random 12
+	ifequal 0, .bulbasaur
+	ifequal 1, .charmander
+	ifequal 2, .squirtle
+	ifequal 3, .chikorita
+	ifequal 4, .cyndaquil
+	ifequal 5, .totodile
+	ifequal 6, .pichu
+	ifequal 7, .cleffa
+	ifequal 8, .igglybuff
+	ifequal 9, .togepi
+	ifequal 10, .tyrogue
+	ifequal 11, .ditto
 
-.dunsparce
+.bulbasaur
 	setflag ENGINE_SWARM
-	swarm DARK_CAVE_VIOLET_ENTRANCE
-	writetext SwarmDunsparceText
+	swarm ROUTE_36
+	writetext SwarmBulbasaurText
 	waitbutton
 	closetext
 	end
 
-.yanma
+.charmander
 	setflag ENGINE_SWARM
-	swarm ROUTE_35
-	writetext SwarmYanmaText
+	swarm BURNED_TOWER_1F
+	writetext SwarmCharmanderText
 	waitbutton
 	closetext
 	end
 
-.qwilfish
+.squirtle
 	setflag ENGINE_SWARM
-	swarm ROUTE_32
-	writetext SwarmQwilfishText
+	swarm ROUTE_43
+	writetext SwarmSquirtleText
 	waitbutton
 	closetext
 	end
 
-.vulpix
+.chikorita
 	setflag ENGINE_SWARM
 	swarm ROUTE_37
-	writetext SwarmVulpixText
+	writetext SwarmChikoritaText
+	waitbutton
+	closetext
+	end
+
+.cyndaquil
+	setflag ENGINE_SWARM
+	swarm ROUTE_39
+	writetext SwarmCyndaquilText
+	waitbutton
+	closetext
+	end
+
+.totodile
+	setflag ENGINE_SWARM
+	swarm ROUTE_42
+	writetext SwarmTotodileText
+	waitbutton
+	closetext
+	end
+
+.pichu
+	setflag ENGINE_SWARM
+	swarm ROUTE_31
+	writetext SwarmPichuText
+	waitbutton
+	closetext
+	end
+
+.cleffa
+	setflag ENGINE_SWARM
+	swarm SLOWPOKE_WELL_B1F
+	writetext SwarmCleffaText
+	waitbutton
+	closetext
+	end
+
+.igglybuff
+	setflag ENGINE_SWARM
+	swarm ROUTE_46
+	writetext SwarmIgglybuffText
+	waitbutton
+	closetext
+	end
+
+.togepi
+	setflag ENGINE_SWARM
+	swarm ROUTE_34
+	writetext SwarmTogepiText
+	waitbutton
+	closetext
+	end
+
+.tyrogue
+	setflag ENGINE_SWARM
+	swarm UNION_CAVE_1F
+	writetext SwarmTyrogueText
+	waitbutton
+	closetext
+	end
+
+.ditto
+	setflag ENGINE_SWARM
+	swarm ROUTE_35
+	writetext SwarmDittoText
 	waitbutton
 	closetext
 	end
@@ -63,51 +137,97 @@ SwarmGrampsScript:
 	closetext
 	end
 
-SwarmDunsparceText:
+GeneralPreSwarmText:
 	text "Let me see…"
 	line "What did the news"
 	cont "say?"
+	done
 
-	para "Oh yes! There's a"
-	line "swarm of DUNSPARCE"
-	cont "at DARK CAVE."
+SwarmBulbasaurText:
+	text "There's a swarm of"
+	line "BULBASAUR at"
+	cont "ROUTE 36!"
 	done
 	
-SwarmYanmaText:
-	text "Let me see…"
-	line "What did the news"
-	cont "say?"
-
-	para "Oh yes! There's a"
-	line "swarm of YANMA"
-	cont "on ROUTE 35."
+SwarmCharmanderText:
+	text "There's a swarm of"
+	line "CHARMANDER in the"
+	cont "BURNED TOWER!"
 	done
 	
-SwarmQwilfishText:
-	text "Let me see…"
-	line "What did the news"
-	cont "say?"
-
-	para "Oh yes! There's a"
-	line "swarm of QWILFISH"
-	cont "on ROUTE 32."
+SwarmSquirtleText:
+	text "There's a swarm of"
+	line "SQUIRTLE on"
+	cont "ROUTE 43!"
 	done
 
-SwarmVulpixText:
-	text "Let me see…"
-	line "What did the news say?"
+SwarmChikoritaText:
+	text "There's a swarm of"
+	line "CHIKORITA on"
+	cont "ROUTE 37!"
+	done
 
-	para "Oh yes! There's a"
-	line "swarm of VULPIX"
-	cont "on ROUTE 37."
+SwarmCyndaquilText:
+	text "There's a swarm of"
+	line "CYNDAQUIL on"
+	cont "ROUTE 39!"
+	done
+
+SwarmTotodileText:
+	text "There's a swarm of"
+	line "TOTODILE on"
+	cont "ROUTE 42!"
+	done
+
+SwarmPichuText:
+	text "There's a swarm of"
+	line "PICHU on"
+	cont "ROUTE 31!"
+	done
+
+SwarmCleffaText:
+	text "There's a swarm of"
+	line "CLEFFA in the"
+	cont "SLOWPOKE WELL!"
+	done
+
+SwarmIgglybuffText:
+	text "There's a swarm of"
+	line "IGGLYBUFF on"
+	cont "ROUTE 46!"
+	done
+
+SwarmTogepiText:
+	text "There's a swarm of"
+	line "TOGEPI on"
+	cont "ROUTE 34!"
+	done
+
+SwarmTyrogueText:
+	text "There's a swarm of"
+	line "TYROGUE in the"
+	cont "UNION CAVE!"
+	done
+
+SwarmDittoText:
+	text "There's a swarm of"
+	line "DITTO on"
+	cont "ROUTE 35!"
 	done
 
 SkipSwarmText:
-	text "Often #MON"
-	line "of unusual colors"
+	text "You forgot which"
+	line "#MON is swarm-"
+	cont "ing?"
+	
+	para "Me too! I'm old."
 
-	para "are reported in"
-	line "swarms."
+	para "What I do remember"
+	line "is there are 12"
+	cont "#MON swarms."
+
+	para "You ought visit"
+	line "me again sometime."
 	done
 
 GoldenrodNameRaterBookshelf:
@@ -131,5 +251,5 @@ GoldenrodNameRater_MapEvents:
 	bg_event  7,  1, BGEVENT_READ, GoldenrodNameRaterRadio
 
 	def_object_events
-	object_event  2,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodNameRater, -1
-	object_event  2,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SwarmGrampsScript, -1
+	object_event  2,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodNameRater, -1
+	object_event  2,  4, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, SwarmGrampsScript, -1
