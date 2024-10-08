@@ -265,8 +265,8 @@ VictoryRoadEricTheExplorerScript:
 	end
 
 VictoryRoadEricTheExplorerText:
-	text "Hi <PLAY_G>! We"
-	line "meet again!"
+	text "ERIC: Hi <PLAY_G>!"
+	line "We meet again!"
 	
 	para "This seems to be"
 	line "the final GROTTO."
