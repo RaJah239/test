@@ -3064,7 +3064,6 @@ wRoute36NationalParkGateSceneID::                 db
 wAzaleaTownSceneID::                              db
 wGoldenrodGymSceneID::                            db
 wGoldenrodMagnetTrainStationSceneID::             db
-wGoldenrodPokecenter1FSceneID::                   db
 wOlivineCitySceneID::                             db
 wRoute34SceneID::                                 db
 wRoute34IlexForestGateSceneID::                   db
@@ -3112,7 +3111,7 @@ wMobileBattleRoomSceneID::                        db
 wSilverCavePokecenter1F::                         db ; Crystal Trove
 wSilverCaveOutsideSceneID::                       db ; Crystal Trove removed Mt. Moon scene with Rival and moved to Mt. Silver
 wUnionCaveGrottoSceneID::                         db ; Union Cave Grotto
-	ds 21
+	ds 22
 
  wNumBalls:: db
  wBalls:: ds MAX_BALLS * 2 + 1
