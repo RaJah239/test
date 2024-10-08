@@ -61,6 +61,8 @@ POKEGEAR: Now shows the detailed name of map you're currently in (based on Map G
 - Short beeping noise for low HP to replace the continuous beeping noise.
 - Lose money proportional to badges and lead level Pokémon on white out.
 - Survive poisoning with 1 HP.
+- PokeCentre fast heal added.
+- Use unique colours for each thrown Poké Ball.
 - Field moves are useable of a Pokémon can learn the TM/HM and is in the respective pocket.
 - Items that act like HMs added (except Fly) to prevent softlocks.
 - Animate tiles when text boxes are open.
