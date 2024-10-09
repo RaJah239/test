@@ -707,7 +707,65 @@ DEF KRIS EQU __trainer_class__
 	trainerclass MAXIMA
 	const MAXIMA1
 
+	trainerclass GIOVANNI
+	const GIOVANNI1
+	const GIOVANNI2
+
+	trainerclass OAK
+	const OAK1
+
+	trainerclass PROTON
+	const PROTON1
+	const PROTON2
+
+	trainerclass PETREL
+	const PETREL1
+	const PETREL2
+
+	trainerclass LORELEI
+	const LORELEI1
+	const LORELEI2
+	
+	trainerclass AGATHA
+	const AGATHA1
+	const AGATHA2
+
+	trainerclass SCARLET
+	const SCARLET1
+
+	trainerclass ARIANA
+	const ARIANA1
+	const ARIANA2
+	
+	trainerclass ARCHER
+	const ARCHER1
+	const ARCHER2
+	const ARCHER3
+
+	trainerclass ELDER
+	const ELDER1
+	const ELDER2
+
  	const_def
- 	const RANDOMLIST_0
+ 	const MAXIMASRANDOMLIST		; MAXIMA1
+ 	const OAKSRANDOMLIST		; OAK1
+ 	const GIOVANNILIST1		; GIOVANNI1
+ 	const GIOVANNILIST2		; GIOVANNI2
+ 	const PROTONLIST1		; PROTON2
+ 	const PROTONLIST2		; PROTON1
+ 	const PETRELLIST1		; PETREL1
+ 	const PETRELLIST2		; PETREL2
+ 	const ARIANALIST1		; ARIANA1
+ 	const ARIANALIST2		; ARIANA2
+ 	const ARCHERLIST1		; ARCHER1
+ 	const ARCHERLIST2		; ARCHER2
+ 	const ARCHERLIST3		; ARCHER3
+ 	const LORELEILIST1		; LORELEI1
+ 	const LORELEILIST2		; LORELEI2
+ 	const AGATHALIST1		; AGATHA1
+ 	const AGATHALIST2		; AGATHA2
+ 	const ELDERLILIST1		; ELDERLI1
+ 	const ELDERLILIST2		; ELDERLI2
+ 	const SCARLETLIST1		; SCARLET1
 
 DEF NUM_TRAINER_CLASSES EQU __trainer_class__ - 1

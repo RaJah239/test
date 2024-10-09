@@ -72,4 +72,14 @@ TrainerEncounterMusic::
 	db MUSIC_ROCKET_ENCOUNTER      ; gruntf
 	db MUSIC_HIKER_ENCOUNTER       ; mysticalman
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; maxima
+	db MUSIC_ROCKET_BATTLE         ; giovanni
+	db MUSIC_HIKER_ENCOUNTER       ; oak
+	db MUSIC_ROCKET_ENCOUNTER      ; proton
+	db MUSIC_ROCKET_ENCOUNTER      ; petrel
+	db MUSIC_BEAUTY_ENCOUNTER      ; lorelei
+	db MUSIC_BEAUTY_ENCOUNTER      ; agatha
+	db MUSIC_BEAUTY_ENCOUNTER      ; scarlet
+	db MUSIC_ROCKET_ENCOUNTER      ; ariana
+	db MUSIC_ROCKET_ENCOUNTER      ; archer
+	db MUSIC_SAGE_ENCOUNTER        ; elder_li
 	assert_table_length NUM_TRAINER_CLASSES + 1

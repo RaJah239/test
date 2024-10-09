@@ -71,4 +71,14 @@ TrainerPicPointers::
 	dba GruntfPic
 	dba MysticalmanPic
 	dba MaximaPic
+	dba GiovanniPic
+	dba OakPic
+	dba ProtonPic
+	dba PetrelPic
+	dba LoreleiPic
+	dba AgathaPic
+	dba ScarletPic
+	dba ArianaPic
+	dba ArcherPic
+	dba ElderPic
 	assert_table_length NUM_TRAINER_CLASSES

@@ -70,4 +70,14 @@ TrainerClassDVs:
 	dn  7, 14, 10,  8 ; GRUNTF
 	dn  9,  8,  8,  8 ; MYSTICALMAN
 	dn  0,  0,  0,  0 ; MAXIMA
+	dn 15, 15, 15, 15 ; GIOVANNI
+	dn 12, 13, 15, 15 ; OAK
+	dn  0,  0,  0,  0 ; PROTON
+	dn  0,  0,  0,  0 ; PETREL
+	dn  0,  0,  0,  0 ; LORELEI
+	dn  0,  0,  0,  0 ; AGATHA
+	dn 15, 15, 15, 15 ; SCARLET
+	dn 15, 15, 15, 15 ; ARIANA
+	dn 15, 15, 15, 15 ; ARCHER
+	dn 15, 15, 15, 15 ; ELDER_LI
 	assert_table_length NUM_TRAINER_CLASSES

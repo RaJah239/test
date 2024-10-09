@@ -783,7 +783,16 @@ OmastarBackpic:     INCBIN "gfx/pokemon/omastar/back.2bpp.lz"
 MaximaPic:          INCBIN "gfx/trainers/maxima_trainer.2bpp.lz"
 SwinubBackpic:      INCBIN "gfx/pokemon/swinub/back.2bpp.lz"
 UnownDBackpic:      INCBIN "gfx/pokemon/unown_d/back.2bpp.lz"
-
+ElderPic:            INCBIN "gfx/trainers/elder.2bpp.lz"
+ArcherPic:           INCBIN "gfx/trainers/archer.2bpp.lz"
+ArianaPic:           INCBIN "gfx/trainers/ariana.2bpp.lz"
+ScarletPic:           INCBIN "gfx/trainers/scarlet.2bpp.lz"
+AgathaPic:           INCBIN "gfx/trainers/agatha.2bpp.lz"
+LoreleiPic:          INCBIN "gfx/trainers/lorelei.2bpp.lz"
+PetrelPic:           INCBIN "gfx/trainers/petrel.2bpp.lz"
+OakPic:              INCBIN "gfx/trainers/oak.2bpp.lz"
+ProtonPic:           INCBIN "gfx/trainers/proton.2bpp.lz"
+GiovanniPic:         INCBIN "gfx/trainers/giovanni.2bpp.lz"
 
 SECTION "Pics 21", ROMX
 

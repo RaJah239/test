@@ -70,4 +70,14 @@ BTTrainerClassGenders:
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF
 	db MALE   ; MAXIMA
+	db MALE   ; GIOVANNI
+	db MALE   ; OAK
+	db MALE   ; PROTON
+	db MALE   ; PETREL
+	db FEMALE ; LORELEI
+	db FEMALE ; AGATHA
+	db FEMALE ; SCARLET
+	db FEMALE ; ARIANA
+	db MALE   ; ARCHER
+	db MALE   ; ELDER
 	assert_table_length NUM_TRAINER_CLASSES - 1 ; exclude MYSTICALMAN

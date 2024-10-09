@@ -27,6 +27,11 @@ MaleTrainers:
 	db BIKER
 	db SCIENTIST
 	db MAXIMA
+	db GIOVANNI
+	db PROTON
+	db PETREL
+	db ARCHER
+	db ELDER
 .End
 
 FemaleTrainers:
@@ -40,4 +45,8 @@ FemaleTrainers:
 	db KIMONO_GIRL
 	db POKEFANF
 	db COOLTRAINERF
+	db LORELEI
+	db AGATHA
+	db SCARLET
+	db ARIANA
 .End
