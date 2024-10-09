@@ -6,6 +6,8 @@
 	const INDIGOPLATEAUPOKECENTER1F_GRAMPS
 	const INDIGOPLATEAUPOKECENTER1F_KADABRA
 	const INDIGOPLATEAUPOKECENTER1F_COINCOLLECTORF
+	const INDIGOPLATEAUPOKECENTER1F_OFFICER1
+	const INDIGOPLATEAUPOKECENTER1F_OFFICER2
 
 IndigoPlateauPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -447,6 +449,23 @@ KadabraText:
 	text "KADABRA: Dabra!"
 	done
 
+VictoryRoadGateOfficer1Script:
+VictoryRoadGateOfficer2Script:
+	faceplayer
+	opentext
+	writetext RematchPreventionOfficerText
+	waitbutton
+	closetext
+	end
+
+RematchPreventionOfficerText:
+	text "The ELITE FOUR are"
+	line "out training."
+
+	para "No one can issue a"
+	line "issue right now."
+	done
+
 IndigoPlateauPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -470,3 +489,5 @@ IndigoPlateauPokecenter1F_MapEvents:
 	object_event  1,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, EVENT_TELEPORT_GUY
 	object_event  0,  9, SPRITE_KADABRA_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, KadabraScript, EVENT_TELEPORT_GUY
 	object_event  5, 10, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, CoinCollectorScript, -1
+	object_event 16,  8, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateOfficer1Script, EVENT_NO_E4_REMATCH_UNTIL_RED_IS_BEATEN
+	object_event 17,  8, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VictoryRoadGateOfficer2Script, EVENT_NO_E4_REMATCH_UNTIL_RED_IS_BEATEN
