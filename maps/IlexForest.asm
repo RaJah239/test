@@ -8,12 +8,12 @@
 	const ILEXFOREST_LASS
 	const ILEXFOREST_YOUNGSTER2
 	const ILEXFOREST_POKE_BALL2
-	const ILEXFOREST_POKE_BALL3
-	const ILEXFOREST_POKE_BALL4
 	const ILEXFOREST_CHANSEY
 	const ILEXFOREST_S_MUSHROOM
-	const ILEXFOREST_L_MUSHROOM
 	const ILEXFOREST_S2_MUSHROOM
+	const ILEXFOREST_S3_MUSHROOM
+	const ILEXFOREST_S4_MUSHROOM
+	const ILEXFOREST_L_MUSHROOM
 
 IlexForest_MapScripts:
 	def_scene_scripts
@@ -24,32 +24,12 @@ IlexForest_MapScripts:
 IlexForestFarfetchdandMushroomsCallback:
     checkflag ENGINE_ILEX_FOREST_MUSHROOMS
     iftrue .NoAppear
-    random 3
-    ifequal 0, .AppearSmallMushroom
-    ifequal 1, .AppearLargeMushroom
-    ifequal 2, .AppearSmallMushroom2
-.NoAppear:
-    disappear ILEXFOREST_S_MUSHROOM
-    disappear ILEXFOREST_L_MUSHROOM
-    disappear ILEXFOREST_S2_MUSHROOM
-    sjump .IlexForestFarfetchd
-
-.AppearSmallMushroom:
-    disappear ILEXFOREST_L_MUSHROOM
-    disappear ILEXFOREST_S2_MUSHROOM
     appear ILEXFOREST_S_MUSHROOM
-    sjump .IlexForestFarfetchd
-
-.AppearLargeMushroom:
-    disappear ILEXFOREST_S_MUSHROOM
-    disappear ILEXFOREST_S2_MUSHROOM
-    appear ILEXFOREST_L_MUSHROOM
-    sjump .IlexForestFarfetchd
-
-.AppearSmallMushroom2
-    disappear ILEXFOREST_S_MUSHROOM
-    disappear ILEXFOREST_L_MUSHROOM
     appear ILEXFOREST_S2_MUSHROOM
+    appear ILEXFOREST_S3_MUSHROOM
+    appear ILEXFOREST_S4_MUSHROOM
+    appear ILEXFOREST_L_MUSHROOM
+.NoAppear:
     sjump .IlexForestFarfetchd
    
 .IlexForestFarfetchd
@@ -438,12 +418,6 @@ IlexForestLassScript:
 
 IlexForestRevive:
 	itemball REVIVE
-
-IlexForestXAttack:
-	itemball X_ATTACK
-
-IlexForestAntidote:
-	itemball ANTIDOTE
 
 IlexForestEther:
 	itemball ETHER
@@ -1007,6 +981,32 @@ IlexForestSMushroomScript2:
 	itemnotify
 	closetext
 	end
+
+IlexForestSMushroomScript3:
+	giveitem TINYMUSHROOM
+	getitemname STRING_BUFFER_3, TINYMUSHROOM
+	disappear ILEXFOREST_S3_MUSHROOM
+	setflag ENGINE_ILEX_FOREST_MUSHROOMS
+	opentext
+	writetext IlexForestFoundMushroomText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+IlexForestSMushroomScript4:
+	giveitem TINYMUSHROOM
+	getitemname STRING_BUFFER_3, TINYMUSHROOM
+	disappear ILEXFOREST_S4_MUSHROOM
+	setflag ENGINE_ILEX_FOREST_MUSHROOMS
+	opentext
+	writetext IlexForestFoundMushroomText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
 	
 IlexForestLMushroomScript:
 	giveitem BIG_MUSHROOM
@@ -1042,7 +1042,7 @@ IlexForest_MapEvents:
 	def_bg_events
 	bg_event  3, 17, BGEVENT_READ, IlexForestSignpost
 	bg_event 11,  7, BGEVENT_ITEM, IlexForestHiddenEther
-	bg_event 22, 14, BGEVENT_ITEM, IlexForestHiddenSuperPotion
+	bg_event 27,  1, BGEVENT_ITEM, IlexForestHiddenSuperPotion
 	bg_event  1, 17, BGEVENT_ITEM, IlexForestHiddenFullHeal
 	bg_event  8, 22, BGEVENT_UP, IlexForestShrineScript
 
@@ -1055,10 +1055,10 @@ IlexForest_MapEvents:
 	object_event  8, 29, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ILEX_FOREST_KURT
 	object_event  3, 24, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, IlexForestLassScript, EVENT_ILEX_FOREST_LASS
 	object_event 12,  1, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerBugCatcherWayne, -1
-	object_event  9, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestXAttack, EVENT_ILEX_FOREST_X_ATTACK
-	object_event 27, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestAntidote, EVENT_ILEX_FOREST_ANTIDOTE
-	object_event 27,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
+	object_event  9, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
 	object_event 10,  4, SPRITE_CHANSEY_OW, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestChanseyScript, -1
 	object_event  2,  8, SPRITE_S_MUSHROOM, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestSMushroomScript, EVENT_ILEX_FOREST_S_MUSHROOM
-	object_event 23, 22, SPRITE_L_MUSHROOM, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestLMushroomScript, EVENT_ILEX_FOREST_L_MUSHROOM
 	object_event 17,  7, SPRITE_S_MUSHROOM, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestSMushroomScript2, EVENT_ILEX_FOREST_S2_MUSHROOM
+	object_event 22, 14, SPRITE_S_MUSHROOM, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestSMushroomScript3, EVENT_ILEX_FOREST_S3_MUSHROOM
+	object_event 22, 28, SPRITE_S_MUSHROOM, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestSMushroomScript4, EVENT_ILEX_FOREST_S4_MUSHROOM
+	object_event 23, 22, SPRITE_L_MUSHROOM, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IlexForestLMushroomScript, EVENT_ILEX_FOREST_L_MUSHROOM
