@@ -12,35 +12,35 @@ OverworldSprites:
 	overworld_sprite GameboyKidSpriteGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite RivalSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite OakSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite RedSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite BlueSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite RedSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite BlueSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite BillSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite ElderSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite JanineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite JanineSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite KurtSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite MomSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite BlaineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite RedsMomSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite DaisySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite MomSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite BlaineSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite RedsMomSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite DaisySpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite ElmSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite WillSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
-	overworld_sprite FalknerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite WhitneySpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite BugsySpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite FalknerSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite WhitneySpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite BugsySpriteGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite MortySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite ChuckSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite ChuckSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite JasmineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
-	overworld_sprite PryceSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite PryceSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ClairSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite BrockSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite BrockSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite KarenSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
-	overworld_sprite BrunoSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite BrunoSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite MistySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite LanceSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite SurgeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
-	overworld_sprite ErikaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
-	overworld_sprite KogaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite SabrinaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite SurgeSpriteGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
+	overworld_sprite ErikaSpriteGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
+	overworld_sprite KogaSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
+	overworld_sprite SabrinaSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite CooltrainerMSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CooltrainerFSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BugCatcherSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
@@ -63,7 +63,7 @@ OverworldSprites:
 	overworld_sprite RocketGirlSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite NurseSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite LinkReceptionistSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite ClerkSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite ClerkSpriteGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite FisherSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite FishingGuruSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite ScientistSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
@@ -114,21 +114,21 @@ OverworldSprites:
 	overworld_sprite KingdraOWSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite CorsolaOWSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite StarmieOWSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
-	overworld_sprite GiovanniSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite ProtonSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite GiovanniSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
+	overworld_sprite ProtonSpriteGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite PetrelSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
-	overworld_sprite AgathaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite LoreleiSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite AgathaSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite LoreleiSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite ScarletSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite ArianaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite ArcherSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite ArcherSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite EusineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite MaximaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite SMushroomSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite LMushroomSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite BerryOWSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite ApricornSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
-	overworld_sprite DelibirdMartSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite DelibirdMartSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite ApricornYellowSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
 	overworld_sprite BerryYellowSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
 	overworld_sprite ApricornWhiteSpriteGFX, 4, STILL_SPRITE, PAL_NPC_EMOTE
