@@ -88,4 +88,5 @@ MapScenes::
 	scene_var ROUTE_38_ECRUTEAK_GATE,                      wRoute38EcruteakGateSceneID
 	scene_var ROUTE_42_ECRUTEAK_GATE,                      wRoute42EcruteakGateSceneID
 	scene_var ROUTE_31_VIOLET_GATE,                        wRoute31VioletGateSceneID
+	scene_var ROUTE_30,                                    wRoute30SceneID
 	db -1 ; end

@@ -3108,8 +3108,9 @@ wUnionCaveGrottoSceneID::                         db ; Union Cave Grotto
 wRoute38EcruteakGateSceneID::                     db ; Route 38 Ecruteak Gate blocker until defeating Pryce
 wRoute42EcruteakGateSceneID::                     db ; Route 42 Ecruteak Gate blocker until defeating Morty
 wRoute31VioletGateSceneID::                       db ; Route 31 Violet City Gate Old Rod Fishing Guru scene 
+wRoute30SceneID::                                 db ; Route 30 Berry teacher scene
 
-	ds 42
+	ds 41
 
  wNumBalls:: db
  wBalls:: ds MAX_BALLS * 2 + 1

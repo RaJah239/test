@@ -16,6 +16,7 @@ Route30BerryHouseTeacherScript:
 	verbosegiveitem BERRY
 	iffalse .NoRoom
 	setevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE
+	setmapscene ROUTE_30, SCENE_ROUTE_30_NOOP
 .GotBerry:
 	writetext Route30BerrySpeechHouseTreesInfoText
 	waitbutton
