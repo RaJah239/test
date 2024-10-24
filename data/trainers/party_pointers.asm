@@ -53,11 +53,9 @@ TrainerGroups:
 	dba FirebreatherGroup
 	dba JugglerGroup
 	dba BlackbeltGroup
-	dba ExecutiveMGroup
 	dba PsychicGroup
 	dba PicnickerGroup
 	dba CamperGroup
-	dba ExecutiveFGroup
 	dba SageGroup
 	dba MediumGroup
 	dba BoarderGroup

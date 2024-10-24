@@ -302,12 +302,6 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_OFTEN
 
-; Executivem
-	db NO_ITEM, NO_ITEM ; items
-	db 18 ; base reward
-	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
-	dw CONTEXT_USE | SWITCH_OFTEN
-
 ; Psychic T
 	db NO_ITEM, NO_ITEM ; items
 	db 8 ; base reward
@@ -323,12 +317,6 @@ TrainerClassAttributes:
 ; Camper
 	db NO_ITEM, NO_ITEM ; items
 	db 5 ; base reward
-	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
-	dw CONTEXT_USE | SWITCH_OFTEN
-
-; Executivef
-	db NO_ITEM, NO_ITEM ; items
-	db 18 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_OFTEN
 

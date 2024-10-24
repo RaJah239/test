@@ -681,10 +681,6 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	jr z, .load_rocket_pals
 	cp GRUNTF
 	jr z, .load_rocket_pals
-	cp EXECUTIVEM
-	jr z, .load_rocket_pals
-	cp EXECUTIVEF
-	jr z, .load_rocket_pals
 	cp SCIENTIST
 	jr z, .load_rocket_pals
 	ld hl, .pals

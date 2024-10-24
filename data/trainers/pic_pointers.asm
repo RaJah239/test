@@ -53,11 +53,9 @@ TrainerPicPointers::
 	dba FirebreatherPic
 	dba JugglerPic
 	dba BlackbeltTPic
-	dba ExecutivemPic
 	dba PsychicTPic
 	dba PicnickerPic
 	dba CamperPic
-	dba ExecutivefPic
 	dba SagePic
 	dba MediumPic
 	dba BoarderPic

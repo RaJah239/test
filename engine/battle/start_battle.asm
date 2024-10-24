@@ -105,10 +105,6 @@ PlayBattleMusic:
 	jr z, .done
 	cp GRUNTF
 	jr z, .done
-	cp EXECUTIVEM
-	jr z, .done
-	cp EXECUTIVEF
-	jr z, .done
 	cp SCIENTIST
 	jr z, .done	
 	cp SCIENTIST
