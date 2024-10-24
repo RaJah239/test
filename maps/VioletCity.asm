@@ -4,18 +4,33 @@
 	const VIOLETCITY_SUPER_NERD
 	const VIOLETCITY_GRAMPS
 	const VIOLETCITY_YOUNGSTER
-	const VIOLETCITY_FRUIT_TREE
 	const VIOLETCITY_POKE_BALL1
 	const VIOLETCITY_POKE_BALL2
+	const VIOLETCITY_BERRY
+	const VIOLETCITY_APRICORN
 
 VioletCity_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, VioletCityFlypointCallback
+	callback MAPCALLBACK_OBJECTS, VioletCityFruittrees
 
 VioletCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_VIOLET
+	endcallback
+
+VioletCityFruittrees:
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .NoFruit
+	ifequal WEDNESDAY, .NoFruit
+	ifequal FRIDAY, .NoFruit
+	ifequal SUNDAY, .NoFruit
+	checkflag ENGINE_DAILY_ROUTE_31_VIOLET_TREES
+	iftrue .NoFruit
+	appear VIOLETCITY_BERRY
+	appear VIOLETCITY_APRICORN
+.NoFruit
 	endcallback
 
 VioletCityEarlScript:
@@ -79,9 +94,6 @@ VioletCityPPUp:
 
 VioletCityRareCandy:
 	itemball RARE_CANDY
-
-VioletCityFruitTree:
-	fruittree FRUITTREE_VIOLET_CITY
 
 VioletCityHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_VIOLET_CITY_HIDDEN_HYPER_POTION
@@ -222,6 +234,80 @@ EarlsPokemonAcademySignText:
 	line "ACADEMY"
 	done
 
+VioletCityBerryTree:
+	opentext
+	getitemname STRING_BUFFER_3, PRZCUREBERRY
+	writetext VioletCityTreeText
+	promptbutton
+	writetext VioletCityHeyItsBerryApricornText
+	promptbutton
+	giveitem PRZCUREBERRY
+	iffalse VioletCityNoRoomInBag
+	disappear VIOLETCITY_BERRY
+	setflag ENGINE_DAILY_ROUTE_31_VIOLET_TREES
+	writetext VioletCityFoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+VioletCityApricornTree:
+	opentext
+	getitemname STRING_BUFFER_3, YLW_APRICORN
+	writetext VioletCityTreeText
+	promptbutton
+	writetext VioletCityHeyItsBerryApricornText
+	promptbutton
+	giveitem YLW_APRICORN
+	iffalse VioletCityNoRoomInBag
+	disappear VIOLETCITY_APRICORN
+	setflag ENGINE_DAILY_ROUTE_31_VIOLET_TREES
+	writetext VioletCityFoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+VioletCityNoBerryOrApricorn:
+	opentext
+	writetext VioletCityTreeText
+	promptbutton
+	writetext VioletCityNothingHereText
+	waitbutton
+	closetext
+	end
+
+VioletCityNoRoomInBag:
+	writetext VioletCityNoRoomInBagText
+	waitbutton
+	closetext
+	end
+
+VioletCityTreeText:
+	text_far _FruitBearingTreeText
+	text_end
+
+VioletCityNothingHereText:
+	text_far _NothingHereText
+	text_end
+
+VioletCityHeyItsBerryApricornText:
+	text "Hey! It's a"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
+	done
+
+VioletCityFoundItemText:
+	text_far _ObtainedFruitText
+	text_end
+
+VioletCityNoRoomInBagText:
+	text_far _CantCarryItemText
+	text_end
+
 VioletCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -246,6 +332,8 @@ VioletCity_MapEvents:
 	bg_event 32, 25, BGEVENT_READ, VioletCityPokecenterSign
 	bg_event 10, 17, BGEVENT_READ, VioletCityMartSign
 	bg_event 37, 14, BGEVENT_ITEM, VioletCityHiddenHyperPotion
+	bg_event 14, 29, BGEVENT_READ, VioletCityNoBerryOrApricorn
+	bg_event 12, 16, BGEVENT_READ, VioletCityNoBerryOrApricorn
 
 	def_object_events
 	object_event 18, 18, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityEarlScript, EVENT_VIOLET_CITY_EARL
@@ -253,6 +341,7 @@ VioletCity_MapEvents:
 	object_event 24, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletCitySuperNerdScript, -1
 	object_event 13, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityGrampsScript, -1
 	object_event  5, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityYoungsterScript, -1
-	object_event 14, 29, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1
 	object_event  4,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityPPUp, EVENT_VIOLET_CITY_PP_UP
 	object_event 35,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VioletCityRareCandy, EVENT_VIOLET_CITY_RARE_CANDY
+	object_event 12, 16, SPRITE_BERRY_YELLOW, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityBerryTree, EVENT_VIOLET_BERRY
+	object_event 14, 29, SPRITE_APRICORN_YELLOW, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityApricornTree, EVENT_VIOLET_APRICORN

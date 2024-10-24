@@ -100,7 +100,7 @@ ItemNames::
 	li "BLACKBELT"
 	li "BLK APRICORN"
 	li "TERU-SAMA"
-	li "PNK APRICORN"
+	li "PUR APRICORN"
 	li "BLACKGLASSES"
 	li "SLOWPOKETAIL"
 	li "PINK BOW"

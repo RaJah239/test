@@ -17,11 +17,6 @@ _ObtainedFruitText::
 	text "!"
 	done
 
-_FruitPackIsFullText::
-	text "But the PACK is"
-	line "full…"
-	done
-
 _NothingHereText::
 	text "There's nothing"
 	line "here…"

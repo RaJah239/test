@@ -146,7 +146,7 @@ Route36OfficerScriptContest:
 	ifequal FRIDAY, _ContestNotOn
 	faceplayer
 	opentext
-	checkflag ENGINE_DAILY_BUG_CONTEST
+	checkflag ENGINE_DAILY_BUG_CONTEST_UNION_CAVE_LAPRAS_MT_MOON_SQUARE_CLEFAIRY_DAISYS_GROOMING
 	iftrue Route36Officer_ContestHasConcluded
 	scall Route36ParkGate_DayToText
 	writetext Route36NationalParkGateOfficer1AskToParticipateText
@@ -292,7 +292,7 @@ _ContestNotOn:
 Route36NationalParkGateOfficerScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_DAILY_BUG_CONTEST
+	checkflag ENGINE_DAILY_BUG_CONTEST_UNION_CAVE_LAPRAS_MT_MOON_SQUARE_CLEFAIRY_DAISYS_GROOMING
 	iftrue Route36Officer_ContestHasConcluded
 	writetext Route36NationalParkGateOfficer1SomeMonOnlySeenInParkText
 	waitbutton

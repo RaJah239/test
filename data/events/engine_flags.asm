@@ -112,27 +112,35 @@ EngineFlags:
 
 	engine_flag wStatusFlags2, STATUSFLAGS2_UNUSED_3_F
 
+; wDailyFlags1
 	engine_flag wDailyFlags1, DAILYFLAGS1_KURT_MAKING_BALLS_F
-	engine_flag wDailyFlags1, DAILYFLAGS1_BUG_CONTEST_F
+	engine_flag wDailyFlags1, DAILYFLAGS1_BUG_CONTEST_UNION_CAVE_LAPRAS_MT_MOON_SQUARE_CLEFAIRY_DAISYS_GROOMING
 	engine_flag wDailyFlags1, DAILYFLAGS1_SWARM_F
-	engine_flag wDailyFlags1, DAILYFLAGS1_TIME_CAPSULE_F
-	engine_flag wDailyFlags1, DAILYFLAGS1_ALL_FRUIT_TREES_F
-	engine_flag wDailyFlags1, DAILYFLAGS1_GOT_SHUCKIE_TODAY_F
+	engine_flag wDailyFlags1, DAILYFLAGS1_DAILY_GIFT_BERRY_F
+	engine_flag wDailyFlags1, DAILYFLAGS1_CIANWOOD_PHOTOGRAPH
+	engine_flag wDailyFlags1, DAILYFLAGS1_ILEX_FOREST_MUSHROOMS
 	engine_flag wDailyFlags1, DAILYFLAGS1_GOLDENROD_UNDERGROUND_BARGAIN_F
-	engine_flag wDailyFlags1, DAILYFLAGS1_TRAINER_HOUSE_F
+	engine_flag wDailyFlags1, DAILYFLAGS1_INDIGO_PLATEAU_RIVAL_FIGHT_F
 
-	engine_flag wDailyFlags2, DAILYFLAGS2_MT_MOON_SQUARE_CLEFAIRY_F
-	engine_flag wDailyFlags2, DAILYFLAGS2_UNION_CAVE_LAPRAS_F
-	engine_flag wDailyFlags2, DAILYFLAGS2_GOLDENROD_UNDERGROUND_GOT_HAIRCUT_F
-	engine_flag wDailyFlags2, DAILYFLAGS2_GOLDENROD_DEPT_STORE_TM27_RETURN_F
-	engine_flag wDailyFlags2, DAILYFLAGS2_DAISYS_GROOMING_F
-	engine_flag wDailyFlags2, DAILYFLAGS2_INDIGO_PLATEAU_RIVAL_FIGHT_F
-	engine_flag wDailyFlags2, DAILYFLAGS2_DAILY_GIFT_BERRY_F
+; wDailyFlags2
 	engine_flag wDailyFlags2, DAILYFLAGS2_BUENAS_PASSWORD_F
+	engine_flag wDailyFlags2, DAILYFLAGS2_ROUTE_29_30_TREES_F
+	engine_flag wDailyFlags2, DAILYFLAGS2_ROUTE_31_VIOLET_TREES_F
+	engine_flag wDailyFlags2, DAILYFLAGS2_ROUTE_33_AZALEA_TREES_F
+	engine_flag wDailyFlags2, DAILYFLAGS2_ROUTE_35_36_TREES_F
+	engine_flag wDailyFlags2, DAILYFLAGS2_ROUTE_37_38_TREES_F
+	engine_flag wDailyFlags2, DAILYFLAGS2_ROUTE_39_42_TREES_F
+	engine_flag wDailyFlags2, DAILYFLAGS2_ROUTE_43_44_TREES_F
 
-;  wDailyFlags3:: - 8 daily Flags can be added here (max)
-	engine_flag wDailyFlags3, DAILYFLAGS3_CIANWOOD_PHOTOGRAPH
-	engine_flag wDailyFlags3, DAILYFLAGS3_ILEX_FOREST_MUSHROOMS
+; wDailyFlags3
+	engine_flag wDailyFlags3, DAILYFLAGS3_ROUTE_45_46_TREES_F
+	engine_flag wDailyFlags3, DAILYFLAGS3_ROUTE_1_26_TREES_F
+	engine_flag wDailyFlags3, DAILYFLAGS3_PEWTER_ROUTE_8_TREES_F
+	engine_flag wDailyFlags3, DAILYFLAGS3_ROUTE_11_FUCHSIA_TREES_F
+	engine_flag wDailyFlags3, DAILYFLAGS3_DAILY_UNUSED_1_F
+	engine_flag wDailyFlags3, DAILYFLAGS3_DAILY_UNUSED_2_F
+	engine_flag wDailyFlags3, DAILYFLAGS3_DAILY_UNUSED_3_F
+	engine_flag wDailyFlags3, DAILYFLAGS3_GOLDENROD_UNDERGROUND_GOT_HAIRCUT_F
 
 	engine_flag wSwarmFlags, SWARMFLAGS_BUENAS_PASSWORD_F
 	engine_flag wSwarmFlags, SWARMFLAGS_GOLDENROD_DEPT_STORE_SALE_F

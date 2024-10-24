@@ -9,15 +9,15 @@ BluesHouse_MapScripts:
 DaisyScript:
 	faceplayer
 	opentext
-	readvar VAR_HOUR
-	ifequal 15, .ThreePM
+	readvar VAR_WEEKDAY
+	ifequal WEDNESDAY, .Wednesday
 	writetext DaisyHelloText
 	waitbutton
 	closetext
 	end
 
-.ThreePM:
-	checkflag ENGINE_DAISYS_GROOMING
+.Wednesday:
+	checkflag ENGINE_DAILY_BUG_CONTEST_UNION_CAVE_LAPRAS_MT_MOON_SQUARE_CLEFAIRY_DAISYS_GROOMING
 	iftrue .AlreadyGroomedMon
 	writetext DaisyOfferGroomingText
 	yesorno
@@ -27,7 +27,7 @@ DaisyScript:
 	special DaisysGrooming
 	ifequal $0, .Refused
 	ifequal $1, .CantGroomEgg
-	setflag ENGINE_DAISYS_GROOMING
+	setflag ENGINE_DAILY_BUG_CONTEST_UNION_CAVE_LAPRAS_MT_MOON_SQUARE_CLEFAIRY_DAISYS_GROOMING
 	writetext DaisyAlrightText
 	waitbutton
 	closetext
@@ -79,14 +79,14 @@ DaisyHelloText:
 
 DaisyOfferGroomingText:
 	text "DAISY: Hi! Good"
-	line "timing. I'm about"
-	cont "to have some tea."
-
-	para "Would you like to"
-	line "join me?"
+	line "timing. I just"
+	
+	para "groomed my all my"
+	line "#MON."
 
 	para "Oh, your #MON"
-	line "are a bit dirty."
+	line "are a bit dirty"
+	cont "as well."
 
 	para "Would you like me"
 	line "to groom one?"
@@ -122,10 +122,13 @@ DaisyAllDoneText:
 
 DaisyAlreadyGroomedText:
 	text "DAISY: I always"
-	line "have tea around"
+	line "groom my #MON"
 
-	para "this time. Come"
-	line "join me."
+	para "on WEDNESDAY, so"
+	line "drop by and I 'll"
+	
+	para "groom one of yours"
+	line "too!"
 	done
 
 DaisyRefusedText:

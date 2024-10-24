@@ -5,16 +5,30 @@
 	const ROUTE26_COOLTRAINER_F2
 	const ROUTE26_YOUNGSTER
 	const ROUTE26_FISHER
-	const ROUTE26_FRUIT_TREE
 	const ROUTE26_POKE_BALL
+	const ROUTE_26_BERRY
+	const ROUTE_26_APRICORN
 
 Route26_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .Flypoint
+	callback MAPCALLBACK_NEWMAP, Route26FlyPoint
+	callback MAPCALLBACK_OBJECTS, Route26Fruittrees
 
-.Flypoint:
+Route26Fruittrees:
+	readvar VAR_WEEKDAY
+	ifequal TUESDAY, .NoFruit
+	ifequal THURSDAY, .NoFruit
+	ifequal SATURDAY, .NoFruit
+	checkflag ENGINE_DAILY_ROUTE_1_26_TREES
+	iftrue .NoFruit
+	appear ROUTE_26_BERRY
+	appear ROUTE_26_APRICORN
+.NoFruit:
+	endcallback
+
+Route26FlyPoint:
 	setflag ENGINE_FLYPOINT_ROUTE_26
 	return
 
@@ -227,9 +241,6 @@ TrainerFisherScott:
 Route26Sign:
 	jumptext Route26SignText
 
-Route26FruitTree:
-	fruittree FRUITTREE_ROUTE_26
-
 Route26MaxElixer:
 	itemball MAX_ELIXER
 
@@ -391,6 +402,80 @@ Route26SignText:
 	line "RECEPTION GATE"
 	done
 
+Route26BerryTree:
+	opentext
+	getitemname STRING_BUFFER_3, ICE_BERRY
+	writetext Route26BerryTreeText
+	promptbutton
+	writetext Route26HeyItsBerryApricornText
+	promptbutton
+	giveitem ICE_BERRY
+	iffalse Route26NoRoomInBag
+	disappear ROUTE_26_BERRY
+	setflag ENGINE_DAILY_ROUTE_1_26_TREES
+	writetext Route26FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route26ApricornTree:
+	opentext
+	getitemname STRING_BUFFER_3, BLU_APRICORN
+	writetext Route26BerryTreeText
+	promptbutton
+	writetext Route26HeyItsBerryApricornText
+	promptbutton
+	giveitem BLU_APRICORN
+	iffalse Route26NoRoomInBag
+	disappear ROUTE_26_APRICORN
+	setflag ENGINE_DAILY_ROUTE_1_26_TREES
+	writetext Route26FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route26NoBerryOrApricorn:
+	opentext
+	writetext Route26BerryTreeText
+	promptbutton
+	writetext Route26NothingHereText
+	waitbutton
+	closetext
+	end
+
+Route26NoRoomInBag:
+	writetext Route26NoRoomInBagText
+	waitbutton
+	closetext
+	end
+
+Route26BerryTreeText:
+	text_far _FruitBearingTreeText
+	text_end
+
+Route26NothingHereText:
+	text_far _NothingHereText
+	text_end
+
+Route26HeyItsBerryApricornText:
+	text "Hey! It's a"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
+	done
+
+Route26FoundItemText:
+	text_far _ObtainedFruitText
+	text_end
+
+Route26NoRoomInBagText:
+	text_far _CantCarryItemText
+	text_end
+
 Route26_MapEvents:
 	db 0, 0 ; filler
 
@@ -405,6 +490,8 @@ Route26_MapEvents:
 
 	def_bg_events
 	bg_event  8,  6, BGEVENT_READ, Route26Sign
+	bg_event 13, 53, BGEVENT_READ, Route26NoBerryOrApricorn
+	bg_event 14, 54, BGEVENT_READ, Route26NoBerryOrApricorn
 
 	def_object_events
 	object_event 14, 24, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainermJake, -1
@@ -413,5 +500,6 @@ Route26_MapEvents:
 	object_event  5,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainerfBeth1, -1
 	object_event 13, 79, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPsychicRichard, -1
 	object_event 10, 92, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherScott, -1
-	object_event 14, 54, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26FruitTree, -1
 	object_event  9, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26MaxElixer, EVENT_ROUTE_26_MAX_ELIXER
+	object_event 13, 53, SPRITE_BERRY_YELLOW, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, Route26BerryTree, EVENT_ROUTE_26_BERRY
+	object_event 14, 54, SPRITE_APRICORN, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route26ApricornTree, EVENT_ROUTE_26_APRICORN

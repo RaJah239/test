@@ -23,7 +23,7 @@ MountMoonSquareDisappearRockCallback:
 	endcallback
 
 ClefairyDance:
-	checkflag ENGINE_MT_MOON_SQUARE_CLEFAIRY
+	checkflag ENGINE_DAILY_BUG_CONTEST_UNION_CAVE_LAPRAS_MT_MOON_SQUARE_CLEFAIRY_DAISYS_GROOMING
 	iftrue .NoDancing
 	readvar VAR_WEEKDAY
 	ifnotequal MONDAY, .NoDancing
@@ -66,7 +66,7 @@ ClefairyDance:
 	disappear MOUNTMOONSQUARE_FAIRY2
 	stopfollow
 	clearevent EVENT_MOUNT_MOON_SQUARE_HIDDEN_MOON_STONE
-	setflag ENGINE_MT_MOON_SQUARE_CLEFAIRY
+	setflag ENGINE_DAILY_BUG_CONTEST_UNION_CAVE_LAPRAS_MT_MOON_SQUARE_CLEFAIRY_DAISYS_GROOMING
 	end
 
 .NoDancing:

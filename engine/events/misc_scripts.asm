@@ -1,7 +1,7 @@
 Script_AbortBugContest:
 	checkflag ENGINE_BUG_CONTEST_TIMER
 	iffalse .finish
-	setflag ENGINE_DAILY_BUG_CONTEST
+	setflag ENGINE_DAILY_BUG_CONTEST_UNION_CAVE_LAPRAS_MT_MOON_SQUARE_CLEFAIRY_DAISYS_GROOMING
 	special ContestReturnMons
 .finish
 	end

@@ -2135,11 +2135,6 @@ wMenuItemsList:: ds 16
 wMenuItemsListEnd::
 
 NEXTU
-; fruit tree data
-wCurFruitTree:: db
-wCurFruit:: db
-
-NEXTU
 ; item ball data
 wItemBallData::
 wItemBallItemID:: db
@@ -3164,7 +3159,7 @@ wCurMapSceneScriptsPointer:: dw
 wCurMapCallbackCount:: db
 wCurMapCallbacksPointer:: dw
 
-	ds 2
+	ds 10
 
 ; Sprite id of each decoration
 wDecoBed::           db
@@ -3188,11 +3183,6 @@ wDailyFlags3:: db
 wSwarmFlags:: db
 
 wTimerEventStartDay:: db
-
-
-wFruitTreeFlags:: flag_array NUM_FRUIT_TREES
-
-
 
 wLuckyNumberDayTimer:: dw
 
@@ -3218,7 +3208,7 @@ wPlayerMonSelection:: ds 3
 wdc5f:: db
 wdc60:: db
 
-	ds 18
+	ds 10
 
 wStepCount:: db
 wPoisonStepCount:: db

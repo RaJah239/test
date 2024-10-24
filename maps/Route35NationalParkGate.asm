@@ -86,7 +86,7 @@ Route35OfficerScriptContest:
 	ifequal FRIDAY, Route35NationalParkGate_NoContestToday
 	faceplayer
 	opentext
-	checkflag ENGINE_DAILY_BUG_CONTEST
+	checkflag ENGINE_DAILY_BUG_CONTEST_UNION_CAVE_LAPRAS_MT_MOON_SQUARE_CLEFAIRY_DAISYS_GROOMING
 	iftrue Route35NationalParkGate_ContestIsOver
 	scall Route35NationalParkGate_GetDayOfWeek
 	writetext Route35NationalParkGateOfficer1AskToParticipateText
@@ -191,7 +191,7 @@ Route35NationalParkGate_NoContestToday:
 Route35NationalParkGateOfficerScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_DAILY_BUG_CONTEST
+	checkflag ENGINE_DAILY_BUG_CONTEST_UNION_CAVE_LAPRAS_MT_MOON_SQUARE_CLEFAIRY_DAISYS_GROOMING
 	iftrue Route35NationalParkGate_ContestIsOver
 	writetext Route35NationalParkGateOfficer1WeHoldContestsText
 	waitbutton

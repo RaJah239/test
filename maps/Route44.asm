@@ -6,16 +6,30 @@
 	const ROUTE44_YOUNGSTER2
 	const ROUTE44_COOLTRAINER_M
 	const ROUTE44_COOLTRAINER_F
-	const ROUTE44_FRUIT_TREE
 	const ROUTE44_POKE_BALL1
 	const ROUTE44_POKE_BALL2
 	const ROUTE44_POKE_BALL3
 	const ROUTE44_SUPER_ROD_FISHING_GURU
+	const ROUTE_44_BERRY
+	const ROUTE_44_APRICORN
 
 Route44_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, Route44Fruittrees
+
+Route44Fruittrees:
+	readvar VAR_WEEKDAY
+	ifequal TUESDAY, .NoFruit
+	ifequal THURSDAY, .NoFruit
+	ifequal SATURDAY, .NoFruit
+	checkflag ENGINE_DAILY_ROUTE_43_44_TREES
+	iftrue .NoFruit
+	appear ROUTE_44_BERRY
+	appear ROUTE_44_APRICORN
+.NoFruit:
+	endcallback
 
 TrainerBirdKeeperVance1:
 	trainer BIRD_KEEPER, VANCE1, EVENT_BEAT_BIRD_KEEPER_VANCE, BirdKeeperVance1SeenText, BirdKeeperVance1BeatenText, 0, .Script
@@ -278,9 +292,6 @@ Route44Sign1:
 
 Route44Sign2:
 	jumptext Route44Sign2Text
-
-Route44FruitTree:
-	fruittree FRUITTREE_ROUTE_44
 
 Route44MaxRevive:
 	itemball MAX_REVIVE
@@ -547,6 +558,79 @@ DontWantSuperRodText1:
 	line "deceived me?"
 	done
 
+Route44BerryTree:
+	opentext
+	getitemname STRING_BUFFER_3, BURNT_BERRY
+	writetext Route44BerryTreeText
+	promptbutton
+	writetext Route44HeyItsBerryApricornText
+	promptbutton
+	giveitem BURNT_BERRY
+	iffalse Route44NoRoomInBag
+	disappear ROUTE_44_BERRY
+	setflag ENGINE_DAILY_ROUTE_43_44_TREES
+	writetext Route44FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route44ApricornTree:
+	opentext
+	getitemname STRING_BUFFER_3, RED_APRICORN
+	writetext Route44BerryTreeText
+	promptbutton
+	writetext Route44HeyItsBerryApricornText
+	promptbutton
+	giveitem RED_APRICORN
+	iffalse Route44NoRoomInBag
+	disappear ROUTE_44_APRICORN
+	setflag ENGINE_DAILY_ROUTE_43_44_TREES
+	writetext Route44FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route44NoBerryOrApricorn:
+	opentext
+	writetext Route44BerryTreeText
+	promptbutton
+	writetext Route44NothingHereText
+	waitbutton
+	closetext
+	end
+
+Route44NoRoomInBag:
+	writetext Route44NoRoomInBagText
+	waitbutton
+	closetext
+	end
+
+Route44BerryTreeText:
+	text_far _FruitBearingTreeText
+	text_end
+
+Route44NothingHereText:
+	text_far _NothingHereText
+	text_end
+
+Route44HeyItsBerryApricornText:
+	text "Hey! It's a"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
+	done
+
+Route44FoundItemText:
+	text_far _ObtainedFruitText
+	text_end
+
+Route44NoRoomInBagText:
+	text_far _CantCarryItemText
+	text_end
 
 Route44_MapEvents:
 	db 0, 0 ; filler
@@ -560,6 +644,8 @@ Route44_MapEvents:
 	bg_event 53,  7, BGEVENT_READ, Route44Sign1
 	bg_event  6, 10, BGEVENT_READ, Route44Sign2
 	bg_event 32,  9, BGEVENT_ITEM, Route44HiddenElixer
+	bg_event 15,  3, BGEVENT_READ, Route44NoBerryOrApricorn
+	bg_event  9,  5, BGEVENT_READ, Route44NoBerryOrApricorn
 
 	def_object_events
 	object_event 35,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherWilton1, -1
@@ -569,8 +655,9 @@ Route44_MapEvents:
 	object_event 51,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperVance1, -1
 	object_event 41, 15, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainermAllen, -1
 	object_event 31, 14, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerfCybil, -1
-	object_event  9,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route44FruitTree, -1
 	object_event 30,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRevive, EVENT_ROUTE_44_MAX_REVIVE
 	object_event 45,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44UltraBall, EVENT_ROUTE_44_ULTRA_BALL
 	object_event 14,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRepel, EVENT_ROUTE_44_MAX_REPEL
 	object_event 42,  5, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route12SuperRodHouseFishingGuruScript1, -1
+	object_event 15,  3, SPRITE_BERRY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, Route44BerryTree, EVENT_ROUTE_44_BERRY
+	object_event  9,  5, SPRITE_APRICORN, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route44ApricornTree, EVENT_ROUTE_44_APRICORN

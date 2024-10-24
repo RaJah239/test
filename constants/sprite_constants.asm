@@ -1,5 +1,5 @@
 ; sprite ids
-; 14 more free sprites
+; 12 more free sprites
 ; OverworldSprites indexes (see data/sprites/sprites.asm)
 	const_def
 	const SPRITE_NONE ; 00
@@ -91,7 +91,6 @@
 	const SPRITE_BOULDER ; 5a
 	const SPRITE_SNES ; 5b
 	const SPRITE_FAMICOM ; 5c
-	const SPRITE_FRUIT_TREE ; 5d
 	const SPRITE_GOLD_TROPHY ; 5e
 	const SPRITE_SILVER_TROPHY ; 5f
 	const SPRITE_KRIS ; 60
@@ -126,10 +125,13 @@
 	const SPRITE_BERRY
 	const SPRITE_APRICORN
 	const SPRITE_DELIBIRD_MART
+	const SPRITE_APRICORN_YELLOW
+	const SPRITE_BERRY_YELLOW
+	const SPRITE_APRICORN_WHITE
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
-	const_next $7C
+	const_next $7E
 DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_UNOWN ; 80
 	const SPRITE_WEEDLE ; 83

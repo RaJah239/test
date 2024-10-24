@@ -2,13 +2,13 @@
 	const ROUTE42_FISHER
 	const ROUTE42_POKEFAN_M
 	const ROUTE42_SUPER_NERD
-	const ROUTE42_FRUIT_TREE1
-	const ROUTE42_FRUIT_TREE2
-	const ROUTE42_FRUIT_TREE3
 	const ROUTE42_POKE_BALL1
 	const ROUTE42_POKE_BALL2
 	const ROUTE42_SUICUNE
 	const ROUTE42_SUICUNE_STATIONARY
+	const ROUTE_42_APRICORN_1
+	const ROUTE_42_APRICORN_2
+	const ROUTE_42_APRICORN_3
 
 Route42_MapScripts:
 	def_scene_scripts
@@ -16,12 +16,26 @@ Route42_MapScripts:
 	scene_script Route42Noop2Scene, SCENE_ROUTE42_SUICUNE
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, Route42Fruittrees
 
 Route42Noop1Scene:
 	end
 
 Route42Noop2Scene:
 	end
+
+Route42Fruittrees:
+	readvar VAR_WEEKDAY
+	ifequal TUESDAY, .NoFruit
+	ifequal THURSDAY, .NoFruit
+	ifequal SATURDAY, .NoFruit
+	checkflag ENGINE_DAILY_ROUTE_39_42_TREES
+	iftrue .NoFruit
+	appear ROUTE_42_APRICORN_1
+	appear ROUTE_42_APRICORN_2
+	appear ROUTE_42_APRICORN_3
+.NoFruit:
+	endcallback
 
 Route45StationarySuicuneScript:
     faceplayer
@@ -204,15 +218,6 @@ Route42UltraBall:
 Route42SuperPotion:
 	itemball SUPER_POTION
 
-Route42FruitTree1:
-	fruittree FRUITTREE_ROUTE_42_1
-
-Route42FruitTree2:
-	fruittree FRUITTREE_ROUTE_42_2
-
-Route42FruitTree3:
-	fruittree FRUITTREE_ROUTE_42_3
-
 Route42HiddenMaxPotion:
 	hiddenitem MAX_POTION, EVENT_ROUTE_42_HIDDEN_MAX_POTION
 
@@ -320,6 +325,98 @@ Route42Sign2Text:
 	line "MAHOGANY TOWN"
 	done
 
+Route42ApricornTree1:
+	opentext
+	getitemname STRING_BUFFER_3, PNK_APRICORN
+	writetext Route42BerryTreeText
+	promptbutton
+	writetext Route42HeyItsBerryApricornText
+	promptbutton
+	giveitem PNK_APRICORN
+	iffalse Route42NoRoomInBag
+	disappear ROUTE_42_APRICORN_1
+	setflag ENGINE_DAILY_ROUTE_39_42_TREES
+	writetext Route42FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route42ApricornTree2:
+	opentext
+	getitemname STRING_BUFFER_3, GRN_APRICORN
+	writetext Route42BerryTreeText
+	promptbutton
+	writetext Route42HeyItsBerryApricornText
+	promptbutton
+	giveitem GRN_APRICORN
+	iffalse Route42NoRoomInBag
+	disappear ROUTE_42_APRICORN_2
+	setflag ENGINE_DAILY_ROUTE_39_42_TREES
+	writetext Route42FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route42ApricornTree3:
+	opentext
+	getitemname STRING_BUFFER_3, YLW_APRICORN
+	writetext Route42BerryTreeText
+	promptbutton
+	writetext Route42HeyItsBerryApricornText
+	promptbutton
+	giveitem YLW_APRICORN
+	iffalse Route42NoRoomInBag
+	disappear ROUTE_42_APRICORN_3
+	setflag ENGINE_DAILY_ROUTE_39_42_TREES
+	writetext Route42FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route42NoBerryOrApricorn:
+	opentext
+	writetext Route42BerryTreeText
+	promptbutton
+	writetext Route42NothingHereText
+	waitbutton
+	closetext
+	end
+
+Route42NoRoomInBag:
+	writetext Route42NoRoomInBagText
+	waitbutton
+	closetext
+	end
+
+Route42BerryTreeText:
+	text_far _FruitBearingTreeText
+	text_end
+
+Route42NothingHereText:
+	text_far _NothingHereText
+	text_end
+
+Route42HeyItsBerryApricornText:
+	text "Hey! It's a"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
+	done
+
+Route42FoundItemText:
+	text_far _ObtainedFruitText
+	text_end
+
+Route42NoRoomInBagText:
+	text_far _CantCarryItemText
+	text_end
+
 Route42_MapEvents:
 	db 0, 0 ; filler
 
@@ -341,15 +438,18 @@ Route42_MapEvents:
 	bg_event 45,  9, BGEVENT_READ, MtMortarSign2
 	bg_event 54,  8, BGEVENT_READ, Route42Sign2
 	bg_event 16, 11, BGEVENT_ITEM, Route42HiddenMaxPotion
+	bg_event 27, 16, BGEVENT_READ, Route42NoBerryOrApricorn
+	bg_event 28, 16, BGEVENT_READ, Route42NoBerryOrApricorn
+	bg_event 29, 16, BGEVENT_READ, Route42NoBerryOrApricorn
 
 	def_object_events
 	object_event 40, 10, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherTully, -1
 	object_event 51,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerBenjamin, -1
 	object_event 47,  8, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacShane, -1
-	object_event 27, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree1, -1
-	object_event 28, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree2, -1
-	object_event 29, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42FruitTree3, -1
 	object_event  6,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42UltraBall, EVENT_ROUTE_42_ULTRA_BALL
 	object_event 33,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42SuperPotion, EVENT_ROUTE_42_SUPER_POTION
 	object_event 26, 16, SPRITE_SUICUNE_OW, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_42
 	object_event 26, 16, SPRITE_SUICUNE_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route45StationarySuicuneScript, EVENT_ROUTE_42_STATIONARY_SUICUNE
+	object_event 27, 16, SPRITE_APRICORN, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Route42ApricornTree1, EVENT_ROUTE_42_APRICORN_1
+	object_event 28, 16, SPRITE_APRICORN, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route42ApricornTree2, EVENT_ROUTE_42_APRICORN_2
+	object_event 29, 16, SPRITE_APRICORN_YELLOW, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route42ApricornTree3, EVENT_ROUTE_42_APRICORN_3

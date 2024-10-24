@@ -54,8 +54,11 @@ CinnabarGroupSprites:
 	db SPRITE_SWIMMER_GUY
 	; max 9 of 9 walking sprites
 	db SPRITE_POKE_BALL
-	db SPRITE_FRUIT_TREE
 	db SPRITE_COOLTRAINER_M
+	db SPRITE_BERRY
+	db SPRITE_APRICORN
+	db SPRITE_BERRY_YELLOW
+	db SPRITE_APRICORN_YELLOW
 	db 0 ; end
 
 ; CeruleanCity and Route5 are connected
@@ -89,7 +92,6 @@ CeladonGroupSprites:
 	; 6 of max 9 walking sprites
 	db SPRITE_POLIWHIRL_OW
 	db SPRITE_POKE_BALL
-	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
 ; Route11, Route12 and Route13 are connected
@@ -110,7 +112,10 @@ FuchsiaGroupSprites:
 	db SPRITE_BIG_SNORLAX
 	db SPRITE_MACHOP
 	db SPRITE_POKE_BALL
-	db SPRITE_FRUIT_TREE
+	db SPRITE_BERRY_YELLOW
+	db SPRITE_APRICORN_YELLOW
+	db SPRITE_BERRY
+	db SPRITE_APRICORN
 	db 0 ; end
 
 IndigoGroupSprites:
@@ -133,9 +138,11 @@ CherrygroveGroupSprites:
 	db SPRITE_COOLTRAINER_F
 	; max 8 of 9 walking sprites
 	db SPRITE_POKE_BALL
-	db SPRITE_FRUIT_TREE
 	db SPRITE_MONSTER
 	db SPRITE_PIDGEY_OW
+	db SPRITE_BERRY
+	db SPRITE_APRICORN
+	db SPRITE_BERRY_YELLOW
 	db 0 ; end
 
 ; Route37 and EcruteakCity are connected
@@ -155,8 +162,11 @@ EcruteakGroupSprites:
 	db SPRITE_TWIN
 	db SPRITE_SUDOWOODO
 	db SPRITE_POKE_BALL
-	db SPRITE_FRUIT_TREE
 	db SPRITE_SUICUNE_OW
+	db SPRITE_BERRY_YELLOW
+	db SPRITE_APRICORN_YELLOW
+	db SPRITE_BERRY
+	db SPRITE_APRICORN
 	db 0 ; end
 
 AzaleaGroupSprites:
@@ -169,9 +179,12 @@ AzaleaGroupSprites:
 	db SPRITE_RIVAL
 	db SPRITE_LASS
 	; 6 of max 9 walking sprites
-	db SPRITE_FRUIT_TREE
 	db SPRITE_SLOWPOKE
 	db SPRITE_KURT
+	db SPRITE_BERRY
+	db SPRITE_APRICORN
+	db SPRITE_APRICORN_WHITE
+	db SPRITE_APRICORN_YELLOW
 	db 0 ; end
 
 GoldenrodGroupSprites:
@@ -205,10 +218,11 @@ CianwoodGroupSprites:
 	db SPRITE_EUSINE
 	; 9 of max 9 walking sprites
 	db SPRITE_MILTANK_OW
-	db SPRITE_FRUIT_TREE
 	db SPRITE_ROCK
 	db SPRITE_YOUNGSTER
 	db SPRITE_SUICUNE_OW
+	db SPRITE_BERRY
+	db SPRITE_APRICORN
 	db 0 ; end
 
 MahoganyGroupSprites:
@@ -222,10 +236,12 @@ MahoganyGroupSprites:
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_FISHER
 	; 8 of max 9 walking sprites
-	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
 	db SPRITE_SUICUNE_OW
 	db SPRITE_FISHING_GURU
+	db SPRITE_BERRY
+	db SPRITE_APRICORN
+	db SPRITE_APRICORN_YELLOW
 	db 0 ; end
 
 LakeOfRageGroupSprites:
@@ -240,8 +256,9 @@ LakeOfRageGroupSprites:
 	db SPRITE_YOUNGSTER
 	; 8 of max 9 walking sprites
 	db SPRITE_GYARADOS
-	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
+	db SPRITE_BERRY
+	db SPRITE_APRICORN
 	db 0 ; end
 
 BlackthornGroupSprites:
@@ -255,9 +272,12 @@ BlackthornGroupSprites:
 	db SPRITE_BLACK_BELT
 	db SPRITE_COOLTRAINER_F
 	; 8 of max 9 walking sprites
-	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
 	db SPRITE_RAIKOU_OW
+	db SPRITE_BERRY
+	db SPRITE_BERRY_YELLOW
+	db SPRITE_APRICORN_YELLOW
+	db SPRITE_APRICORN
 	db 0 ; end
 
 SilverGroupSprites:

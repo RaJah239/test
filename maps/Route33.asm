@@ -1,12 +1,29 @@
 	object_const_def
 	const ROUTE33_POKEFAN_M
 	const ROUTE33_LASS
-	const ROUTE33_FRUIT_TREE
+	const ROUTE_33_BERRY
+	const ROUTE_33_APRICORN_1
+	const ROUTE_33_APRICORN_2
 
 Route33_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, Route33Fruittrees
+
+Route33Fruittrees:
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .NoFruit
+	ifequal WEDNESDAY, .NoFruit
+	ifequal FRIDAY, .NoFruit
+	ifequal SUNDAY, .NoFruit
+	checkflag ENGINE_DAILY_ROUTE_33_AZALEA_TREES
+	iftrue .NoFruit
+	appear ROUTE_33_BERRY
+	appear ROUTE_33_APRICORN_1
+	appear ROUTE_33_APRICORN_2
+.NoFruit
+	endcallback
 
 Route33LassScript:
 	jumptextfaceplayer Route33LassText
@@ -123,9 +140,6 @@ TrainerHikerAnthony:
 Route33Sign:
 	jumptext Route33SignText
 
-Route33FruitTree:
-	fruittree FRUITTREE_ROUTE_33
-
 HikerAnthony2SeenText:
 	text "I came through the"
 	line "tunnel, but I"
@@ -176,6 +190,98 @@ Route33SignText:
 	text "ROUTE 33"
 	done
 
+Route33BerryTree:
+	opentext
+	getitemname STRING_BUFFER_3, PSNCUREBERRY
+	writetext Route33BerryTreeText
+	promptbutton
+	writetext Route33HeyItsBerryApricornText
+	promptbutton
+	giveitem PSNCUREBERRY
+	iffalse Route33NoRoomInBag
+	disappear ROUTE_33_BERRY
+	setflag ENGINE_DAILY_ROUTE_33_AZALEA_TREES
+	writetext Route33FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route33ApricornTree:
+	opentext
+	getitemname STRING_BUFFER_3, BLK_APRICORN
+	writetext Route33BerryTreeText
+	promptbutton
+	writetext Route33HeyItsBerryApricornText
+	promptbutton
+	giveitem BLK_APRICORN
+	iffalse Route33NoRoomInBag
+	disappear ROUTE_33_APRICORN_1
+	setflag ENGINE_DAILY_ROUTE_33_AZALEA_TREES
+	writetext Route33FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route33ApricornTree2:
+	opentext
+	getitemname STRING_BUFFER_3, PNK_APRICORN
+	writetext Route33BerryTreeText
+	promptbutton
+	writetext Route33HeyItsBerryApricornText
+	promptbutton
+	giveitem PNK_APRICORN
+	iffalse Route33NoRoomInBag
+	disappear ROUTE_33_APRICORN_2
+	setflag ENGINE_DAILY_ROUTE_33_AZALEA_TREES
+	writetext Route33FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route33NoBerryOrApricorn:
+	opentext
+	writetext Route33BerryTreeText
+	promptbutton
+	writetext Route33NothingHereText
+	waitbutton
+	closetext
+	end
+
+Route33NoRoomInBag:
+	writetext Route33NoRoomInBagText
+	waitbutton
+	closetext
+	end
+
+Route33BerryTreeText:
+	text_far _FruitBearingTreeText
+	text_end
+
+Route33NothingHereText:
+	text_far _NothingHereText
+	text_end
+
+Route33HeyItsBerryApricornText:
+	text "Hey! It's a"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
+	done
+
+Route33FoundItemText:
+	text_far _ObtainedFruitText
+	text_end
+
+Route33NoRoomInBagText:
+	text_far _CantCarryItemText
+	text_end
+
 Route33_MapEvents:
 	db 0, 0 ; filler
 
@@ -186,8 +292,13 @@ Route33_MapEvents:
 
 	def_bg_events
 	bg_event 11, 11, BGEVENT_READ, Route33Sign
+	bg_event 14, 16, BGEVENT_READ, Route33NoBerryOrApricorn
+	bg_event 13, 16, BGEVENT_READ, Route33NoBerryOrApricorn
+	bg_event  6, 11, BGEVENT_READ, Route33NoBerryOrApricorn
 
 	def_object_events
 	object_event  6, 13, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerAnthony, -1
-	object_event 13, 16, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route33LassScript, -1
-	object_event 14, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route33FruitTree, -1
+	object_event 12, 16, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route33LassScript, -1
+	object_event  6, 11, SPRITE_BERRY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Route33BerryTree, EVENT_ROUTE_33_BERRY
+	object_event 14, 16, SPRITE_APRICORN, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, Route33ApricornTree, EVENT_ROUTE_33_APRICORN_1
+	object_event 13, 16, SPRITE_APRICORN, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Route33ApricornTree2, EVENT_ROUTE_33_APRICORN_2

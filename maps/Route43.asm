@@ -5,14 +5,16 @@
 	const ROUTE43_FISHER
 	const ROUTE43_LASS
 	const ROUTE43_YOUNGSTER
-	const ROUTE43_FRUIT_TREE
 	const ROUTE43_POKE_BALL
+	const ROUTE_43_BERRY
+	const ROUTE_43_APRICORN
 
 Route43_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, Route43CheckIfRocketsScene
+	callback MAPCALLBACK_OBJECTS, Route43Fruittrees
 
 Route43CheckIfRocketsScene:
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
@@ -22,6 +24,19 @@ Route43CheckIfRocketsScene:
 
 .NoRockets:
 	setmapscene ROUTE_43_GATE, SCENE_ROUTE43GATE_NOOP
+	endcallback
+
+Route43Fruittrees:
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .NoFruit
+	ifequal WEDNESDAY, .NoFruit
+	ifequal FRIDAY, .NoFruit
+	ifequal SUNDAY, .NoFruit
+	checkflag ENGINE_DAILY_ROUTE_43_44_TREES
+	iftrue .NoFruit
+	appear ROUTE_43_BERRY
+	appear ROUTE_43_APRICORN
+.NoFruit
 	endcallback
 
 TrainerCamperSpencer:
@@ -286,9 +301,6 @@ Route43Sign2:
 Route43TrainerTips:
 	jumptext Route43TrainerTipsText
 
-Route43FruitTree:
-	fruittree FRUITTREE_ROUTE_43
-
 Route43MaxEther:
 	itemball MAX_ETHER
 
@@ -471,6 +483,80 @@ Route43TrainerTipsText:
 	line "#MON's type."
 	done
 
+Route43BerryTree:
+	opentext
+	getitemname STRING_BUFFER_3, BITTER_BERRY
+	writetext Route43BerryTreeText
+	promptbutton
+	writetext Route43HeyItsBerryApricornText
+	promptbutton
+	giveitem BITTER_BERRY
+	iffalse Route43NoRoomInBag
+	disappear ROUTE_43_BERRY
+	setflag ENGINE_DAILY_ROUTE_43_44_TREES
+	writetext Route43FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route43ApricornTree:
+	opentext
+	getitemname STRING_BUFFER_3, BLK_APRICORN
+	writetext Route43BerryTreeText
+	promptbutton
+	writetext Route43HeyItsBerryApricornText
+	promptbutton
+	giveitem BLK_APRICORN
+	iffalse Route43NoRoomInBag
+	disappear ROUTE_43_APRICORN
+	setflag ENGINE_DAILY_ROUTE_43_44_TREES
+	writetext Route43FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route43NoBerryOrApricorn:
+	opentext
+	writetext Route43BerryTreeText
+	promptbutton
+	writetext Route43NothingHereText
+	waitbutton
+	closetext
+	end
+
+Route43NoRoomInBag:
+	writetext Route43NoRoomInBagText
+	waitbutton
+	closetext
+	end
+
+Route43BerryTreeText:
+	text_far _FruitBearingTreeText
+	text_end
+
+Route43NothingHereText:
+	text_far _NothingHereText
+	text_end
+
+Route43HeyItsBerryApricornText:
+	text "Hey! It's a"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
+	done
+
+Route43FoundItemText:
+	text_far _ObtainedFruitText
+	text_end
+
+Route43NoRoomInBagText:
+	text_far _CantCarryItemText
+	text_end
+
 Route43_MapEvents:
 	db 0, 0 ; filler
 
@@ -488,6 +574,8 @@ Route43_MapEvents:
 	bg_event 13,  3, BGEVENT_READ, Route43Sign1
 	bg_event 11, 49, BGEVENT_READ, Route43Sign2
 	bg_event 16, 38, BGEVENT_READ, Route43TrainerTips
+	bg_event  1, 26, BGEVENT_READ, Route43NoBerryOrApricorn
+	bg_event  1, 28, BGEVENT_READ, Route43NoBerryOrApricorn
 
 	def_object_events
 	object_event 13,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacBen, -1
@@ -496,5 +584,6 @@ Route43_MapEvents:
 	object_event  4, 16, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerFisherMarvin, -1
 	object_event  9, 25, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerTiffany, -1
 	object_event 13, 40, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperSpencer, -1
-	object_event  1, 26, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route43FruitTree, -1
 	object_event 12, 32, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route43MaxEther, EVENT_ROUTE_43_MAX_ETHER
+	object_event  1, 26, SPRITE_BERRY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route43BerryTree, EVENT_ROUTE_43_BERRY
+	object_event  1, 28, SPRITE_APRICORN, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, Route43ApricornTree, EVENT_ROUTE_43_APRICORN

@@ -95,7 +95,6 @@ OverworldSprites:
 	overworld_sprite BoulderSpriteGFX, 4, STILL_SPRITE, PAL_OW_ROCK
 	overworld_sprite SnesSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
 	overworld_sprite FamicomSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
-	overworld_sprite FruitTreeSpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite GoldTrophySpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite SilverTrophySpriteGFX, 4, STILL_SPRITE, PAL_OW_EMOTE
 	overworld_sprite KrisSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
@@ -130,4 +129,7 @@ OverworldSprites:
 	overworld_sprite BerryOWSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite ApricornSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite DelibirdMartSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite ApricornYellowSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
+	overworld_sprite BerryYellowSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
+	overworld_sprite ApricornWhiteSpriteGFX, 4, STILL_SPRITE, PAL_NPC_EMOTE
 	assert_table_length NUM_OVERWORLD_SPRITES

@@ -245,7 +245,6 @@ ScriptCommandTable:
 	dw Script_phonecall                  ; 98
 	dw Script_hangup                     ; 99
 	dw Script_describedecoration         ; 9a
-	dw Script_fruittree                  ; 9b
 	dw Script_specialphonecall           ; 9c
 	dw Script_checkphonecall             ; 9d
 	dw Script_verbosegiveitem            ; 9e
@@ -672,13 +671,6 @@ Script_describedecoration:
 	farcall DescribeDecoration
 	ld h, d
 	ld l, e
-	jp ScriptJump
-
-Script_fruittree:
-	call GetScriptByte
-	ld [wCurFruitTree], a
-	ld b, BANK(FruitTreeScript)
-	ld hl, FruitTreeScript
 	jp ScriptJump
 
 Script_swarm:

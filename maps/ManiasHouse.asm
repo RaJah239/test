@@ -29,7 +29,7 @@ ManiaScript:
 	end
 
 .alreadyhaveshuckie
-	checkflag ENGINE_GOT_SHUCKIE_TODAY
+	checkflag DAILYFLAGS1_BUG_CONTEST_UNION_CAVE_LAPRAS_MT_MOON_SQUARE_CLEFAIRY_DAISYS_GROOMING
 	iffalse .returnshuckie
 	writetext ManiaText_TakeCareOfShuckle
 	waitbutton

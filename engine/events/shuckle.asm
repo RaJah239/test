@@ -55,7 +55,7 @@ GiveShuckle:
 
 ; Engine flag for this event.
 	ld hl, wDailyFlags1
-	set DAILYFLAGS1_GOT_SHUCKIE_TODAY_F, [hl]
+	set DAILYFLAGS1_BUG_CONTEST_UNION_CAVE_LAPRAS_MT_MOON_SQUARE_CLEFAIRY_DAISYS_GROOMING, [hl]
 	ld a, 1
 	ld [wScriptVar], a
 	ret

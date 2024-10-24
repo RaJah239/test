@@ -5,7 +5,7 @@ DerekPhoneCalleeScript:
 	iftrue .Nugget
 	farscall PhoneScript_Random2
 	ifequal 0, .NoContest
-	checkflag ENGINE_DAILY_BUG_CONTEST
+	checkflag ENGINE_DAILY_BUG_CONTEST_UNION_CAVE_LAPRAS_MT_MOON_SQUARE_CLEFAIRY_DAISYS_GROOMING
 	iftrue .NoContest
 	readvar VAR_WEEKDAY
 	ifequal TUESDAY, .ContestToday
@@ -27,7 +27,7 @@ DerekPhoneCallerScript:
 	farscall PhoneScript_GreetPhone_Male
 	farscall PhoneScript_Random2
 	ifequal 0, .NoContest
-	checkflag ENGINE_DAILY_BUG_CONTEST
+	checkflag ENGINE_DAILY_BUG_CONTEST_UNION_CAVE_LAPRAS_MT_MOON_SQUARE_CLEFAIRY_DAISYS_GROOMING
 	iftrue .NoContest
 	readvar VAR_WEEKDAY
 	ifequal TUESDAY, .ContestToday

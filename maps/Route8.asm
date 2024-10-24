@@ -4,12 +4,27 @@
 	const ROUTE8_BIKER3
 	const ROUTE8_SUPER_NERD1
 	const ROUTE8_SUPER_NERD2
-	const ROUTE8_FRUIT_TREE
+	const ROUTE_8_BERRY
+	const ROUTE_8_APRICORN
 
 Route8_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, Route8Fruittrees
+
+Route8Fruittrees:
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .NoFruit
+	ifequal WEDNESDAY, .NoFruit
+	ifequal FRIDAY, .NoFruit
+	ifequal SUNDAY, .NoFruit
+	checkflag ENGINE_DAILY_PEWTER_ROUTE_8_TREES
+	iftrue .NoFruit
+	appear ROUTE_8_BERRY
+	appear ROUTE_8_APRICORN
+.NoFruit
+	endcallback
 
 TrainerBikerDwayne:
 	trainer BIKER, DWAYNE, EVENT_BEAT_BIKER_DWAYNE, BikerDwayneSeenText, BikerDwayneBeatenText, 0, .Script
@@ -66,9 +81,6 @@ Route8LockedDoor:
 
 Route8UndergroundPathSign:
 	jumptext Route8UndergroundPathSignText
-
-Route8FruitTree:
-	fruittree FRUITTREE_ROUTE_8
 
 BikerDwayneSeenText:
 	text "We're the KANTO"
@@ -165,6 +177,80 @@ Route8UndergroundPathSignText:
 	line "read…"
 	done
 
+Route8BerryTree:
+	opentext
+	getitemname STRING_BUFFER_3, PRZCUREBERRY
+	writetext Route8BerryTreeText
+	promptbutton
+	writetext Route8HeyItsBerryApricornText
+	promptbutton
+	giveitem PRZCUREBERRY
+	iffalse Route8NoRoomInBag
+	disappear ROUTE_8_BERRY
+	setflag ENGINE_DAILY_PEWTER_ROUTE_8_TREES
+	writetext Route8FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route8ApricornTree:
+	opentext
+	getitemname STRING_BUFFER_3, YLW_APRICORN
+	writetext Route8BerryTreeText
+	promptbutton
+	writetext Route8HeyItsBerryApricornText
+	promptbutton
+	giveitem YLW_APRICORN
+	iffalse Route8NoRoomInBag
+	disappear ROUTE_8_APRICORN
+	setflag ENGINE_DAILY_PEWTER_ROUTE_8_TREES
+	writetext Route8FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route8NoBerryOrApricorn:
+	opentext
+	writetext Route8BerryTreeText
+	promptbutton
+	writetext Route8NothingHereText
+	waitbutton
+	closetext
+	end
+
+Route8NoRoomInBag:
+	writetext Route8NoRoomInBagText
+	waitbutton
+	closetext
+	end
+
+Route8BerryTreeText:
+	text_far _FruitBearingTreeText
+	text_end
+
+Route8NothingHereText:
+	text_far _NothingHereText
+	text_end
+
+Route8HeyItsBerryApricornText:
+	text "Hey! It's a"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
+	done
+
+Route8FoundItemText:
+	text_far _ObtainedFruitText
+	text_end
+
+Route8NoRoomInBagText:
+	text_far _CantCarryItemText
+	text_end
+
 Route8_MapEvents:
 	db 0, 0 ; filler
 
@@ -177,6 +263,8 @@ Route8_MapEvents:
 	def_bg_events
 	bg_event 11,  7, BGEVENT_READ, Route8UndergroundPathSign
 	bg_event 10,  5, BGEVENT_READ, Route8LockedDoor
+	bg_event 33,  4, BGEVENT_READ, Route8NoBerryOrApricorn
+	bg_event 34,  4, BGEVENT_READ, Route8NoBerryOrApricorn
 
 	def_object_events
 	object_event 10,  8, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerBikerDwayne, -1
@@ -184,4 +272,5 @@ Route8_MapEvents:
 	object_event 10, 10, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerBikerZeke, -1
 	object_event 23,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdSam, -1
 	object_event 31, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerSupernerdTom, -1
-	object_event 33,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8FruitTree, -1
+	object_event 33,  4, SPRITE_BERRY_YELLOW, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8BerryTree, EVENT_ROUTE_8_BERRY
+	object_event 34,  4, SPRITE_APRICORN_YELLOW, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8ApricornTree, EVENT_ROUTE_8_APRICORN

@@ -22,7 +22,7 @@ BallColors:
 	db MOON_BALL
 	RGB 31,31,31, 07,19,25
 	db LOVE_BALL
-	RGB 31,31,31, 30,11,22
+	RGB 31,31,31, 20,08,23
 	db PARK_BALL
 	RGB 31,31,31, 18,18,05
 	db -1 ; end

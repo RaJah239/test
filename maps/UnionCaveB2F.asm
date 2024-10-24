@@ -13,7 +13,7 @@ UnionCaveB2F_MapScripts:
 	callback MAPCALLBACK_OBJECTS, UnionCaveB2FLaprasCallback
 
 UnionCaveB2FLaprasCallback:
-	checkflag ENGINE_UNION_CAVE_LAPRAS
+	checkflag ENGINE_DAILY_BUG_CONTEST_UNION_CAVE_LAPRAS_MT_MOON_SQUARE_CLEFAIRY_DAISYS_GROOMING
 	iftrue .NoAppear
 	readvar VAR_WEEKDAY
 	ifequal FRIDAY, .Appear
@@ -31,7 +31,7 @@ UnionCaveLapras:
 	loadwildmon LAPRAS, 20
 	startbattle
 	disappear UNIONCAVEB2F_LAPRAS
-	setflag ENGINE_UNION_CAVE_LAPRAS
+	setflag ENGINE_DAILY_BUG_CONTEST_UNION_CAVE_LAPRAS_MT_MOON_SQUARE_CLEFAIRY_DAISYS_GROOMING
 	reloadmapafterbattle
 	end
 

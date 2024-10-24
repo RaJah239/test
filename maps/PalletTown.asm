@@ -31,11 +31,12 @@ BluesHouseSign:
 	jumptext BluesHouseSignText
 
 PalletTownTeacherText:
-	text "I'm raising #-"
-	line "MON too."
-
-	para "They serve as my"
-	line "private guards."
+	text "DAISY grooms her"
+	line "#MON every"
+	cont "WEDNESDAY."
+	
+	para "Maybe she'll groom"
+	line "yours too!"
 	done
 
 PalletTownFisherText:

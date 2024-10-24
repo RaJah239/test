@@ -3,15 +3,29 @@
 	const ROUTE31_YOUNGSTER
 	const ROUTE31_BUG_CATCHER
 	const ROUTE31_COOLTRAINER_M
-	const ROUTE31_FRUIT_TREE
 	const ROUTE31_POKE_BALL1
 	const ROUTE31_POKE_BALL2
+	const ROUTE_31_BERRY
+	const ROUTE_31_APRICORN
 
 Route31_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, Route31CheckMomCallCallback
+	callback MAPCALLBACK_OBJECTS, Route31Fruittrees
+
+Route31Fruittrees:
+	readvar VAR_WEEKDAY
+	ifequal TUESDAY, .NoFruit
+	ifequal THURSDAY, .NoFruit
+	ifequal SATURDAY, .NoFruit
+	checkflag ENGINE_DAILY_ROUTE_31_VIOLET_TREES
+	iftrue .NoFruit
+	appear ROUTE_31_BERRY
+	appear ROUTE_31_APRICORN
+.NoFruit:
+	endcallback
 
 Route31CheckMomCallCallback:
 	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
@@ -240,9 +254,6 @@ DarkCaveSign:
 Route31CooltrainerMScript:
 	jumptextfaceplayer Route31CooltrainerMText
 
-Route31FruitTree:
-	fruittree FRUITTREE_ROUTE_31
-
 Route31Potion:
 	itemball POTION
 
@@ -399,6 +410,80 @@ DarkCaveSignText:
 	text "DARK CAVE"
 	done
 
+Route31BerryTree:
+	opentext
+	getitemname STRING_BUFFER_3, BITTER_BERRY
+	writetext Route31TreeText
+	promptbutton
+	writetext Route31HeyItsBerryApricornText
+	promptbutton
+	giveitem BITTER_BERRY
+	iffalse Route31NoRoomInBag
+	disappear ROUTE_31_BERRY
+	setflag ENGINE_DAILY_ROUTE_31_VIOLET_TREES
+	writetext Route31FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route31ApricornTree:
+	opentext
+	getitemname STRING_BUFFER_3, BLK_APRICORN
+	writetext Route31TreeText
+	promptbutton
+	writetext Route31HeyItsBerryApricornText
+	promptbutton
+	giveitem BLK_APRICORN
+	iffalse Route31NoRoomInBag
+	disappear ROUTE_31_APRICORN
+	setflag ENGINE_DAILY_ROUTE_31_VIOLET_TREES
+	writetext Route31FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route31NoBerryOrApricorn:
+	opentext
+	writetext Route31TreeText
+	promptbutton
+	writetext Route31NothingHereText
+	waitbutton
+	closetext
+	end
+
+Route31NoRoomInBag:
+	writetext Route31NoRoomInBagText
+	waitbutton
+	closetext
+	end
+
+Route31TreeText:
+	text_far _FruitBearingTreeText
+	text_end
+
+Route31NothingHereText:
+	text_far _NothingHereText
+	text_end
+
+Route31HeyItsBerryApricornText:
+	text "Hey! It's a"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
+	done
+
+Route31FoundItemText:
+	text_far _ObtainedFruitText
+	text_end
+
+Route31NoRoomInBagText:
+	text_far _CantCarryItemText
+	text_end
+
 Route31_MapEvents:
 	db 0, 0 ; filler
 
@@ -412,12 +497,15 @@ Route31_MapEvents:
 	def_bg_events
 	bg_event  7,  5, BGEVENT_READ, Route31Sign
 	bg_event 31,  5, BGEVENT_READ, DarkCaveSign
+	bg_event 30,  7, BGEVENT_READ, Route31NoBerryOrApricorn
+	bg_event 16,  7, BGEVENT_READ, Route31NoBerryOrApricorn
 
 	def_object_events
 	object_event 17,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31MailRecipientScript, -1
 	object_event  9,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31YoungsterScript, -1
 	object_event 21, 13, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherWade1, -1
 	object_event 33,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31CooltrainerMScript, -1
-	object_event 16,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31FruitTree, -1
 	object_event 29,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31Potion, EVENT_ROUTE_31_POTION
 	object_event 19, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31PokeBall, EVENT_ROUTE_31_POKE_BALL
+	object_event 30,  7, SPRITE_BERRY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route31BerryTree, EVENT_ROUTE_31_BERRY
+	object_event 16,  7, SPRITE_APRICORN, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_EMOTE, OBJECTTYPE_SCRIPT, 0, Route31ApricornTree, EVENT_ROUTE_31_APRICORN

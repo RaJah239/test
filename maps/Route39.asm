@@ -7,13 +7,28 @@
 	const ROUTE39_MILTANK3
 	const ROUTE39_MILTANK4
 	const ROUTE39_PSYCHIC_NORMAN
-	const ROUTE39_FRUIT_TREE
 	const ROUTE39_POKEFAN_F2
+	const ROUTE_39_BERRY
+	const ROUTE_39_APRICORN
 
 Route39_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_OBJECTS, Route39Fruittrees
+
+Route39Fruittrees:
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .NoFruit
+	ifequal WEDNESDAY, .NoFruit
+	ifequal FRIDAY, .NoFruit
+	ifequal SUNDAY, .NoFruit
+	checkflag ENGINE_DAILY_ROUTE_39_42_TREES
+	iftrue .NoFruit
+	appear ROUTE_39_BERRY
+	appear ROUTE_39_APRICORN
+.NoFruit
+	endcallback
 
 Route39Miltank:
 	opentext
@@ -169,9 +184,6 @@ MoomooFarmSign:
 
 Route39TrainerTips:
 	jumptext Route39TrainerTipsText
-
-Route39FruitTree:
-	fruittree FRUITTREE_ROUTE_39
 
 Route39HiddenNugget:
 	hiddenitem NUGGET, EVENT_ROUTE_39_HIDDEN_NUGGET
@@ -337,6 +349,80 @@ Route39TrainerTipsText:
 	line "any tree you see!"
 	done
 
+Route39BerryTree:
+	opentext
+	getitemname STRING_BUFFER_3, BERRY
+	writetext Route39BerryTreeText
+	promptbutton
+	writetext Route39HeyItsBerryApricornText
+	promptbutton
+	giveitem BERRY
+	iffalse Route39NoRoomInBag
+	disappear ROUTE_39_BERRY
+	setflag ENGINE_DAILY_ROUTE_39_42_TREES
+	writetext Route39FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route39ApricornTree:
+	opentext
+	getitemname STRING_BUFFER_3, GRN_APRICORN
+	writetext Route39BerryTreeText
+	promptbutton
+	writetext Route39HeyItsBerryApricornText
+	promptbutton
+	giveitem GRN_APRICORN
+	iffalse Route39NoRoomInBag
+	disappear ROUTE_39_APRICORN
+	setflag ENGINE_DAILY_ROUTE_39_42_TREES
+	writetext Route39FoundItemText
+	playsound SFX_ITEM
+	waitsfx
+	itemnotify
+	closetext
+	end
+
+Route39NoBerryOrApricorn:
+	opentext
+	writetext Route39BerryTreeText
+	promptbutton
+	writetext Route39NothingHereText
+	waitbutton
+	closetext
+	end
+
+Route39NoRoomInBag:
+	writetext Route39NoRoomInBagText
+	waitbutton
+	closetext
+	end
+
+Route39BerryTreeText:
+	text_far _FruitBearingTreeText
+	text_end
+
+Route39NothingHereText:
+	text_far _NothingHereText
+	text_end
+
+Route39HeyItsBerryApricornText:
+	text "Hey! It's a"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
+	done
+
+Route39FoundItemText:
+	text_far _ObtainedFruitText
+	text_end
+
+Route39NoRoomInBagText:
+	text_far _CantCarryItemText
+	text_end
+
 Route39_MapEvents:
 	db 0, 0 ; filler
 
@@ -351,6 +437,8 @@ Route39_MapEvents:
 	bg_event  9,  5, BGEVENT_READ, MoomooFarmSign
 	bg_event 15,  7, BGEVENT_READ, Route39Sign
 	bg_event  5, 13, BGEVENT_ITEM, Route39HiddenNugget
+	bg_event  6, 13, BGEVENT_READ, Route39NoBerryOrApricorn
+	bg_event  9,  3, BGEVENT_READ, Route39NoBerryOrApricorn
 
 	def_object_events
 	object_event 13, 29, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSailorEugene, -1
@@ -361,5 +449,6 @@ Route39_MapEvents:
 	object_event  4, 15, SPRITE_MILTANK_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event  8, 13, SPRITE_MILTANK_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route39Miltank, -1
 	object_event 13,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicNorman, -1
-	object_event  9,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FruitTree, -1
 	object_event  4, 22, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerPokefanfJaime, -1
+	object_event  6, 13, SPRITE_BERRY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route39BerryTree, EVENT_ROUTE_39_BERRY
+	object_event  9,  3, SPRITE_APRICORN, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route39ApricornTree, EVENT_ROUTE_39_APRICORN

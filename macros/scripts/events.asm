@@ -964,12 +964,6 @@ MACRO describedecoration
 	db \1 ; byte
 ENDM
 
-	const fruittree_command ; $9b
-MACRO fruittree
-	db fruittree_command
-	db \1 ; tree_id
-ENDM
-
 	const specialphonecall_command ; $9c
 MACRO specialphonecall
 	db specialphonecall_command
