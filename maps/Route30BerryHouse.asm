@@ -1,12 +1,12 @@
 	object_const_def
-	const ROUTE30BERRYHOUSE_POKEFAN_M
+	const ROUTE30BERRYHOUSE_TEACHER
 
 Route30BerryHouse_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
-Route30BerryHousePokefanMScript:
+Route30BerryHouseTeacherScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE
@@ -17,7 +17,7 @@ Route30BerryHousePokefanMScript:
 	iffalse .NoRoom
 	setevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE
 .GotBerry:
-	writetext Route30BerrySpeechHouseCheckTreesText
+	writetext Route30BerrySpeechHouseTreesInfoText
 	waitbutton
 .NoRoom:
 	closetext
@@ -38,10 +38,31 @@ Route30BerrySpeechHouseMonEatBerriesText:
 	line "one with you!"
 	done
 
-Route30BerrySpeechHouseCheckTreesText:
-	text "Check trees for"
-	line "BERRIES. They just"
-	cont "drop right off."
+Route30BerrySpeechHouseTreesInfoText:
+	text "Some trees hold"
+	line "BERRIES, others"
+	cont "APRICORNS."
+	
+	para "Neither grow daily"
+	line "though."
+	
+	para "Certain days of"
+	line "the week, a tree"
+	cont "will bare fruit."
+	
+	para "Wild #MON eat"
+	line "or hold these"
+	
+	para "so, missing fruits"
+	line "on trees could be"
+	cont "their doing."
+	
+	para "A move that steals"
+	line "held items may"
+	
+	para "net so some or"
+	line "other useful items"
+	cont "from wild #MON."
 	done
 
 Route30BerryHouse_MapEvents:
@@ -58,4 +79,4 @@ Route30BerryHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, Route30BerryHouseBookshelf
 
 	def_object_events
-	object_event  2,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route30BerryHousePokefanMScript, -1
+	object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Route30BerryHouseTeacherScript, -1
