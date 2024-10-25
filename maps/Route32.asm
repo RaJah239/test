@@ -13,12 +13,14 @@
 	const ROUTE32_FISHER5
 	const ROUTE32_FRIEDA
 	const ROUTE32_POKE_BALL2
+	const ROUTE32_SCARLET
 
 Route32_MapScripts:
 	def_scene_scripts
 	scene_script Route32Noop1Scene, SCENE_ROUTE32_COOLTRAINER_M_BLOCKS
 	scene_script Route32Noop2Scene, SCENE_ROUTE32_OFFER_SLOWPOKETAIL
-	scene_script Route32Noop3Scene, SCENE_ROUTE32_NOOP
+	scene_script Route32Noop3Scene, SCENE_ROUTE32_SCARLET
+	scene_script Route32Noop4Scene, SCENE_ROUTE32_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, .Flypoint
@@ -34,6 +36,9 @@ Route32Noop2Scene:
 	end
 
 Route32Noop3Scene:
+	end
+
+Route32Noop4Scene:
 	end
 
 Route32CooltrainerMScript:
@@ -832,6 +837,199 @@ Route32UnionCaveSignText:
 	line "AHEAD"
 	done
 
+Route32ScarletSceneScript:
+	turnobject PLAYER, LEFT
+	showemote EMOTE_SHOCK, PLAYER, 15
+	special FadeOutMusic
+	pause 15
+	appear ROUTE32_SCARLET
+	applymovement ROUTE32_SCARLET, Route32ScarletApproachesFromRuinsofAlphMovement1
+	turnobject PLAYER, LEFT
+	turnobject ROUTE32_SCARLET, RIGHT
+	playmusic MUSIC_SCARLET
+	opentext
+	writetext IJustCameFromTheRuinsOfAlphLetsBattleText
+	waitbutton
+	closetext
+	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	iftrue .Totodile
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iftrue .Chikorita
+	winlosstext Route32ScarletWinText, Route32ScarletLossText
+	setlasttalked ROUTE32_SCARLET
+	loadtrainer SCARLET, SCARLET1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	iftrue .AfterVictorious
+	sjump .AfterYourDefeat
+
+.Totodile:
+	winlosstext Route32ScarletWinText, Route32ScarletLossText
+	setlasttalked ROUTE32_SCARLET
+	loadtrainer SCARLET, SCARLET2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	iftrue .AfterVictorious
+	sjump .AfterYourDefeat
+
+.Chikorita:
+	winlosstext Route32ScarletWinText, Route32ScarletLossText
+	setlasttalked ROUTE32_SCARLET
+	loadtrainer SCARLET, SCARLET3
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	iftrue .AfterVictorious
+	sjump .AfterYourDefeat
+
+.AfterVictorious:
+	playmusic MUSIC_SCARLET
+	opentext
+	writetext Route32Scarlet_YouLostText
+	waitbutton
+	closetext
+	sjump .FinishRival
+
+.AfterYourDefeat:
+	playmusic MUSIC_SCARLET
+	opentext
+	writetext Route32Scarlet_YouWonText
+	waitbutton
+	closetext
+.FinishRival:
+	applymovement ROUTE32_SCARLET, Route32ScarletMoveUpOneTile
+	turnobject ROUTE32_SCARLET, DOWN
+	applymovement PLAYER, LettingHerPass
+	turnobject PLAYER, RIGHT
+	applymovement ROUTE32_SCARLET, Route32AScarletExits
+	disappear ROUTE32_SCARLET
+	special HealParty
+	playmapmusic
+	setevent EVENT_RUINS_OF_ALPH_INNER_CHAMBER_SCARLET
+	setmapscene ROUTE_32, SCENE_ROUTE32_OFFER_SLOWPOKETAIL
+	end
+
+LettingHerPass:
+	step LEFT
+	step LEFT
+	step_end
+
+Route32AScarletExits:
+	step DOWN
+	step RIGHT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+Route32ScarletMoveUpOneTile:
+	step UP
+	step_end
+
+Route32ScarletApproachesFromRuinsofAlphMovement1:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step DOWN
+	step_end
+
+IJustCameFromTheRuinsOfAlphLetsBattleText:
+	text "SCARLET: <PLAY_G>,"
+	line "did you visit the"
+	cont "RUINS OF ALPH?"
+	
+	para "It's mystery has"
+	line "baffled scientists"
+	cont "for many years!"
+	
+	para "The atmosphere"
+	line "there fills me"
+	cont "with intrigue."
+	
+	para "Its secrets could"
+	line "be legendary!"
+	
+	para "Oh! I might be"
+	line "getting carried"
+	cont "away."
+	
+	para "I've trained some"
+	line "since last time."
+	
+	para "I'd like to see"
+	line "your improvement!"
+	
+	para "Here I come!"
+	done
+
+Route32ScarletWinText:
+	text "Aww… You got me"
+	line "this time…"
+	done
+
+Route32ScarletLossText:
+	text "Yay! I got you"
+	line "this time!"
+	done
+
+Route32Scarlet_YouWonText:
+	text "SCARLET: Riveting"
+	line "battle!"
+	
+	para "I'll have to try"
+	line "even harder next"
+	cont "time."
+	
+	para "I'm going on ahead"
+	line "to build my team."
+	
+	para "So long <PLAY_G>."
+	
+	para "Be ready for next"
+	line "time."
+	
+	para "Now, if you'll"
+	line "allow me to pass."
+	done
+
+Route32Scarlet_YouLostText:
+	text "SCARLET: That was"
+	line "quite an uphill"
+
+	para "battle! We barely"
+	line "cinched it!"
+
+	para "I'm happy our hard"
+	line "work paid off!"
+	
+	para "We won't slack off"
+	line "though."
+	
+	para "Johto is immense."
+	line "Lots to cover."
+	
+	para "Don't be down"
+	line "<PLAY_G>."
+	
+	para "Be ready next"
+	line "time."
+	
+	para "I'm forging on."
+	line "Bye!"
+
+	para "Now, if you'll"
+	line "allow me to pass."
+	done
+
 Route32_MapEvents:
 	db 0, 0 ; filler
 
@@ -845,6 +1043,7 @@ Route32_MapEvents:
 	def_coord_events
 	coord_event 18,  8, SCENE_ROUTE32_COOLTRAINER_M_BLOCKS, Route32CooltrainerMStopsYouScene
 	coord_event  7, 71, SCENE_ROUTE32_OFFER_SLOWPOKETAIL, Route32WannaBuyASlowpokeTailScript
+	coord_event 18,  5, SCENE_ROUTE32_SCARLET, Route32ScarletSceneScript
 
 	def_bg_events
 	bg_event 13,  5, BGEVENT_READ, Route32Sign
@@ -869,3 +1068,4 @@ Route32_MapEvents:
 	object_event 16, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32RoarTMGuyScript, -1
 	object_event 12, 67, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FriedaScript, EVENT_ROUTE_32_FRIEDA_OF_FRIDAY
 	object_event  3, 30, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32Repel, EVENT_ROUTE_32_REPEL
+	object_event 13,  3, SPRITE_SCARLET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_32_SCARLET

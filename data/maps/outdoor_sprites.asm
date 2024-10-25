@@ -136,7 +136,7 @@ CherrygroveGroupSprites:
 	db SPRITE_BUG_CATCHER
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_SCARLET
-	; max 8 of 9 walking sprites
+	; max 9 of 9 walking sprites
 	db SPRITE_POKE_BALL
 	db SPRITE_MONSTER
 	db SPRITE_PIDGEY_OW
@@ -158,6 +158,7 @@ EcruteakGroupSprites:
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_BUG_CATCHER
 	db SPRITE_SUPER_NERD
+	db SPRITE_SCARLET
 	; 8 of max 9 walking sprites
 	db SPRITE_TWIN
 	db SPRITE_SUDOWOODO

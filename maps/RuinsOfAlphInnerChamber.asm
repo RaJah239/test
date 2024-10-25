@@ -3,6 +3,7 @@
 	const RUINSOFALPHINNERCHAMBER_TEACHER
 	const RUINSOFALPHINNERCHAMBER_GRAMPS
 	const RUINSOFALPHINNERCHAMBER_CHANSEY
+	const RUINSOFALPHINNERCHAMBER_SCARLET
 
 RuinsOfAlphInnerChamber_MapScripts:
 	def_scene_scripts
@@ -30,6 +31,9 @@ RuinsOfAlphInnerChamberStrangePresenceScript:
 
 RuinsOfAlphInnerChamberFisherScript:
 	jumptextfaceplayer RuinsOfAlphInnerChamberFisherText
+
+RuinsOfAlphInnerChamberScarletScript:
+	jumptextfaceplayer RuinsOfAlphInnerChamberScarletText
 
 RuinsOfAlphInnerChamberTeacherScript:
 	jumptextfaceplayer RuinsOfAlphInnerChamberTeacherText
@@ -73,6 +77,23 @@ RuinsOfAlphInnerChamberStatueText:
 	text "It's a replica of"
 	line "an ancient #-"
 	cont "MON."
+	done
+
+RuinsOfAlphInnerChamberScarletText:
+	text "SCARLET: Do you"
+	line "feel anything in"
+	cont "here <PLAY_G>?"
+	
+	para "It's like #MON"
+	line "are about to jump"
+	cont "out the walls!"
+	
+	para "This eerie feeling"
+	line "is telling me that"
+	
+	para "there's a powerful"
+	line "#MON in here"
+	cont "but where?"
 	done
 
 RuinsOfAlphInnerChamberChanseyScript:
@@ -127,3 +148,4 @@ RuinsOfAlphInnerChamber_MapEvents:
 	object_event 14, 13, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberTeacherScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
 	object_event 11, 19, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberGrampsScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
 	object_event  8, 11, SPRITE_CHANSEY_OW, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberChanseyScript, -1
+	object_event  6, 13, SPRITE_SCARLET, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberScarletScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_SCARLET
