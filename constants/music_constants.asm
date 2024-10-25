@@ -114,6 +114,7 @@
 	const MUSIC_UNOVA_ELITE_FOUR_BATTLE      ; 73
 	const MUSIC_CAVE_OF_ORIGIN               ; 74
 	const MUSIC_SCARLET                      ; 75
+	const MUSIC_SCARLET_FINAL_THEME          ; 76
 DEF NUM_MUSIC_SONGS EQU const_value
 
 ; GetMapMusic picks music for these values (see home/map.asm)
