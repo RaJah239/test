@@ -457,7 +457,8 @@
 	const EVENT_ROUTE_32_SCARLET
 	const EVENT_RUINS_OF_ALPH_INNER_CHAMBER_SCARLET
 	const EVENT_ROUTE_35_GOLDENROD_GATE_SCARLET
-; Unused: next 152 events
+	const EVENT_ROUTE_42_ECRUTEAK_GATE_SCARLET
+; Unused: next 151 events
 
 	const_next 600
 ; Kurt Apricorn events
