@@ -1,23 +1,6 @@
 BillPhoneCalleeScript:
-	checktime DAY
-	iftrue .daygreet
-	checktime NITE
-	iftrue .nitegreet
-	farwritetext BillPhoneMornGreetingText
-	promptbutton
-	sjump .main
-
-.daygreet
 	farwritetext BillPhoneDayGreetingText
 	promptbutton
-	sjump .main
-
-.nitegreet
-	farwritetext BillPhoneNiteGreetingText
-	promptbutton
-	sjump .main
-
-.main
 	farwritetext BillPhoneGenericText
 	promptbutton
 	readvar VAR_BOXSPACE
