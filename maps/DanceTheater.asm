@@ -8,6 +8,7 @@
 	const DANCETHEATER_RHYDON
 	const DANCETHEATER_COOLTRAINER_M
 	const DANCETHEATER_GRANNY
+	const DANCETHEATER_SCARLET
 
 DanceTheater_MapScripts:
 	def_scene_scripts
@@ -378,6 +379,50 @@ DanceTheaterFancyPanelText:
 	cont "with flowers."
 	done
 
+DanceTheaterScarletScript:
+	opentext
+	writetext DanceTheaterScarletText
+	waitbutton
+	closetext
+	faceplayer
+	opentext
+	writetext DanceTheaterScarletIWasMesmerisedText
+	waitbutton
+	closetext
+	turnobject DANCETHEATER_SCARLET, UP
+	opentext
+	writetext DanceTheaterScarletIWonderHowIdLookInAKimonoText
+	waitbutton
+	closetext
+	end
+
+DanceTheaterScarletText:
+	text "SCARLET: The way"
+	line "they move is so"
+
+	para "beautiful and yet"
+	line "so mesmerizing…"
+	done
+
+
+DanceTheaterScarletIWasMesmerisedText:
+	text "Sorry <PLAY_G>, I"
+	line "was lost in the"
+	cont "moment there."
+	
+	para "I want to learn"
+	line "to be as graceful"
+	cont "as them one day!"
+	
+	para "I will study by"
+	line "watching more."
+	done
+
+DanceTheaterScarletIWonderHowIdLookInAKimonoText:
+	text "I wonder how I'd"
+	line "look in a kimono…"
+	done
+
 DanceTheater_MapEvents:
 	db 0, 0 ; filler
 
@@ -400,4 +445,5 @@ DanceTheater_MapEvents:
 	object_event  7, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheaterSurfGuy, -1
 	object_event  6,  8, SPRITE_RHYDON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DanceTheaterRhydon, -1
 	object_event 10, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DanceTheaterCooltrainerMScript, -1
-	object_event  3,  6, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheaterGrannyScript, -1
+	object_event  8,  6, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheaterGrannyScript, -1
+	object_event  1,  6, SPRITE_SCARLET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheaterScarletScript, EVENT_DANCE_THEATRE_SCARLET
