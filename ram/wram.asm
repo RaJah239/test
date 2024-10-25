@@ -3110,8 +3110,9 @@ wRoute42EcruteakGateSceneID::                     db ; Route 42 Ecruteak Gate bl
 wRoute31VioletGateSceneID::                       db ; Route 31 Violet City Gate Old Rod Fishing Guru scene 
 wRoute30SceneID::                                 db ; Route 30 Berry teacher scene
 wUnionCave1FSceneID::                             db ; Scarlet's Union Cave scene explaining Grottos
+wRoute35GoldenrodGate::                           db ; Scarlet's battle
 
-	ds 40
+	ds 39
 
  wNumBalls:: db
  wBalls:: ds MAX_BALLS * 2 + 1

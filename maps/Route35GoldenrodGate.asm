@@ -2,11 +2,21 @@
 	const ROUTE35GOLDENRODGATE_RANDY
 	const ROUTE35GOLDENRODGATE_POKEFAN_F
 	const ROUTE35GOLDENRODGATE_FISHER
+	const ROUTE35GOLDENRODGATE_SCARLET
 
 Route35GoldenrodGate_MapScripts:
 	def_scene_scripts
-
+	scene_script Route35GoldenrodGaeNoop1Scene, SCENE_ROUTE35_GOLDENROD_GATE_SCARLET_BATTLE
+	scene_script Route35GoldenrodGaeNoop2Scene, SCENE_ROUTE35_GOLDENROD_GATE_NOOP
+	
 	def_callbacks
+
+Route35GoldenrodGaeNoop1Scene:
+	sdefer Route35GoldenrodGateScarletScript
+	end
+
+Route35GoldenrodGaeNoop2Scene:
+	end
 
 RandyScript:
 	faceplayer
@@ -195,6 +205,190 @@ Route35GoldenrodGateFisherText:
 	line "different kinds."
 	done
 
+Route35GoldenrodGateScarletScript:
+	showemote EMOTE_SHOCK, ROUTE35GOLDENRODGATE_SCARLET, 15
+	turnobject ROUTE35GOLDENRODGATE_SCARLET, DOWN
+	special FadeOutMusic
+	pause 15
+	playmusic MUSIC_SCARLET
+	opentext
+	writetext Route35GoldenrodGateScarletSpotsPlayerText
+	waitbutton
+	closetext
+	applymovement ROUTE35GOLDENRODGATE_SCARLET, Route35GoldenrodGateScarletWalksToPlayer
+	turnobject ROUTE35GOLDENRODGATE_SCARLET, DOWN
+	opentext
+	writetext Route35GoldenrodGateScarletThisGuyNeedsHelpText
+	waitbutton
+   	closetext
+	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	iftrue .Totodile
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iftrue .Chikorita
+	winlosstext Route35GoldenrodGateScarletPlayerWinText, Route35GoldenrodGateScarletPlayerLossText
+	setlasttalked ROUTE35GOLDENRODGATE_SCARLET
+	loadtrainer SCARLET, SCARLET1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	iftrue .AfterVictorious
+	sjump .AfterYourDefeat
+
+.Totodile:
+	winlosstext Route35GoldenrodGateScarletPlayerWinText, Route35GoldenrodGateScarletPlayerLossText
+	setlasttalked ROUTE35GOLDENRODGATE_SCARLET
+	loadtrainer SCARLET, SCARLET2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	iftrue .AfterVictorious
+	sjump .AfterYourDefeat
+
+.Chikorita:
+	winlosstext Route35GoldenrodGateScarletPlayerWinText, Route35GoldenrodGateScarletPlayerLossText
+	setlasttalked ROUTE35GOLDENRODGATE_SCARLET
+	loadtrainer SCARLET, SCARLET3
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	iftrue .AfterVictorious
+	sjump .AfterYourDefeat
+
+.AfterVictorious:
+	playmusic MUSIC_SCARLET
+	opentext
+	writetext Route35GoldenrodGateScarlet_YouLostText
+	waitbutton
+	closetext
+	sjump .FinishRival
+
+.AfterYourDefeat:
+	playmusic MUSIC_SCARLET
+	opentext
+	writetext Route35GoldenrodGateScarlet_YouWonText
+	waitbutton
+	closetext
+.FinishRival:
+	applymovement ROUTE35GOLDENRODGATE_SCARLET, Route35GoldenrodGateScarletLeaves
+	playsound SFX_ENTER_DOOR
+	special HealParty
+	playmapmusic
+	setscene SCENE_ROUTE35_GOLDENROD_GATE_NOOP
+	disappear ROUTE35GOLDENRODGATE_SCARLET
+	end
+
+Route35GoldenrodGateScarletWalksToPlayer:
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step_end
+
+Route35GoldenrodGateScarletLeaves:
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step_end
+
+Route35GoldenrodGateScarletSpotsPlayerText:
+	text "SCARLET: <PLAY_G>!"
+	line "What a surprise!"
+	done
+
+Route35GoldenrodGateScarletThisGuyNeedsHelpText:
+	text "I've not seen you"
+	line "in a bit. How are"
+	cont "you?"
+	
+	para "I'm fine. I was"
+	line "making my way"
+	
+	para "through here but"
+	line "this officer asked"
+	
+	para "for help. Sadly, I"
+	line "have a full party."
+	
+	para "If you're up for"
+	line "it <PLAY_G>, you"
+	cont "could help."
+	
+	para "I'm in a bit of"
+	line "a rush to ECRUTEAK"
+	cont "CITY."
+	
+	para "There's something"
+	line "I'm interested in"
+	cont "there…"
+	
+	para "But not in such a"
+	line "rush to not have"
+	
+	para "a battle with my"
+	line "childhood friend!"
+	
+	para "Let me show you"
+	line "our progress!"
+	done
+
+Route35GoldenrodGateScarletPlayerWinText:
+	text "I trained so hard"
+	line "yet I'm up short…"
+	done
+
+Route35GoldenrodGateScarletPlayerLossText:
+	text "Yay! My team came"
+	line "through for me!"
+	done
+
+Route35GoldenrodGateScarlet_YouWonText:
+	text "SCARKET: Oh my!"
+	line "You're on fire!"
+	
+	para "As expected. We"
+	line "are both pushing"
+
+	para "each other to our"
+	line "limits."
+
+	para "I'm a bit cross"
+	line "about the outcome"
+
+	para "but I'll bounce"
+	line "back!"
+	
+	para "Anyway, ECRUTEAK"
+	line "CITY is calling!"
+	
+	para "Bye <PLAY_G>!"
+	done
+
+Route35GoldenrodGateScarlet_YouLostText:
+	text "SCARLET: Good game"
+	line "<PLAY_G>!"
+	
+	para "I saw your grit"
+	line "but our teamwork"
+	cont "was on point."
+	
+	para "Cheer up! There's"
+	line "still a next time."
+	
+	para "Let's do our best!"
+	
+	para "Anyway, ECRUTEAK"
+	line "CITY is calling!"
+	
+	para "Bye <PLAY_G>!"
+	done
+
 Route35GoldenrodGate_MapEvents:
 	db 0, 0 ; filler
 
@@ -212,3 +406,4 @@ Route35GoldenrodGate_MapEvents:
 	object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RandyScript, -1
 	object_event  6,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route35GoldenrodGatePokefanFScript, -1
 	object_event  3,  2, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route35GoldenrodGateFisherScript, -1
+	object_event  2,  4, SPRITE_SCARLET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route35GoldenrodGateScarletScript, EVENT_ROUTE_35_GOLDENROD_GATE_SCARLET

@@ -456,7 +456,8 @@
 	const EVENT_CIANWOOD_POKECENTER_1F_SCARLET
 	const EVENT_ROUTE_32_SCARLET
 	const EVENT_RUINS_OF_ALPH_INNER_CHAMBER_SCARLET
-; Unused: next 153 events
+	const EVENT_ROUTE_35_GOLDENROD_GATE_SCARLET
+; Unused: next 152 events
 
 	const_next 600
 ; Kurt Apricorn events
