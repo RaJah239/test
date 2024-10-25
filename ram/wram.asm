@@ -3111,8 +3111,9 @@ wRoute31VioletGateSceneID::                       db ; Route 31 Violet City Gate
 wRoute30SceneID::                                 db ; Route 30 Berry teacher scene
 wUnionCave1FSceneID::                             db ; Scarlet's Union Cave scene explaining Grottos
 wRoute35GoldenrodGate::                           db ; Scarlet's battle
+wOlivineLightHouse3F::                            db ; Scarlet's battle
 
-	ds 39
+	ds 38
 
  wNumBalls:: db
  wBalls:: ds MAX_BALLS * 2 + 1

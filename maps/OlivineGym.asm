@@ -39,7 +39,7 @@ OlivineGymJasmineScript:
 	verbosegiveitem TM_IRON_TAIL
 	iffalse .NoRoomForIronTail
 	setevent EVENT_GOT_TM23_IRON_TAIL
-	setevent EVENT_CIANWOOD_POKECENTER_1F_SCARLET
+	setevent EVENT_OLIVINE_LIGHT_HOUSE_6F_SCARLET
 	writetext Jasmine_IronTailSpeech
 	waitbutton
 	closetext
@@ -160,7 +160,7 @@ Jasmine_SteelTypeIntro:
 PlayerNotReady:
 	text "Um… excuse me."
 
-	para "You need five" 
+	para "You need six" 
 	line "badges to"
 	cont "challenge me."
 

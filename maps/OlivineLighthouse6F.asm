@@ -2,6 +2,7 @@
 	const OLIVINELIGHTHOUSE6F_JASMINE
 	const OLIVINELIGHTHOUSE6F_MONSTER
 	const OLIVINELIGHTHOUSE6F_POKE_BALL
+	const OLIVINELIGHTHOUSE6F_SCARLET
 
 OlivineLighthouse6F_MapScripts:
 	def_scene_scripts
@@ -253,6 +254,41 @@ AmphyPaluPaluluText:
 	line "Palulu!"
 	done
 
+OlivineLighthouse6FScarletScript:
+	faceplayer
+	opentext
+	checkevent EVENT_JASMINE_RETURNED_TO_GYM
+	iftrue .IllStayHereABit
+	writetext AmphyNeedsUsText
+	waitbutton
+	closetext
+	turnobject OLIVINELIGHTHOUSE6F_SCARLET, LEFT
+	end
+
+.IllStayHereABit:
+	writetext IllStayHereABitText
+	waitbutton
+	closetext
+	turnobject OLIVINELIGHTHOUSE6F_SCARLET, LEFT
+	end
+
+AmphyNeedsUsText:
+	text "SCARLET: AMPHY" 
+	line "needs us right now"
+		
+	para "<PLAY_G>, so can"
+	line "you acquire the"
+	
+	para "medicine JASMINE"
+	line "needs to give?"
+	done
+
+IllStayHereABitText:
+	text "AMPY looks miles"
+	line "better! I'll stay"
+	cont "here a bit longer."
+	done
+
 OlivineLighthouse6F_MapEvents:
 	db 0, 0 ; filler
 
@@ -269,3 +305,4 @@ OlivineLighthouse6F_MapEvents:
 	object_event  8,  8, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseJasmine, EVENT_OLIVINE_LIGHTHOUSE_JASMINE
 	object_event  9,  8, SPRITE_AMPHAROS_OW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OlivineLighthouseAmphy, -1
 	object_event  3,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OlivineLighthouse6FSuperPotion, EVENT_OLIVINE_LIGHTHOUSE_6F_SUPER_POTION
+	object_event 10,  8, SPRITE_SCARLET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineLighthouse6FScarletScript, EVENT_OLIVINE_LIGHT_HOUSE_6F_SCARLET

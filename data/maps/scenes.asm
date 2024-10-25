@@ -91,4 +91,5 @@ MapScenes::
 	scene_var ROUTE_30,                                    wRoute30SceneID
 	scene_var UNION_CAVE_1F,                               wUnionCave1FSceneID
 	scene_var ROUTE_35_GOLDENROD_GATE,                     wRoute35GoldenrodGate
+	scene_var OLIVINE_LIGHTHOUSE_3F,                       wOlivineLightHouse3F
 	db -1 ; end
