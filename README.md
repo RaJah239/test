@@ -50,11 +50,13 @@ POKEGEAR: Now shows the detailed name of map you're currently in (based on Map G
 - Short beeping noise for low HP to replace the continuous beeping noise.
 - Lose money proportional to badges and lead level Pokémon on white out.
 - Survive poisoning with 1 HP.
+- New overworld trees added with visible berries and apricorns, inspired by Sour Crystal (https://github.com/SoupPotato/Sourcrystal).
 - Show an icon for the current weather in battles.
 - Pokémon Centre fast heal after the first visit added.
 - Use unique colours for each thrown Poké Ball.
 - Animate tiles when text boxes are open.
 - Trainer rematch system has been improved.
+- Visible mushroom added to Ilex Forest, inspired by Sour Crystal (https://github.com/SoupPotato/Sourcrystal).
 - Field moves are useable if a Pokémon can learn the TM/HM and is in the respective pocket.
 - Items that act like HMs added (except Fly) to prevent softlocks.
 - Third paged added to trainer card for Kanto Badges and all badges colored.
@@ -146,6 +148,8 @@ Morning	-  5:00am - 9:59am // Day	- 10:00am - 6:59pm // Night	-	7:00pm - 4:59pm
 
 # **Vanilla Bugfixes:**
 - Prevent Steel‐types from being poisoned by Twineedle. Prevent burning fire types and freezing ice types by Tri-Attack.
+- All Bugs and Glitches fixed from here: https://pret.github.io/pokecrystal/bugs_and_glitches.html#some-trainer-npcs-have-inconsistent-overworld-sprites minus "Slot machine payout sound effects cut each other off" since I prefer the vanilla game's sound effect.
+- All Design Flaws fixed from here: https://pret.github.io/pokecrystal/design_flaws.html#identical-sine-wave-code-and-data-is-repeated-five-times minus "Identical sine wave code and data is repeated five times"
 
 # **Known Bugs:**
 
