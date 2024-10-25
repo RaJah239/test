@@ -39,6 +39,7 @@ OlivineGymJasmineScript:
 	verbosegiveitem TM_IRON_TAIL
 	iffalse .NoRoomForIronTail
 	setevent EVENT_GOT_TM23_IRON_TAIL
+	setevent EVENT_CIANWOOD_POKECENTER_1F_SCARLET
 	writetext Jasmine_IronTailSpeech
 	waitbutton
 	closetext

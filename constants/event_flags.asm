@@ -453,7 +453,8 @@
 	const EVENT_PLAYERS_NEIGHBOR_SCARLET_HOME
 	const EVENT_NEW_BARK_TOWN_SCARLET_LEAVES_HOME
 	const EVENT_DANCE_THEATRE_SCARLET
-; Unused: next 155 events
+	const EVENT_CIANWOOD_POKECENTER_1F_SCARLET
+; Unused: next 154 events
 
 	const_next 600
 ; Kurt Apricorn events
