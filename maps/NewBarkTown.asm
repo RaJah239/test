@@ -137,6 +137,9 @@ NewBarkTownElmsLabSign:
 NewBarkTownElmsHouseSign:
 	jumptext NewBarkTownElmsHouseSignText
 
+NewBarkTownScrletsHouseSign:
+	jumptext NewBarkTownScrletsHouseSignText
+
 NewBarkTown_TeacherRunsToYouMovement1:
 	step LEFT
 	step LEFT
@@ -268,7 +271,7 @@ NewBarkTownSignText:
 	done
 
 NewBarkTownPlayersHouseSignText:
-	text "<PLAYER>'s House"
+	text "<PLAYER>'s HOUSE"
 	done
 
 NewBarkTownElmsLabSignText:
@@ -277,6 +280,10 @@ NewBarkTownElmsLabSignText:
 
 NewBarkTownElmsHouseSignText:
 	text "ELM'S HOUSE"
+	done
+
+NewBarkTownScrletsHouseSignText:
+	text "SCARLET'S HOUSE"
 	done
 
 NewBarkTown_MapEvents:
@@ -301,6 +308,7 @@ ENDC
 	bg_event 11,  5, BGEVENT_READ, NewBarkTownPlayersHouseSign
 	bg_event  3,  3, BGEVENT_READ, NewBarkTownElmsLabSign
 	bg_event  9, 13, BGEVENT_READ, NewBarkTownElmsHouseSign
+	bg_event  6, 11, BGEVENT_READ, NewBarkTownScrletsHouseSign
 
 	def_object_events
 	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1

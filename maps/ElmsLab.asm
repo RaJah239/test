@@ -606,6 +606,7 @@ ScarletsTutorialBattleScript:
 	playsound SFX_ENTER_DOOR
 	setscene SCENE_ELMSLAB_NOOP
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
+	clearevent EVENT_PLAYERS_NEIGHBOR_SCARLET_HOME
 	special HealParty
 	end
 

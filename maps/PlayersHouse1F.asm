@@ -339,17 +339,14 @@ NeighborNiteIntroText:
 	done
 
 NeighborText:
-	text "<PLAY_G>, have you"
-	line "heard?"
-
-	para "My daughter is"
-	line "adamant about"
-
-	para "becoming PROF."
-	line "ELM's assistant."
-
-	para "She really loves"
-	line "#MON!"
+	text "Today's the day"
+	line "that both you and"
+	
+	para "SCARLET get your"
+	line "first #MON!"
+	
+	para "Are you exited?"
+	line "I know I am!"
 	done
 
 PlayersHouse1FStoveText:

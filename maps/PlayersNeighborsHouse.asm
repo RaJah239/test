@@ -1,5 +1,5 @@
 	object_const_def
-	const PLAYERSNEIGHBORSHOUSE_COOLTRAINER_F
+	const PLAYERSNEIGHBORSHOUSE_SCARLET
 	const PLAYERSNEIGHBORSHOUSE_POKEFAN_F
 
 PlayersNeighborsHouse_MapScripts:
@@ -7,8 +7,14 @@ PlayersNeighborsHouse_MapScripts:
 
 	def_callbacks
 
-PlayersNeighborsDaughterScript:
-	jumptextfaceplayer PlayersNeighborsDaughterText
+ScarletHomeScript:
+	faceplayer
+	opentext
+	writetext ScarletDoingErrandsText
+	waitbutton
+	closetext
+	turnobject PLAYERSNEIGHBORSHOUSE_SCARLET, RIGHT
+	end
 
 PlayersNeighborScript:
 	jumptextfaceplayer PlayersNeighborText
@@ -44,23 +50,9 @@ PlayersNeighborsHouseRadioScript:
 	closetext
 	end
 
-PlayersNeighborsDaughterText:
-	text "PIKACHU is an"
-	line "evolved #MON."
-
-	para "I was amazed by"
-	line "PROF.ELM's find-"
-	cont "ings."
-
-	para "He's so famous for"
-	line "his research on"
-	cont "#MON evolution."
-
-	para "…sigh…"
-
-	para "I wish I could be"
-	line "a researcher like"
-	cont "him…"
+ScarletDoingErrandsText:
+	text "SCARLET: I'm doing"
+	line "some errands."
 	done
 
 PlayersNeighborText:
@@ -111,5 +103,5 @@ PlayersNeighborsHouse_MapEvents:
 	bg_event  7,  1, BGEVENT_READ, PlayersNeighborsHouseRadioScript
 
 	def_object_events
-	object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PlayersNeighborsDaughterScript, -1
+	object_event  2,  4, SPRITE_SCARLET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ScarletHomeScript, EVENT_PLAYERS_NEIGHBOR_SCARLET_HOME
 	object_event  5,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PlayersNeighborScript, EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR
