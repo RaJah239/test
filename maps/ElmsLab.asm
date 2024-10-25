@@ -405,6 +405,7 @@ ElmAfterTheftScript:
 	writetext ElmAfterTheftText6
 	waitbutton
 	closetext
+	setmapscene NEW_BARK_TOWN, SCENE_NEWBARKTOWN_SCARLET_LEAVES_HOME
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS
 	end
 
@@ -1310,10 +1311,16 @@ ElmAfterTheftText6:
 
 	para "championship will"
 	line "be a long one."
-
-	para "Before you leave,"
-	line "make sure that you"
-	cont "talk to your mom."
+	
+	para "Stay strong and"
+	line "remember that your"
+	
+	para "#MON rely on"
+	line "you as much as you"
+	cont "do on them."
+	
+	para "All the best to"
+	line "you!"
 	done
 
 ElmStudyingEggText:

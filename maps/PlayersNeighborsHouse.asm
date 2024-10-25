@@ -17,7 +17,13 @@ ScarletHomeScript:
 	end
 
 PlayersNeighborScript:
-	jumptextfaceplayer PlayersNeighborText
+	faceplayer
+	opentext
+	writetext PlayersNeighborText
+	waitbutton
+	closetext
+	turnobject PLAYERSNEIGHBORSHOUSE_POKEFAN_F, LEFT
+	end
 
 PlayersNeighborsHouseBookshelfScript:
 	jumpstd MagazineBookshelfScript
@@ -56,16 +62,20 @@ ScarletDoingErrandsText:
 	done
 
 PlayersNeighborText:
-	text "My daughter is"
-	line "adamant about"
+	text "SCARLET is out in"
+	line "the world and I"
 
-	para "becoming PROF."
-	line "ELM's assistant."
+	para "support her in all"
+	line "she aspires to do."
 
-	para "She really loves"
-	line "#MON!"
-
-	para "But then, so do I!"
+	para "Her #MON looks"
+	line "strong and is very"
+	cont "protective of her!"
+	
+	para "She'll be fine…"
+	
+	para "I will miss her"
+	line "though…"
 	done
 
 PlayerNeighborRadioText1:
@@ -104,4 +114,4 @@ PlayersNeighborsHouse_MapEvents:
 
 	def_object_events
 	object_event  2,  4, SPRITE_SCARLET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ScarletHomeScript, EVENT_PLAYERS_NEIGHBOR_SCARLET_HOME
-	object_event  5,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PlayersNeighborScript, EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR
+	object_event  5,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PlayersNeighborScript, EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR

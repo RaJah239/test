@@ -451,7 +451,8 @@
 	const EVENT_ROUTE_30_BERRY_TEACHER
 	const EVENT_UNION_CAVE_1F_SCARLET
 	const EVENT_PLAYERS_NEIGHBOR_SCARLET_HOME
-; Unused: next 156 events
+	const EVENT_NEW_BARK_TOWN_SCARLET_LEAVES_HOME
+; Unused: next 155 events
 
 	const_next 600
 ; Kurt Apricorn events

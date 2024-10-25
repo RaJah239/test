@@ -154,12 +154,20 @@ MomScript:
 NeighborScript:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .YouBothGotAPokemon
 	checktime MORN
 	iftrue .MornScript
 	checktime DAY
 	iftrue .DayScript
 	checktime NITE
 	iftrue .NiteScript
+
+.YouBothGotAPokemon:
+	writetext YouBothGotAPokemonText
+	waitbutton
+	closetext
+	end
 
 .MornScript:
 	writetext NeighborMornIntroText
@@ -345,8 +353,21 @@ NeighborText:
 	para "SCARLET get your"
 	line "first #MON!"
 	
-	para "Are you exited?"
+	para "Are you excited?"
 	line "I know I am!"
+	done
+
+YouBothGotAPokemonText:
+	text "SCARLET already"
+	line "showed me her"
+	cont "#MON."
+	
+	para "It's so cute but"
+	line "looks strong and"
+	cont "protective of her!"
+	
+	para "I couldn't be more"
+	line "happy!"
 	done
 
 PlayersHouse1FStoveText:

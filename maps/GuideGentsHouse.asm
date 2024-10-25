@@ -39,4 +39,4 @@ GuideGentsHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, GuideGentsHouseBookshelf
 
 	def_object_events
-	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GuideGentsHouseGuideGent, -1
+	object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GuideGentsHouseGuideGent, -1

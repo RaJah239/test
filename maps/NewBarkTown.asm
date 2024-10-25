@@ -2,11 +2,13 @@
 	const NEWBARKTOWN_TEACHER
 	const NEWBARKTOWN_FISHER
 	const NEWBARKTOWN_RIVAL
+	const NEWBARKTOWN_SCARLET
 
 NewBarkTown_MapScripts:
 	def_scene_scripts
 	scene_script NewBarkTownNoop1Scene, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU
-	scene_script NewBarkTownNoop2Scene, SCENE_NEWBARKTOWN_NOOP
+	scene_script NewBarkTownNoop2Scene, SCENE_NEWBARKTOWN_SCARLET_LEAVES_HOME
+	scene_script NewBarkTownNoop3Scene, SCENE_NEWBARKTOWN_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, NewBarkTownFlypointCallback
@@ -15,6 +17,9 @@ NewBarkTownNoop1Scene:
 	end
 
 NewBarkTownNoop2Scene:
+	end
+
+NewBarkTownNoop3Scene:
 	end
 
 NewBarkTownFlypointCallback:
@@ -286,6 +291,88 @@ NewBarkTownScrletsHouseSignText:
 	text "SCARLET'S HOUSE"
 	done
 
+NewBarkTown_ScarletLeavesHomeScript:
+	appear NEWBARKTOWN_SCARLET
+	pause 5
+	showemote EMOTE_SHOCK, NEWBARKTOWN_SCARLET, 15
+	waitsfx
+	applymovement NEWBARKTOWN_SCARLET, NewBarkTownScarletApproachesToTellYouSheIsReadyToLeaveMovement
+	playmusic MUSIC_SCARLET
+	opentext
+	writetext NewBarkTownScarletTellsYouSheIsHeadingOutText
+	waitbutton
+	closetext
+	turnobject NEWBARKTOWN_SCARLET, LEFT
+	pause 35
+	turnobject NEWBARKTOWN_SCARLET, RIGHT
+	pause 35
+	turnobject NEWBARKTOWN_SCARLET, UP
+	opentext
+	writetext NewBarkTownScarletTheWorldOutThereIsHugeText
+	waitbutton
+	closetext
+	applymovement NEWBARKTOWN_SCARLET, NewBarkTownScarletLeavesToGoOnHerAdventureMovement
+	disappear NEWBARKTOWN_SCARLET
+	setevent EVENT_PLAYERS_NEIGHBOR_SCARLET_HOME
+	setevent EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
+	clearevent EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR
+	special RestartMapMusic
+	setscene SCENE_NEWBARKTOWN_NOOP
+	end
+
+NewBarkTownScarletApproachesToTellYouSheIsReadyToLeaveMovement:
+	step UP
+	step UP
+	step LEFT
+	step UP
+	step UP
+	step_end
+
+NewBarkTownScarletLeavesToGoOnHerAdventureMovement:
+	step DOWN
+	step DOWN
+	step LEFT
+	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step_end
+
+NewBarkTownScarletTellsYouSheIsHeadingOutText:
+	text "I've completed my"
+	line "errands. Also… I"
+	
+	para "got permission to"
+	line "leave home now"
+	
+	para "since I have my"
+	line "own #MON."
+	
+	para "I'm all packed and"
+	line "ready to head out!"
+	done
+
+NewBarkTownScarletTheWorldOutThereIsHugeText:
+	text "The world out"
+	line "there must be"
+	cont "huge!"
+	
+	para "Be sure to tell"
+	line "your mom before"
+	cont "leaving."
+
+	para "I'm certain our"
+	line "paths will cross"
+	cont "many times."
+
+	para "Let's push each"
+	line "other to excel!"
+	
+	para "Bye <PLAY_G>, I'll"
+	line "see you around…"
+	done
+
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
@@ -302,6 +389,7 @@ ENDC
 	def_coord_events
 	coord_event  1,  8, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU, NewBarkTown_TeacherStopsYouScene1
 	coord_event  1,  9, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU, NewBarkTown_TeacherStopsYouScene2
+	coord_event  6,  4, SCENE_NEWBARKTOWN_SCARLET_LEAVES_HOME, NewBarkTown_ScarletLeavesHomeScript
 
 	def_bg_events
 	bg_event  8,  8, BGEVENT_READ, NewBarkTownSign
@@ -314,3 +402,4 @@ ENDC
 	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
 	object_event 12,  9, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
 	object_event  3,  2, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRivalScript, EVENT_RIVAL_NEW_BARK_TOWN
+	object_event  7,  9, SPRITE_SCARLET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_NEW_BARK_TOWN_SCARLET_LEAVES_HOME
