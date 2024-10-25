@@ -449,7 +449,9 @@
 	const EVENT_FUCHSIA_BERRY
 	const EVENT_FUCHSIA_APRICORN
 	const EVENT_ROUTE_30_BERRY_TEACHER
-; Unused: next 158 events
+	const EVENT_UNION_CAVE_1F_SCARLET
+	const EVENT_PLAYERS_NEIGHBOR_SCARLET_HOME
+; Unused: next 156 events
 
 	const_next 600
 ; Kurt Apricorn events

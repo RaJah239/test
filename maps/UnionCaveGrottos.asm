@@ -152,10 +152,9 @@ UnionCaveGrottosEricTheExplorerScript:
 	turnobject PLAYER, UP
 	applymovement UNIONCAVEGROTTOS_ERIC_THE_EXPLORER, UnionCaveGrottoEricTheExplorerExits
 	turnobject PLAYER, RIGHT
-	playsound SFX_ENTER_DOOR
+	playsound SFX_EXIT_BUILDING
 	setscene SCENE_UNION_CAVE_GROTTOS_NOOP
 	disappear UNIONCAVEGROTTOS_ERIC_THE_EXPLORER
-	setevent EVENT_MET_ERIC_THE_EXPLORER
 	clearevent EVENT_VICTORY_ROAD_ERIC_THE_EXPLORER
 	end
 
@@ -198,7 +197,7 @@ UnionCaveGrottoEricTheExplorerYoureAnAdventurerTooText:
 	line "#MON that some-"
 	
 	para "times visit this"
-	line "Grotto."
+	line "GROTTO."
 
 	para "I made it. I'll"
 	line "add signs to each."	

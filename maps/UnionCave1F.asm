@@ -8,11 +8,20 @@
 	const UNIONCAVE1F_POKE_BALL2
 	const UNIONCAVE1F_POKE_BALL3
 	const UNIONCAVE1F_POKE_BALL4
+	const UNIONCAVE1F_SCARLET
 
 UnionCave1F_MapScripts:
 	def_scene_scripts
+	scene_script UnionCave1FNoop1Scene, SCENE_UNION_CAVE_1F_SCARLET
+	scene_script UnionCave1FNoop2Scene, SCENE_UNION_CAVE_1F_NOOP
 
 	def_callbacks
+
+UnionCave1FNoop1Scene:
+	end
+
+UnionCave1FNoop2Scene:
+	end
 
 TrainerPokemaniacLarry:
 	trainer POKEMANIAC, LARRY, EVENT_BEAT_POKEMANIAC_LARRY, PokemaniacLarrySeenText, PokemaniacLarryBeatenText, 0, .Script
@@ -185,6 +194,87 @@ FirebreatherRayAfterBattleText:
 	cont "up this cave."
 	done
 
+UnionCave1FScarletScript:
+	playsound SFX_EXIT_BUILDING
+	appear UNIONCAVE1F_SCARLET
+	pause 15
+	turnobject PLAYER, LEFT
+	showemote EMOTE_SHOCK, PLAYER, 15
+	waitsfx
+	applymovement UNIONCAVE1F_SCARLET, UnionCave1FScarletApproachesMovement
+	playmusic MUSIC_SCARLET
+	turnobject PLAYER, DOWN
+	opentext
+	writetext UnionCave1FScarletGrottosText
+	waitbutton
+	closetext
+	applymovement UNIONCAVE1F_SCARLET, UnionCave1FScarletLeavesMovement
+	disappear UNIONCAVE1F_SCARLET
+	special RestartMapMusic
+	setscene SCENE_UNION_CAVE_1F_NOOP
+	end
+
+UnionCave1FScarletApproachesMovement:
+	step DOWN
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step RIGHT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step UP
+	step_end
+
+UnionCave1FScarletLeavesMovement:
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_end
+
+UnionCave1FScarletGrottosText:
+	text "SCARLET: Hey! What"
+	line "a coincidence!"
+
+	para "You're spelunking"
+	line "too <PLAY_G>?"
+
+	para "Being in here… It's"
+	line "full of wonder!"
+
+	para "A bit deeper in,"
+	line "there's a special"
+	
+	para "cave called a"
+	line "GROTTO."
+	
+	para "Wild #MON seem"
+	line "to appear in there"
+
+	para "randomly on each"
+	line "entry."
+
+	para "I had fun catching"
+	line "them all!"
+	
+	para "You should check"
+	line "it out. Have fun!"
+	
+	para "I better not keep"
+	line "you back. I'm off!"
+	done
+
 UnionCave1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -195,6 +285,7 @@ UnionCave1F_MapEvents:
 	warp_event 17,  3, ROUTE_32, 4
 
 	def_coord_events
+	coord_event  7, 23, SCENE_UNION_CAVE_1F_SCARLET, UnionCave1FScarletScript
 
 	def_bg_events
 
@@ -208,3 +299,4 @@ UnionCave1F_MapEvents:
 	object_event  4,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FXAttack, EVENT_UNION_CAVE_1F_X_ATTACK
 	object_event  4, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FPotion, EVENT_UNION_CAVE_1F_POTION
 	object_event 12, 33, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FAwakening, EVENT_UNION_CAVE_1F_AWAKENING
+	object_event  5, 19, SPRITE_SCARLET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_UNION_CAVE_1F_SCARLET
