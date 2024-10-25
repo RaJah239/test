@@ -78,4 +78,5 @@ TrainerClassDVs:
 	dn 15, 15, 15, 15 ; ARIANA
 	dn 15, 15, 15, 15 ; ARCHER
 	dn 15, 15, 15, 15 ; ELDER_LI
+	dn 15, 15, 15, 15 ; SCARLET_FINAL
 	assert_table_length NUM_TRAINER_CLASSES

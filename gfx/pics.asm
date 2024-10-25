@@ -789,6 +789,7 @@ OakPic:              INCBIN "gfx/trainers/oak.2bpp.lz"
 ProtonPic:           INCBIN "gfx/trainers/proton.2bpp.lz"
 GiovanniPic:         INCBIN "gfx/trainers/giovanni.2bpp.lz"
 UnownFBackpic:       INCBIN "gfx/pokemon/unown_f/back.2bpp.lz"
+ScarletFinalPic::    INCBIN "gfx/trainers/scarlet.2bpp.lz"
 
 SECTION "Pics 21", ROMX
 

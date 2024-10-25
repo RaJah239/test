@@ -100,6 +100,10 @@ PlayBattleMusic:
 	cp MAXIMA
 	jp z, .done
 
+	ld de, MUSIC_SCARLET_FINAL_THEME
+	cp SCARLET_FINAL
+	jp z, .done
+
 	ld de, MUSIC_ROCKET_BATTLE
 	cp GRUNTM
 	jr z, .done

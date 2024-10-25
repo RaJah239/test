@@ -79,4 +79,5 @@ TrainerGroups:
 	dba ArianaGroup
 	dba ArcherGroup
 	dba ElderGroup
+	dba ScarletFinalGroup
 	assert_table_length NUM_TRAINER_CLASSES

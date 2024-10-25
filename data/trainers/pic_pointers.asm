@@ -79,4 +79,5 @@ TrainerPicPointers::
 	dba ArianaPic
 	dba ArcherPic
 	dba ElderPic
+	dba ScarletFinalPic
 	assert_table_length NUM_TRAINER_CLASSES

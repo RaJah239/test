@@ -696,6 +696,9 @@ DEF KRIS EQU __trainer_class__
 	const ELDER1
 	const ELDER2
 
+	trainerclass SCARLET_FINAL
+	const SCARLET_FINAL1
+
  	const_def
  	const MAXIMASRANDOMLIST		; MAXIMA1
  	const OAKSRANDOMLIST		; OAK1

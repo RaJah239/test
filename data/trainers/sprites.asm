@@ -76,4 +76,5 @@ BTTrainerClassSprites:
 	db SPRITE_ARIANA
 	db SPRITE_ARCHER
 	db SPRITE_ELDER
+	db SPRITE_SCARLET
 	assert_table_length NUM_TRAINER_CLASSES - 1 ; exclude MYSTICALMAN

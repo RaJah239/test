@@ -78,4 +78,5 @@ BTTrainerClassGenders:
 	db FEMALE ; ARIANA
 	db MALE   ; ARCHER
 	db MALE   ; ELDER
+	db FEMALE ; SCARLET_FINAL
 	assert_table_length NUM_TRAINER_CLASSES - 1 ; exclude MYSTICALMAN

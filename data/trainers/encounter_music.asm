@@ -76,8 +76,9 @@ TrainerEncounterMusic::
 	db MUSIC_ROCKET_ENCOUNTER      ; petrel
 	db MUSIC_BEAUTY_ENCOUNTER      ; lorelei
 	db MUSIC_BEAUTY_ENCOUNTER      ; agatha
-	db MUSIC_BEAUTY_ENCOUNTER      ; scarlet
+	db MUSIC_SCARLET               ; scarlet
 	db MUSIC_ROCKET_ENCOUNTER      ; ariana
 	db MUSIC_ROCKET_ENCOUNTER      ; archer
 	db MUSIC_SAGE_ENCOUNTER        ; elder_li
+	db MUSIC_SCARLET               ; scarlet_final
 	assert_table_length NUM_TRAINER_CLASSES + 1
