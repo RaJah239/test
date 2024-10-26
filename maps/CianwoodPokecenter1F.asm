@@ -4,7 +4,6 @@
 	const CIANWOODPOKECENTER1F_GYM_GUIDE
 	const CIANWOODPOKECENTER1F_SUPER_NERD
 	const CIANWOODPOKECENTER1F_CHANSEY
-	const CIANWOODPOKECENTER1F_SCARLET
 
 CianwoodPokecenter1F_MapScripts:
 	def_scene_scripts
@@ -13,6 +12,9 @@ CianwoodPokecenter1F_MapScripts:
 
 CianwoodPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
+
+CianwoodPokecenter1FLassScript:
+	jumptextfaceplayer CianwoodPokecenter1FLassText
 
 CianwoodGymGuideScript:
 	faceplayer
@@ -34,8 +36,14 @@ CianwoodGymGuideScript:
 CianwoodPokecenter1FSuperNerdScript:
 	jumptextfaceplayer CianwoodPokecenter1FSuperNerdText
 
-CianwoodPokecenterScarletScript:
-	jumptextfaceplayer CianwoodPokecenterScarletText
+CianwoodPokecenter1FLassText:
+	text "Did you meet the"
+	line "#MANIAC?"
+
+	para "He's always brag-"
+	line "ging about his"
+	cont "rare #MON."
+	done
 
 CianwoodGymGuideText:
 	text "The #MON GYM"
@@ -96,38 +104,6 @@ CianwoodPokecenter1FSuperNerdText:
 	line "off my #MON!"
 	done
 
-CianwoodPokecenterScarletText:
-	text "SCARLET: Finally!"
-	line "We made it!"
-	
-	para "My #MON and I"
-	line "are beat! That sea"
-	
-	para "route to get here"
-	line "took it out of us!"
-	
-	para "Now, we can FLY"
-	line "back anytime."
-	
-	para "Those islands on"
-	line "the way here were"
-	
-	para "barred from entry"
-	line "by WHIRLPOOLS."
-	
-	para "What could have"
-	line "caused them?"
-	
-	para "Just what could be"
-	line "in those islands…"
-	
-	para "We'll take a break"
-	line "here for a bit but"
-	
-	para "next time we meet,"
-	line "let's battle!"
-	done
-
 CianwoodPokecenterChanseyScript:
 	jumpstd ChanseyPokeCenterScript
 
@@ -145,7 +121,7 @@ CianwoodPokecenter1F_MapEvents:
 
 	def_object_events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FNurseScript, -1
+	object_event  1,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FLassScript, -1
 	object_event  5,  3, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodGymGuideScript, -1
 	object_event  8,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FSuperNerdScript, -1
 	object_event  4,  1, SPRITE_CHANSEY_OW, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenterChanseyScript, -1
-	object_event  2,  3, SPRITE_SCARLET, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenterScarletScript, EVENT_CIANWOOD_POKECENTER_1F_SCARLET
