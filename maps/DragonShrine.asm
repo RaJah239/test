@@ -169,6 +169,8 @@ DragonShrineTakeTestScript:
 	specialphonecall SPECIALCALL_MASTERBALL
 	setscene SCENE_DRAGONSHRINE_NOOP
 	setmapscene DRAGONS_DEN_B1F, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM
+	setmapscene NEW_BARK_TOWN, SCENE_NEWBARKTOWN_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	clearevent EVENT_PLAYERS_NEIGHBOR_SCARLET_HOME
 	writetext DragonShrinePlayerReceivedRisingBadgeText
 	promptbutton
 	writetext DragonShrineRisingBadgeExplanationText

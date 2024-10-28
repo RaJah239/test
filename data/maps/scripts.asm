@@ -450,7 +450,6 @@ INCLUDE "maps/VictoryRoadGate.asm"
 
 SECTION "Map Scripts 23", ROMX
 
-INCLUDE "maps/NewBarkTown.asm"
 INCLUDE "maps/VioletCity.asm"
 INCLUDE "maps/OlivineCity.asm"
 INCLUDE "maps/Route37.asm"
@@ -505,5 +504,8 @@ INCLUDE "maps/UnionCaveGrottos.asm"
 INCLUDE "maps/SlowpokeWellB1F.asm"
 INCLUDE "maps/SlowpokeWellB2F.asm"
 INCLUDE "maps/SlowpokeWellGrotto.asm"
+
+SECTION "Map Scripts 26", ROMX
+INCLUDE "maps/NewBarkTown.asm"
 
 ENDSECTION

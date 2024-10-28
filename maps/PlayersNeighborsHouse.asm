@@ -10,7 +10,25 @@ PlayersNeighborsHouse_MapScripts:
 ScarletHomeScript:
 	faceplayer
 	opentext
+	checkevent EVENT_SCARLET_IS_DEFEATED_IN_NEW_BARK_TOWN
+	iftrue .GoodLuckAtTheLeague
+	checkevent EVENT_BEAT_CLAIR
+	iftrue .IJustCameHome
 	writetext ScarletDoingErrandsText
+	waitbutton
+	closetext
+	turnobject PLAYERSNEIGHBORSHOUSE_SCARLET, RIGHT
+	end
+
+.GoodLuckAtTheLeague:
+	writetext GoodLuckAtTheLeagueText
+	waitbutton
+	closetext
+	turnobject PLAYERSNEIGHBORSHOUSE_SCARLET, RIGHT
+	end
+
+.IJustCameHome:
+	writetext IJustCameHomeText
 	waitbutton
 	closetext
 	turnobject PLAYERSNEIGHBORSHOUSE_SCARLET, RIGHT
@@ -19,11 +37,41 @@ ScarletHomeScript:
 PlayersNeighborScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_CLAIR
+	iftrue .ScarletJustCameHome
 	writetext PlayersNeighborText
 	waitbutton
 	closetext
 	turnobject PLAYERSNEIGHBORSHOUSE_POKEFAN_F, LEFT
 	end
+
+.ScarletJustCameHome:
+	writetext ScarletJustCameHomeText
+	waitbutton
+	closetext
+	turnobject PLAYERSNEIGHBORSHOUSE_POKEFAN_F, LEFT
+	end
+
+IJustCameHomeText:
+	text "SCARLET: Hi, I"
+	line "just came home."
+	
+	para "Say hello to your"
+	line "mom for me."
+	done 
+
+GoodLuckAtTheLeagueText:
+	text "Good luck at the"
+	line "#MON LEAGUE!"
+	done
+
+ScarletJustCameHomeText:
+	text "SCARLET just came"
+	line "home. She seems so"
+	
+	para "much more mature"
+	line "and so do you!"
+	done
 
 PlayersNeighborsHouseBookshelfScript:
 	jumpstd MagazineBookshelfScript

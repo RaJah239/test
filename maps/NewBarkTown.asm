@@ -3,12 +3,14 @@
 	const NEWBARKTOWN_FISHER
 	const NEWBARKTOWN_RIVAL
 	const NEWBARKTOWN_SCARLET
+	const NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
 
 NewBarkTown_MapScripts:
 	def_scene_scripts
 	scene_script NewBarkTownNoop1Scene, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU
 	scene_script NewBarkTownNoop2Scene, SCENE_NEWBARKTOWN_SCARLET_LEAVES_HOME
-	scene_script NewBarkTownNoop3Scene, SCENE_NEWBARKTOWN_NOOP
+	scene_script NewBarkTownNoop3Scene, SCENE_NEWBARKTOWN_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	scene_script NewBarkTownNoop4Scene, SCENE_NEWBARKTOWN_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, NewBarkTownFlypointCallback
@@ -20,6 +22,9 @@ NewBarkTownNoop2Scene:
 	end
 
 NewBarkTownNoop3Scene:
+	end
+
+NewBarkTownNoop4Scene:
 	end
 
 NewBarkTownFlypointCallback:
@@ -372,6 +377,242 @@ NewBarkTownScarletTheWorldOutThereIsHugeText:
 	para "Bye <PLAY_G>, I'll"
 	line "see you around…"
 	done
+NewBarkTown_ScarletBattleScript2:
+	moveobject NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE, 12, 8
+	turnobject PLAYER, LEFT
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, LEFT
+	special FadeOutMusic
+	pause 15
+	appear NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	applymovement NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE, NewBarkTownScarlet2Approaches
+	playmusic MUSIC_SCARLET
+	opentext
+	writetext SoYoureHeadingToTheLeagueLetsBattleText
+	waitbutton
+	closetext
+
+	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	iftrue .totodile
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iftrue .chikorita
+	winlosstext NewBarkTownScarlet_WinText, NewBarkTownScarlet_LossText
+	setlasttalked NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	loadtrainer SCARLET, SCARLET1
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .returnfrombattle
+
+.totodile
+	winlosstext NewBarkTownScarlet_WinText, NewBarkTownScarlet_LossText
+	setlasttalked NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	loadtrainer SCARLET, SCARLET2
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .returnfrombattle
+
+.chikorita
+	winlosstext NewBarkTownScarlet_WinText, NewBarkTownScarlet_LossText
+	setlasttalked NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	loadtrainer SCARLET, SCARLET3
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .returnfrombattle
+
+.returnfrombattle
+	playmusic MUSIC_SCARLET
+	opentext
+	writetext NewBarkTownScarlet_AfterText
+	waitbutton
+	closetext
+	applymovement NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE, NewBarkTownScarletGoesHome
+	disappear NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	playmapmusic
+	setscene SCENE_NEWBARKTOWN_NOOP
+	end
+
+NewBarkTown_ScarletBattleScript3:
+	turnobject PLAYER, LEFT
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, LEFT
+	special FadeOutMusic
+	pause 15
+	appear NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	applymovement NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE, NewBarkTownScarlet2Approaches
+	playmusic MUSIC_SCARLET
+	opentext
+	writetext SoYoureHeadingToTheLeagueLetsBattleText
+	waitbutton
+	closetext
+
+	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	iftrue .totodile
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iftrue .chikorita
+	winlosstext NewBarkTownScarlet_WinText, NewBarkTownScarlet_LossText
+	setlasttalked NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	loadtrainer SCARLET, SCARLET1
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .returnfrombattle
+
+.totodile
+	winlosstext NewBarkTownScarlet_WinText, NewBarkTownScarlet_LossText
+	setlasttalked NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	loadtrainer SCARLET, SCARLET2
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .returnfrombattle
+
+.chikorita
+	winlosstext NewBarkTownScarlet_WinText, NewBarkTownScarlet_LossText
+	setlasttalked NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	loadtrainer SCARLET, SCARLET3
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .returnfrombattle
+
+.returnfrombattle
+	playmusic MUSIC_SCARLET
+	opentext
+	writetext NewBarkTownScarlet_AfterText
+	waitbutton
+	closetext
+	applymovement NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE, NewBarkTownScarletGoesHome
+	disappear NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	playmapmusic
+	setscene SCENE_NEWBARKTOWN_NOOP
+	end
+
+NewBarkTown_ScarletBattleScript1:
+	moveobject NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE, 12, 6
+	turnobject PLAYER, LEFT
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, LEFT
+	special FadeOutMusic
+	pause 15
+	appear NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	applymovement NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE, NewBarkTownScarlet2Approaches
+	playmusic MUSIC_SCARLET
+	opentext
+	writetext SoYoureHeadingToTheLeagueLetsBattleText
+	waitbutton
+	closetext
+
+	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	iftrue .totodile
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iftrue .chikorita
+	winlosstext NewBarkTownScarlet_WinText, NewBarkTownScarlet_LossText
+	setlasttalked NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	loadtrainer SCARLET, SCARLET1
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .returnfrombattle
+
+.totodile
+	winlosstext NewBarkTownScarlet_WinText, NewBarkTownScarlet_LossText
+	setlasttalked NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	loadtrainer SCARLET, SCARLET2
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .returnfrombattle
+
+.chikorita
+	winlosstext NewBarkTownScarlet_WinText, NewBarkTownScarlet_LossText
+	setlasttalked NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	loadtrainer SCARLET, SCARLET3
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	sjump .returnfrombattle
+
+.returnfrombattle
+	playmusic MUSIC_SCARLET
+	opentext
+	writetext NewBarkTownScarlet_AfterText
+	waitbutton
+	closetext
+	applymovement NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE, NewBarkTownScarletGoesHome
+	setevent EVENT_SCARLET_IS_DEFEATED_IN_NEW_BARK_TOWN
+	disappear NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
+	playmapmusic
+	setscene SCENE_NEWBARKTOWN_NOOP
+	end
+
+NewBarkTownScarlet2Approaches:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_end
+
+NewBarkTownScarletGoesHome:
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step_end
+
+SoYoureHeadingToTheLeagueLetsBattleText:
+	text "SCARLET: Welcome"
+	line "home <PLAY_G>!"
+	
+	para "So you've collect"
+	line "all 8 badges in"
+	cont "JOHTO?"
+	
+	para "I have as well but"
+	line "I don't think I'm"
+	
+	para "ready to take on"
+	line "on the #MON"
+	
+	para "LEAGUE yet. First,"
+	line "I want test myself"
+	
+	para "with a battle ag-"
+	line "ainst you."
+	
+	para "Let's go once"
+	line "again <PLAY_G>!"
+	done
+
+NewBarkTownScarlet_WinText:
+	text "Looks like you're"
+	line "ready for the"
+	cont "#MON LEAGUE!"
+	done
+
+NewBarkTownScarlet_LossText:
+	text "Looks like I'm"
+	line "ready for the"
+	cont "#MON LEAGUE!"
+	done
+
+NewBarkTownScarlet_AfterText:
+	text "SCARLET: That"
+	line "battle decided it."
+
+	para "I'm not ready…"
+	
+	para "I'll train some"
+	line "more, then I'll"
+	cont "make an attempt."
+	
+	para "All the best at"
+	line "the #MON LEAGUE"
+	cont "<PLAY_G>! Bye!"
+	done
 
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
@@ -390,6 +631,9 @@ ENDC
 	coord_event  1,  8, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU, NewBarkTown_TeacherStopsYouScene1
 	coord_event  1,  9, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU, NewBarkTown_TeacherStopsYouScene2
 	coord_event  6,  4, SCENE_NEWBARKTOWN_SCARLET_LEAVES_HOME, NewBarkTown_ScarletLeavesHomeScript
+	coord_event 17,  6, SCENE_NEWBARKTOWN_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE, NewBarkTown_ScarletBattleScript1
+	coord_event 17,  8, SCENE_NEWBARKTOWN_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE, NewBarkTown_ScarletBattleScript2
+	coord_event 17,  9, SCENE_NEWBARKTOWN_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE, NewBarkTown_ScarletBattleScript3
 
 	def_bg_events
 	bg_event  8,  8, BGEVENT_READ, NewBarkTownSign
@@ -400,6 +644,7 @@ ENDC
 
 	def_object_events
 	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
-	object_event 12,  9, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
+	object_event 10, 10, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
 	object_event  3,  2, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRivalScript, EVENT_RIVAL_NEW_BARK_TOWN
 	object_event  7,  9, SPRITE_SCARLET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_NEW_BARK_TOWN_SCARLET_LEAVES_HOME
+	object_event 12,  9, SPRITE_SCARLET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_NEW_BARK_TOWN_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
