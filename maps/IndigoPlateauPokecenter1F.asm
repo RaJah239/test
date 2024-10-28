@@ -229,7 +229,7 @@ CoinCollectorScript:
 	end
 
 .SacredAsh:
-	verbosegiveitem SACRED_ASH, 5
+	verbosegiveitem SACRED_ASH, 3
 	iffalse .NoRoom
 	ifequal TRUE, .ConcludeTransaction
 	closetext
@@ -285,7 +285,7 @@ CoinCollectorScript:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "SACRED ASH x5@"
+	db "SACRED ASH x3@"
 	db "EON MAIL   x1@"
 	db "CRYSTAL   x33@"
 	db "CANCEL@"
