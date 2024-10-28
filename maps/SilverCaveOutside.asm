@@ -185,34 +185,48 @@ MaximaScript:
 .CantMissText:
 	checkevent EVENT_TALKED_TO_MAXIMA_MT_SILVER_OUTSIDE
 	iffalse .DescribeTheBattles
-    writetext MaximaMatchAcceptText
-    yesorno
-    iftrue .DoMatch
+	writetext MaximaMatchAcceptText
+	yesorno
+	iftrue .DoMatch
 .DontDoMatch:
-    writetext MaximaMatchRefuseText
-    waitbutton
-    closetext
-    end 
+	writetext MaximaMatchRefuseText
+	waitbutton
+	closetext
+	turnobject MTSILVER_MAXIMA, UP
+	end 
 
 .DescribeTheBattles
-    writetext MaximaIntroText
+	writetext MaximaIntroText
 	promptbutton
    	setevent EVENT_TALKED_TO_MAXIMA_MT_SILVER_OUTSIDE
 .DoMatch:
 	special HealParty
-    writetext MaximaMatchText
-    waitbutton
-    closetext
-	winlosstext MaximaMatchLossText, 0
-    loadtrainer MAXIMA, MAXIMA1
+	writetext MaximaMatchText
+	waitbutton
+	closetext
+	winlosstext MaximaMatchLossText, MaximaMatchWinText
+	loadtrainer MAXIMA, MAXIMA1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
-	reloadmapafterbattle
+	reloadmap
+	iftrue .AfterYourDefeat
+	opentext
+	writetext TakeThisCrystalText
+	promptbutton
+	verbosegiveitem CRYSTAL
+	special HealParty
+	closetext
+	turnobject MTSILVER_MAXIMA, UP
+	end
+
+.AfterYourDefeat:
 	opentext
 	writetext MaximaMatchAfterText
 	special HealParty
-    waitbutton
-    closetext
-    end
+	waitbutton
+	closetext
+	turnobject MTSILVER_MAXIMA, UP
+	end
 
 MaximaIntroText:
     text "MAXIMA: Hiya again"
@@ -257,18 +271,32 @@ MaximaMatchAcceptText:
 	done
 
 MaximaMatchRefuseText:
-    text "Aw shucks! Next"
+	text "Aw shucks! Next"
 	line "time alright?"
 	done 
 	
 MaximaMatchLossText:
-    text "Spicy! Splendid!"
+	text "Spicy! Splendid!"
 	line "Stellar! Superb!"
 	done
 
+MaximaMatchWinText:
+	text "Better luck next"
+	line "time <PLAY_G>."
+	done
+
 MaximaMatchText:
-    text "Show me all you've"
+	text "Show me all you've"
 	line "learned <PLAY_G>!"
+	done
+
+TakeThisCrystalText:
+	text "MAXIMA: Challenge"
+	line "me anytime for a"
+
+	para "unique battle"
+	line "<PLAY_G> and take"
+	cont "this for winning."
 	done
 
 MaximaMatchAfterText:
