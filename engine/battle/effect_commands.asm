@@ -3931,6 +3931,7 @@ BattleCommand_BurnTarget:
 	ret z
 	ld a, FIRE ; Don't burn a Fire-type
 	call CheckIfTargetIsGivenType
+	ret z
 	ld a, WATER ; Don't burn a Water-type
 	call CheckIfTargetIsGivenType
 	ret z
