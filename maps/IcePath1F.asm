@@ -10,7 +10,7 @@ IcePath1F_MapScripts:
 	def_callbacks
 
 IcePath1FHMWaterfall:
-	itemball FULL_RESTORE
+	itemball CRYSTAL
 
 IcePath1FPPUp:
 	itemball HP_UP
