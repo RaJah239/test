@@ -429,6 +429,7 @@ NewBarkTown_ScarletBattleScript2:
 	waitbutton
 	closetext
 	applymovement NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE, NewBarkTownScarletGoesHome
+	setevent EVENT_SCARLET_IS_DEFEATED_IN_NEW_BARK_TOWN
 	disappear NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
 	playmapmusic
 	setscene SCENE_NEWBARKTOWN_NOOP
@@ -485,6 +486,7 @@ NewBarkTown_ScarletBattleScript3:
 	waitbutton
 	closetext
 	applymovement NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE, NewBarkTownScarletGoesHome
+	setevent EVENT_SCARLET_IS_DEFEATED_IN_NEW_BARK_TOWN
 	disappear NEWBARKTOWN_SCARLET_SCARLET_BATTLE_WHEN_LEAVING_FOR_LEAGUE
 	playmapmusic
 	setscene SCENE_NEWBARKTOWN_NOOP
