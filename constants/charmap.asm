@@ -343,7 +343,7 @@
 	charmap "に", $c6
 	charmap "<FLOAT>",   $c7 ; floatmon arrow
 	charmap "ね", $c8
-	charmap "の", $c9
+	charmap "<%>", $c9 ; Percent symbo to be used throughout
 	charmap "は", $ca
 	charmap "ひ", $cb
 	charmap "ふ", $cc

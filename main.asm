@@ -116,6 +116,7 @@ INCLUDE "engine/battle/read_trainer_dvs.asm"
 INCLUDE "engine/battle/returntobattle_useball.asm"
 INCLUDE "engine/battle/consume_held_item.asm"
 INCLUDE "data/moves/effects.asm"
+INCLUDE "data/battle/effect_command_pointers.asm"
 INCLUDE "engine/events/kurt_selectquantity_interpretjoypad.asm"
 
 
@@ -168,8 +169,6 @@ INCLUDE "data/trainers/randomparty.asm"
 SECTION "Battle Core", ROMX
 
 INCLUDE "engine/battle/core.asm"
-INCLUDE "data/battle/effect_command_pointers.asm"
-
 
 SECTION "bank10", ROMX
 

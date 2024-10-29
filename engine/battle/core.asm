@@ -5705,9 +5705,9 @@ MoveInfoBox:
 	xor a
 	ldh [hBGMapMode], a
 
-	hlcoord 0, 8
-	ld b, 3
-	ld c, 9
+	hlcoord 0, 5 ; upper right corner of the textbox
+	ld b, 6 ; Box height
+	ld c, 9 ; Box length
 	call Textbox
 	call MobileTextBorder
 
@@ -5725,7 +5725,7 @@ MoveInfoBox:
 	hlcoord 1, 10
 	ld de, .Disabled
 	call PlaceString
-	jr .done
+	jp .done
 
 .not_disabled
 	ld hl, wMenuCursorY
@@ -5760,24 +5760,111 @@ MoveInfoBox:
 	ld a, [wPlayerMoveStruct + MOVE_ANIM]
 	ld b, a
 	farcall GetMoveCategoryName
-	hlcoord 1, 9
+	hlcoord 2, 7
 	ld de, wStringBuffer1
 	call PlaceString
+
+	ld a, [wPlayerMoveStruct + MOVE_ANIM]
+	ld b, a
+	hlcoord 1, 6
+	predef PrintMoveType
 
 	ld h, b
 	ld l, c
 	ld [hl], "/"
 
-	ld a, [wPlayerMoveStruct + MOVE_ANIM]
-	ld b, a
-	hlcoord 2, 10
-	predef PrintMoveType
+; print "ACC/"
+	ld de, .accuracy_string ; "ACC"
+	hlcoord 1, 9
+	call PlaceString
 
+; print "PP/"
+	ld de, .pp_string ; "PP"
+	hlcoord 1, 11
+	call PlaceString
+
+; print "EFF/"
+	ld de, .eff_string ; "PP"
+	hlcoord 1, 10
+	call PlaceString
+
+; print move BP (Base Power)
+	ld de, .power_string ; "BP"
+	hlcoord 1, 8
+	call PlaceString
+
+	hlcoord 5, 8
+	ld a, [wPlayerMoveStruct + MOVE_POWER]
+	and a
+	jr nz, .haspower
+	ld de, .nopower_string ; "---"
+	call PlaceString
+	jr .place_accuracy
+
+.haspower	
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	lb bc, 1, 3 ; number of bytes this number is in, in 'b', number of possible digits in 'c'
+	call PrintNum
+
+; Print move accuracy
+.place_accuracy
+	ld a, [wCurSpecies]
+	ld bc, MOVE_LENGTH
+	ld hl, (Moves + MOVE_ACC) - MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	Call Adjust_Percent_Battle
+	ld [wBuffer1], a
+	ld de, wBuffer1
+	lb bc, 1, 3
+	hlcoord 5, 9
+	call PrintNum
+	ld [hl], "<%>" ; displays percent symbol
+	hlcoord 8, 8
+
+; Print move effect chance
+	ld a, [wCurSpecies]
+	ld bc, MOVE_LENGTH
+	ld hl, (Moves + MOVE_CHANCE) - MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	cp 1
+	jr c, .if_null_chance2
+	Call Adjust_Percent_Battle
+	ld [wBuffer1], a
+	ld de, wBuffer1
+	lb bc, 1, 3
+	hlcoord 5, 10
+	call PrintNum
+	ld [hl], "<%>" ; displays percent symbol
+	hlcoord 9, 8
+	jr .skip_null_chance2
+
+.if_null_chance2
+	ld de, .nopower_string
+	ld bc, 3
+	hlcoord 5, 10
+	call PlaceString
+
+.skip_null_chance2
 .done
 	ret
 
+.nopower_string:
+	db "---@"
+.power_string:
+	db "POW/@"
+.accuracy_string:
+	db "ACC/@"
+.pp_string:
+	db "PP /@"
+.eff_string
+	db "EFF/@"
 .Disabled:
-	db "Disabled!@"
+	db "DISABLED!@"
 
 .PrintPP:
 	hlcoord 5, 11
@@ -5844,6 +5931,55 @@ CheckPlayerHasUsableMoves:
 	ld c, 60
 	call DelayFrames
 	xor a
+	ret
+
+; This converts values out of 256 into a value
+; out of 100. It achieves this by multiplying
+; the value by 100 and dividing it by 256.
+Adjust_Percent_Battle:
+
+	; Overwrite the "hl" register.
+	ld l, a
+	ld h, 0
+	push af
+
+	; Multiplies the value of the "hl" register by 3.
+	add hl, hl
+	add a, l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
+
+	; Multiplies the value of the "hl" register
+	; by 8. The value of the "hl" register
+	; is now 24 times its original value.
+	add hl, hl
+	add hl, hl
+	add hl, hl
+
+	; Add the original value of the "hl" value to itself,
+	; making it 25 times its original value.
+	pop af
+	add a, l
+	ld l, a
+	adc h
+	sbc l
+	ld h, a
+
+	; Multiply the value of the "hl" register by
+	; 4, making it 100 times its original value.
+	add hl, hl
+	add hl, hl
+
+	; Set the "l" register to 0.5, otherwise the rounded
+	; value may be lower than expected. Round the
+	; high byte to nearest and drop the low byte.
+	ld l, 0.5
+	sla l
+	sbc a
+	and 1
+	add a, h
 	ret
 
 ParseEnemyAction:

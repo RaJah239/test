@@ -5,4 +5,4 @@ CategoryNames:
 
 .Physical: db "PHYSICAL@"
 .Special:  db "SPECIAL@"
-.Status:   db "STATUS@"
+.Status:   db "OTHER@"
