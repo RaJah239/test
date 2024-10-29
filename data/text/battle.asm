@@ -303,7 +303,7 @@ BattleText_UsersStringBuffer1Activated:
 	prompt
 
 BattleText_ItemsCantBeUsedHere:
-	text "Items unusable in"
+	text "Items forbidden in"
 	line "trainer battles!"
 	prompt
 
