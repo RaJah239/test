@@ -94,13 +94,7 @@ ENDC
 	db -1 ; end
 
 MartAzalea:
-IF DEF(_DEBUG)
-	db 11 ; # items
-	db RARE_CANDY
-	db MASTER_BALL
-ELSE
-	db 9 ; # items
-ENDC
+	db 8 ; # items
 	db CHARCOAL
 	db POKE_BALL
 	db POTION
