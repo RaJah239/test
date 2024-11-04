@@ -1,6 +1,6 @@
 	object_const_def
 	const TRAINERHOUSEB1F_RECEPTIONIST
-	const TRAINERHOUSEB1F_CHRIS
+	const TRAINERHOUSEB1F_MAXIMA
 
 TrainerHouseB1F_MapScripts:
 	def_scene_scripts
@@ -15,45 +15,29 @@ TrainerHouseReceptionistScript:
 	turnobject PLAYER, UP
 	opentext
 	writetext TrainerHouseB1FIntroText
-	yesorno
 	special HealParty
-	loadtrainer MAXIMA, MAXIMA1
-   	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
-	iffalse .Declined
-	writetext TrainerHouseB1FGoRightInText
 	waitbutton
 	closetext
 	applymovement PLAYER, Movement_EnterTrainerHouseBattleRoom
 	opentext
-	writetext TrainerHouseB1FCalBeforeText
+	writetext TrainerHouseB1FMaximaBeforeText
 	waitbutton
 	closetext
-	special TrainerHouse
-	iffalse .NoSpecialBattle
-	special HealParty
-	winlosstext TrainerHouseB1FCalBeatenText, 0
-	setlasttalked TRAINERHOUSEB1F_CHRIS
-	loadtrainer CAL, CAL2
-	startbattle
-	reloadmapafterbattle
-	iffalse .End
-.NoSpecialBattle:
-	winlosstext TrainerHouseB1FCalBeatenText, 0
-	setlasttalked TRAINERHOUSEB1F_CHRIS
+	winlosstext TrainerHouseB1FMaximaBeatenText, TrainerHouseB1FMaximaWonText
+	setlasttalked TRAINERHOUSEB1F_MAXIMA
 	loadtrainer MAXIMA, MAXIMA1
    	loadvar VAR_BATTLETYPE, BATTLETYPE_INVERSE
 	startbattle
 	special HealParty
 	reloadmap
+	iftrue .End
+	opentext
+	writetext TrainerHouseB1FMaximaGivesCrystalForWinningText
+	promptbutton
+	verbosegiveitem CRYSTAL
+	closetext
 .End:
 	applymovement PLAYER, Movement_ExitTrainerHouseBattleRoom
-	end
-
-.Declined:
-	writetext TrainerHouseB1FPleaseComeAgainText
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_TrainerHouseTurnBack
 	end
 
 Movement_EnterTrainerHouseBattleRoom:
@@ -97,26 +81,28 @@ TrainerHouseB1FIntroText:
 	text "Hi and welcome to"
 	line "the TRAINING HALL."
 
-	para "Would you like to"
-	line "battle?"
+	para "Go on through for"
+	line "an inverse battle."
 	done
 
-TrainerHouseB1FGoRightInText:
-	text "Please go right"
-	line "through."
+TrainerHouseB1FMaximaGivesCrystalForWinningText:
+	text "Take this for win-"
+	line "ing <PLAY_G>."
 	done
 
-TrainerHouseB1FPleaseComeAgainText:
-	text "Do visit us again."
+TrainerHouseB1FMaximaBeatenText:
+	text "Spicy! Splendid!"
+	line "Stellar! Superb!"
 	done
 
-TrainerHouseB1FCalBeatenText:
-	text "I lost…"
-	line "Darn…"
+TrainerHouseB1FMaximaWonText:
+	text "Better luck next"
+	line "time <PLAY_G>."
 	done
 
-TrainerHouseB1FCalBeforeText:
-	text "Shall we begin?"
+TrainerHouseB1FMaximaBeforeText:
+	text "Shall we begin"
+	line "<PLAY_G>?"
 	done
 
 TrainerHouseB1F_MapEvents:
@@ -132,4 +118,4 @@ TrainerHouseB1F_MapEvents:
 
 	def_object_events
 	object_event  7,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  6, 11, SPRITE_MAXIMA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  6, 11, SPRITE_MAXIMA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

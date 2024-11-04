@@ -2404,6 +2404,10 @@ WinTrainerBattle:
 	ld a, [wBattleType]
 	cp BATTLETYPE_CANLOSE
 	jr nz, .skip_heal
+
+	ld a, [wBattleType]
+	cp BATTLETYPE_INVERSE
+	jr nz, .skip_heal
 	predef HealParty
 .skip_heal
 
