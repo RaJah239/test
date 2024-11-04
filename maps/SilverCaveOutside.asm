@@ -205,24 +205,22 @@ MaximaScript:
 	waitbutton
 	closetext
 	winlosstext MaximaMatchLossText, MaximaMatchWinText
-	loadtrainer MAXIMA, MAXIMA1
-	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	loadtrainer MAXIMA, MAXIMA1 ; will random here
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE ; Might use from here as the `sjump` of the Regular Scripts when I add a bunch of teams 
 	startbattle
+	special HealParty
 	reloadmap
-	iftrue .AfterYourDefeat
 	opentext
+	iftrue .AfterYourDefeat
 	writetext TakeThisCrystalText
 	promptbutton
 	verbosegiveitem CRYSTAL
-	special HealParty
 	closetext
 	turnobject MTSILVER_MAXIMA, UP
 	end
 
 .AfterYourDefeat:
-	opentext
 	writetext MaximaMatchAfterText
-	special HealParty
 	waitbutton
 	closetext
 	turnobject MTSILVER_MAXIMA, UP
