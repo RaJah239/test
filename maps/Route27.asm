@@ -13,11 +13,7 @@ Route27_MapScripts:
 	def_scene_scripts
 	scene_script Route27Noop1Scene, SCENE_ROUTE27_FIRST_STEP_INTO_KANTO
 	scene_script Route27Noop2Scene, SCENE_ROUTE27_NOOP
-	callback MAPCALLBACK_NEWMAP, .Flypoint
 
-.Flypoint:
-	setflag ENGINE_FLYPOINT_TOHJO_FALLS
-	return
 	def_callbacks
 
 Route27Noop1Scene:

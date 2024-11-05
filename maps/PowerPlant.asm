@@ -136,7 +136,6 @@ PowerPlantManager:
 	opentext
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
-	setflag ENGINE_FLYPOINT_ROCK_TUNNEL
 	checkitem MACHINE_PART
 	iftrue .FoundMachinePart
 	checkevent EVENT_MET_MANAGER_AT_POWER_PLANT

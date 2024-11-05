@@ -4,11 +4,6 @@ MountMoon_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .Flypoint
-
-.Flypoint:
-	setflag ENGINE_FLYPOINT_MT_MOON
-	return
 
 MountMoon_MapEvents:
 	db 0, 0 ; filler

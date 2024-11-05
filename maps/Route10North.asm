@@ -5,8 +5,8 @@ Route10North_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .Flypoint
 
 .Flypoint:
-	setflag FLY_ROCK_TUNNEL
-	return
+	setflag ENGINE_FLYPOINT_ROCK_TUNNEL
+	endcallback
 
 PowerPlantSign:
 	jumptext PowerPlantSignText

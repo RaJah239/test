@@ -8,13 +8,9 @@ Route20_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, Route20ClearRocksCallback
-	callback MAPCALLBACK_NEWMAP, .Flypoint
-
-.Flypoint:
-	setflag ENGINE_FLYPOINT_ROUTE_20
-	return
 
 Route20ClearRocksCallback:
+	setflag ENGINE_FLYPOINT_ROUTE_20
 	setevent EVENT_CINNABAR_ROCKS_CLEARED
 	endcallback
 
