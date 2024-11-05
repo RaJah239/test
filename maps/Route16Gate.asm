@@ -3,35 +3,11 @@
 
 Route16Gate_MapScripts:
 	def_scene_scripts
-	scene_script Route16GateNoopScene, SCENE_ROUTE16GATE_BICYCLE_CHECK
 
 	def_callbacks
 
-Route16GateNoopScene:
-	end
-
 Route16GateOfficerScript:
 	jumptextfaceplayer Route16GateOfficerText
-
-Route16GateBicycleCheck:
-	checkitem BICYCLE
-	iffalse .NoBicycle
-	end
-
-.NoBicycle:
-	showemote EMOTE_SHOCK, ROUTE16GATE_OFFICER, 15
-	turnobject PLAYER, UP
-	opentext
-	writetext Route16GateCannotPassText
-	waitbutton
-	closetext
-	applymovement PLAYER, Route16GateCannotPassMovement
-	end
-
-Route16GateCannotPassMovement:
-	step RIGHT
-	turn_head LEFT
-	step_end
 
 Route16GateOfficerText:
 	text "CYCLING ROAD"
@@ -48,16 +24,6 @@ Route16GateOfficerText:
 	line "a ship or train."
 	done
 
-Route16GateCannotPassText:
-	text "Hey! Whoa! Stop!"
-
-	para "You can't go out"
-	line "on the CYCLING"
-
-	para "ROAD without a"
-	line "BICYCLE."
-	done
-
 Route16Gate_MapEvents:
 	db 0, 0 ; filler
 
@@ -68,8 +34,6 @@ Route16Gate_MapEvents:
 	warp_event  9,  5, ROUTE_16, 3
 
 	def_coord_events
-	coord_event  5,  4, SCENE_ROUTE16GATE_BICYCLE_CHECK, Route16GateBicycleCheck
-	coord_event  5,  5, SCENE_ROUTE16GATE_BICYCLE_CHECK, Route16GateBicycleCheck
 
 	def_bg_events
 

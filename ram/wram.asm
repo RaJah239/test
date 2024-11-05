@@ -3035,7 +3035,6 @@ wRoute25SceneID::                                 db
 wTrainerHouseB1FSceneID::                         db
 wVictoryRoadGateSceneID::                         db
 wSaffronMagnetTrainStationSceneID::               db
-wRoute16GateSceneID::                             db
 wRoute17Route18GateSceneID::                      db
 wIndigoPlateauPokecenter1FSceneID::               db
 wWillsRoomSceneID::                               db
@@ -3113,7 +3112,7 @@ wUnionCave1FSceneID::                             db ; Scarlet's Union Cave scen
 wRoute35GoldenrodGate::                           db ; Scarlet's battle
 wOlivineLightHouse3F::                            db ; Scarlet's battle
 
-	ds 38
+	ds 39
 
  wNumBalls:: db
  wBalls:: ds MAX_BALLS * 2 + 1
