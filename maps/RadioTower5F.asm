@@ -4,6 +4,7 @@
 	const RADIOTOWER5F_ROCKET_GIRL
 	const RADIOTOWER5F_ROCKER
 	const RADIOTOWER5F_POKE_BALL
+	const RADIOTOWER5F_REAL_DIRECTOR
 
 RadioTower5F_MapScripts:
 	def_scene_scripts
@@ -72,17 +73,17 @@ FakeDirectorImpersonatorSpinMovement:
 	turn_head DOWN
 	step_end
 
-Director:
+FakeDirectorScript1:
 	faceplayer
 	opentext
-	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .TrueDirector
 	writetext FakeDirectorTextAfter
 	waitbutton
 	closetext
 	end
 
-.TrueDirector:
+TrueDirector:
+	faceplayer
+	opentext
 	writetext RadioTower5FDirectorText
 	waitbutton
 	closetext
@@ -133,9 +134,9 @@ RadioTower5FRocketBossScript:
 	clearevent EVENT_RADIO_TOWER_CIVILIANS_AFTER
 	special PlayMapMusic
 	disappear RADIOTOWER5F_DIRECTOR
-	moveobject RADIOTOWER5F_DIRECTOR, 12, 0
-	appear RADIOTOWER5F_DIRECTOR
-	applymovement RADIOTOWER5F_DIRECTOR, RadioTower5FDirectorWalksIn
+	moveobject RADIOTOWER5F_REAL_DIRECTOR, 12, 0
+	appear RADIOTOWER5F_REAL_DIRECTOR
+	applymovement RADIOTOWER5F_REAL_DIRECTOR, RadioTower5FDirectorWalksIn
 	turnobject PLAYER, RIGHT
 	opentext
 	writetext RadioTower5FDirectorThankYouText
@@ -151,9 +152,9 @@ RadioTower5FRocketBossScript:
 	sjump .UselessJump
 
 .UselessJump:
-	applymovement RADIOTOWER5F_DIRECTOR, RadioTower5FDirectorWalksOut
+	applymovement RADIOTOWER5F_REAL_DIRECTOR, RadioTower5FDirectorWalksOut
 	playsound SFX_EXIT_BUILDING
-	disappear RADIOTOWER5F_DIRECTOR
+	disappear RADIOTOWER5F_REAL_DIRECTOR
 	end
 
 Ben:
@@ -488,8 +489,9 @@ RadioTower5F_MapEvents:
 	bg_event 17,  1, BGEVENT_READ, RadioTower5FBookshelf
 
 	def_object_events
-	object_event  3,  6, SPRITE_DIRECTOR_IMPERSONATOR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1,PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Director, -1
+	object_event  3,  6, SPRITE_DIRECTOR_IMPERSONATOR, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1,PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, FakeDirectorScript1, EVENT_RADIO_TOWER_5F_DIRECTOR_FAKE
 	object_event 13,  5, SPRITE_ARCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 17,  2, SPRITE_ARIANA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerExecutivef1, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 13,  5, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Ben, EVENT_RADIO_TOWER_CIVILIANS_AFTER
 	object_event  8,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RadioTower5FUltraBall, EVENT_RADIO_TOWER_5F_ULTRA_BALL
+	object_event  3,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1,PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, TrueDirector, -1
