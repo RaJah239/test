@@ -621,8 +621,8 @@ Route30_MapEvents:
 	warp_event 17,  5, MR_POKEMONS_HOUSE, 1
 
 	def_coord_events
-	coord_event 12, 40, SCENE_ROUTE38ECRUTEAKGATE_OFFICER_BLOCKER, Route30BerryTeacher1Script
-	coord_event 13, 40, SCENE_ROUTE38ECRUTEAKGATE_OFFICER_BLOCKER, Route30BerryTeacher2Script
+	coord_event 12, 40, SCENE_ROUTE_30_TEACHER_STOPS_YOU, Route30BerryTeacher1Script
+	coord_event 13, 40, SCENE_ROUTE_30_TEACHER_STOPS_YOU, Route30BerryTeacher2Script
 
 	def_bg_events
 	bg_event  9, 43, BGEVENT_READ, Route30Sign
