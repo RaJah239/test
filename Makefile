@@ -23,7 +23,6 @@ rom_obj := \
 	gfx/sprites.o \
 	gfx/tilesets.o \
 	lib/mobile/main.o \
-	lib/mobile/mail.o
 
 crystaltrove_obj         := $(rom_obj:.o=.o)
 crystaltrove11_obj       := $(rom_obj:.o=11.o)

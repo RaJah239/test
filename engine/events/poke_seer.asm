@@ -295,44 +295,9 @@ PrintSeerText:
 
 SeerTexts:
 	dw SeerSeeAllText
-	dw SeerCantTellAThingText
-	dw SeerNameLocationText
-	dw SeerTimeLevelText
-	dw SeerTradeText
-	dw SeerDoNothingText
-	dw SeerEggText
-	dw SeerNoLocationText
 
 SeerSeeAllText:
-	text_far _SeerSeeAllText
-	text_end
-
-SeerCantTellAThingText:
-	text_far _SeerCantTellAThingText
-	text_end
-
-SeerNameLocationText:
-	text_far _SeerNameLocationText
-	text_end
-
-SeerTimeLevelText:
-	text_far _SeerTimeLevelText
-	text_end
-
-SeerTradeText:
-	text_far _SeerTradeText
-	text_end
-
-SeerNoLocationText:
-	text_far _SeerNoLocationText
-	text_end
-
-SeerEggText:
-	text_far _SeerEggText
-	text_end
-
-SeerDoNothingText:
-	text_far _SeerDoNothingText
+	text_far _ObjectEventText
 	text_end
 
 SeerAdvice:
@@ -364,30 +329,9 @@ SeerAdvice:
 SeerAdviceTexts:
 ; level, text
 	dbw 9,   SeerMoreCareText
-	dbw 29,  SeerMoreConfidentText
-	dbw 59,  SeerMuchStrengthText
-	dbw 89,  SeerMightyText
-	dbw 100, SeerImpressedText
-	dbw 255, SeerMoreCareText
 
 SeerMoreCareText:
-	text_far _SeerMoreCareText
-	text_end
-
-SeerMoreConfidentText:
-	text_far _SeerMoreConfidentText
-	text_end
-
-SeerMuchStrengthText:
-	text_far _SeerMuchStrengthText
-	text_end
-
-SeerMightyText:
-	text_far _SeerMightyText
-	text_end
-
-SeerImpressedText:
-	text_far _SeerImpressedText
+	text_far _ObjectEventText
 	text_end
 
 GetCaughtGender:

@@ -3099,8 +3099,6 @@ wVermilionPortSceneID::                           db
 wFastShip1FSceneID::                              db
 wFastShipB1FSceneID::                             db
 wMountMoonSquareSceneID::                         db
-wMobileTradeRoomSceneID::                         db
-wMobileBattleRoomSceneID::                        db
 wSilverCavePokecenter1F::                         db ; Crystal Trove
 wSilverCaveOutsideSceneID::                       db ; Crystal Trove removed Mt. Moon scene with Rival and moved to Mt. Silver
 wUnionCaveGrottoSceneID::                         db ; Union Cave Grotto
@@ -3112,7 +3110,7 @@ wUnionCave1FSceneID::                             db ; Scarlet's Union Cave scen
 wRoute35GoldenrodGate::                           db ; Scarlet's battle
 wOlivineLightHouse3F::                            db ; Scarlet's battle
 
-	ds 39
+	ds 41
 
  wNumBalls:: db
  wBalls:: ds MAX_BALLS * 2 + 1
@@ -3577,20 +3575,6 @@ NEXTU
 wSurfWaveBGEffect:: ds $40
 wSurfWaveBGEffectEnd::
 ENDU
-
-
-SECTION "Mobile RAM", WRAMX
-
-w5_d800:: ds $200
-w5_da00:: ds $200
-w5_dc00:: ds $d
-w5_dc0d:: ds 4
-w5_dc11:: ds 9
-w5_MobileOpponentBattleMessages:: ds $c
-w5_MobileOpponentBattleStartMessage:: ds $c
-w5_MobileOpponentBattleWinMessage:: ds $c
-w5_MobileOpponentBattleLossMessage:: ds $c
-
 
 SECTION "Scratch RAM", WRAMX
 

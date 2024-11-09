@@ -4,10 +4,6 @@ Timer:: ; unreferenced
 	push af
 	ldh a, [hMobile]
 	and a
-	jr z, .not_mobile
-	call MobileTimer
-
-.not_mobile
 	pop af
 	reti
 

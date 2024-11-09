@@ -79,8 +79,6 @@ MapScenes::
 	scene_var FAST_SHIP_1F,                                wFastShip1FSceneID
 	scene_var FAST_SHIP_B1F,                               wFastShipB1FSceneID
 	scene_var MOUNT_MOON_SQUARE,                           wMountMoonSquareSceneID
-	scene_var MOBILE_TRADE_ROOM,                           wMobileTradeRoomSceneID
-	scene_var MOBILE_BATTLE_ROOM,                          wMobileBattleRoomSceneID
 	scene_var SILVER_CAVE_POKECENTER_1F,                   wSilverCavePokecenter1F
 	scene_var SILVER_CAVE_OUTSIDE,                         wSilverCaveOutsideSceneID
 	scene_var UNION_CAVE_GROTTOS,                          wUnionCaveGrottoSceneID

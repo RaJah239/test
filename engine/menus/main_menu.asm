@@ -20,9 +20,6 @@
 	const MAINMENUITEM_MOBILE_STUDIUM ; 5
 	const MAINMENUITEM_DEBUG_ROOM     ; 6
 
-MobileMenuGFX:
-INCBIN "gfx/mobile/mobile_menu.2bpp"
-
 MainMenu:
 .loop
 	xor a
@@ -87,6 +84,10 @@ endc
 if DEF(_DEBUG)
 	dw MainMenu_DebugRoom
 endc
+
+	MainMenu_MobileStudium:
+	MainMenu_Mobile:
+	ret
 
 MainMenuItems:
 ; entries correspond to MAINMENU_* constants

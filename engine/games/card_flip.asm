@@ -1105,7 +1105,7 @@ CardFlip_CheckWinCondition:
 	text_end
 
 .CardFlipDarnText:
-	text_far _CardFlipDarnText
+	text_far _SlotsDarnText
 	text_end
 
 .AddCoinPlaySFX:

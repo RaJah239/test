@@ -1076,7 +1076,7 @@ TeleportFunction:
 	text_end
 
 .CantUseTeleportText:
-	text_far _CantUseTeleportText
+	text_far _CantUseDigText
 	text_end
 
 .TeleportScript:

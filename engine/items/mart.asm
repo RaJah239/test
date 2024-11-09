@@ -628,7 +628,7 @@ HerbShopLadyIntroText:
 	text_end
 
 HerbalLadyHowManyText:
-	text_far _HerbalLadyHowManyText
+	text_far _MartHowManyText
 	text_end
 
 HerbalLadyFinalPriceText:
@@ -640,7 +640,7 @@ HerbalLadyThanksText:
 	text_end
 
 HerbalLadyPackFullText:
-	text_far _HerbalLadyPackFullText
+	text_far _MartPackFullText
 	text_end
 
 HerbalLadyNoMoneyText:
@@ -664,7 +664,7 @@ BargainShopThanksText:
 	text_end
 
 BargainShopPackFullText:
-	text_far _BargainShopPackFullText
+	text_far _MartPackFullText
 	text_end
 
 BargainShopSoldOutText:
@@ -684,7 +684,7 @@ PharmacyIntroText:
 	text_end
 
 PharmacyHowManyText:
-	text_far _PharmacyHowManyText
+	text_far _MartSellHowManyText
 	text_end
 
 PharmacyFinalPriceText:
@@ -696,7 +696,7 @@ PharmacyThanksText:
 	text_end
 
 PharmacyPackFullText:
-	text_far _PharmacyPackFullText
+	text_far _MartPackFullText
 	text_end
 
 PharmacyNoMoneyText:

@@ -170,7 +170,6 @@ Script_MayNotEnterABattleRoomUnderL70:
 	sjump Script_Menu_ChallengeExplanationCancel
 
 Script_MobileError:
-	special BattleTowerMobileError
 	closetext
 	end
 

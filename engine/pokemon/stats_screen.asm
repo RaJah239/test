@@ -82,29 +82,6 @@ StatsScreenMain:
 	ret
 
 StatsScreenMobile:
-	xor a
-	ld [wJumptableIndex], a
-	ld [wStatsScreenFlags], a
-
-	ld a, [wStatsScreenFlags]
-	and ~STAT_PAGE_MASK
-	or PINK_PAGE ; first_page
-	ld [wStatsScreenFlags], a
-
-.loop
-	farcall Mobile_SetOverworldDelay
-	ld a, [wJumptableIndex]
-	and $7f
-	ld hl, StatsScreenPointerTable
-	rst JumpTable
-	call StatsScreen_WaitAnim
-	farcall MobileComms_CheckInactivityTimer
-	jr c, .exit
-	ld a, [wJumptableIndex]
-	bit 7, a
-	jr z, .loop
-
-.exit
 	ret
 
 StatsScreenPointerTable:

@@ -213,7 +213,7 @@ NamingScreen:
 	ret
 
 .oTomodachi_no_namae_sutoringu
-	db "おともだち　の　なまえは？@"
+	db "!@"
 
 .LoadSprite:
 	push de

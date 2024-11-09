@@ -445,10 +445,10 @@ Cable_Club_Map_Names: ;newgroup CABLE_CLUB
 	table_width 2, Cable_Club_Map_Names                                         ; 20
 	dw Cable_Club_Map_Name1 ; map_const POKECENTER_2F ;  1
 	dw Cable_Club_Map_Name2 ; map_const TRADE_CENTER ;  2
-	dw Cable_Club_Map_Name3 ; map_const COLOSSEUM ;  3
+	dw Cable_Club_Map_Name3 ; map_const COLOSSEUM ;  3 
+;	was dw Cable_Club_Map_Name5 ; map_const MOBILE_TRADE_ROOM ;  5 which is now unused in Crystal Trove
 	dw Cable_Club_Map_Name4 ; map_const TIME_CAPSULE ;  4
-	dw Cable_Club_Map_Name5 ; map_const MOBILE_TRADE_ROOM ;  5
-	dw Cable_Club_Map_Name6 ; map_const MOBILE_BATTLE_ROOM ;  6
+;	was dw Cable_Club_Map_Name6 ; map_const MOBILE_BATTLE_ROOM ;  6 which is now unused in Crystal Trove
 	assert_table_length NUM_CABLE_CLUB_MAPS
 
 Celadon_Map_Names: ;newgroup CELADON
@@ -1219,10 +1219,6 @@ Cable_Club_Map_Name3: ; map_const COLOSSEUM ;  3
 	db "<PKMN> COLOSSEUM@"
 Cable_Club_Map_Name4: ; map_const TIME_CAPSULE ;  4
 	db "<PKMN> TIME CAPSULE@"
-Cable_Club_Map_Name5: ; map_const MOBILE_TRADE_ROOM ;  5
-	db "MOBILE TRADE@"
-Cable_Club_Map_Name6: ; map_const MOBILE_BATTLE_ROOM ;  6
-	db "MOBILE BATTLE@"                                          ; 21
 
 Celadon_Map_Name1: ; map_const ROUTE_7,;  1
 	db "ROUTE 7@"

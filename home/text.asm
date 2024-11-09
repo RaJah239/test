@@ -206,7 +206,6 @@ MACRO dict
 	endc
 ENDM
 
-	dict "<MOBILE>",  MobileScriptChar
 	dict "<LINE>",    LineChar
 	dict "<NEXT>",    NextLineChar
 	dict "<CR>",      CarriageReturnChar
@@ -245,12 +244,6 @@ ENDM
 	ld [hli], a
 	call PrintLetterDelay
 	jp NextChar
-
-MobileScriptChar::
-	ld c, l
-	ld b, h
-	farcall RunMobileScript
-	jp PlaceNextChar
 
 MACRO print_name
 	push de
@@ -360,7 +353,7 @@ TrainerCharText:: db "TRAINER@"
 PCCharText::      db "PC@"
 RocketCharText::  db "ROCKET@"
 PlacePOKeText::   db "POKé@"
-KougekiText::     db "こうげき@"
+KougekiText::     db "!@"
 SixDotsCharText:: db "……@"
 EnemyText::       db "Enemy @"
 PlacePKMNText::   db "<PK><MN>@"

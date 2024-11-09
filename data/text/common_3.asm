@@ -36,14 +36,12 @@ _ClockIsThisOKText::
 
 _LinkTimeoutText::
 	text "Too much time has"
-	line "elapsed. Please"
-	cont "try again."
+	line "passed. Try again."
 	prompt
 
 _LinkTradeCantBattleText::
-	text "If you trade that"
-	line "#MON, you won't"
-	cont "be able to battle."
+	text "That's your last"
+	line "#MON!"
 	prompt
 
 _LinkAbnormalMonText::
@@ -61,111 +59,6 @@ _LinkAskTradeForText::
 	line "for @"
 	text_ram wStringBuffer1
 	text "?"
-	done
-
-_MobileBattleMustPickThreeMonText::
-	text "To enter a mobile"
-	line "battle, you must"
-
-	para "pick a team of"
-	line "three #MON."
-
-	para "Is that OK?"
-	done
-
-_MobileBattleMoreInfoText::
-	text "Need more info on"
-	line "mobile battles?"
-	done
-
-_MobileBattleRulesText::
-	text "For a mobile"
-	line "battle, choose"
-	cont "three #MON."
-
-	para "The maximum daily"
-	line "play time is ten"
-
-	para "minutes for each"
-	line "linked player."
-
-	para "If a battle isn't"
-	line "finished within"
-
-	para "the time limit,"
-	line "the player with"
-
-	para "the fewest fainted"
-	line "#MON wins."
-
-	para "If tied, the team"
-	line "that lost the"
-
-	para "least amount of HP"
-	line "wins."
-	done
-
-_WouldYouLikeToMobileBattleText::
-	text "Today's remaining"
-	line "time is @"
-	text_decimal wStringBuffer2, 1, 2
-	text " min."
-
-	para "Would you like to"
-	line "battle?"
-	done
-
-_WantAQuickMobileBattleText::
-	text "There are only @"
-	text_decimal wStringBuffer2, 1, 2
-	text_start
-	line "min. left today."
-
-	para "Want a quick"
-	line "battle?"
-	done
-
-_WantToRushThroughAMobileBattleText::
-	text "There is only"
-	line "1 min. left today!"
-
-	para "Want to rush"
-	line "through a battle?"
-	done
-
-_PleaseTryAgainTomorrowText::
-	text "There is less than"
-	line "1 min. left today!"
-
-	para "Please try again"
-	line "tomorrow."
-	done
-
-_TryAgainUsingSameSettingsText::
-	text "Try again using"
-	line "the same settings?"
-	done
-
-_MobileBattleLessThanOneMinuteLeftText::
-	text "There is less than"
-	line "1 min. left today!"
-	done
-
-_MobileBattleNoTimeLeftForLinkingText::
-	text "No time left for"
-	line "linking today."
-	done
-
-_PickThreeMonForMobileBattleText::
-	text "Pick three #MON"
-	line "for battle."
-	done
-
-_MobileBattleRemainingTimeText::
-	text "Today's remaining"
-	line "time is @"
-	text_decimal wStringBuffer2, 1, 2
-	text " min."
 	done
 
 _WouldYouLikeToSaveTheGameText::
@@ -204,15 +97,7 @@ _WindowPoppingErrorText::
 	done
 
 _ObjectEventText::
-	text "Object event"
-	done
-
-_BGEventText::
-	text "BG event"
-	done
-
-_CoordinatesEventText::
-	text "Coordinates event"
+	text "!"
 	done
 
 _ReceivedItemText::
@@ -238,172 +123,6 @@ _PocketIsFullText::
 	text_start
 	line "is full…"
 	prompt
-
-_SeerSeeAllText::
-	text "I see all."
-	line "I know all…"
-
-	para "Certainly, I know"
-	line "of your #MON!"
-	done
-
-_SeerCantTellAThingText::
-	text "Whaaaat? I can't"
-	line "tell a thing!"
-
-	para "How could I not"
-	line "know of this?"
-	done
-
-_SeerNameLocationText::
-	text "Hm… I see you met"
-	line "@"
-	text_ram wSeerNickname
-	text " here:"
-	cont "@"
-	text_ram wSeerCaughtLocation
-	text "!"
-	prompt
-
-_SeerTimeLevelText::
-	text "The time was"
-	line "@"
-	text_ram wSeerTimeOfDay
-	text "!"
-
-	para "Its level was @"
-	text_ram wSeerCaughtLevelString
-	text "!"
-
-	para "Am I good or what?"
-	prompt
-
-_SeerTradeText::
-	text "Hm… @"
-	text_ram wSeerNickname
-	text_start
-	line "came from @"
-	text_ram wSeerOT
-	text_start
-	cont "in a trade?"
-
-	para "@"
-	text_ram wSeerCaughtLocation
-	text_start
-	line "was where @"
-	text_ram wSeerOT
-	text_start
-	cont "met @"
-	text_ram wSeerNickname
-	text "!"
-	prompt
-
-_SeerNoLocationText::
-	text "What!? Incredible!"
-
-	para "I don't understand"
-	line "how, but it is"
-
-	para "incredible!"
-	line "You are special."
-
-	para "I can't tell where"
-	line "you met it, but it"
-	cont "was at level @"
-	text_ram wSeerCaughtLevelString
-	text "."
-
-	para "Am I good or what?"
-	prompt
-
-_SeerEggText::
-	text "Hey!"
-
-	para "That's an EGG!"
-
-	para "You can't say that"
-	line "you've met it yet…"
-	done
-
-_SeerDoNothingText::
-	text "Fufufu! I saw that"
-	line "you'd do nothing!"
-	done
-
-_SeerMoreCareText::
-	text "Incidentally…"
-
-	para "It would be wise"
-	line "to raise your"
-
-	para "#MON with a"
-	line "little more care."
-	done
-
-_SeerMoreConfidentText::
-	text "Incidentally…"
-
-	para "It seems to have"
-	line "grown a little."
-
-	para "@"
-	text_ram wSeerNickname
-	text " seems"
-	line "to be becoming"
-	cont "more confident."
-	done
-
-_SeerMuchStrengthText::
-	text "Incidentally…"
-
-	para "@"
-	text_ram wSeerNickname
-	text " has"
-	line "grown. It's gained"
-	cont "much strength."
-	done
-
-_SeerMightyText::
-	text "Incidentally…"
-
-	para "It certainly has"
-	line "grown mighty!"
-
-	para "This @"
-	text_ram wSeerNickname
-	text_start
-	line "must have come"
-
-	para "through numerous"
-	line "#MON battles."
-
-	para "It looks brimming"
-	line "with confidence."
-	done
-
-_SeerImpressedText::
-	text "Incidentally…"
-
-	para "I'm impressed by"
-	line "your dedication."
-
-	para "It's been a long"
-	line "time since I've"
-
-	para "seen a #MON as"
-	line "mighty as this"
-	cont "@"
-	text_ram wSeerNickname
-	text "."
-
-	para "I'm sure that"
-	line "seeing @"
-	text_ram wSeerNickname
-	text_start
-
-	para "in battle would"
-	line "excite anyone."
-	done
 
 _CongratulationsYourPokemonText::
 	text "Congratulations!"
@@ -463,10 +182,6 @@ _HerbShopLadyIntroText::
 	para "Hehehehe…"
 	done
 
-_HerbalLadyHowManyText::
-	text "How many?"
-	done
-
 _HerbalLadyFinalPriceText::
 	text_decimal wItemQuantityChange, 1, 2
 	text " @"
@@ -480,11 +195,6 @@ _HerbalLadyFinalPriceText::
 _HerbalLadyThanksText::
 	text "Thank you, dear."
 	line "Hehehehe…"
-	done
-
-_HerbalLadyPackFullText::
-	text "Oh? Your PACK is"
-	line "full, dear."
 	done
 
 _HerbalLadyNoMoneyText::
@@ -520,11 +230,6 @@ _BargainShopThanksText::
 	text "Thanks."
 	done
 
-_BargainShopPackFullText::
-	text "Uh-oh, your PACK"
-	line "is chock-full."
-	done
-
 _BargainShopSoldOutText::
 	text "You bought that"
 	line "already. I'm all"
@@ -546,10 +251,6 @@ _PharmacyIntroText::
 	line "some medicine?"
 	done
 
-_PharmacyHowManyText::
-	text "How many?"
-	done
-
 _PharmacyFinalPriceText::
 	text_decimal wItemQuantityChange, 1, 2
 	text " @"
@@ -562,11 +263,6 @@ _PharmacyFinalPriceText::
 
 _PharmacyThanksText::
 	text "Thanks much!"
-	done
-
-_PharmacyPackFullText::
-	text "You don't have any"
-	line "more space."
 	done
 
 _PharmacyNoMoneyText::
@@ -655,8 +351,7 @@ _SlotsNotEnoughCoinsText::
 	prompt
 
 _SlotsRanOutOfCoinsText::
-	text "Darn… Ran out of"
-	line "coins…"
+	text "No more coins…"
 	done
 
 _SlotsPlayAgainText::
@@ -671,170 +366,7 @@ _SlotsLinedUpText::
 	done
 
 _SlotsDarnText::
-	text "Darn!"
-	done
-
-_MobileStadiumEntryText::
-	text "Data for use in"
-	line "the MOBILE STADIUM"
-
-	para "of the N64 #MON"
-	line "STADIUM 2 can be"
-	cont "read here."
-
-	para "Read the data?"
-	done
-
-_MobileStadiumSuccessText::
-	text "Data transfer is"
-	line "complete."
-
-	para "We hope you enjoy"
-	line "MOBILE STADIUM"
-
-	para "battles in the N64"
-	line "#MON STADIUM 2."
-
-	para ""
-	done
-
-_MainMenuTimeUnknownText::
-	text "Clock time unknown"
-	done
-
-_DeleteSavedLoginPasswordText::
-	text "Delete the saved"
-	line "LOG-IN PASSWORD?"
-	done
-
-_DeletedTheLoginPasswordText::
-	text "Deleted the LOG-IN"
-	line "PASSWORD."
-	done
-
-_MobilePickThreeMonForBattleText::
-	text "Pick three #MON"
-	line "for battle."
-	prompt
-
-_MobileUseTheseThreeMonText::
-	text_ram wMobileParticipant1Nickname
-	text ","
-	line "@"
-	text_ram wMobileParticipant2Nickname
-	text " and"
-	cont "@"
-	text_ram wMobileParticipant3Nickname
-	text "."
-
-	para "Use these three?"
-	done
-
-_MobileOnlyThreeMonMayEnterText::
-	text "Only three #MON"
-	line "may enter."
-	prompt
-
-_MobileCardFolderIntro1Text::
-	text "The CARD FOLDER"
-	line "stores your and"
-
-	para "your friends'"
-	line "CARDS."
-
-	para "A CARD contains"
-	line "information like"
-
-	para "the person's name,"
-	line "phone number and"
-	cont "profile."
-
-	para ""
-	done
-
-_MobileCardFolderIntro2Text::
-	text "This is your CARD."
-
-	para "Once you've"
-	line "entered your phone"
-
-	para "number, you can"
-	line "trade CARDS with"
-	cont "your friends."
-
-	para ""
-	done
-
-_MobileCardFolderIntro3Text::
-	text "If you have your"
-	line "friend's CARD, you"
-
-	para "can use it to make"
-	line "a call from a"
-
-	para "mobile phone on"
-	line "the 2nd floor of a"
-	cont "#MON CENTER."
-
-	para ""
-	done
-
-_MobileCardFolderIntro4Text::
-	text "To safely store"
-	line "your collection of"
-
-	para "CARDS, you must"
-	line "set a PASSCODE for"
-	cont "your CARD FOLDER."
-
-	para ""
-	done
-
-_MobileCardFolderAskDeleteText::
-	text "If the CARD FOLDER"
-	line "is deleted, all"
-
-	para "its CARDS and the"
-	line "PASSCODE will also"
-	cont "be deleted."
-
-	para "Beware--a deleted"
-	line "CARD FOLDER can't"
-	cont "be restored."
-
-	para "Want to delete"
-	line "your CARD FOLDER?"
-	done
-
-_MobileCardFolderDeleteAreYouSureText::
-	text "Are you sure you"
-	line "want to delete it?"
-	done
-
-_MobileCardFolderDeletedText::
-	text "The CARD FOLDER"
-	line "has been deleted."
-
-	para ""
-	done
-
-_MobileCardFolderAskOpenOldText::
-	text "There is an older"
-	line "CARD FOLDER from a"
-	cont "previous journey."
-
-	para "Do you want to"
-	line "open it?"
-	done
-
-_MobileCardFolderAskDeleteOldText::
-	text "Delete the old"
-	line "CARD FOLDER?"
-	done
-
-_MobileCardFolderFinishRegisteringCardsText::
-	text "Finish registering"
-	line "CARDS?"
+	text "Aww…"
 	done
 
 _PhoneWrongNumberText::
@@ -862,10 +394,6 @@ _PhoneJustTalkToThemText::
 
 _PhoneThankYouText::
 	text "Thank you!"
-	done
-
-_PasswordAskResetClockText::
-	text "Reset the clock?"
 	done
 
 _ClearAllSaveDataText::
@@ -979,10 +507,6 @@ _CardFlipShuffledText::
 
 _CardFlipYeahText::
 	text "Yeah!"
-	done
-
-_CardFlipDarnText::
-	text "Darn…"
 	done
 
 _GearTodayText::
@@ -1115,19 +639,6 @@ _YouCantTakeAnEggText::
 	para ""
 	done
 
-_BallDodgedText::
-	text "It dodged the"
-	line "thrown BALL!"
-
-	para "This #MON"
-	line "can't be caught!"
-	prompt
-
-_BallMissedText::
-	text "You missed the"
-	line "#MON!"
-	prompt
-
 _BallBrokeFreeText::
 	text "Oh no! The #MON"
 	line "broke free!"
@@ -1195,29 +706,6 @@ _ItemCantUseOnMonText::
 	line "on this #MON."
 	prompt
 
-_RepelUsedEarlierIsStillInEffectText::
-	text "!"
-	prompt
-
-_PlayedFluteText::
-	text "Played the #"
-	line "FLUTE."
-
-	para "Now, that's a"
-	line "catchy tune!"
-	prompt
-
-_FluteWakeUpText::
-	text "All sleeping"
-	line "#MON woke up."
-	prompt
-
-Text_PlayedPokeFlute::
-	text "<PLAYER> played the"
-	line "# FLUTE.@"
-	text_promptbutton
-	text_end
-
 _BlueCardBalanceText::
 	text "You now have"
 	line "@"
@@ -1267,35 +755,9 @@ _ItemOakWarningText::
 	cont "time to use that!"
 	prompt
 
-_ItemBelongsToSomeoneElseText::
-	text "That belongs to"
-	line "someone else!"
-	prompt
-
 _ItemWontHaveEffectText::
 	text "It won't have any"
 	line "effect."
-	prompt
-
-_BallBlockedText::
-	text "The trainer"
-	line "blocked the BALL!"
-	prompt
-
-_BallDontBeAThiefText::
-	text "Don't be a thief!"
-	prompt
-
-_NoCyclingText::
-	text "Cycling isn't"
-	line "allowed here."
-	prompt
-
-_ItemCantGetOnText::
-	text "Can't get on your"
-	line "@"
-	text_ram wStringBuffer1
-	text " now."
 	prompt
 
 _BallBoxFullText::
@@ -1312,12 +774,12 @@ _ItemUsedText::
 	done
 
 _ExpShareToggleOn::
-	text "The EXP.SHARE was"
+	text "EXP.SHARE was"
 	line "turned on."
 	prompt
 
 _ExpShareToggleOff::
-	text "The EXP.SHARE was"
+	text "EXP.SHARE was"
 	line "turned off."
 	prompt
 

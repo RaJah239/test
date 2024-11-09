@@ -98,54 +98,6 @@ _CameToItsSensesText::
 	line "to its senses."
 	done
 
-_EnterNewPasscodeText::
-	text "Please enter any"
-	line "four-digit number."
-	done
-
-_ConfirmPasscodeText::
-	text "Enter the same"
-	line "number to confirm."
-	done
-
-_PasscodesNotSameText::
-	text "That's not the"
-	line "same number."
-	done
-
-_PasscodeSetText::
-	text "Your PASSCODE has"
-	line "been set."
-
-	para "Enter this number"
-	line "next time to open"
-	cont "the CARD FOLDER."
-
-	para ""
-	done
-
-_FourZerosInvalidText::
-	text "0000 is invalid!"
-
-	para ""
-	done
-
-_EnterPasscodeText::
-	text "Enter the CARD"
-	next "FOLDER PASSCODE."
-	done
-
-_IncorrectPasscodeText::
-	text "Incorrect"
-	line "PASSCODE!"
-
-	para ""
-	done
-
-_CardFolderOpenText::
-	text "CARD FOLDER open.@"
-	text_end
-
 _OakTimeWokeUpText::
 	text "<……><……><……><……><……><……>"
 	line "<……><……><……><……><……><……>"
@@ -400,14 +352,6 @@ _MobileForPartnersMonText::
 	line "@"
 	text_ram wOTTrademonSpeciesName
 	text "."
-	done
-
-_MobilePlayersMonTradeText::
-	text_ram wPlayerTrademonSenderName
-	text "'s"
-	line "@"
-	text_ram wPlayerTrademonSpeciesName
-	text " trade…"
 	done
 
 _MobileTakeGoodCareOfMonText::

@@ -279,8 +279,7 @@ PokeBallDesc:
 	db   "An item for catch-"
 	next "ing #MON.@"
 
-TeruSama1Desc:
-	db   "?@"
+
 
 BicycleDesc:
 	db   "A collapsible bike"
@@ -353,9 +352,6 @@ ThunderStoneDesc:
 WaterStoneDesc:
 	db   "Evolves certain"
 	next "kinds of #MON.@"
-
-TeruSama2Desc:
-	db   "?@"
 
 HPUpDesc:
 	db   "Raises the HP of"
@@ -437,9 +433,6 @@ DireHitDesc:
 	db   "Ups critical hit"
 	next "ratio. (1 BTL)@"
 
-TeruSama3Desc:
-	db   "?@"
-
 FreshWaterDesc:
 	db   "Restores #MON"
 	next "HP by 50.@"
@@ -455,9 +448,6 @@ LemonadeDesc:
 XAttackDesc:
 	db   "Raises ATTACK."
 	next "(1 BTL)@"
-
-TeruSama4Desc:
-	db   "?@"
 
 XDefendDesc:
 	db   "Raises DEFENSE."
@@ -478,9 +468,6 @@ CoinCaseDesc:
 ItemfinderDesc:
 	db   "Checks for unseen"
 	next "items in the area.@"
-
-TeruSama5Desc:
-	db   "?@"
 
 ExpShareDesc:
 	db   "Shares battle EXP."
@@ -608,9 +595,6 @@ SilverPowderDesc:
 BluApricornDesc:
 	db   "A blue APRICORN.@"
 
-TeruSama6Desc:
-	db   "?@"
-
 AmuletCoinDesc:
 	db   "Doubles monetary"
 	next "earnings. (HOLD)@"
@@ -643,9 +627,6 @@ BlackbeltDesc:
 BlkApricornDesc:
 	db   "A black APRICORN."
 	next "@"
-
-TeruSama7Desc:
-	db   "?@"
 
 PnkApricornDesc:
 	db   "A pink APRICORN."
@@ -723,9 +704,6 @@ FocusBandDesc:
 	db   "May prevent faint-"
 	next "ing. (HOLD)@"
 
-TeruSama8Desc:
-	db   "?@"
-
 EnergyPowderDesc:
 	db   "Restores #MON"
 	next "HP by 50. Bitter.@"
@@ -781,12 +759,6 @@ PassDesc:
 	db   "A ticket for the"
 	next "MAGNET TRAIN.@"
 
-TeruSama9Desc:
-	db   "?@"
-
-TeruSama10Desc:
-	db   "?@"
-
 ZincDesc:
 	db   "Ups SPCL.DEF"
 	next "of one #MON.@"
@@ -803,12 +775,6 @@ ScopeLensDesc:
 	db   "Raises critical"
 	next "hit ratio. (HOLD)@"
 
-TeruSama12Desc:
-	db   "?@"
-
-TeruSama13Desc:
-	db   "?@"
-
 MetalCoatDesc:
 	db   "Powers up steel-"
 	next "type moves. (HOLD)@"
@@ -816,9 +782,6 @@ MetalCoatDesc:
 DragonFangDesc:
 	db   "Powers up dragon-"
 	next "type moves. (HOLD)@"
-
-TeruSama14Desc:
-	db   "?@"
 
 LeftoversDesc:
 	db   "Restores HP during"
@@ -841,12 +804,6 @@ DragonScaleDesc:
 BerserkGeneDesc:
 	db   "Boosts ATTACK but"
 	next "causes confusion.@"
-
-TeruSama18Desc:
-	db   "?@"
-
-TeruSama19Desc:
-	db   "?@"
 
 GeyserBootsDesc:
 	db   "Makes one able to"
@@ -944,9 +901,6 @@ RainbowWingDesc:
 	db   "A mystical feather"
 	next "of rainbow colors.@"
 
-TeruSama24Desc:
-	db   "?@"
-
 BrickPieceDesc:
 	db   "A rare chunk of"
 	next "tile.@"
@@ -987,29 +941,29 @@ MirageMailDesc:
 	db   "MEW-print MAIL."
 	next "(HOLD)@"
 
+TeruSama1Desc:
 TeruSama25Desc:
-	db   "?@"
-
+TeruSama24Desc:
+TeruSama18Desc:
+TeruSama14Desc:
+TeruSama13Desc:
+TeruSama12Desc:
+TeruSama10Desc:
+TeruSama9Desc:
+TeruSama8Desc:
+TeruSama7Desc:
+TeruSama6Desc:
+TeruSama5Desc:
+TeruSama4Desc:
+TeruSama3Desc:
+TeruSama2Desc:
+TeruSama19Desc:
 TeruSama26Desc:
-	db   "?@"
-
 TeruSama27Desc:
-	db   "?@"
-
 TeruSama28Desc:
-	db   "?@"
-
 TeruSama29Desc:
-	db   "?@"
-
 TeruSama30Desc:
-	db   "?@"
-
 TeruSama31Desc:
-	db   "?@"
-
 TeruSama32Desc:
-	db   "?@"
-
 TeruSama33Desc:
 	db   "?@"

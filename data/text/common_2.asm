@@ -145,11 +145,11 @@ _ComeBackText::
 	done
 
 _BootedTMText::
-	text "Booted up a TM."
+	text "Booted up TM."
 	prompt
 
 _BootedHMText::
-	text "Booted up an HM."
+	text "Booted up HM."
 	prompt
 
 _ContainedMoveText::
@@ -176,14 +176,6 @@ _TMHMNotCompatibleText::
 	line "@"
 	text_ram wStringBuffer2
 	text "."
-	prompt
-
-_NoRoomTMHMText::
-	text "You have no room"
-	line "for any more"
-	cont "@"
-	text_ram wStringBuffer1
-	text "S."
 	prompt
 
 _ReceivedTMHMText::
@@ -353,15 +345,8 @@ _CantUseDigText::
 	done
 
 _TeleportReturnText::
-	text "Return to the last"
+	text "Returning to last"
 	line "#MON CENTER."
-	done
-
-_CantUseTeleportText::
-	text "Can't use that"
-	line "here."
-
-	para ""
 	done
 
 _AlreadyUsingStrengthText::
@@ -406,7 +391,7 @@ _MayPassWhirlpoolText::
 	line "WHIRLPOOL!"
 
 	para "A #MON or item"
-	line "may stabilize it."
+	line "may calm it."
 	done
 
 _AskWhirlpoolText::
@@ -515,7 +500,7 @@ _WhitedOutText::
 	text "<PLAYER> is out of"
 	line "useable #MON!"
 
-	para "<PLAYER> whited"
+	para "<PLAYER> blacked"
 	line "out!"
 	done
 
@@ -532,7 +517,7 @@ _WhitedOutToWildMonText::
 	para "<……><……><……>"
 	line "<……><……><……>"
 
-	para "<PLAYER> whited"
+	para "<PLAYER> blacked"
 	line "out!"
 	done
 
@@ -549,7 +534,7 @@ _WhitedOutToTrainerText::
 	para "<……><……><……>"
 	line "<……><……><……>"
 
-	para "<PLAYER> whited"
+	para "<PLAYER> blacked"
 	line "out!"
 	done
 
@@ -599,10 +584,6 @@ _AnEggCantHoldAnItemText::
 	text "An EGG can't hold"
 	line "an item."
 	prompt
-
-_PackNoItemText::
-	text "No items."
-	done
 
 _AskThrowAwayText::
 	text "Throw away how"
@@ -656,11 +637,6 @@ _AskItemMoveText::
 _PackEmptyText::
 	text_start
 	done
-
-_YouCantUseItInABattleText::
-	text "You can't use it"
-	line "in a battle."
-	prompt
 
 _AreYouABoyOrAreYouAGirlText::
 	text "Are you a boy?"
@@ -748,26 +724,6 @@ _UsedInsteadText::
 _MoveNameText::
 	text_ram wStringBuffer2
 	text_end
-
-_EndUsedMove1Text::
-	text "!"
-	done
-
-_EndUsedMove2Text::
-	text "!"
-	done
-
-_EndUsedMove3Text::
-	text "!"
-	done
-
-_EndUsedMove4Text::
-	text "!"
-	done
-
-_EndUsedMove5Text::
-	text "!"
-	done
 
 Text_BreedHuh::
 	text "Huh?"
