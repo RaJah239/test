@@ -1,482 +1,575 @@
 EggMaster:
-    ld hl, Text_EggMasterIntro
-    call PrintText
-    call JoyWaitAorB
+	ld hl, EggReminderIntroText
+	call PrintText
+	farcall PlaceMoneyTopRight
+	call YesNoBox
+	jr c, .cancel
 
-    ld hl, Text_EggMasterPrompt
-    call PrintText
-    farcall PlaceMoneyTopRight
-    call YesNoBox
-    jp c, .cancel
-    ld hl, .cost_to_relearn2
-    ld de, hMoneyTemp
-    ld bc, 3
-    call CopyBytes
-    ld bc, hMoneyTemp
-    ld de, wMoney
-    farcall CompareMoney
-    jp c, .not_enough_money
-    jp c, .cancel
+	; Calls the "CalculateCostAgainstPlayerMoney" label. Relative jump
+	; to the ".not_enough_money" local jump if the player does
+	; not have enough money and continue if they do.
+	call CalculateCostAgainstPlayerMoney
+	jr c, .not_enough_money
 
-    ld hl, Text_EggMasterWhichMon
-    call PrintText
-    call JoyWaitAorB
+	ld hl, EggReminderWhichMonText
+	call PrintText
+.loop_party_menu
+	farcall SelectMonFromParty
+	jr c, .cancel
+	ld a, [wCurPartySpecies]
+	cp EGG
+	jr z, .is_an_egg
+	call IsAPokemon
+	jr c, .not_a_pokemon
+	call GetRemindableEggMoves
+	jr z, .no_moves_to_learn
+	ld hl, EggReminderWhichMoveText
+	call PrintText
 
-    ld b, $6
-    farcall SelectMonFromParty
-    jr c, .cancel
+.loop_move_menu
+	call ChooseEggMoveToLearn
+	jr c, .loop_party_menu
+	ld a, [wMenuSelection]
+	ld [wNamedObjectIndex], a
+	call GetMoveName
+	call CopyName1
+	predef LearnMove
+	ld a, b
+	dec a
+	jr z, .move_learned
 
-    ld a, [wCurPartySpecies]
-    cp EGG
-    jr z, .egg
+.recheck_for_moves
+	call GetRemindableEggMoves
+	jr z, .no_moves_to_learn
+	jr .loop_move_menu
 
-    call IsAPokemon
-    jr c, .no_mon
-
-    call GetRemindableEggMoves
-    jr z, .no_moves
-
-    ld hl, Text_EggMasterWhichMove
-    call PrintText
-    call JoyWaitAorB
-
-    call ChooseEggMoveToLearn
-    jr c, .skip_learn
-
-    ld a, [wMenuSelection]
-    ld [wd265], a
-    call GetMoveName
-    ld hl, wStringBuffer1
-    ld de, wStringBuffer2
-    ld bc, wStringBuffer2 - wStringBuffer1
-    call CopyBytes
-    ld b, 0
-    predef LearnMove
-    ld a, b
-    and a
-    jr z, .skip_learn
-    ld hl, .cost_to_relearn2
-    ld de, hMoneyTemp
-    ld bc, 3
-    call CopyBytes
-    ld bc, hMoneyTemp
-    ld de, wMoney
-    farcall TakeMoney
-    ld de, SFX_TRANSACTION
-    call PlaySFX
-    call WaitSFX
-.skip_learn
-    call ReturnToMapWithSpeechTextbox
 .cancel
-    farcall PlaceMoneyTopRight
-    ld hl, Text_EggMasterCancel
-    jp PrintText
+	ld hl, EggReminderCancelText
+	jp PrintText
 
-.egg
-    ld hl, Text_EggMasterEgg
-    jp PrintText
+.is_an_egg
+	ld hl, EggReminderEggText
+	call PrintText
+	jr .loop_party_menu
 
-.no_mon
-    ld hl, Text_EggMasterNoMon
-    jp PrintText
+.not_a_pokemon
+	ld hl, EggReminderNotaMonText
+	call PrintText
+	jr .loop_party_menu
 
-.cost_to_relearn2
-    dt 500000
+.no_moves_to_learn
+	ld hl, EggReminderNoMovesText
+	call PrintText
+	jr .loop_party_menu
 
+; Loads and prints the "EggReminderNotEnoughMoneyText" text.
+; This will end the dialogue.
 .not_enough_money
-    ld hl, Text_EggMasterNotEnoughMoney
-    jp PrintText
+	ld hl, EggReminderNotEnoughMoneyText
+	jp PrintText
 
-.no_moves
-    ld hl, Text_EggMasterNoMoves
-    jp PrintText
+.move_learned
+	call ReturnToMapWithSpeechTextbox
+	ld hl, EggReminderMoveLearnedText
+	call PrintText
+ 
+; This code falls through into the ".pay_for_move" local jump.
+
+; Places the player's current money at the top right corner of
+; the screen, retrieves the amount of money defined in the
+; "EggMoveCost" label, removes the defined amount of money from
+; the player, plays the "SFX_TRANSACTION" sound effect and
+; finally prints the "EggReminderPaymentReceivedText" text.
+.pay_for_move
+	farcall PlaceMoneyTopRight
+	ld hl, EggMoveCost
+	ld de, hMoneyTemp
+	ld bc, 3
+	call CopyBytes
+	call ApplyTilemap
+	call PromptButton
+	call WaitSFX
+	ld bc, hMoneyTemp
+	ld de, wMoney
+	farcall TakeMoney
+	farcall PlaceMoneyTopRight
+	ld de, SFX_TRANSACTION
+	call PlaySFX
+	call WaitSFX
+	ld hl, EggReminderPaymentReceivedText
+	call PrintText
+	ret
+
+	call CalculateCostAgainstPlayerMoney
+	jr c, .not_enough_money
+ 
+	jr .recheck_for_moves
+
+; Compares the value of "EggMoveCost" to
+; the amount of money the player has.
+CalculateCostAgainstPlayerMoney:
+	ld hl, EggMoveCost
+	ld de, hMoneyTemp
+	ld bc, 3
+	call CopyBytes
+	ld bc, hMoneyTemp
+	ld de, wMoney
+	farcall CompareMoney
+	ret
+
+; The cost for learning a move.
+EggMoveCost:
+	dt 500000
 
 GetRemindableEggMoves:
-; Get egg moves of CurPartyMon
-; Returns z if it has no egg moves.
-
-    ld hl, wd002
-    xor a
-    ld [hli], a
-    ld [hl], $ff
-
-    ld a, MON_SPECIES
-    call GetPartyParamLocation
-    ld a, [hl]
-    ld [wCurPartySpecies], a
-
-    push af
-    ld b, 0
-    ld de, wd002 + 1
-
-; Based on GetEggMove in engine/pokemon/breeding.asm
-    ld a, [wCurPartySpecies]
-    dec a
-    push bc
-    ld b, 0
-    ld c, a
-    ld hl, EggMovePointers
-    add hl, bc
-    add hl, bc
-    ld a, BANK(EggMovePointers)
-    call GetFarWord
+	ld hl, wd002
+	xor a
+	ld [hli], a
+	ld [hl], $ff
+	ld a, MON_SPECIES
+	call GetPartyParamLocation
+	ld a, [hl]
+	ld [wCurPartySpecies], a
+	push af
+	ld b, 0
+	ld de, wd002 + 1
+	ld a, [wCurPartySpecies]
+	dec a
+	push bc
+	ld c, a
+	ld hl, EggMovePointers
+	add hl, bc
+	add hl, bc
+	ld a, BANK(EggMovePointers)
+	call GetFarWord
 
 .loop_moves
-    ld a, BANK("Egg Moves")
-    call GetFarByte
-    inc hl
-    cp -1
-    jr z, .done
-
-    ld c, a
-    call CheckAlreadyInMoveList
-    jr c, .loop_moves
-    call CheckPokemonAlreadyKnowsEggMove
-    jr c, .loop_moves
-    ld a, c
-    ld [de], a
-    inc de
-    ld a, $ff
-    ld [de], a
-    pop bc
-    inc b
-    push bc
-    jr .loop_moves
+	ld a, BANK("Egg Moves")
+	call GetFarByte
+	inc hl
+	cp -1
+	jr z, .done
+	ld c, a
+	call CheckAlreadyInList
+	jr c, .loop_moves
+	call CheckPokemonAlreadyKnowsMove
+	jr c, .loop_moves
+	ld a, c
+	ld [de], a
+	inc de
+	ld a, $ff
+	ld [de], a
+	pop bc
+	inc b
+	push bc
+	jr .loop_moves
 
 .done
-    pop bc
-    pop af
-    ld [wCurPartySpecies], a
-    ld a, b
-    ld [wd002], a
-    and a
-    ret
+	pop bc
+	pop af
+	ld [wCurPartySpecies], a
+	ld a, b
+	ld [wd002], a
+	and a
+	ret
 
 CheckAlreadyInMoveList:
-    push hl
-    ld hl, wd002 + 1
+	push hl
+	ld hl, wd002 + 1
+
 .loop
-    ld a, [hli]
-    inc a
-    jr z, .nope
-    dec a
-    cp c
-    jr nz, .loop
-    pop hl
-    scf
-    ret
+	ld a, [hli]
+	inc a
+	jr z, .nope
+	dec a
+	cp c
+	jr nz, .loop
+	pop hl
+	scf
+	ret
+
 .nope
-    pop hl
-    and a
-    ret
+	pop hl
+	and a
+	ret
 
 CheckPokemonAlreadyKnowsEggMove:
-    push hl
-    push bc
-    ld a, MON_MOVES
-    call GetPartyParamLocation
-    ld b, 4
+	push hl
+	push bc
+	ld a, MON_MOVES
+	call GetPartyParamLocation
+	ld b, 4
+
 .loop
-    ld a, [hli]
-    cp c
-    jr z, .yes
-    dec b
-    jr nz, .loop
-    pop bc
-    pop hl
-    and a
-    ret
+	ld a, [hli]
+	cp c
+	jr z, .yes
+	dec b
+	jr nz, .loop
+	pop bc
+	pop hl
+	and a
+	ret
+
 .yes
-    pop bc
-    pop hl
-    scf
-    ret
+	pop bc
+	pop hl
+	scf
+	ret
 
 ChooseEggMoveToLearn:
-; Number of items stored in wd002
-; List of items stored in wd002 + 1
-    call FadeToMenu
-    farcall BlankScreen
-    call UpdateSprites
-    ld hl, .MenuHeader
-    call CopyMenuHeader
-    xor a
-    ld [wMenuCursorPosition], a
-    ld [wMenuScrollPosition], a
-    call ScrollingMenu
-    call SpeechTextbox
-    ld a, [wMenuJoypad]
-    cp B_BUTTON
-    jr z, .carry
-    ld a, [wMenuSelection]
-    ld [wPutativeTMHMMove], a
-    and a
-    ret
+	farcall FadeOutToWhite
+	farcall BlankScreen
+	ld hl, .MenuHeader
+	call CopyMenuHeader
+	xor a
+	ld [wMenuCursorPosition], a
+	ld [wMenuScrollPosition], a
+	hlcoord 0,  0
+	lb bc, 9, 18
+	call TextboxBorder
+	hlcoord 2, 0
+	lb bc, 1, 16
+	call ClearBox
+	ld de, FontBattleExtra + 14 tiles
+	ld hl, vTiles2 tile $6e
+	lb bc, BANK(FontBattleExtra), 1
+	call Get2bppViaHDMA
+	farcall LoadStatsScreenPageTilesGFX
+	xor a
+	ld [wMonType], a
+	ld hl, wPartyMonNicknames
+	ld a, [wCurPartyMon]
+	call GetNickname
+	hlcoord  3, 0
+	call PlaceString
+	farcall CopyMonToTempMon
+	hlcoord 14, 0
+	call PrintLevel
+	call ScrollingMenu
+	ld a, [wMenuJoypad]
+	cp B_BUTTON
+	jr z, .carry
+	ld a, [wMenuSelection]
+	ld [wPutativeTMHMMove], a
+	and a
+	ret
 
 .carry
-    scf
-    ret
+	scf
+	ret
 
 .MenuHeader:
-    db MENU_BACKUP_TILES ; flags
-    menu_coords 1, 1, SCREEN_WIDTH - 1, 11
-    dw .MenuData
-    db 1 ; default option
+	db MENU_BACKUP_TILES
+	menu_coords 1, 1, SCREEN_WIDTH - 2, 9
+	dw .MenuData
+	db 1
 
 .MenuData:
-    db SCROLLINGMENU_DISPLAY_ARROWS | SCROLLINGMENU_ENABLE_FUNCTION3 ; item format
-    db 5, SCREEN_WIDTH + 2 ; rows, columns
-    db SCROLLINGMENU_ITEMS_NORMAL
-    dba  wd002
-    dba .PrintMoveName
-    dba .PrintDetails
-    dba .PrintMoveDesc
+	db SCROLLINGMENU_DISPLAY_ARROWS | SCROLLINGMENU_ENABLE_FUNCTION3
+	db 4, SCREEN_WIDTH + 2
+	db SCROLLINGMENU_ITEMS_NORMAL
+	dba  wd002
+	dba .print_move_name
+	dba .print_pp
+	dba .print_move_details
 
-.PrintMoveName
-    push de
-    ld a, [wMenuSelection]
-    ld [wd265], a
-    call GetMoveName
-    pop hl
-    jp PlaceString
+.print_move_name
+	push de
+	ld a, [wMenuSelection]
+	ld [wNamedObjectIndex], a
+	call GetMoveName
+	pop hl
+	jp PlaceString
 
-.PrintDetails
-    ld hl, wStringBuffer1
-    ld bc, wStringBuffer2 - wStringBuffer1
-    ld a, " "
-    call ByteFill
-    ld a, [wMenuSelection]
-    inc a
-    ret z
-    dec a
-    push de
-    dec a
-
-IF DEF(PSS)
-    ld bc, MOVE_LENGTH
-    ld hl, Moves
-    call AddNTimes
-    ld a, BANK(Moves)
-    call GetFarByte
-
-; bc = a * 4
-    add a
-    add a
-    ld b, 0
-    ld c, a
-    ld hl, .Types
-    add hl, bc
-    ld d, h
-    ld e, l
-    ld hl, wStringBuffer1
-    ld bc, 3
-    call PlaceString
-    ld hl, wStringBuffer1 + 3
-    ld [hl], "/"
-
-    ld a, [wMenuSelection]
-    dec a
-ENDC
-
-    ld bc, MOVE_LENGTH
-    ld hl, Moves + MOVE_TYPE
-    call AddNTimes
-    ld a, BANK(Moves)
-    call GetFarByte
-    ld [wd265], a
-
-; bc = a * 4
-    add a
-    add a
-    ld b, 0
-    ld c, a
-    ld hl, .Types
-    add hl, bc
-    ld d, h
-    ld e, l
-    ld hl, wStringBuffer1 + 4
-    ld bc, 3
-    call PlaceString
-    ld hl, wStringBuffer1 + 7
-    ld [hl], "/"
-
-    ld a, [wMenuSelection]
-    dec a
+.print_pp
+	ld hl, wStringBuffer1
+	ld bc, wStringBuffer2 - wStringBuffer1
+	ld a, " "
+	call ByteFill
+	ld a, [wMenuSelection]
+	inc a
+	ret z
+	dec a
+	push de
+	ld a, [wMenuSelection]
+	ld bc, MOVE_LENGTH
+	ld hl, (Moves + MOVE_PP) - MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	ld [wBuffer1], a
+	ld hl, wStringBuffer1 + 9
+	ld de, wBuffer1
+	lb bc, 1, 2
+	call PrintNum
+	ld hl, wStringBuffer1 + 11
+	ld [hl], "/"
+	ld hl, wStringBuffer1 + 12
+	call PrintNum
     
-    ld bc, MOVE_LENGTH
-    ld hl, Moves + MOVE_POWER
-    call AddNTimes
-    ld a, BANK(Moves)
-    call GetFarByte
-    ld hl, wStringBuffer1 + 8
-    and a
-    jr z, .no_power
-    ld [wTempMonMoves], a
-    ld de, wTempMonMoves
-    lb bc, 1, 3
-    call PrintNum
-    jr .got_power
-.no_power
-    ld de, .ThreeDashes
-    ld bc, 3
-    call PlaceString
-.got_power
-    ld hl, wStringBuffer1 + 11
-    ld [hl], "/"
+	ld hl, wStringBuffer1 + 14
+	ld [hl], "@"
+	pop hl
+	ld de, wStringBuffer1
+	call PlaceString
+	ld bc, 6
+	add hl, bc
+	ld a, $3e
+	ld [hli], a
+	ld [hl], a
+	ret
 
-    ld a, [wMenuSelection]
-    dec a
+.cancel_border_fix
+	hlcoord 0, 9
+	ld [hl], "│"
+	inc hl
+	ret
 
-; Print PP (works)
-    ld a, [wMenuSelection]
-    dec a
-    ld bc, MOVE_LENGTH
-    ld hl, Moves + MOVE_PP
-    call AddNTimes
-    ld a, BANK(Moves)
-    call GetFarByte
-    ld [wTempMonPP], a
-    ld hl, wStringBuffer1 + 12
-    ld de, wTempMonPP
-    lb bc, 1, 2
-    call PrintNum
-    ld hl, wStringBuffer1 + 14
-    ld [hl], "@"
+.print_move_details
+	hlcoord 0, 10
+	lb bc, 6, 18
+	call TextboxBorder
+	ld a, [wMenuSelection]
+	cp -1
+	jr z, .cancel_border_fix
 
-    pop hl
-    ld de, wStringBuffer1
-    jp PlaceString
-    
-.ThreeDashes
-    db "---@"
+.print_move_desc
+	push de
+	ld a, [wMenuSelection]
+	inc a
+	pop de
+	ret z
+	dec a
+	ld [wCurSpecies], a
+	hlcoord 1, 14
+	predef PrintMoveDescription
 
-.Types
-	db "NRM@"
-	db "FGT@"
-	db "FLY@"
-	db "PSN@"
-	db "GRD@"
-	db "RCK@"
-	db "BRD@"
-	db "BUG@"
-	db "GHT@"
-	db "STL@"
-	db "NRM@"
-	db "NRM@"
-	db "NRM@"
-	db "NRM@"
-	db "NRM@"
-	db "NRM@"
-	db "NRM@"
-	db "NRM@"
-	db "NRM@"
-	db "???@"
-	db "FIR@"
-	db "WTR@"
-	db "GRS@"
-	db "ELC@"
-	db "PSY@"
-	db "ICE@"
-	db "DRG@"
-	db "DRK@"
+.print_move_type
+	ld a, [wCurSpecies]
+	ld b, a
+	hlcoord 10, 11
+	predef PrintMoveType
 
-.PrintMoveDesc
-    push de
-    call SpeechTextbox
-    ld a, [wMenuSelection]
-    inc a
-    pop de
-    ret z
-    dec a
-    ld [wCurSpecies], a
-    hlcoord 1, 14
-    predef_jump PrintMoveDescription
+.print_move_stat_strings
+	hlcoord 0, 9
+	ld de, EggMoveTypeTopString
+	call PlaceString
 
-Text_EggMasterIntro:
-    text_far _EggMasterIntroText
-    text_end
+	hlcoord 0, 10
+	ld de, EggMoveTypeBottomString
+	call PlaceString
 
-Text_EggMasterPrompt:
-    text_far _EggMasterPromptText
-    text_end
+	ld a, [wCurSpecies]
+	ld b, a
+	farcall GetMoveCategoryName
+	hlcoord 11, 12
+	ld de, wStringBuffer1
+	call PlaceString
+	hlcoord 10, 12
+	ld [hl], "/"
+	inc hl
 
-Text_EggMasterWhichMon:
-    text_far _EggMasterWhichMonText
-    text_end
+	hlcoord 1, 10
+	ld de, EggMoveAttackString
+	call PlaceString
+	hlcoord  1, 12
+	ld de, EggMoveChanceString
+	call PlaceString
+	hlcoord 1, 11
+	ld de, EggMoveAccuracyString
+	call PlaceString
 
-Text_EggMasterWhichMove:
-    text_far _EggMasterWhichMoveText
-    text_end
+.print_move_chance
+	ld a, [wMenuSelection]
+	ld bc, MOVE_LENGTH
+	ld hl, (Moves + MOVE_CHANCE) - MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	cp 1
+	jr c, .print_move_null_chance
+	call EggConvertPercentages
+	ld [wBuffer1], a
+	ld de, wBuffer1
+	lb bc, 1, 3
+	hlcoord  5, 12
+	call PrintNum
+	ld [hl], "<%>" ; displays percent symbol
+	hlcoord 8, 8
+	jr .print_move_accuracy
 
-Text_EggMasterCancel:
-    text_far _EggMasterCancelText
-    text_end
+.print_move_null_chance
+	ld de, MoveNullValueString
+	ld bc, 3
+	hlcoord  5, 12
+	call PlaceString
 
-Text_EggMasterEgg:
-    text_far _EggMasterEggText
-    text_end
+.print_move_accuracy
+	ld a, [wMenuSelection]
+	ld bc, MOVE_LENGTH
+	ld hl, (Moves + MOVE_EFFECT) - MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	cp EFFECT_MIRROR_MOVE
+	jr nc, .perfect_accuracy
+	ld a, [wMenuSelection]
+	ld bc, MOVE_LENGTH
+	ld hl, (Moves + MOVE_ACC) - MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	call EggConvertPercentages
+	ld [wBuffer1], a
+	ld de, wBuffer1
+	lb bc, 1, 3
+	hlcoord 5, 11
+	call PrintNum
+	ld [hl], "<%>" ; displays percent symbol
+	hlcoord 7, 8
+	jr .print_move_attack
 
-Text_EggMasterNoMon:
-    text_far _EggMasterNoMonText
-    text_end
+.perfect_accuracy
+	ld de, MoveNullValueString
+	ld bc, 3
+	hlcoord 5, 11
+	call PlaceString
 
-Text_EggMasterNotEnoughMoney:
-    text_far _EggMasterNotEnoughMoneyText
-    text_end
-
-Text_EggMasterNoMoves:
-    text_far _EggMasterNoMovesText
-    text_end
-
-_EggMasterIntroText::
-    text "I'm the one and"
-    line "only EGG TUTOR!"
-    
-    para "I can teach your"
-    line "#MON moves that"
+.print_move_attack
+	ld a, [wMenuSelection]
+	ld bc, MOVE_LENGTH
+	ld hl, (Moves + MOVE_POWER) - MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	cp 2
+	jr c, .print_move_null_attack
+	ld [wBuffer1], a
+	ld de, wBuffer1
+	lb bc, 1, 3
+	hlcoord 5, 10
+	jp PrintNum
  
-    para "they'd normally"
-    line "need crossbreeding"
-    cont "to inherit."
-    
-    para "My service fee is"
-    line "¥500,000."
-    done
+.print_move_null_attack
+	hlcoord 5, 10
+	ld de, MoveNullValueString
+	ld bc, 3
+	jp PlaceString
 
-_EggMasterPromptText:
-    text "How about it?"
-    done
+EggConvertPercentages:
+	ld l, a
+	ld h, 0
+	push af
+	add hl, hl
+	add a, l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	pop af
+	add a, l
+	ld l, a
+	adc h
+	sbc l
+	ld h, a
+	add hl, hl
+	add hl, hl
+	ld l, 0.5
+	sla l
+	sbc a
+	and 1
+	add a, h
+	ret
 
-_EggMasterWhichMonText::
-    text "Which #MON do"
-    line "you need tutoring?"
-    done
+EggMoveTypeTopString:
+	db "┌───────┐@"
 
-_EggMasterCancelText::
-    text "Do visit again."
-    done
+EggMoveTypeBottomString:
+	db "│       └──────────┐@"
 
-_EggMasterWhichMoveText::
-    text "Select a move to"
-    line "be taught."
-    done
+EggMoveAttackString:
+	db "POW/@"
 
-_EggMasterNoMovesText::
-    text "Hmm… this #MON"
-    line "has no EGG MOVES."
-    done
+EggMoveNullValueString:
+	db "---@"
 
-_EggMasterEggText::
-    text "EGGS needs to be"
-    line "hatched first."
-    done
+EggMoveAccuracyString:
+	db "ACC/@"
 
-_EggMasterNoMonText::
-    text "No #MON has"
-    line "been selected."
-    done
+EggMoveChanceString:
+	db "EFF/@"
 
-_EggMasterNotEnoughMoneyText:
-	text "You don't have"
+EggReminderIntroText:
+	text "I'm the one and"
+	line "only EGG TUTOR!"
+
+	para "I can teach your"
+	line "#MON moves that"
+
+	para "they'd normally"
+	line "need crossbreeding"
+	cont "to inherit."
+
+	para "My service fee is"
+	line "¥500,000."
+
+	para "How about it?"
+	done
+
+; This is the text that displays if the player
+; does not have enough money to learn a move.
+EggReminderNotEnoughMoneyText:
+	text "Hm… You don't have"
 	line "enough money."
+
+	para "Please come back"
+	line "when you do."
+	done
+
+EggReminderWhichMonText:
+	text "Which #MON"
+	line "needs tutoring?"
+	prompt
+
+EggReminderWhichMoveText:
+	text "Which move should"
+	line "it learn, then?"
+	prompt
+
+EggReminderCancelText:
+	text "Do visit again."
+	done
+
+EggReminderEggText:
+	text "EGGS needs to be"
+	line "hatched first."
+	prompt
+
+EggReminderNotaMonText:
+	text "What is that!?"
+	para "I'm sorry, but I"
+	line "can only teach"
+	cont "moves to #MON!"
+	prompt
+
+EggReminderNoMovesText:
+	text "Hmm… this #MON"
+	line "has no EGG MOVES."
+	prompt
+
+EggReminderMoveLearnedText:
+	text "Done! Your #MON"
+	line "learned the move."
+	prompt
+
+EggReminderPaymentReceivedText:
+	text "Pleasure doing"
+	line "business!"
+
+	para "Come again, any-"
+	line "time!"
 	done
