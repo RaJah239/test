@@ -84,9 +84,8 @@ EggMaster:
     dt 500000
 
 .not_enough_money
-    ld a, MOVERELEARNERTEXT_NOTENOUGHMONEY
-    call PrintMoveRelearnerText
-    ret
+    ld hl, Text_EggMasterNotEnoughMoney
+    jp PrintText
 
 .no_moves
     ld hl, Text_EggMasterNoMoves
@@ -421,6 +420,10 @@ Text_EggMasterNoMon:
     text_far _EggMasterNoMonText
     text_end
 
+Text_EggMasterNotEnoughMoney:
+    text_far _EggMasterNotEnoughMoneyText
+    text_end
+
 Text_EggMasterNoMoves:
     text_far _EggMasterNoMovesText
     text_end
@@ -472,3 +475,8 @@ _EggMasterNoMonText::
     text "No #MON has"
     line "been selected."
     done
+
+_EggMasterNotEnoughMoneyText:
+	text "You don't have"
+	line "enough money."
+	done
