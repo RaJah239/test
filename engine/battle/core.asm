@@ -5626,10 +5626,20 @@ MoveInfoBox:
 .place_accuracy
 	ld a, [wCurSpecies]
 	ld bc, MOVE_LENGTH
+	ld hl, (Moves + MOVE_EFFECT) - MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+
+	cp EFFECT_MIRROR_MOVE
+	jr nc, .perfect_accuracy
+	ld a, [wCurSpecies]
+	ld bc, MOVE_LENGTH
 	ld hl, (Moves + MOVE_ACC) - MOVE_LENGTH
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
+
 	Call Adjust_Percent_Battle
 	ld [wBuffer1], a
 	ld de, wBuffer1
@@ -5639,7 +5649,18 @@ MoveInfoBox:
 	ld [hl], "<%>" ; displays percent symbol
 	hlcoord 8, 8
 
+	jr .print_move_attack
+
+; This prints "---" if the move
+; has perfect accuracy.
+.perfect_accuracy
+	ld de, .nopower_string ; "---"
+	ld bc, 3
+	hlcoord 5, 9
+	call PlaceString
+
 ; Print move effect chance
+.print_move_attack
 	ld a, [wCurSpecies]
 	ld bc, MOVE_LENGTH
 	ld hl, (Moves + MOVE_CHANCE) - MOVE_LENGTH
