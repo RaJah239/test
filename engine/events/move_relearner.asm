@@ -391,10 +391,10 @@ ChooseMoveToLearn:
 	; top left of the screen.
 	xor a
 	ld [wMonType], a
-	ld a, [wCurPartySpecies]
-	ld [wNamedObjectIndex], a
-	call GetPokemonName
-	hlcoord  3, 0
+	ld hl, wPartyMonNicknames
+	ld a, [wCurPartyMon]
+	call GetNickname
+	hlcoord 3, 0
 	call PlaceString
 
 	; This displays the Pokémon's level
