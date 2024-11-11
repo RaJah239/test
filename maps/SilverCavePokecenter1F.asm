@@ -77,7 +77,7 @@ MasterMaximaIntroText:
 	para "I was visiting my"
 	line "pal, VICTOR here."
 
-	para "He helps trainers'"
+	para "He helps trainers"
 	line "get their #MON"
 	cont "to their peak."
 
