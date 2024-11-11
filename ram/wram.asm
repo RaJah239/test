@@ -3190,9 +3190,8 @@ wLuckyNumberDayTimer:: dw
 wSpecialPhoneCallID:: db
 
 wBugContestStartTime:: ds 4 ; day, hour, min, sec
-wUnusedTwoDayTimerOn:: db
-wUnusedTwoDayTimer:: db
-wUnusedTwoDayTimerStartDate:: db
+
+	ds 3
 
 wMobileOrCable_LastSelection:: db
 wdc41:: ds 1

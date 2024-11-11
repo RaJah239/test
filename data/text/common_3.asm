@@ -392,10 +392,6 @@ _PhoneJustTalkToThemText::
 	line "that person!"
 	done
 
-_PhoneThankYouText::
-	text "Thank you!"
-	done
-
 _ClearAllSaveDataText::
 	text "Clear all save"
 	line "data?"

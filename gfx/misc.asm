@@ -18,7 +18,7 @@ SECTION "Unused Egg Pic", ROMX
 
 UnusedEggPic::
 ; The G/S Egg pic. This is shifted up a few pixels.
-INCBIN "gfx/pokemon/egg/unused_front.2bpp.lz"
+INCBIN "gfx/pokemon/egg/front.gbcpal"
 
 
 SECTION "The End", ROMX

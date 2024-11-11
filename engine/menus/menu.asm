@@ -21,9 +21,6 @@ _InterpretBattleMenu::
 	call Get2DMenuSelection
 	ret
 
-_InterpretMobileMenu::
-	ret
-
 Draw2DMenu:
 	xor a
 	ldh [hBGMapMode], a
@@ -623,38 +620,6 @@ _ExitMenu::
 	ldh [rSVBK], a
 	ld hl, wWindowStackSize
 	dec [hl]
-	ret
-
-RestoreOverworldMapTiles: ; unreferenced
-	ld a, [wStateFlags]
-	bit SPRITE_UPDATES_DISABLED_F, a
-	ret z
-	xor a ; sScratch
-	call OpenSRAM
-	hlcoord 0, 0
-	ld de, sScratch
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	call CopyBytes
-	call CloseSRAM
-	call LoadOverworldTilemapAndAttrmapPals
-	xor a ; sScratch
-	call OpenSRAM
-	ld hl, sScratch
-	decoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-.loop
-	ld a, [hl]
-	cp $61
-	jr c, .next
-	ld [de], a
-.next
-	inc hl
-	inc de
-	dec bc
-	ld a, c
-	or b
-	jr nz, .loop
-	call CloseSRAM
 	ret
 
 Error_Cant_ExitMenu:
