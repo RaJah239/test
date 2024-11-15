@@ -196,10 +196,10 @@ TrainerSchoolboyAlan1:
 .Script:
 	loadvar VAR_CALLERID, PHONE_SCHOOLBOY_ALAN
 	opentext
-	checkflag ENGINE_ALAN_READY_FOR_REMATCH
-	iftrue .ChooseRematch
 	checkflag ENGINE_ALAN_HAS_FIRE_STONE
 	iftrue .GiveFireStone
+	checkflag ENGINE_ALAN_READY_FOR_REMATCH
+	iftrue .ChooseRematch
 	checkcellnum PHONE_SCHOOLBOY_ALAN
 	iftrue .NumberAccepted
 	checkevent EVENT_ALAN_ASKED_FOR_PHONE_NUMBER
@@ -207,14 +207,13 @@ TrainerSchoolboyAlan1:
 	writetext SchoolboyAlanBooksText
 	promptbutton
 	setevent EVENT_ALAN_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber1
+	scall .AskNumber
 	sjump .ContinueAskForPhoneNumber
 
 .AskAgainForPhoneNumber:
-	scall .AskNumber2
+	scall .AskNumber
 .ContinueAskForPhoneNumber:
 	askforphonenumber PHONE_SCHOOLBOY_ALAN
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, SCHOOLBOY, ALAN1
 	scall .RegisteredNumber
@@ -270,18 +269,14 @@ TrainerSchoolboyAlan1:
 	verbosegiveitem FIRE_STONE
 	iffalse .BagFull
 	clearflag ENGINE_ALAN_HAS_FIRE_STONE
-	setevent EVENT_ALAN_GAVE_FIRE_STONE
-	sjump .NumberAccepted
+	closetext
+	end
 
 .BagFull:
 	sjump .PackFull
 
-.AskNumber1:
+.AskNumber:
 	jumpstd AskNumber1MScript
-	end
-
-.AskNumber2:
-	jumpstd AskNumber2MScript
 	end
 
 .RegisteredNumber:
@@ -294,10 +289,6 @@ TrainerSchoolboyAlan1:
 
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
-	end
-
-.PhoneFull:
-	jumpstd PhoneFullMScript
 	end
 
 .Rematch:

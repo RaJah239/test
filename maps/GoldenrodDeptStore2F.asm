@@ -40,8 +40,12 @@ GoldenrodDeptStore2FElevatorButton:
 	jumpstd ElevatorButtonScript
 
 GoldenrodDeptStore2FYoungsterText:
-	text "#GEAR stores 35"
-	line "phone numbers max!"
+	text "Your #GEAR can"
+	line "store many phone"
+	cont "numbers!"
+	
+	para "There's no need to"
+	line "delete anyone."
 	done
 
 GoldenrodDeptStore2FCooltrainerFText:

@@ -62,10 +62,10 @@ TrainerBirdKeeperJose2:
 .Script:
 	loadvar VAR_CALLERID, PHONE_BIRDKEEPER_JOSE
 	opentext
-	checkflag ENGINE_JOSE_READY_FOR_REMATCH
-	iftrue .WantsBattle
 	checkflag ENGINE_JOSE_HAS_STAR_PIECE
 	iftrue .HasStarPiece
+	checkflag ENGINE_JOSE_READY_FOR_REMATCH
+	iftrue .WantsBattle
 	checkcellnum PHONE_BIRDKEEPER_JOSE
 	iftrue .NumberAccepted
 	checkevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
@@ -73,14 +73,13 @@ TrainerBirdKeeperJose2:
 	writetext BirdKeeperJose2AfterBattleText
 	promptbutton
 	setevent EVENT_JOSE_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber1
+	scall .AskNumber
 	sjump .AskForNumber
 
 .AskedAlready:
-	scall .AskNumber2
+	scall .AskNumber
 .AskForNumber:
 	askforphonenumber PHONE_BIRDKEEPER_JOSE
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, BIRD_KEEPER, JOSE2
 	scall .RegisteredNumber
@@ -118,17 +117,14 @@ TrainerBirdKeeperJose2:
 	verbosegiveitem STAR_PIECE
 	iffalse .NoRoom
 	clearflag ENGINE_JOSE_HAS_STAR_PIECE
-	sjump .NumberAccepted
+	closetext
+	end
 
 .NoRoom:
 	sjump .PackFull
 
-.AskNumber1:
+.AskNumber:
 	jumpstd AskNumber1MScript
-	end
-
-.AskNumber2:
-	jumpstd AskNumber2MScript
 	end
 
 .RegisteredNumber:
@@ -141,10 +137,6 @@ TrainerBirdKeeperJose2:
 
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
-	end
-
-.PhoneFull:
-	jumpstd PhoneFullMScript
 	end
 
 .Rematch:
@@ -185,6 +177,8 @@ TrainerCooltrainerfReena:
 .Script:
 	loadvar VAR_CALLERID, PHONE_COOLTRAINERF_REENA
 	opentext
+	checkevent EVENT_REENA_MOON_STONE
+	iftrue .RematchGift
 	checkflag ENGINE_REENA_READY_FOR_REMATCH
 	iftrue .WantsBattle
 	checkcellnum PHONE_COOLTRAINERF_REENA
@@ -194,14 +188,13 @@ TrainerCooltrainerfReena:
 	writetext CooltrainerfReenaAfterBattleText
 	promptbutton
 	setevent EVENT_REENA_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber1
+	scall .AskNumber
 	sjump .AskForNumber
 
 .AskedAlready:
-	scall .AskNumber2
+	scall .AskNumber
 .AskForNumber:
 	askforphonenumber PHONE_COOLTRAINERF_REENA
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, COOLTRAINERF, REENA1
 	scall .RegisteredNumber
@@ -232,14 +225,30 @@ TrainerCooltrainerfReena:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_REENA_READY_FOR_REMATCH
+	opentext
+	writetext CooltrainerfReenaText_GiveMoonStoneAfterBattle
+	waitbutton
+	verbosegiveitem MOON_STONE
+	iffalse .PackFull
+	closetext
 	end
 
-.AskNumber1:
+.RematchGift
+	writetext CooltrainerfReenaText_AgainGiveMoonStoneAfterBattle
+	waitbutton
+	verbosegiveitem MOON_STONE
+	iffalse .PackFull
+	clearevent EVENT_REENA_MOON_STONE
+	closetext
+	end
+
+.PackFull:
+	setevent EVENT_REENA_MOON_STONE
+	jumpstd PackFullFScript
+	end
+
+.AskNumber:
 	jumpstd AskNumber1FScript
-	end
-
-.AskNumber2:
-	jumpstd AskNumber2FScript
 	end
 
 .RegisteredNumber:
@@ -252,10 +261,6 @@ TrainerCooltrainerfReena:
 
 .NumberDeclined:
 	jumpstd NumberDeclinedFScript
-	end
-
-.PhoneFull:
-	jumpstd PhoneFullFScript
 	end
 
 .Rematch:
@@ -439,6 +444,16 @@ TohjoFallsSignText:
 
 	para "THE LINK BETWEEN"
 	line "KANTO AND JOHTO"
+	done
+
+CooltrainerfReenaText_GiveMoonStoneAfterBattle:
+	text "I'm in a giving"
+	line "mood. Take this!"
+	done
+
+CooltrainerfReenaText_AgainGiveMoonStoneAfterBattle:
+	text "Oh, back for my"
+	line "gift, are you?"
 	done
 
 Route27_MapEvents:

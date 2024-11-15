@@ -65,6 +65,8 @@ TrainerPokemaniacBrent:
 .Script:
 	loadvar VAR_CALLERID, PHONE_POKEMANIAC_BRENT
 	opentext
+	checkevent EVENT_BRENT_GOLD_BERRY
+	iftrue .RematchGift
 	checkflag ENGINE_BRENT_READY_FOR_REMATCH
 	iftrue .WantsBattle
 	checkcellnum PHONE_POKEMANIAC_BRENT
@@ -74,14 +76,13 @@ TrainerPokemaniacBrent:
 	writetext PokemaniacBrentAfterBattleText
 	promptbutton
 	setevent EVENT_BRENT_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber1
+	scall .AskNumber
 	sjump .AskForNumber
 
 .AskedAlready:
-	scall .AskNumber2
+	scall .AskNumber
 .AskForNumber:
 	askforphonenumber PHONE_POKEMANIAC_BRENT
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, POKEMANIAC, BRENT1
 	scall .RegisteredNumber
@@ -121,14 +122,30 @@ TrainerPokemaniacBrent:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_BRENT_READY_FOR_REMATCH
+	opentext
+	writetext PokemaniacBrent_GiveGoldBerryAfterBattleText
+	waitbutton
+	verbosegiveitem GOLD_BERRY
+	iffalse .PackFull
+	closetext
 	end
 
-.AskNumber1:
+.RematchGift
+	writetext PokemaniacBrent_AgainGiveGoldBerryAfterBattleText
+	waitbutton
+	verbosegiveitem GOLD_BERRY
+	iffalse .PackFull
+	clearevent EVENT_BRENT_GOLD_BERRY
+	closetext
+	end
+
+.PackFull:
+	setevent EVENT_BRENT_GOLD_BERRY
+	jumpstd PackFullMScript
+	end
+
+.AskNumber:
 	jumpstd AskNumber1MScript
-	end
-
-.AskNumber2:
-	jumpstd AskNumber2MScript
 	end
 
 .RegisteredNumber:
@@ -141,10 +158,6 @@ TrainerPokemaniacBrent:
 
 .NumberDeclined:
 	jumpstd NumberDeclinedMScript
-	end
-
-.PhoneFull:
-	jumpstd PhoneFullMScript
 	end
 
 .Rematch:
@@ -177,10 +190,10 @@ TrainerPicnickerTiffany:
 .Script:
 	loadvar VAR_CALLERID, PHONE_PICNICKER_TIFFANY
 	opentext
-	checkflag ENGINE_TIFFANY_READY_FOR_REMATCH
-	iftrue .WantsBattle
 	checkflag ENGINE_TIFFANY_HAS_PINK_BOW
 	iftrue .HasPinkBow
+	checkflag ENGINE_TIFFANY_READY_FOR_REMATCH
+	iftrue .WantsBattle
 	checkcellnum PHONE_PICNICKER_TIFFANY
 	iftrue .NumberAccepted
 	checkpoke CLEFAIRY
@@ -190,14 +203,13 @@ TrainerPicnickerTiffany:
 	writetext PicnickerTiffanyWantsPicnicText
 	promptbutton
 	setevent EVENT_TIFFANY_ASKED_FOR_PHONE_NUMBER
-	scall .AskNumber1
+	scall .AskNumber
 	sjump .AskForNumber
 
 .AskedAlready:
-	scall .AskNumber2
+	scall .AskNumber
 .AskForNumber:
 	askforphonenumber PHONE_PICNICKER_TIFFANY
-	ifequal PHONE_CONTACTS_FULL, .PhoneFull
 	ifequal PHONE_CONTACT_REFUSED, .NumberDeclined
 	gettrainername STRING_BUFFER_3, PICNICKER, TIFFANY3
 	scall .RegisteredNumber
@@ -244,8 +256,8 @@ TrainerPicnickerTiffany:
 	verbosegiveitem PINK_BOW
 	iffalse .NoRoom
 	clearflag ENGINE_TIFFANY_HAS_PINK_BOW
-	setevent EVENT_TIFFANY_GAVE_PINK_BOW
-	sjump .NumberAccepted
+	closetext
+	end
 
 .NoRoom:
 	sjump .PackFull
@@ -256,12 +268,8 @@ TrainerPicnickerTiffany:
 	closetext
 	end
 
-.AskNumber1:
+.AskNumber:
 	jumpstd AskNumber1FScript
-	end
-
-.AskNumber2:
-	jumpstd AskNumber2FScript
 	end
 
 .RegisteredNumber:
@@ -274,10 +282,6 @@ TrainerPicnickerTiffany:
 
 .NumberDeclined:
 	jumpstd NumberDeclinedFScript
-	end
-
-.PhoneFull:
-	jumpstd PhoneFullFScript
 	end
 
 .Rematch:
@@ -443,8 +447,8 @@ PicnickerTiffanyClefairyText:
 	line "just the most"
 	cont "adorable thing?"
 	
-	para "If you had one, we"
-	line "could be friends!"
+	para "Do you have a"
+	line "CLEFAIRY?"
 	done
 
 Route43Sign1Text:
@@ -556,6 +560,17 @@ Route43FoundItemText:
 Route43NoRoomInBagText:
 	text_far _CantCarryItemText
 	text_end
+
+PokemaniacBrent_GiveGoldBerryAfterBattleText:
+	text "Take this to be"
+	line "stronger for our"
+	cont "next battle."
+	done
+
+PokemaniacBrent_AgainGiveGoldBerryAfterBattleText:
+	text "Made room now?"
+	line "Take it!"
+	done
 
 Route43_MapEvents:
 	db 0, 0 ; filler
