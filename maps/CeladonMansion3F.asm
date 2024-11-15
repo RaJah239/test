@@ -47,7 +47,6 @@ GameFreakGraphicArtistScript:
 	writetext GameFreakGraphicArtistPrintDiplomaText
 	yesorno
 	iffalse .Refused
-	special PrintDiploma
 	closetext
 	end
 

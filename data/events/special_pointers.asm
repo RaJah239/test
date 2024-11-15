@@ -50,7 +50,6 @@ SpecialsPointers::
 	add_special NameRival
 	add_special SetDayOfWeek
 	add_special OverworldTownMap
-	add_special UnownPrinter
 	add_special MapRadio
 	add_special UnownPuzzle
 	add_special SlotMachine
@@ -114,7 +113,6 @@ SpecialsPointers::
 	add_special InitRoamMons
 	add_special FadeOutMusic
 	add_special Diploma
-	add_special PrintDiploma
 
 ; Crystal only
 	add_special BattleTowerRoomMenu

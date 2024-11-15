@@ -80,7 +80,6 @@ INCLUDE "engine/events/money.asm"
 INCLUDE "data/items/marts.asm"
 INCLUDE "engine/events/mom.asm"
 INCLUDE "engine/events/daycare.asm"
-INCLUDE "engine/events/print_unown.asm"
 INCLUDE "engine/pokemon/breeding.asm"
 
 
@@ -278,7 +277,6 @@ INCLUDE "data/text/battle.asm"
 
 SECTION "bank21", ROMX
 
-INCLUDE "engine/printer/printer_serial.asm"
 INCLUDE "engine/printer/printer.asm"
 INCLUDE "gfx/battle_anims.asm"
 INCLUDE "engine/events/halloffame.asm"
@@ -598,11 +596,6 @@ INCLUDE "data/items/names.asm"
 INCLUDE "engine/items/print_item_description.asm"
 INCLUDE "data/moves/names.asm"
 INCLUDE "engine/overworld/landmarks.asm"
-
-
-SECTION "Print Party", ROMX
-
-INCLUDE "engine/printer/print_party.asm"
 
 
 SECTION "bank77", ROMX

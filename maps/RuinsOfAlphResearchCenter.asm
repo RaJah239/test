@@ -165,7 +165,6 @@ RuinsOfAlphResearchCenterPrinter:
 .PrinterAvailable:
 	writetext RuinsOfAlphResearchCenterUnownPrinterText
 	waitbutton
-	special UnownPrinter
 	closetext
 	end
 
