@@ -39,7 +39,6 @@ MeetMomScript:
 	getstring STRING_BUFFER_4, PokegearName
 	scall PlayersHouse1FReceiveItemStd
 	setflag ENGINE_POKEGEAR
-	special UnlockMysteryGift
 	setflag ENGINE_PHONE_CARD
 	addcellnum PHONE_MOM
 	setscene SCENE_PLAYERSHOUSE1F_NOOP

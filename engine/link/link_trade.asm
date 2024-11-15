@@ -97,7 +97,6 @@ _LinkTextbox:
 InitTradeSpeciesList:
 	call _LoadTradeScreenBorderGFX
 	call LoadCableTradeBorderTilemap
-	farcall InitMG_Mobile_LinkTradePalMap
 	farcall PlaceTradePartnerNamesAndParty
 	hlcoord 10, 17
 	ld de, .CancelString

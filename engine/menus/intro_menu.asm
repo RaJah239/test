@@ -45,12 +45,6 @@ NewGame_ClearTilemapEtc:
 	call ClearWindowData
 	ret
 
-MysteryGift:
-	call UpdateTime
-	farcall DoMysteryGiftIfDayHasPassed
-	farcall DoMysteryGift
-	ret
-
 Option:
 	farcall _Option
 	ret
@@ -361,7 +355,6 @@ Continue:
 	ld c, 20
 	call DelayFrames
 	farcall JumpRoamMons
-	farcall CopyMysteryGiftReceivedDecorationsToPC
 	farcall ClockContinue
 	ld a, [wSpawnAfterChampion]
 	cp SPAWN_LANCE

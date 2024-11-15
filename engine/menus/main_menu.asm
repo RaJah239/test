@@ -78,7 +78,7 @@ endc
 	dw MainMenu_Continue
 	dw MainMenu_NewGame
 	dw MainMenu_Option
-	dw MainMenu_MysteryGift
+	dw MainMenu_ResetClock
 	dw MainMenu_Mobile
 	dw MainMenu_MobileStudium
 if DEF(_DEBUG)
@@ -393,6 +393,6 @@ MainMenu_Continue:
 	farcall Continue
 	ret
 
-MainMenu_MysteryGift:
+MainMenu_ResetClock:
 	farcall _ResetClock
 	ret
