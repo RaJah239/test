@@ -144,10 +144,10 @@ DoBattle:
 	call SpikesDamage
 	ld a, [wLinkMode]
 	and a
-	jr z, .not_linked_2
+	jr z, BattleTurn
 	ldh a, [hSerialConnectionStatus]
 	cp USING_INTERNAL_CLOCK
-	jr nz, .not_linked_2
+	jr nz, BattleTurn
 	xor a
 	ld [wEnemySwitchMonIndex], a
 	call NewEnemyMonStatus
@@ -156,8 +156,6 @@ DoBattle:
 	call EnemySwitch
 	call SetEnemyTurn
 	call SpikesDamage
-
-.not_linked_2
 	jp BattleTurn
 
 .tutorial_debug
@@ -334,7 +332,14 @@ CheckFaint_PlayerThenEnemy:
 	ret
 
 CheckFaint_EnemyThenPlayer:
-; BUG: Perish Song and Spikes can leave a Pokemon with 0 HP and not faint (see docs/bugs_and_glitches.md)
+.faint_loop
+	call .Function
+	ret c
+	call HasAnyoneFainted
+	ret nz
+	jr .faint_loop
+
+.Function
 	call HasEnemyFainted
 	jr nz, .EnemyNotFainted
 	call HandleEnemyMonFaint
@@ -395,6 +400,7 @@ HandleBerserkGene:
 	pop de
 	ret nz
 
+	xor a
 	ld [hl], a
 
 	ld h, d
@@ -1070,8 +1076,7 @@ EnemyTurn_EndOpponentProtectEndureDestinyBond:
 	call SetEnemyTurn
 	call EndUserDestinyBond
 	callfar DoEnemyTurn
-	jp EndOpponentProtectEndureDestinyBond
-
+; fallthrough
 EndOpponentProtectEndureDestinyBond:
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVarAddr
@@ -1401,6 +1406,7 @@ HandleLeftovers:
 
 	callfar GetUserItem
 	ld a, [hl]
+	ret z ; if no item
 	ld [wNamedObjectIndex], a
 	call GetItemName
 	ld a, b
@@ -1451,7 +1457,7 @@ HandleMysteryberry:
 	callfar GetUserItem
 	ld a, b
 	cp HELD_RESTORE_PP
-	jr nz, .quit
+	ret nz
 	ld hl, wPartyMon1PP
 	ld a, [wCurBattleMon]
 	call GetPartyLocation
@@ -1482,7 +1488,7 @@ HandleMysteryberry:
 .loop
 	ld a, [hl]
 	and a
-	jr z, .quit
+	ret z
 	ld a, [de]
 	and PP_MASK
 	jr z, .restore
@@ -1492,8 +1498,6 @@ HandleMysteryberry:
 	ld a, c
 	cp NUM_MOVES
 	jr nz, .loop
-
-.quit
 	ret
 
 .restore
@@ -1665,6 +1669,8 @@ HandleSafeguard:
 	ldh [hBattleTurn], a
 	ld hl, BattleText_SafeguardFaded
 	jp StdBattleTextbox
+
+;here in CSE
 
 HandleScreens:
 	ldh a, [hSerialConnectionStatus]
@@ -6025,6 +6031,81 @@ CheckEnemyLockedIn:
 	ret
 
 LinkBattleSendReceiveAction:
+	call .StageForSend
+	ld [wLinkBattleSentAction], a
+	vc_hook Wireless_start_exchange
+	farcall PlaceWaitingText
+	jr .LinkBattle_SendReceiveAction
+
+.StageForSend:
+	ld a, [wBattlePlayerAction]
+	and a ; BATTLEPLAYERACTION_USEMOVE?
+	jr nz, .switch
+	ld a, [wCurPlayerMove]
+	ld b, BATTLEACTION_STRUGGLE
+	cp STRUGGLE
+	jr z, .struggle
+	ld b, BATTLEACTION_SKIPTURN
+	cp $ff
+	jr z, .struggle
+	ld a, [wCurMoveNum]
+	jr .use_move
+
+.switch
+	ld a, [wCurPartyMon]
+	add BATTLEACTION_SWITCH1
+	jr .use_move
+
+.struggle
+	ld a, b
+
+.use_move
+	and $0f
+	ret
+
+.LinkBattle_SendReceiveAction:
+	ld a, [wLinkBattleSentAction]
+	ld [wPlayerLinkAction], a
+	ld a, $ff
+	ld [wOtherPlayerLinkAction], a
+.waiting
+	call LinkTransfer
+	call DelayFrame
+	ld a, [wOtherPlayerLinkAction]
+	inc a
+	jr z, .waiting
+
+	vc_hook Wireless_end_exchange
+	vc_patch Wireless_net_delay_3
+if DEF(_CRYSTAL_VC)
+	ld b, 26
+else
+	ld b, 10
+endc
+	vc_patch_end
+.receive
+	call DelayFrame
+	call LinkTransfer
+	dec b
+	jr nz, .receive
+
+	vc_hook Wireless_start_send_zero_bytes
+	vc_patch Wireless_net_delay_4
+if DEF(_CRYSTAL_VC)
+	ld b, 26
+else
+	ld b, 10
+endc
+	vc_patch_end
+.acknowledge
+	call DelayFrame
+	call LinkDataReceived
+	dec b
+	jr nz, .acknowledge
+
+	vc_hook Wireless_end_send_zero_bytes
+	ld a, [wOtherPlayerLinkAction]
+	ld [wBattleAction], a
 	ret
 
 LoadEnemyMon:

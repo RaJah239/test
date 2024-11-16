@@ -1,6 +1,7 @@
 _BattleTowerRoomMenu:
 	xor a
 	ld [wcd38], a
+Function118125:
 	call BattleTowerRoomMenu_InitRAM
 	ld a, $3
 	ld [wcd33], a
@@ -37,6 +38,9 @@ _BattleTowerRoomMenu:
 	call BattleTowerRoomMenu_Cleanup
 	call Function118180
 	call ReturnToMapFromSubmenu
+	ret
+
+BattleTowerRoomMenu_DoNothing:
 	ret
 
 Function118180:
@@ -182,6 +186,7 @@ BattleTowerRoomMenu_Jumptable:
 	dw BattleTowerRoomMenu_PickLevelMessage
 	dw BattleTowerRoomMenu_PlacePickLevelMenu
 	dw BattleTowerRoomMenu_UpdatePickLevelMenu
+	dw BattleTowerRoomMenu_DoNothing
 	dw BattleTowerRoomMenu_PartyMonTopsThisLevelMessage
 	dw BattleTowerRoomMenu_WaitForMessage
 	dw BattleTowerRoomMenu_DelayRestartMenu
@@ -216,7 +221,7 @@ BattleTowerRoomMenu_PickLevelMessage:
 	jr .asm_118930
 
 .asm_11892d
-	ld hl, Text_Random_Text_FFS
+	ld hl, Text_CheckBattleRoomListByMaxLevel
 
 .asm_118930
 	call BattleTowerRoomMenu_SetMessage
@@ -389,6 +394,54 @@ BattleTowerRoomMenu_UpdatePickLevelMenu:
 	ld [wMobileInactivityTimerFrames], a
 	ret
 
+Function118b9a:
+	ld a, h
+	cp $e0
+	ret c
+	ld a, $d3
+	call SetMobileErrorCode
+	and a
+	ret
+
+Function118e39:
+	ld a, [hli]
+	and a
+	jr nz, Function118e39
+	dec hl
+
+asm_118e3e:
+	ld a, [hld]
+	cp $2f
+	jr nz, asm_118e3e
+	inc hl
+	inc hl
+	ld de, wcd85
+	ld c, $4
+.asm_118e4a
+	ld a, [hli]
+	cp $2e
+	jr z, .asm_118e63
+	cp $30
+	jr c, .asm_118e67
+	cp $3a
+	jr nc, .asm_118e67
+	sub $30
+	add $f6
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .asm_118e4a
+	ld de, wcd85
+.asm_118e63
+	ld a, $50
+	ld [de], a
+	ret
+.asm_118e67
+	ld a, $f3
+	ld [de], a
+	inc de
+	jr .asm_118e63
+
 Function118e76:
 	; Call $c in BattleTowerRoomMenu2
 	ld a, $c
@@ -438,7 +491,7 @@ BattleTowerRoomMenu_QuitMessage:
 	jr z, .asm_119cd1
 	dec a
 	jr z, .asm_119cd6
-	ld hl, Text_Random_Text_FFS
+	ld hl, Text_QuitReadingNews
 	jr .asm_119cd9
 
 .asm_119cd1
@@ -446,7 +499,7 @@ BattleTowerRoomMenu_QuitMessage:
 	jr .asm_119cd9
 
 .asm_119cd6
-	ld hl, Text_Random_Text_FFS
+	ld hl, Text_ExitGymLeaderHonorRoll
 
 .asm_119cd9
 	call BattleTowerRoomMenu_SetMessage
@@ -623,6 +676,7 @@ BattleTowerRoomMenu2:
 	dw Function119f45
 	dw Function119f56
 	dw Function119f76
+	dw Function119f98
 	dw Function11a113
 	dw Function11a129
 	dw Function11a131
@@ -700,6 +754,9 @@ Function119f76:
 	xor a
 	ld [wMobileInactivityTimerMinutes], a
 	jp BattleTowerRoomMenu2_IncrementJumptable
+
+Function119f98:
+	ret
 
 Function11a113:
 	call Function11a63c
@@ -1434,7 +1491,6 @@ String_11a762:
 
 String_11a779:
 	db   "!@"
-
 String_11a791:
 	db   "!@"
 
@@ -1448,7 +1504,7 @@ String_11a7d7:
 	db   "!@"
 
 String_11a7f4:
-	db   "　　　　　　　　　　　　　　　@"
+	db   "!@"
 
 BattleTowerRoomMenu_WriteMessage:
 	jumptable .Jumptable, wc31a
@@ -1580,6 +1636,7 @@ Function11a9ce:
 	call ClearBGPalettes
 	call ReloadTilesetAndPalettes
 	call Call_ExitMenu
+	farcall Function106464
 	call GSReloadPalettes
 	farcall FinishExitMenu
 	call UpdateSprites
@@ -1590,7 +1647,7 @@ Function11a9f0:
 	and a
 	ret
 
-Text_Random_Text_FFS:
+Text_QuitReadingNews:
 	text "!"
 	done
 
@@ -1613,12 +1670,20 @@ Text_CancelBattleRoomChallenge:
 	line "ROOM challenge?"
 	done
 
+Text_ExitGymLeaderHonorRoll:
+	text "!"
+	done
+
 Text_WhatLevelDoYouWantToChallenge:
 	text "What level do you"
 	line "want to challenge?"
 	done
 
-AddMobileMonToParty:
+Text_CheckBattleRoomListByMaxLevel:
+	text "!"
+	done
+
+AddMobileMonToParty: 
 	ld hl, wPartyCount
 	ld a, [hl]
 	ld e, a
