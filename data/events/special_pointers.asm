@@ -147,3 +147,4 @@ SpecialsPointers::
 	add_special CoinsTMTrader
 	add_special CianwoodPhotograph
 	add_special EggMaster
+	add_special FillPokedex ; used for testing

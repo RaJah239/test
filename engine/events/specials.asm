@@ -21,6 +21,22 @@ SetPlayerPalette:
 	farcall _SetPlayerPalette
 	ret
 
+FillPokedex:
+	ld a, UNOWN_A
+	ld [wFirstUnownSeen], a
+	ld a, BULBASAUR
+	ld [wScriptVar], a
+.loop
+	ld a, [wScriptVar]
+	dec a
+	call SetSeenAndCaughtMon
+	ld a, [wScriptVar]
+	inc a
+	cp EGG
+	ret z
+	ld [wScriptVar], a
+	jr .loop
+
 GameCornerPrizeMonCheckDex:
 	ld a, [wScriptVar]
 	dec a
