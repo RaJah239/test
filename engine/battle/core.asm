@@ -8303,7 +8303,6 @@ InitEnemyTrainer:
 	callfar GetTrainerAttributes
 	callfar ReadTrainerParty
 
-.ok
 	ld de, vTiles2
 	callfar GetTrainerPic
 	xor a
