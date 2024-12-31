@@ -812,7 +812,7 @@ LoadOrangePage:
 	call StatsScreen_placeCaughtLevel
 	call StatsScreen_placeCaughtTime
 	call StatsScreen_placeCaughtLocation
-	call StatsScreen_PrintDVs
+	call StatsScreen_PrintEVs
 	ld de, HiddenPowerTypeString
 	hlcoord 1, 16
 	call PlaceString
@@ -854,7 +854,7 @@ ld hl, wTempMonDVs
 	call PlaceString
 	ret
 
-StatsScreen_PrintDVs:
+StatsScreen_PrintEVs:
 	hlcoord 1, 11
 	ld de, .EffortValuesString
 	call PlaceString
@@ -904,7 +904,6 @@ StatsScreen_PrintDVs:
 	; DEF EVs
 	ld a, [wTempMonDefEV]
 	ld [wPokedexStatus], a 
-	; calc HP stat contribution
 	pop bc
 	and 1
 	jr z, .def_not_odd
@@ -939,7 +938,6 @@ StatsScreen_PrintDVs:
 	; SpAtk EVs
 	ld a, [wTempMonSpclAtkEV]
 	ld [wPokedexStatus], a
-	; calc HP stat contribution
 	pop bc
 	and 1
 	jr z, .spc_not_odd
@@ -953,7 +951,6 @@ StatsScreen_PrintDVs:
 	lb bc, 1, 3 ; 3 digits
 	hlcoord 14, 13
 	call PrintNum
-
 
 	; SpDef EVs
 	ld a, [wTempMonSpclDefEV]
