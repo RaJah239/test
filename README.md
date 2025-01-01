@@ -30,20 +30,22 @@ AREA Pages: Currently supports Johto/Kanto Walking/grass/surfing encounters plus
 POKEGEAR: Now shows the detailed name of map you're currently in (based on Map Group & Map Number) and it also reads the map's attribute to see it's fishing group, if it has one.
 
 # **Full List of Quality of Life Features:**
-- Select + B resets the game. 
+- Bring up Save data deletion menu by pressing pressing Up + B + Start on Suicune running screen.
+- Select + B resets the game.
+- Added an About Page to the Main Menu.
 - Instant Text speed added & set to Default. Removed SLOW and MEDIUM text speeds.
 - Removed the artificial save delay.
 - Replace Menu Account with a small clock in the top left corner of the screen.
 - Clock Reset added to Main Menu.
 - All encounters can be turned On/Off from the Options Menu.
 - Do Not Disturb mode added in Options Menu; prevent all non essential phone calls.
-- Running shoes added (default Run, press B to walk).
+- Skateboard added (default skateboard at the cycling speed, press B to walk).
 - Surf faster by default, press B to surf at regular speed.
 - Overworld Porygons added throughout the game for PC access.
 - Chanseys that heal the player’s party in the overworld added throughout the game.
 - Color coded starter Poké Balls.
 - Displays colored Pokémon pictures in the overworld.
-- Phone now holds up to 35 contacts / max in game.
+- The Pokégear can hold all phone contacts in the game.
 - Bag's item pocket now has a capacity of 84.
 - A Battle Item Pocket has been added, with a capacity to hold up to 50 items, including all berries.
 - Edited PC text to allow for faster maneuvering.
@@ -55,13 +57,14 @@ POKEGEAR: Now shows the detailed name of map you're currently in (based on Map G
 - Pokémon Centre fast heal after the first visit added.
 - Use unique colours for each thrown Poké Ball.
 - Animate tiles when text boxes are open.
-- Trainer rematch system has been improved.
-- Visible mushroom added to Ilex Forest, inspired by Sour Crystal (https://github.com/SoupPotato/Sourcrystal).
+- Trainer phone call rematch system has been improved - trainers only call for rematches or to give items now.
+- Overworld mushrooms added to Ilex Forest, inspired by Sour Crystal (https://github.com/SoupPotato/Sourcrystal).
 - Field moves are useable if a Pokémon can learn the TM/HM and is in the respective pocket.
 - Items that act like HMs added (except Fly) to prevent softlocks.
 - Third paged added to trainer card for Kanto Badges and all badges colored.
-- Pokémon eggs get laid 100% of the time after 256 steps and all eggs hatch after 1,024 steps.
+- Pokémon eggs get laid 100% of the time after 255 steps and all eggs hatch after 1,024 steps.
 - Eggs hatch at level 1.
+- Shiny Pokémon's egg have a blue party icon now while regular eggs have a red party icon.
 - Refusing eggs no longer prevents Pokémon from laying more.
 - Eggs can be released via the PC.
 - Odd Eggs always have PokéRUS.
@@ -123,7 +126,6 @@ Morning	-  5:00am - 9:59am // Day	- 10:00am - 6:59pm // Night	-	7:00pm - 4:59pm
 
 # **Asset Credits List:**
 - RBY text frame added from Polished Crystal
-- Chris' run sprite by Tom Wang  and Kris' run sprite by Seasick both from GitHub
 - Do Not Disturb mode by lifeofmauri on Discord
 - Take off all overworld Encounters by lifeofmauri on Discord
 - Item usage is forbidden by lifeofmauri on Discord
@@ -133,18 +135,18 @@ Morning	-  5:00am - 9:59am // Day	- 10:00am - 6:59pm // Night	-	7:00pm - 4:59pm
 - Giovanni, Archer, Proton and Petrel's overworld and trainer sprites by sirwhibbles from DeviantArt
 - Cooltrainer Male's overworld sprite eye fix by Major Agnostic on Discord
 - Battle HUD update by Idain and Major Agnostic on Discord
-- Scarlet's trainer sprite, Corsola, Dratini, Kingdra, Starmie, Mantine, Octillery and Qwilfish's overworld swimming sprites by FrenchOrange on Discord
-- Chansey and Porygon's overworld sprites and Lanturn and Seaking's overworld swimming sprites by Megaman-Omega from DeviantArt
+- Scarlet's trainer sprite, Chris and Kris' skateboard sprites, Corsola, Dratini, Kingdra, Starmie, Mantine, Octillery and Qwilfish's overworld swimming sprites by FrenchOrange on Discord
+- Chansey and Porygon's overworld sprites plus Lanturn and Seaking's overworld swimming sprites by Megaman-Omega from DeviantArt
 - Charizard, Dragonite and Feraligatr's back sprites by mauvesea on Discord
 - Surf faster - cRz-Shadows on Discord
 - RBY Kanto's Gym Leader Battle, Indigo Plateau & Champion Theme by dannye from Discord & GitHub.
-- Maxie/Archie Battle, Hoen Rival Battle, May Encounter, Cave of Origin and Unova Elite Four's themes all by Mmmmm from SoundCloud/ https://soundcloud.com/mmmmmmmmmmmmmmmmm-1.
+- Maxie/Archie Battle, Hoen Rival Battle, May Encounter, Vs. Hoenn Champion, Cave of Origin and Unova Elite Four's themes all by Mmmmm from SoundCloud/ https://soundcloud.com/mmmmmmmmmmmmmmmmm-1.
 - Dragonite, Farfetch'd, berry tree, apricorn tree, small and large mushroom's overworld sprites by SourApple.
 
 # **General Credits List:**
 - Everyone that contributed to the pokecrystal disassembly, Pret’s Discord Server and pokecrystal tutorials which legitimately carried me.
 
-- I wanted to name these people in particular from Pret's Discord Server: GetKosiorekt, Nayru62, NickJam, Grate Oracle Lewot, Idain, Major_Agnostic, SourApple, lifeofmauri, FrenchOrange, PiaCRT, mauvemon, Ardorin, PerreteCartago, Rod , cRz-Shadows, ElfinHilon10, dannye, FootFingers, Ferropexola, Handheld Hero, 8bitzeta, Pferomon, Vulcandth, ax6, FIQ and rangi42.
+- I wanted to name these people in particular from Pret's Discord Server: GetKosiorekt, Nayru62, NickJam, Grate Oracle Lewot, Idain, Major_Agnostic, SourApple, lifeofmauri, FrenchOrange, PiaCRT, mauvemon, Ardorin, PerreteCartago, Rod, cRz-Shadows, ElfinHilon10, dannye, FootFingers, Ferropexola, weepingwitch, SonicRay100, Handheld Hero, 8bitzeta, Pferomon, Vulcandth, ax6, FIQ and rangi42.
 
 # **Vanilla Bugfixes:**
 - Prevent Steel‐types from being poisoned by Twineedle. Prevent burning fire types and freezing ice types by Tri-Attack.
@@ -153,7 +155,7 @@ Morning	-  5:00am - 9:59am // Day	- 10:00am - 6:59pm // Night	-	7:00pm - 4:59pm
 
 # **Known Bugs:**
 
-- Pressing Select while viewing the Pic menu in the Pokedex to see a shiny, then pressing Start exits the Pictures.
+- None so far.
 
 # **To do List:**
 
