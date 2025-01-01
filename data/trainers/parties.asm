@@ -37,7 +37,7 @@ FalknerGroup:
 
 	; FALKNER (2)
 	db "FALKNER@", TRAINERTYPE_MOVES
-	db  11, PIDGEY,     SPLASH, NO_MOVE, NO_MOVE, NO_MOVE
+	db  11, PIDGEY,     CROSS_CHOP, NO_MOVE, NO_MOVE, NO_MOVE
 	db -1 ; end
 
 WhitneyGroup:

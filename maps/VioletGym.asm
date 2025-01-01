@@ -89,15 +89,28 @@ VioletGymFalknerScript:
 	writetext FalknerRematchAcceptText
 	waitbutton
 	closetext
-	winlosstext FalknerRematchLossText, 0
+	winlosstext FalknerRematchLossText, FalknerRematchWinText
 	loadtrainer FALKNER, FALKNER2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_FALKNER
+	reloadmap
+	iftrue .AfterYourDefeat
+	sjump .AfterVictorious
+
+.AfterVictorious:
 	opentext
-	writetext FalknerRematchAfterText
+	writetext FalknerRematchPlayerVictoryText
 	waitbutton
 	closetext
+	sjump .FinishBattle
+
+.AfterYourDefeat:
+	opentext
+	writetext FalknerRematchPlayerLossText
+	waitbutton
+	closetext
+.FinishBattle:
+	special HealParty
 	end
 
 VioletGymActivateRockets:
@@ -308,8 +321,13 @@ FalknerRematchLossText:
 	text "I understand…"
 	line "I'll bow out…"
 	done
-	
-FalknerRematchAfterText:
+
+FalknerRematchWinText:
+	text "This is the power"
+	line "of bird #MON!"
+	done
+
+FalknerRematchPlayerVictoryText:
 	text "FALKNER: What an"
 	line "intense battle!"
 	
@@ -320,6 +338,14 @@ FalknerRematchAfterText:
 	line "you're as tough as"
 	cont "ever!"
 	done 
+
+FalknerRematchPlayerLossText:
+	text "FALKNER: You're"
+	line "quite tough but my"
+
+	para "bird #MON are"
+	line "tougher!"
+	done
 
 BirdKeeperRodSeenText:
 	text "The keyword is"
