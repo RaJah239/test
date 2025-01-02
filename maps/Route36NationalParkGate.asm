@@ -504,26 +504,21 @@ Route36NationalParkGatePlayerReceivedParkBallsText:
 
 Route36NationalParkGateOfficer1ExplainsRulesText:
 	text "The person who"
-	line "gets the strong-"
-	cont "est bug #MON"
-	cont "is the winner."
+	line "gets the best bug"
+	cont "#MON wins!"
 
 	para "You have {d:BUG_CONTEST_MINUTES}"
 	line "minutes."
 
 	para "If you run out of"
-	line "PARK BALLS, you're"
-	cont "done."
+	line "PARK BALLS, it's over."
 
 	para "You can keep the"
 	line "last #MON you"
 	cont "catch as your own."
 
-	para "Go out and catch"
-	line "the strongest bug"
-
-	para "#MON you can"
-	line "find!"
+	para "Go out and do your"
+	line "best!"
 	done
 
 Route36NationalParkGateOfficer1AskToUseFirstMonText:
@@ -540,8 +535,7 @@ Route36NationalParkGateOfficer1AskToUseFirstMonText:
 	para "first #MON in"
 	line "your party."
 
-	para "Is that OK with"
-	line "you?"
+	para "Alright?"
 	done
 
 Route36NationalParkGateOfficer1WellHoldYourMonText:

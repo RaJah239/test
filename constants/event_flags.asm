@@ -463,7 +463,8 @@
 	const EVENT_SCARLET_IS_DEFEATED_IN_NEW_BARK_TOWN
 	const EVENT_RADIO_TOWER_5F_REAL_DIRECTOR
 	const EVENT_RADIO_TOWER_5F_DIRECTOR_FAKE
-; Unused: next 146 events
+	const EVENT_REMATCH_FALKNER
+; Unused: next 145 events
 
 	const_next 600
 ; Kurt Apricorn events

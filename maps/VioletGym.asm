@@ -44,8 +44,6 @@ VioletGymFalknerScript:
 .FightDone:
 	checkevent EVENT_GOT_TM31_MUD_SLAP
 	iftrue .SpeechAfterTM
-	setevent EVENT_BEAT_BIRD_KEEPER_ROD
-	setevent EVENT_BEAT_BIRD_KEEPER_ABE
 	setmapscene ELMS_LAB, SCENE_ELMSLAB_NOOP
 	specialphonecall SPECIALCALL_ASSISTANT
 	writetext FalknerZephyrBadgeText
@@ -64,6 +62,8 @@ VioletGymFalknerScript:
 	end
 
 .SpeechAfterTM:
+	checkevent EVENT_REMATCH_FALKNER
+	iftrue .OfferInfinityRematch
 	checkevent EVENT_BEAT_RED
 	iftrue .OfferRematch
 	; player hasn't beaten RED yet
@@ -71,6 +71,46 @@ VioletGymFalknerScript:
 	waitbutton
 .NoRoomForMudSlap:
 	closetext
+	end
+
+.OfferInfinityRematch:
+	writetext FalknerInfinityRematchText
+	yesorno
+	iftrue .DoInfinityRematch
+	; keep going if false
+	
+.DontDoInfinityRematch:
+	writetext FalknerRematchRefuseText
+	waitbutton
+	closetext
+	end
+	
+.DoInfinityRematch:
+	writetext FalknerRematchAcceptText
+	waitbutton
+	closetext
+	winlosstext FalknerRematchLossText, FalknerRematchWinText
+	loadtrainer FALKNER, FALKNER2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	reloadmap
+	iftrue .AfterYourInfinityRematchDefeat
+	sjump .AfterInfinityRematchVictorious
+
+.AfterInfinityRematchVictorious:
+	opentext
+	writetext FalknerInfinityRematchPlayerVictoryText
+	waitbutton
+	closetext
+	sjump .InfinityRematchFinishBattle
+
+.AfterYourInfinityRematchDefeat:
+	opentext
+	writetext FalknerInfinityRematchPlayerLossText
+	waitbutton
+	closetext
+.InfinityRematchFinishBattle:
+	special HealParty
 	end
 
 .OfferRematch:
@@ -83,7 +123,7 @@ VioletGymFalknerScript:
 	writetext FalknerRematchRefuseText
 	waitbutton
 	closetext
-    end
+	end
 	
 .DoRematch:
 	writetext FalknerRematchAcceptText
@@ -111,6 +151,7 @@ VioletGymFalknerScript:
 	closetext
 .FinishBattle:
 	special HealParty
+	setevent EVENT_REMATCH_FALKNER
 	end
 
 VioletGymActivateRockets:
@@ -171,8 +212,7 @@ VioletGymStatue:
 	jumpstd GymStatue2Script
 
 PlayerisaRookie:
-	text "You… You're a new"
-	line "trainer right?"
+	text "New trainer right?"
 
 	para "You may not be"
 	line "prepared for your"
@@ -254,19 +294,6 @@ FalknerTMMudSlapText:
 	para "Think before you"
 	line "act--a TM can be"
 	cont "used only once."
-
-	para "TM31 contains"
-	line "MUD-SLAP."
-
-	para "It reduces the"
-	line "enemy's accuracy"
-
-	para "while it causes"
-	line "damage."
-
-	para "In other words, it"
-	line "is both defensive"
-	cont "and offensive."
 	done
 
 FalknerFightDoneText:
@@ -275,8 +302,7 @@ FalknerFightDoneText:
 	cont "towns ahead."
 
 	para "You should test"
-	line "your skills at"
-	cont "these GYMS."
+	line "your skills there."
 
 	para "I'm going to train"
 	line "harder to become"
@@ -303,6 +329,11 @@ FalknerRematchText:
 	
 	para "Up for a rematch?"
 	done 
+
+FalknerInfinityRematchText:
+	text "Want to take on my"
+	line "bird #MON?"
+	done
 
 FalknerRematchAcceptText:
 	text "I'll show you the"
@@ -337,6 +368,8 @@ FalknerRematchPlayerVictoryText:
 	para "once again, that"
 	line "you're as tough as"
 	cont "ever!"
+	
+	para "Drop by anytime."
 	done 
 
 FalknerRematchPlayerLossText:
@@ -345,6 +378,22 @@ FalknerRematchPlayerLossText:
 
 	para "bird #MON are"
 	line "tougher!"
+
+	para "Drop by anytime."
+	done
+
+FalknerInfinityRematchPlayerVictoryText:
+	text "FALKNER: What an"
+	line "intense battle!"
+
+	para "Drop by anytime."
+	done
+
+FalknerInfinityRematchPlayerLossText:
+	text "FALKNER: My bird"
+	line "#MON are tough!"
+
+	para "Drop by anytime."
 	done
 
 BirdKeeperRodSeenText:
@@ -368,9 +417,7 @@ BirdKeeperRodAfterBattleText:
 	text "FALKNER's skills"
 	line "are for real!"
 
-	para "Don't get cocky"
-	line "just because you"
-	cont "beat me!"
+	para "Don't get cocky!"
 	done
 
 BirdKeeperAbeSeenText:
