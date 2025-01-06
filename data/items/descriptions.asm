@@ -90,7 +90,7 @@ ItemDescriptions:
 	dw BigMushroomDesc
 	dw SilverPowderDesc
 	dw BluApricornDesc
-	dw TeruSama6Desc
+	dw ShinyCharmDesc
 	dw AmuletCoinDesc
 	dw YlwApricornDesc
 	dw GrnApricornDesc
@@ -941,6 +941,10 @@ MirageMailDesc:
 	db   "MEW-print MAIL."
 	next "(HOLD)@"
 
+ShinyCharmDesc:
+	db "Raises chance of"
+	next "SHINY #MON.@"
+
 TeruSama1Desc:
 TeruSama25Desc:
 TeruSama24Desc:
@@ -952,7 +956,6 @@ TeruSama10Desc:
 TeruSama9Desc:
 TeruSama8Desc:
 TeruSama7Desc:
-TeruSama6Desc:
 TeruSama5Desc:
 TeruSama4Desc:
 TeruSama3Desc:

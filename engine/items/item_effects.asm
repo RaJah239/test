@@ -58,12 +58,12 @@ ItemEffects:
 	dw HedgerEffect        ; HEDGER
 	dw PaddleBoatEffect    ; PADDLE_BOAT
 	dw DireHitEffect       ; DIRE_HIT
-	dw NoEffect            ; OLD_AMBER
+	dw NoEffect            ;
 	dw RestoreHPEffect     ; FRESH_WATER
 	dw RestoreHPEffect     ; SODA_POP
 	dw RestoreHPEffect     ; LEMONADE
 	dw XItemEffect         ; X_ATTACK
-	dw NoEffect            ; DOME_FOSSIL
+	dw NoEffect            ;
 	dw XItemEffect         ; X_DEFEND
 	dw XItemEffect         ; X_SPEED
 	dw XItemEffect         ; X_SPECIAL
@@ -103,7 +103,7 @@ ItemEffects:
 	dw NoEffect            ; BIG_MUSHROOM
 	dw NoEffect            ; SILVERPOWDER
 	dw NoEffect            ; BLU_APRICORN
-	dw NoEffect            ; HELIX_FOSSIL
+	dw NoEffect            ; SHINY_CHARM 
 	dw NoEffect            ; AMULET_COIN
 	dw NoEffect            ; YLW_APRICORN
 	dw NoEffect            ; GRN_APRICORN
@@ -160,9 +160,9 @@ ItemEffects:
 	dw NoEffect            ; DRAGON_FANG
 	dw NoEffect            ; ITEM_91
 	dw NoEffect            ; LEFTOVERS
-	dw NoEffect            ; ITEM_93
-	dw NoEffect            ; ITEM_94
-	dw NoEffect            ; ITEM_95
+	dw NoEffect            ; OLD_AMBER
+	dw NoEffect            ; DOME_FOSSIL
+	dw NoEffect            ; HELIX_FOSSIL
 	dw RestorePPEffect     ; MYSTERYBERRY
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
